@@ -21,12 +21,12 @@
       "base_alpha": 1.0,
       "cold_effect_alpha": 1.0,
       "trip_scale": 128,
-      "warm_alpha": 0.1,
-      "warm_terms": "work_size"
+      "warm_alpha": 0.025,
+      "warm_terms": "memory_work"
     },
     "jax_version": "0.12.0.1",
     "jaxlib_version": "0.12.0.1",
-    "model_version": "cpu-ridge-v1-7864d652dd6de258",
+    "model_version": "cpu-ridge-v1-7d1bfd3b3d66fd5b",
     "regressions": [
       {
         "intercept": 2.693466983813209,
@@ -59,14 +59,14 @@
       {
         "intercept": 0.0,
         "weights": [
-          -0.20667623073953234,
-          -0.08354819589335863,
-          -0.4278947369260951,
-          0.2943353403927898,
-          -0.3119451212034523,
-          -0.008444324229046875,
-          -0.9539067103207071,
-          1.295397121559919
+          -0.17358601458972958,
+          -0.09244055188634472,
+          -0.09326180020319169,
+          -0.024472208457467566,
+          -0.48553630612707654,
+          -0.007969229277329851,
+          0.31532851837325937,
+          2.028096207576727
         ]
       }
     ],
@@ -103,6 +103,14 @@
       100.0
     ]
   },
+  "selection": {
+    "primary": "minimum worst-family mean positive regret at long horizons",
+    "long_R_min": 10000,
+    "tie_break": [
+      "pooled mean positive regret",
+      "pooled warm log MAE"
+    ]
+  },
   "cv": {
     "lofo_recurrence": {
       "configurations": 8,
@@ -116,17 +124,18 @@
           "factor_ratio_log_mae": 0.055518204853475896
         },
         "log_warm_us": {
-          "log_mae": 0.7823938516093341,
-          "mean_absolute_relative_error": 0.577103179661108,
-          "median_predicted_over_measured": 0.4101179451806831,
-          "p90_absolute_log_error": 1.095553085392045,
+          "log_mae": 0.8336786252523631,
+          "mean_absolute_relative_error": 0.5919011138478614,
+          "median_predicted_over_measured": 0.36998433434884903,
+          "p90_absolute_log_error": 1.1344165128967285,
           "within_25_percent": 0.125,
-          "factor_ratio_log_mae": 0.2601742993446405
+          "factor_ratio_log_mae": 0.18940346209621547
         }
       },
       "median_regret": 0.0,
-      "mean_positive_regret": 0.024452038429160355,
-      "factor_agreement": 0.8229166666666666,
+      "mean_positive_regret": 0.016197909381568322,
+      "mean_positive_regret_long": 0.04626906727172977,
+      "factor_agreement": 0.8333333333333334,
       "budget_violation_rate": 0.5
     },
     "lofo_elementwise": {
@@ -141,17 +150,18 @@
           "factor_ratio_log_mae": 0.10037916193593585
         },
         "log_warm_us": {
-          "log_mae": 1.7000167318365673,
-          "mean_absolute_relative_error": 0.7688991839814088,
-          "median_predicted_over_measured": 0.1922304333189599,
-          "p90_absolute_log_error": 2.6583167114324127,
+          "log_mae": 1.6907722811129424,
+          "mean_absolute_relative_error": 0.7670838781702356,
+          "median_predicted_over_measured": 0.19538205703643563,
+          "p90_absolute_log_error": 2.656637399674517,
           "within_25_percent": 0.0,
-          "factor_ratio_log_mae": 0.2847591812469307
+          "factor_ratio_log_mae": 0.27464337892165436
         }
       },
       "median_regret": 0.0,
-      "mean_positive_regret": 0.012602553067095604,
-      "factor_agreement": 0.95,
+      "mean_positive_regret": 0.01237311563644512,
+      "mean_positive_regret_long": 0.0,
+      "factor_agreement": 0.9666666666666667,
       "budget_violation_rate": 0.5
     },
     "lofo_reduction": {
@@ -166,17 +176,18 @@
           "factor_ratio_log_mae": 0.5123194375167536
         },
         "log_warm_us": {
-          "log_mae": 1.0245077683238206,
-          "mean_absolute_relative_error": 1.8426969605124888,
-          "median_predicted_over_measured": 2.8266342790720573,
-          "p90_absolute_log_error": 1.2220753289515813,
+          "log_mae": 1.027613888339056,
+          "mean_absolute_relative_error": 1.8523650184332108,
+          "median_predicted_over_measured": 2.8320589143226558,
+          "p90_absolute_log_error": 1.2246903727172103,
           "within_25_percent": 0.0,
-          "factor_ratio_log_mae": 0.1784758625675791
+          "factor_ratio_log_mae": 0.18163065393762365
         }
       },
       "median_regret": 0.0,
-      "mean_positive_regret": 0.001745139163341405,
-      "factor_agreement": 0.9895833333333334,
+      "mean_positive_regret": 0.0037008208306356393,
+      "mean_positive_regret_long": 0.011102462491906918,
+      "factor_agreement": 0.9791666666666666,
       "budget_violation_rate": 0.5
     },
     "lofo_dense_linear_algebra": {
@@ -191,17 +202,18 @@
           "factor_ratio_log_mae": 0.29927256502085897
         },
         "log_warm_us": {
-          "log_mae": 0.617825160875257,
-          "mean_absolute_relative_error": 0.8860576929936025,
-          "median_predicted_over_measured": 1.8707390436393814,
-          "p90_absolute_log_error": 0.8534297656493761,
-          "within_25_percent": 0.05555555555555555,
-          "factor_ratio_log_mae": 0.13015193465413233
+          "log_mae": 0.4172878178830307,
+          "mean_absolute_relative_error": 0.5380500375337176,
+          "median_predicted_over_measured": 1.5467717587636356,
+          "p90_absolute_log_error": 0.6076437705814245,
+          "within_25_percent": 0.1388888888888889,
+          "factor_ratio_log_mae": 0.16197265978235645
         }
       },
       "median_regret": 0.0,
-      "mean_positive_regret": 0.004322362773854406,
-      "factor_agreement": 0.7870370370370371,
+      "mean_positive_regret": 0.012756020147313018,
+      "mean_positive_regret_long": 0.006352598024364571,
+      "factor_agreement": 0.7129629629629629,
       "budget_violation_rate": 0.5
     },
     "pooled": {
@@ -216,55 +228,104 @@
           "factor_ratio_log_mae": 0.23542702410025504
         },
         "log_warm_us": {
-          "log_mae": 1.057594477877378,
-          "mean_absolute_relative_error": 1.0006260628041508,
-          "median_predicted_over_measured": 1.2535963681565523,
+          "log_mae": 1.0158186651659442,
+          "mean_absolute_relative_error": 0.9162119479358397,
+          "median_predicted_over_measured": 1.1809455798104196,
           "p90_absolute_log_error": 2.0404409067493408,
-          "within_25_percent": 0.04285714285714286,
-          "factor_ratio_log_mae": 0.21509030056155012
+          "within_25_percent": 0.06428571428571428,
+          "factor_ratio_log_mae": 0.20492744730081328
         }
       },
       "median_regret": 0.0,
-      "mean_positive_regret": 0.010700120467875994,
-      "factor_agreement": 0.888095238095238,
+      "mean_positive_regret": 0.011363576553940002,
+      "mean_positive_regret_long": 0.014747017723667847,
+      "factor_agreement": 0.8738095238095238,
       "budget_violation_rate": 0.5
     }
   },
   "dev_trials": [
     {
       "warm_terms": "work_size",
+      "warm_alpha": 0.025,
+      "mean_positive_regret": 0.012099340132195662,
+      "worst_long_regret": 0.05592596423633533,
+      "warm_log_mae": 1.0144258701830755
+    },
+    {
+      "warm_terms": "work_size",
       "warm_alpha": 0.1,
       "mean_positive_regret": 0.010700120467875994,
+      "worst_long_regret": 0.07103145441450587,
       "warm_log_mae": 1.057594477877378
     },
     {
       "warm_terms": "work_size",
       "warm_alpha": 1.0,
       "mean_positive_regret": 0.013384931261049055,
+      "worst_long_regret": 0.07103145441450587,
       "warm_log_mae": 1.0687924440657866
+    },
+    {
+      "warm_terms": "memory_work",
+      "warm_alpha": 0.025,
+      "mean_positive_regret": 0.011363576553940002,
+      "worst_long_regret": 0.04626906727172977,
+      "warm_log_mae": 1.0158186651659442
+    },
+    {
+      "warm_terms": "memory_work",
+      "warm_alpha": 0.1,
+      "mean_positive_regret": 0.01189365623151933,
+      "worst_long_regret": 0.07103145441450587,
+      "warm_log_mae": 1.0538350148801112
+    },
+    {
+      "warm_terms": "memory_work",
+      "warm_alpha": 1.0,
+      "mean_positive_regret": 0.01446570957981593,
+      "worst_long_regret": 0.07103145441450587,
+      "warm_log_mae": 1.0674677466117448
+    },
+    {
+      "warm_terms": "relief",
+      "warm_alpha": 0.025,
+      "mean_positive_regret": 0.010973170460632417,
+      "worst_long_regret": 0.07103145441450587,
+      "warm_log_mae": 1.0679606586471526
     },
     {
       "warm_terms": "relief",
       "warm_alpha": 0.1,
       "mean_positive_regret": 0.011191963097567674,
+      "worst_long_regret": 0.07103145441450587,
       "warm_log_mae": 1.0558736701101836
     },
     {
       "warm_terms": "relief",
       "warm_alpha": 1.0,
       "mean_positive_regret": 0.011811107434292473,
+      "worst_long_regret": 0.07103145441450587,
       "warm_log_mae": 1.074029045508931
+    },
+    {
+      "warm_terms": "trip",
+      "warm_alpha": 0.025,
+      "mean_positive_regret": 0.04206222795342607,
+      "worst_long_regret": 0.2565281108828053,
+      "warm_log_mae": 1.0515186275900195
     },
     {
       "warm_terms": "trip",
       "warm_alpha": 0.1,
       "mean_positive_regret": 0.0420222385769429,
+      "worst_long_regret": 0.2565281108828053,
       "warm_log_mae": 1.0516333578638757
     },
     {
       "warm_terms": "trip",
       "warm_alpha": 1.0,
       "mean_positive_regret": 0.03906396985188953,
+      "worst_long_regret": 0.26569871284155194,
       "warm_log_mae": 1.0526868422259859
     }
   ]

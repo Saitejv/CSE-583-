@@ -1,0 +1,271 @@
+{
+  "model": {
+    "backend": "cpu",
+    "dataset_version": 2,
+    "dev_rows_sha256": "ebdc4d27dbb8d7aac21dce540d87552265bff287d0d84f432483ae674dc684ce",
+    "feature_version": 1,
+    "features": [
+      "trip_count",
+      "factor",
+      "has_tail",
+      "num_equations",
+      "eq_reduce",
+      "num_consts",
+      "const_bytes",
+      "carry_bytes",
+      "bytes_moved_proxy",
+      "flops_proxy"
+    ],
+    "format_version": 1,
+    "hyperparameters": {
+      "base_alpha": 1.0,
+      "cold_effect_alpha": 1.0,
+      "trip_scale": 128,
+      "warm_alpha": 0.1,
+      "warm_terms": "work_size"
+    },
+    "jax_version": "0.12.0.1",
+    "jaxlib_version": "0.12.0.1",
+    "model_version": "cpu-ridge-v1-7864d652dd6de258",
+    "regressions": [
+      {
+        "intercept": 2.693466983813209,
+        "weights": [
+          0.008918452255300875,
+          0.054360806810569075,
+          -0.0009534978385810424,
+          -0.028312620311082972,
+          0.04750946313824986,
+          0.2000174942726459
+        ]
+      },
+      {
+        "intercept": 0.0,
+        "weights": [
+          0.0,
+          0.058822473288282495,
+          0.12260252776253046,
+          0.263202112489596,
+          0.11781746030410638
+        ]
+      },
+      {
+        "intercept": 1.7384997795102217,
+        "weights": [
+          -1.035542967030239,
+          1.784713202924598
+        ]
+      },
+      {
+        "intercept": 0.0,
+        "weights": [
+          -0.20667623073953234,
+          -0.08354819589335863,
+          -0.4278947369260951,
+          0.2943353403927898,
+          -0.3119451212034523,
+          -0.008444324229046875,
+          -0.9539067103207071,
+          1.295397121559919
+        ]
+      }
+    ],
+    "split_version": 1,
+    "support": {
+      "dtype_bits": [
+        32
+      ],
+      "trip_range": [
+        16,
+        1024
+      ]
+    }
+  },
+  "train_date": "2026-11-17",
+  "training_versions": {
+    "python": "3.13.2",
+    "numpy": "2.5.5",
+    "scikit_learn": "1.9.1"
+  },
+  "cv_grid": {
+    "R": [
+      1,
+      10,
+      100,
+      1000,
+      10000,
+      100000
+    ],
+    "B_ms": [
+      null,
+      1.0,
+      10.0,
+      100.0
+    ]
+  },
+  "cv": {
+    "lofo_recurrence": {
+      "configurations": 8,
+      "prediction_errors": {
+        "log_cold_ms": {
+          "log_mae": 0.47092067219690487,
+          "mean_absolute_relative_error": 0.6165665821307345,
+          "median_predicted_over_measured": 1.7199322346491193,
+          "p90_absolute_log_error": 0.5834434866621899,
+          "within_25_percent": 0.0625,
+          "factor_ratio_log_mae": 0.055518204853475896
+        },
+        "log_warm_us": {
+          "log_mae": 0.7823938516093341,
+          "mean_absolute_relative_error": 0.577103179661108,
+          "median_predicted_over_measured": 0.4101179451806831,
+          "p90_absolute_log_error": 1.095553085392045,
+          "within_25_percent": 0.125,
+          "factor_ratio_log_mae": 0.2601742993446405
+        }
+      },
+      "median_regret": 0.0,
+      "mean_positive_regret": 0.024452038429160355,
+      "factor_agreement": 0.8229166666666666,
+      "budget_violation_rate": 0.5
+    },
+    "lofo_elementwise": {
+      "configurations": 10,
+      "prediction_errors": {
+        "log_cold_ms": {
+          "log_mae": 0.20387555588074663,
+          "mean_absolute_relative_error": 0.22385166615303195,
+          "median_predicted_over_measured": 1.2146419543657827,
+          "p90_absolute_log_error": 0.264561448317994,
+          "within_25_percent": 0.6,
+          "factor_ratio_log_mae": 0.10037916193593585
+        },
+        "log_warm_us": {
+          "log_mae": 1.7000167318365673,
+          "mean_absolute_relative_error": 0.7688991839814088,
+          "median_predicted_over_measured": 0.1922304333189599,
+          "p90_absolute_log_error": 2.6583167114324127,
+          "within_25_percent": 0.0,
+          "factor_ratio_log_mae": 0.2847591812469307
+        }
+      },
+      "median_regret": 0.0,
+      "mean_positive_regret": 0.012602553067095604,
+      "factor_agreement": 0.95,
+      "budget_violation_rate": 0.5
+    },
+    "lofo_reduction": {
+      "configurations": 8,
+      "prediction_errors": {
+        "log_cold_ms": {
+          "log_mae": 0.41355603797498414,
+          "mean_absolute_relative_error": 0.297755016078898,
+          "median_predicted_over_measured": 0.896809084036899,
+          "p90_absolute_log_error": 1.1668209544155619,
+          "within_25_percent": 0.5625,
+          "factor_ratio_log_mae": 0.5123194375167536
+        },
+        "log_warm_us": {
+          "log_mae": 1.0245077683238206,
+          "mean_absolute_relative_error": 1.8426969605124888,
+          "median_predicted_over_measured": 2.8266342790720573,
+          "p90_absolute_log_error": 1.2220753289515813,
+          "within_25_percent": 0.0,
+          "factor_ratio_log_mae": 0.1784758625675791
+        }
+      },
+      "median_regret": 0.0,
+      "mean_positive_regret": 0.001745139163341405,
+      "factor_agreement": 0.9895833333333334,
+      "budget_violation_rate": 0.5
+    },
+    "lofo_dense_linear_algebra": {
+      "configurations": 9,
+      "prediction_errors": {
+        "log_cold_ms": {
+          "log_mae": 0.31638930718198804,
+          "mean_absolute_relative_error": 0.2544694979723164,
+          "median_predicted_over_measured": 0.7346131886827812,
+          "p90_absolute_log_error": 0.5955279435625755,
+          "within_25_percent": 0.4444444444444444,
+          "factor_ratio_log_mae": 0.29927256502085897
+        },
+        "log_warm_us": {
+          "log_mae": 0.617825160875257,
+          "mean_absolute_relative_error": 0.8860576929936025,
+          "median_predicted_over_measured": 1.8707390436393814,
+          "p90_absolute_log_error": 0.8534297656493761,
+          "within_25_percent": 0.05555555555555555,
+          "factor_ratio_log_mae": 0.13015193465413233
+        }
+      },
+      "median_regret": 0.0,
+      "mean_positive_regret": 0.004322362773854406,
+      "factor_agreement": 0.7870370370370371,
+      "budget_violation_rate": 0.5
+    },
+    "pooled": {
+      "configurations": 35,
+      "prediction_errors": {
+        "log_cold_ms": {
+          "log_mae": 0.341773514423442,
+          "mean_absolute_relative_error": 0.33838042654166356,
+          "median_predicted_over_measured": 1.1629600652191963,
+          "p90_absolute_log_error": 0.587590239371059,
+          "within_25_percent": 0.42857142857142855,
+          "factor_ratio_log_mae": 0.23542702410025504
+        },
+        "log_warm_us": {
+          "log_mae": 1.057594477877378,
+          "mean_absolute_relative_error": 1.0006260628041508,
+          "median_predicted_over_measured": 1.2535963681565523,
+          "p90_absolute_log_error": 2.0404409067493408,
+          "within_25_percent": 0.04285714285714286,
+          "factor_ratio_log_mae": 0.21509030056155012
+        }
+      },
+      "median_regret": 0.0,
+      "mean_positive_regret": 0.010700120467875994,
+      "factor_agreement": 0.888095238095238,
+      "budget_violation_rate": 0.5
+    }
+  },
+  "dev_trials": [
+    {
+      "warm_terms": "work_size",
+      "warm_alpha": 0.1,
+      "mean_positive_regret": 0.010700120467875994,
+      "warm_log_mae": 1.057594477877378
+    },
+    {
+      "warm_terms": "work_size",
+      "warm_alpha": 1.0,
+      "mean_positive_regret": 0.013384931261049055,
+      "warm_log_mae": 1.0687924440657866
+    },
+    {
+      "warm_terms": "relief",
+      "warm_alpha": 0.1,
+      "mean_positive_regret": 0.011191963097567674,
+      "warm_log_mae": 1.0558736701101836
+    },
+    {
+      "warm_terms": "relief",
+      "warm_alpha": 1.0,
+      "mean_positive_regret": 0.011811107434292473,
+      "warm_log_mae": 1.074029045508931
+    },
+    {
+      "warm_terms": "trip",
+      "warm_alpha": 0.1,
+      "mean_positive_regret": 0.0420222385769429,
+      "warm_log_mae": 1.0516333578638757
+    },
+    {
+      "warm_terms": "trip",
+      "warm_alpha": 1.0,
+      "mean_positive_regret": 0.03906396985188953,
+      "warm_log_mae": 1.0526868422259859
+    }
+  ]
+}

@@ -9,7 +9,7 @@ from datetime import datetime
 from pathlib import Path
 
 from jax_unroll.model import CostModel, WARM_TERMS, read_rows
-from jax_unroll.validation import B_GRID, R_GRID, cv_metrics, lofo_forecasts
+from jax_unroll.validation import B_GRID, LONG_R, R_GRID, cv_metrics, lofo_forecasts
 
 ARTIFACT_NAME = "cost_cpu.json"
 
@@ -26,12 +26,17 @@ def main(argv: list[str] | None = None) -> int:
     dev = read_rows(args.data, split="dev")
     trials = []
     for terms in WARM_TERMS:
-        for alpha in (0.1, 1.0):
+        for alpha in (0.025, 0.1, 1.0):
             folds = lofo_forecasts(dev, warm_terms=terms, warm_alpha=alpha)
             metrics = cv_metrics(folds)
-            trials.append({"warm_terms": terms, "warm_alpha": alpha, "cv": metrics})
+            worst_long_regret = max(fold["mean_positive_regret_long"] for name, fold in metrics.items() if name != "pooled")
+            trials.append({
+                "warm_terms": terms, "warm_alpha": alpha, "cv": metrics,
+                "worst_long_regret": worst_long_regret,
+            })
     best = min(
         trials, key=lambda trial: (
+            trial["worst_long_regret"],
             trial["cv"]["pooled"]["mean_positive_regret"],
             trial["cv"]["pooled"]["prediction_errors"]["log_warm_us"]["log_mae"],
         ),
@@ -44,11 +49,17 @@ def main(argv: list[str] | None = None) -> int:
             "python": platform.python_version(), "numpy": np.__version__, "scikit_learn": sklearn.__version__,
         },
         "cv_grid": {"R": R_GRID, "B_ms": B_GRID},
+        "selection": {
+            "primary": "minimum worst-family mean positive regret at long horizons",
+            "long_R_min": LONG_R,
+            "tie_break": ["pooled mean positive regret", "pooled warm log MAE"],
+        },
         "cv": best["cv"],
         "dev_trials": [
             {
                 "warm_terms": trial["warm_terms"], "warm_alpha": trial["warm_alpha"],
                 "mean_positive_regret": trial["cv"]["pooled"]["mean_positive_regret"],
+                "worst_long_regret": trial["worst_long_regret"],
                 "warm_log_mae": trial["cv"]["pooled"]["prediction_errors"]["log_warm_us"]["log_mae"],
             }
             for trial in trials

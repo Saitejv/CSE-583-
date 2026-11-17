@@ -13,6 +13,7 @@ from jax_unroll.selector import select_factor, total_ms
 
 R_GRID = (1, 10, 100, 1_000, 10_000, 100_000)
 B_GRID = (None, 1.0, 10.0, 100.0)
+LONG_R = 10_000
 POLICIES = (*BASELINES, "selector", "measured_oracle")
 
 
@@ -85,12 +86,13 @@ def cv_metrics(folds: dict[str, list[Forecast]]) -> dict:
                     factors, _ = choices(case, R, B)
                     u, oracle = factors["selector"], factors["measured_oracle"]
                     regret = total_ms(*case.measured[u], R) / total_ms(*case.measured[oracle], R) - 1
-                    observations.append((regret, u == oracle, B is not None and case.measured[u][0] > B))
-        regret, agreement, violation = np.asarray(observations).T
+                    observations.append((regret, u == oracle, B is not None and case.measured[u][0] > B, R >= LONG_R))
+        regret, agreement, violation, long_horizon = np.asarray(observations).T
         reports[fold] = {
             "configurations": len(cases), "prediction_errors": prediction_errors(cases),
             "median_regret": float(np.median(regret)),
             "mean_positive_regret": float(np.mean(np.maximum(regret, 0))),
+            "mean_positive_regret_long": float(np.mean(np.maximum(regret[long_horizon.astype(bool)], 0))),
             "factor_agreement": float(np.mean(agreement)),
             "budget_violation_rate": float(np.mean(violation)),
         }

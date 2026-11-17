@@ -26,7 +26,7 @@ MODEL_FEATURES = (
     "trip_count", "factor", "has_tail", "num_equations", "eq_reduce",
     "num_consts", "const_bytes", "carry_bytes", "bytes_moved_proxy", "flops_proxy",
 )
-WARM_TERMS = ("work_size", "relief", "trip")
+WARM_TERMS = ("work_size", "memory_work", "relief", "trip")
 BASE_ALPHA = COLD_EFFECT_ALPHA = 1.0
 TRIP_SCALE = 128
 Row = Mapping[str, object]
@@ -140,6 +140,8 @@ def _design(row: Row, warm_terms: str) -> tuple[tuple[float, ...], ...]:
     shape = (1.0, trip_weight)
     if warm_terms == "work_size":
         shape += (log_work / 8, log_size / 8)
+    elif warm_terms == "memory_work":
+        shape += (log_work / 8, math.log1p(footprint / (1 + work)) / 8)
     elif warm_terms == "relief":
         shape += (trip_weight / (1 + log_work), log_size / 8)
     warm_effect = tuple(basis * value for basis in (1 - 1 / factor, math.log(factor)) for value in shape)
@@ -149,7 +151,7 @@ def _design(row: Row, warm_terms: str) -> tuple[tuple[float, ...], ...]:
 class CostModel:
     """Fit four tiny ridge equations and run inference directly from JSON weights."""
 
-    def __init__(self, *, warm_terms: str = "work_size", warm_alpha: float = 0.1) -> None:
+    def __init__(self, *, warm_terms: str = "memory_work", warm_alpha: float = 0.025) -> None:
         if warm_terms not in WARM_TERMS or not math.isfinite(warm_alpha) or warm_alpha <= 0:
             raise ValueError("invalid warm regression hyperparameters")
         self.warm_terms = warm_terms
