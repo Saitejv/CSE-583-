@@ -38,6 +38,7 @@ from benchmarks.workloads import (
     FAMILIES,
     WORKLOADS,
     Workload,
+    WorkloadSpec,
     build_workload,
     iter_specs,
     registry_table,
@@ -293,6 +294,7 @@ def enumerate_configs(
     repeats: int = 3,
     seed: int = 583,
     limit: int | None = None,
+    specs: Iterable[WorkloadSpec] | None = None,
 ) -> list[dict[str, Any]]:
     if repeats < 1:
         raise ValueError("repeats must be >= 1")
@@ -300,7 +302,7 @@ def enumerate_configs(
         raise ValueError("shapes must be 'primary', 'secondary', or 'all'")
 
     base: list[dict[str, Any]] = []
-    for spec in iter_specs(families):
+    for spec in iter_specs(families) if specs is None else specs:
         if shapes == "primary":
             variants = [spec.primary_variant]
         elif shapes == "secondary":
@@ -445,7 +447,7 @@ def _write_header(writer: csv.DictWriter, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
 
 
-def run(args: argparse.Namespace) -> int:
+def run(args: argparse.Namespace, *, specs: Iterable[WorkloadSpec] | None = None) -> int:
     if args.list:
         print(json.dumps(registry_table(), indent=2))
         return 0
@@ -461,6 +463,7 @@ def run(args: argparse.Namespace) -> int:
         repeats=args.repeats,
         seed=args.seed,
         limit=args.limit,
+        specs=specs,
     )
     out_path = Path(args.out)
     ensure_parent(out_path)

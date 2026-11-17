@@ -1,0 +1,50 @@
+{
+  "backend": "cpu",
+  "configurations": 71,
+  "dataset_version": 2,
+  "device": "cpu:0",
+  "dropped": [],
+  "feature_version": 1,
+  "jax_version": "0.12.0.1",
+  "jaxlib_version": "0.12.0.1",
+  "joined_sha256": "506906ef57f9382ffe29816f73884d8c338cdf296ecb08b6ceaa1a6b4f944d8d",
+  "legacy_csv_sha256": "ec77c0da078160251b7e2ff92379f8320183a2e2890dddd0f358deb2d4c17757",
+  "legacy_meta_sha256": "8baa31b4a35e73b9dc12f306580b4c01ce087b91e17e2565c2ea9da6a59b9b8c",
+  "partition": "dev",
+  "protocol_sha256": "1bd65e438fc4dfaf410e83e5a16820b42c1802f3e1b74d7a2eea0f482d57de02",
+  "raw_rows": 432,
+  "raw_sha256": "827bca7487aa0bb80251f3747b24527dec3b8d7e3a732345ed8c159266e83658",
+  "split_manifest": {
+    "confirmation": {
+      "bucket_max": "histogram",
+      "masked_rows": "masked_read",
+      "ring_feedback": "ring_buffer",
+      "strided_mix": "strided_read"
+    },
+    "legacy_dev": {
+      "dense_matvec": "dense_linear_algebra",
+      "elementwise_sine": "elementwise",
+      "reduction_vector": "reduction",
+      "scalar_recurrence": "recurrence"
+    },
+    "new_dev": {
+      "gather_lookup": "gather",
+      "gather_rows": "gather",
+      "scatter_accumulate": "scatter",
+      "scatter_blend": "scatter",
+      "window_read": "window",
+      "window_replace": "window"
+    },
+    "process_repeats": 3,
+    "recovery_split_version": 1,
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "variants": [
+      "n64",
+      "n512"
+    ]
+  }
+}

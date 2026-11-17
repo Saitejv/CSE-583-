@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Mapping
 
+from jax_unroll.recovery_split import RECOVERY_SPLIT_VERSION, check_rows
 from jax_unroll.schema import DATASET_KEY_COLUMNS, DATASET_VERSION, FACTORS, FEATURE_COLUMNS, FEATURE_VERSION
 from jax_unroll.splits import DEV_FAMILIES, SPLIT_VERSION, assert_holdout_excluded, lofo_folds, split_for_family
 
@@ -27,6 +28,7 @@ MODEL_FEATURES = (
     "num_consts", "const_bytes", "carry_bytes", "bytes_moved_proxy", "flops_proxy",
 )
 WARM_TERMS = ("work_size", "memory_work", "relief", "trip")
+RECOVERY_WARM_TERMS = ("indexed", "indexed_traffic")
 BASE_ALPHA = COLD_EFFECT_ALPHA = 1.0
 TRIP_SCALE = 128
 Row = Mapping[str, object]
@@ -140,10 +142,15 @@ def _design(row: Row, warm_terms: str) -> tuple[tuple[float, ...], ...]:
     shape = (1.0, trip_weight)
     if warm_terms == "work_size":
         shape += (log_work / 8, log_size / 8)
-    elif warm_terms == "memory_work":
+    elif warm_terms in ("memory_work", *RECOVERY_WARM_TERMS):
         shape += (log_work / 8, math.log1p(footprint / (1 + work)) / 8)
     elif warm_terms == "relief":
         shape += (trip_weight / (1 + log_work), log_size / 8)
+    if warm_terms in RECOVERY_WARM_TERMS:
+        indexed = float(row["eq_gather_scatter"]) / max(1, int(row["num_equations"]))
+        shape += (indexed, trip_weight * indexed)
+    if warm_terms == "indexed_traffic":
+        shape += (float(row["carry_bytes"]) / (1 + footprint), (trip % factor) / factor)
     warm_effect = tuple(basis * value for basis in (1 - 1 / factor, math.log(factor)) for value in shape)
     return cold_base, cold_effect, warm_base, warm_effect
 
@@ -152,7 +159,7 @@ class CostModel:
     """Fit four tiny ridge equations and run inference directly from JSON weights."""
 
     def __init__(self, *, warm_terms: str = "memory_work", warm_alpha: float = 0.025) -> None:
-        if warm_terms not in WARM_TERMS or not math.isfinite(warm_alpha) or warm_alpha <= 0:
+        if warm_terms not in (*WARM_TERMS, *RECOVERY_WARM_TERMS) or not math.isfinite(warm_alpha) or warm_alpha <= 0:
             raise ValueError("invalid warm regression hyperparameters")
         self.warm_terms = warm_terms
         self.warm_alpha = warm_alpha
@@ -190,6 +197,20 @@ class CostModel:
     def fit(self, rows: Iterable[Row]) -> CostModel:
         rows = list(rows)
         _check_dev(rows)
+        if self.warm_terms not in WARM_TERMS:
+            raise ValueError("recovery terms require fit_recovery")
+        return self._fit(rows, data_digest=dev_rows_digest(rows))
+
+    def fit_recovery(self, rows: Iterable[Row]) -> CostModel:
+        """Fit exclusively on the separate, workload-grouped recovery development split."""
+        rows = list(rows)
+        check_rows(rows, "dev")
+        if self.warm_terms not in ("memory_work", *RECOVERY_WARM_TERMS):
+            raise ValueError("warm terms are not in the recovery candidate menu")
+        fingerprint = _digest(sorted(_canonical(dict(row)) for row in rows))
+        return self._fit(rows, data_digest=fingerprint, recovery=True)
+
+    def _fit(self, rows: list[Row], *, data_digest: str, recovery: bool = False) -> CostModel:
 
         import numpy as np
         from sklearn.linear_model import Ridge
@@ -221,8 +242,8 @@ class CostModel:
             "backend": "cpu",
             "jax_version": jax_version,
             "jaxlib_version": jaxlib_version,
-            "dev_rows_sha256": dev_rows_digest(rows),
-            "features": list(MODEL_FEATURES),
+            "dev_rows_sha256": data_digest,
+            "features": list(MODEL_FEATURES) + (["eq_gather_scatter"] if self.warm_terms in RECOVERY_WARM_TERMS else []),
             "hyperparameters": self.hyperparameters,
             "support": {"trip_range": [min(trips), max(trips)], "dtype_bits": sorted({int(row["dtype_bits"]) for row in rows})},
             "regressions": [
@@ -230,12 +251,15 @@ class CostModel:
                 for fit in regressions
             ],
         }
+        if recovery:
+            state["recovery_split_version"] = RECOVERY_SPLIT_VERSION
         self._state = {**state, "model_version": self._version(state)}
         return self
 
     @staticmethod
     def _version(state: dict) -> str:
-        return f"cpu-ridge-v{MODEL_FORMAT_VERSION}-{_digest(state)[:16]}"
+        kind = "recovery" if "recovery_split_version" in state else "ridge"
+        return f"cpu-{kind}-v{MODEL_FORMAT_VERSION}-{_digest(state)[:16]}"
 
     def supports(self, features: Row) -> bool:
         """Check the static domain used for runtime uncertainty fallback."""

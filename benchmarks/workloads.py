@@ -331,12 +331,13 @@ FAMILIES: tuple[str, ...] = tuple(dict.fromkeys(spec.family for spec in WORKLOAD
 
 
 def get_spec(name: str) -> WorkloadSpec:
-    try:
+    if name in WORKLOADS:
         return WORKLOADS[name]
-    except KeyError as exc:
-        raise KeyError(
-            f"unknown workload {name!r}; available: {sorted(WORKLOADS)}"
-        ) from exc
+    from benchmarks.recovery_workloads import RECOVERY_WORKLOADS
+
+    if name in RECOVERY_WORKLOADS:
+        return RECOVERY_WORKLOADS[name]
+    raise KeyError(f"unknown workload {name!r}; available: {sorted(WORKLOADS | RECOVERY_WORKLOADS)}")
 
 
 def iter_specs(families: Iterable[str] | None = None) -> list[WorkloadSpec]:

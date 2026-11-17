@@ -1,0 +1,147 @@
+{
+  "comparisons": {
+    "dev_pairs_sha256": "068756bb6d14a5888751b562d066584ceed78d2a27c848d2f768581112289707",
+    "dev_report_sha256": "2763da4a70818878011e1aeddaed5074dc9e98b7d4b3778ae646c5fc28ca056a",
+    "frozen_week3_sha256": "3cf384c876d034f9afed042b3d8f3607eace5c2331a01016105a03325fd110dc"
+  },
+  "dev_provenance": {
+    "backend": "cpu",
+    "configurations": 71,
+    "dataset_version": 2,
+    "device": "cpu:0",
+    "dropped": [],
+    "feature_version": 1,
+    "jax_version": "0.12.0.1",
+    "jaxlib_version": "0.12.0.1",
+    "joined_sha256": "506906ef57f9382ffe29816f73884d8c338cdf296ecb08b6ceaa1a6b4f944d8d",
+    "legacy_csv_sha256": "ec77c0da078160251b7e2ff92379f8320183a2e2890dddd0f358deb2d4c17757",
+    "legacy_meta_sha256": "8baa31b4a35e73b9dc12f306580b4c01ce087b91e17e2565c2ea9da6a59b9b8c",
+    "partition": "dev",
+    "protocol_sha256": "1bd65e438fc4dfaf410e83e5a16820b42c1802f3e1b74d7a2eea0f482d57de02",
+    "raw_rows": 432,
+    "raw_sha256": "827bca7487aa0bb80251f3747b24527dec3b8d7e3a732345ed8c159266e83658",
+    "split_manifest": {
+      "confirmation": {
+        "bucket_max": "histogram",
+        "masked_rows": "masked_read",
+        "ring_feedback": "ring_buffer",
+        "strided_mix": "strided_read"
+      },
+      "legacy_dev": {
+        "dense_matvec": "dense_linear_algebra",
+        "elementwise_sine": "elementwise",
+        "reduction_vector": "reduction",
+        "scalar_recurrence": "recurrence"
+      },
+      "new_dev": {
+        "gather_lookup": "gather",
+        "gather_rows": "gather",
+        "scatter_accumulate": "scatter",
+        "scatter_blend": "scatter",
+        "window_read": "window",
+        "window_replace": "window"
+      },
+      "process_repeats": 3,
+      "recovery_split_version": 1,
+      "trip_counts": [
+        64,
+        256,
+        1023
+      ],
+      "variants": [
+        "n64",
+        "n512"
+      ]
+    }
+  },
+  "model": {
+    "backend": "cpu",
+    "dataset_version": 2,
+    "dev_rows_sha256": "7ad113d3d58977e92640ecb3da27d91f02226e33ccf2994544cf35a917f3aa06",
+    "feature_version": 1,
+    "features": [
+      "trip_count",
+      "factor",
+      "has_tail",
+      "num_equations",
+      "eq_reduce",
+      "num_consts",
+      "const_bytes",
+      "carry_bytes",
+      "bytes_moved_proxy",
+      "flops_proxy"
+    ],
+    "format_version": 1,
+    "hyperparameters": {
+      "base_alpha": 1.0,
+      "cold_effect_alpha": 1.0,
+      "trip_scale": 128,
+      "warm_alpha": 0.025,
+      "warm_terms": "memory_work"
+    },
+    "jax_version": "0.12.0.1",
+    "jaxlib_version": "0.12.0.1",
+    "model_version": "cpu-recovery-v1-607aa4f6077e111b",
+    "recovery_split_version": 1,
+    "regressions": [
+      {
+        "intercept": 2.60602872946536,
+        "weights": [
+          0.0018701164820446776,
+          0.18401736396518234,
+          -0.06996634324819366,
+          -0.03960822019104594,
+          0.13007328659415524,
+          -0.34138428680791233
+        ]
+      },
+      {
+        "intercept": 0.0,
+        "weights": [
+          0.13060172868823278,
+          0.024200845186719496,
+          0.058561759370069244,
+          0.09673492586440631,
+          0.2966916909971127
+        ]
+      },
+      {
+        "intercept": 1.3618925119445522,
+        "weights": [
+          0.622027022050289,
+          -0.053701420881504876
+        ]
+      },
+      {
+        "intercept": 0.0,
+        "weights": [
+          0.07318635002315652,
+          -0.1601421519285822,
+          -0.2970061892190217,
+          -0.17916151691988066,
+          -0.19278701953660782,
+          0.11049909237218195,
+          0.34340834443045004,
+          0.2597172349762487
+        ]
+      }
+    ],
+    "split_version": 1,
+    "support": {
+      "dtype_bits": [
+        32
+      ],
+      "trip_range": [
+        16,
+        1024
+      ]
+    }
+  },
+  "protocol_sha256": "1bd65e438fc4dfaf410e83e5a16820b42c1802f3e1b74d7a2eea0f482d57de02",
+  "selection": "Plateau at or below refit warm relative MAE on new dev; minimum worst-new-family mean positive regret on oracle-improving feasible long settings; tie-break by warm relative MAE, smaller design, stronger shrinkage.",
+  "training_versions": {
+    "numpy": "2.5.5",
+    "python": "3.13.2",
+    "scikit_learn": "1.9.1"
+  }
+}
