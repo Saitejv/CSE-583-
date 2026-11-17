@@ -2,8 +2,8 @@
 
 The held-out families are frozen *before* any cost-model work. All model
 selection (including leave-one-family-out cross-validation) happens inside
-``DEV_FAMILIES``; the held-out families are touched only by the final Phase 4
-evaluation. Version ``SPLIT_VERSION`` and ``SPLIT_FROZEN_DATE`` record when the
+``DEV_FAMILIES``. The held-out families are reserved for frozen Week 3 gates
+and final evaluation. ``SPLIT_VERSION`` and ``SPLIT_FROZEN_DATE`` record when the
 split was frozen. See ``docs/splits.md``.
 """
 

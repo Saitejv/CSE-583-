@@ -1,6 +1,6 @@
 # Project Tasks: Compilation-Budget-Aware Loop Unroll Selection for JAX
 
-Status: Phase 0, Phase 1, and Phase 2 complete (2026-11-17); Phase 3 next. Target: 4 weeks (Nov 17 - Dec 15, 2026; confirm course deadline).
+Phases 0–3 are implemented as of 2026-11-17. The Week 3 acceptance gate failed in both recorded runs. The four-week target is Nov 17–Dec 15, 2026.
 
 Sources of truth: `CSE583_Cost_Aware_JAX_Loop_Unrolling_Proposal.docx` and `group10_slides.pdf`. If this file conflicts with them, they win.
 
@@ -34,6 +34,7 @@ Non-goals: new XLA/LLVM pass, dynamic trip counts, arbitrary nested control flow
 - [x] Verify CPU backend and `lax.scan(unroll=1/2/4/8)` execution on Apple M2.
 - [x] Create project directories (`src/jax_unroll`, `benchmarks`, `tests`, `data`, `results`) and `.gitignore`.
 - [x] Phase 2 complete (2026-11-17): static Jaxpr features, baselines, feature/label dataset, and frozen splits. See `docs/week2_results.md`.
+- [x] Phase 3 implementation complete (2026-11-17). The CPU selector, dev LOFO, timing, and both frozen gate results are recorded in `docs/week3_results.md`.
 
 ## Phase 0 - Scaffolding and target hardware
 
@@ -126,23 +127,22 @@ Acceptance: feature table for all swept configs; tests pass; baseline heuristic 
 
 ## Phase 3 - Cost model, selector, and overhead (Week 3)
 
-- [ ] T3.1 Train small models on dev families only:
-  - nearest-neighbor / shallow tree regressors for `log C(u)` and `log T(u)`, or normalized cost
-  - optional direct factor classifier as a comparison
+- [x] T3.1 Train small models on dev families only:
+  - ridge regressions for `log C(u)` and `log T(u)` with factor-relative terms
   - no deep learning; prioritize interpretability and tiny inference cost
-- [ ] T3.2 Validate with leave-one-family-out CV. Report MAE of `C`/`T`, factor agreement, and regret.
-- [ ] T3.3 Implement the selector:
+- [x] T3.2 Validate with leave-one-family-out CV. Report MAE of `C`/`T`, factor agreement, and regret.
+- [x] T3.3 Implement the selector:
   - candidate `u in {1,2,4,8}`
-  - `score(u) = C_hat(u) + R * T_hat(u)`
+  - `score(u) = C_hat(u) + R * T_hat(u) / 1000` for cold ms and warm µs
   - feasibility: `C_hat(u) <= B`
   - throughput-only mode: minimize `T_hat(u)`
   - fallback to `u=1` when predictions are uncertain, infeasible, or feature extraction fails
   - deterministic tie-breaking (prefer smaller `u`)
-- [ ] T3.4 Measure analysis + inference overhead and include it in end-to-end cost.
-- [ ] T3.5 Cache decisions by loop signature (shapes, dtypes, body hash, backend, `B`, `R`); invalidate on version/backend change.
-- [ ] T3.6 Report prediction calibration and failure cases; avoid overfitting to one shape.
+- [x] T3.4 Measure analysis + inference overhead and include it in end-to-end cost.
+- [x] T3.5 Cache decisions by loop signature (shapes, dtypes, body hash, backend, `B`, `R`); invalidate on version/backend change.
+- [x] T3.6 Report prediction calibration and failure cases; avoid overfitting to one shape.
 
-Acceptance: selector beats factor 1 and the size heuristic on at least a subset of held-out families for some `R`/`B`; regret and CIs reported; overhead measured.
+Acceptance gate **failed** on 2026-11-17. Both frozen versions selected factor 1 on all 20 held-out configurations across the R/B grid. Neither beat both baselines on a matched setting. The regret, confidence intervals, decision overhead, and dev-only retry are documented in [Week 3 results](docs/week3_results.md).
 
 ## Phase 4 - JAX integration and held-out evaluation (Week 4)
 
@@ -163,7 +163,7 @@ Acceptance: demo script shows a selected factor and measured end-to-end improvem
 
 - [ ] D1 Reproducible factor-sweep suite (`benchmarks/sweep.py` + documented commands).
 - [ ] D2 Jaxpr feature extractor with documented feature definitions.
-- [ ] D3 Learned selector + versioned model artifacts + training script.
+- [x] D3 Learned selector + versioned model artifacts + training script.
 - [ ] D4 Opt-in automatic JAX loop interface.
 - [ ] D5 Correctness/test suite and CI-style `pytest -q` instructions.
 - [ ] D6 Evaluation report with tradeoffs, failure cases, CPU/GPU separation, and threats to validity.
@@ -178,7 +178,7 @@ Acceptance: another student can clone, install, run the sweep and demo, and repr
 |---|---|---|
 | Week 1 (Nov 23) | Sweep harness + oracle over 6 families + target hardware decision | At least 2 families with distinct useful factors, else adjust scope |
 | Week 2 (Nov 30) | Features + baselines + frozen splits | Held-out families frozen; feature extraction cheap and tested |
-| Week 3 (Dec 7) | Trained selector + policy + overhead | Beats both baselines on some held-out settings |
+| Week 3 (Dec 7) | Trained selector, policy, and overhead complete | **Failed** in both frozen evaluations on Nov 17. Zero paired wins over both baselines. |
 | Week 4 (Dec 14) | Wrapper + held-out evaluation + report/demo | Reproducible headline result; limitations stated |
 
 ## Risks and contingencies
@@ -196,7 +196,7 @@ Acceptance: another student can clone, install, run the sweep and demo, and repr
 - Which application-style iterative workload best fits the 4-week budget?
 - Preferred `R` default and budget `B` values for the demo?
 - Predict `C(u)`/`T(u)` vs directly classify the best factor? (Start with regression; compare.)
-- Where will model artifacts and aggregated (non-raw) results be committed?
+- Resolved in Week 3. Commit versioned model JSON under `models/` and aggregate tables, timings and gate log under `results/`. Keep raw sweep measurements gitignored under `results/raw/`.
 
 ## Commands
 
@@ -205,8 +205,8 @@ source .venv/bin/activate
 python -m pytest -q
 # run today:
 python -m benchmarks.dataset --raw results/raw/sweep_cpu_2026-11-17.csv results/raw/sweep_cpu_2026-11-17_shapes.csv --out data/features_cpu_2026-11-17.csv
-# planned:
-# python benchmarks/sweep.py --backend cpu --out results/raw/sweep.csv
-# python -m jax_unroll.train --data results/raw/sweep.csv --out models/
-# python benchmarks/evaluate.py --config configs/default.yaml
+# full sweep:
+# python -m benchmarks.sweep --backend cpu --out results/raw/sweep.csv
+python -m jax_unroll.train --data data/features_cpu_2026-11-17.csv --out models/
+make evaluate
 ```

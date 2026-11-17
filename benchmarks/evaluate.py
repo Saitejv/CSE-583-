@@ -202,7 +202,7 @@ def _write_results(
 ) -> bool:
     table, wins = evaluate(groups, miss_ms=miss_ms, bootstraps=bootstraps)
     with ensure_parent(out.with_suffix(".csv")).open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(table[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(table[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(table)
     out.with_suffix(".md").write_text(
@@ -225,8 +225,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.bootstraps < 1:
         parser.error("--bootstraps must be positive")
-    suffix = "" if args.holdout_gate else "_dev"
-    out = args.out or PROCESSED_RESULTS_DIR / f"selector_cpu_{today}{suffix}"
+    out = args.out or PROCESSED_RESULTS_DIR / f"selector_cpu_{today}_dev"
 
     artifact_bytes = args.model.read_bytes()
     artifact = json.loads(artifact_bytes)
@@ -252,8 +251,13 @@ def main(argv: list[str] | None = None) -> int:
             starts = [entry for entry in map(json.loads, log) if entry["status"] == "started"]
             if any(entry["model_version"] == model.version for entry in starts):
                 parser.error(f"the gate for {model.version} has already been recorded in {GATE_LOG}")
+            run_number = len(starts) + 1
+            suffix = "" if run_number == 1 else f"_gate{run_number}"
+            out = args.out or PROCESSED_RESULTS_DIR / f"selector_cpu_{today}{suffix}"
+            if any(entry["output"] == out.name for entry in starts):
+                parser.error(f"output {out.name} is already recorded for a prior gate")
             run = {
-                "run": len(starts) + 1, "model_version": model.version,
+                "run": run_number, "model_version": model.version,
                 "artifact_sha256": hashlib.sha256(artifact_bytes).hexdigest(),
                 "dataset_sha256": hashlib.sha256(args.data.read_bytes()).hexdigest(),
                 "output": out.name, "started_utc": utc_timestamp(), "decision_overhead_ms": miss_ms,

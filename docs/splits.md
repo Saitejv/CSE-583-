@@ -71,7 +71,9 @@ results exist yet.
 
 - All Phase 3 model fitting, model selection, feature and threshold choices, and
   LOFO cross-validation use **only** `DEV_FAMILIES`.
-- `HELD_OUT_FAMILIES` are used **only** for the final Phase 4 evaluation.
+- `HELD_OUT_FAMILIES` are reserved for frozen prediction-only evaluation,
+  including the Week 3 acceptance gate and the final Phase 4 evaluation.
+  The Week 3 log records one gate per frozen model version.
 - Never tune, threshold, calibrate, or select features on held-out rows.
 - Use the LOFO folds below for development-time validation instead of touching
   the held-out families.
@@ -131,7 +133,7 @@ and `held_out_families` at top level, with the full `manifest()` output under
 `split_manifest`. The manifest records `split_version`, `frozen_date`,
 `all_families`, `dev_families`, `held_out_families`, `final_dev`,
 `final_holdout`, and the four LOFO folds. Rows with `split == "holdout"` are
-reserved for Phase 4 evaluation and must not enter Phase 3 fitting or selection,
+reserved for frozen evaluation and excluded from Phase 3 fitting and selection,
 including when they are physically present in the same CSV.
 
 The builder fails on an unknown family because `split_for_family` raises; it

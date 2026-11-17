@@ -40,6 +40,8 @@ make sweep          # primary-shape factor sweep, 3 process repeats
 make sweep-shapes   # secondary shape variants at T=256,1000, 3 repeats
 make oracle         # aggregate raw rows into oracle table + risk-gate report
 make dataset        # join static features with sweep labels (Phase 2)
+make train          # train the cost model with dev-only LOFO
+make evaluate       # compare dev policies over the R/B grid
 ```
 
 `make sweep` and `make sweep-shapes` write to `results/raw/` (gitignored);
@@ -53,6 +55,11 @@ protocol, and the aggregation/gate rules,
 [docs/splits.md](docs/splits.md) for the frozen held-out families, and
 [docs/week2_results.md](docs/week2_results.md) for the Phase 2 summary.
 
+`make train` reads the committed version-2 dataset and writes
+`models/cost_cpu.json`. `make evaluate` produces CSV and Markdown dev LOFO
+comparisons. The two frozen holdout evaluations and overhead measurements are
+linked from [docs/week3_results.md](docs/week3_results.md).
+
 ## Layout
 
 ```
@@ -63,7 +70,9 @@ src/jax_unroll/splits.py    frozen dev/held-out families and LOFO folds
 src/jax_unroll/schema.py shared SWEEP/ORACLE/DATASET column contract and paths
 benchmarks/             workload definitions, factor-sweep harness, oracle
 benchmarks/dataset.py   feature/label dataset builder (Phase 2)
-tests/                  pytest suite (Waves 1-2)
+benchmarks/evaluate.py  offline CPU policy comparison and frozen holdout gate
+models/                 versioned CPU cost-model JSON
+tests/                  pytest suite
 Makefile                test/list/sweep/oracle/dataset targets and output paths
 docs/data_schema.md     data pipeline, column definitions, measurement protocol
 docs/features.md        feature definitions, captured limits, extraction cost
@@ -71,6 +80,7 @@ docs/splits.md          frozen held-out families, LOFO folds, change control
 docs/hardware.md        target-hardware decision (CPU-only)
 docs/week1_results.md   Week 1 sweep, oracle, and risk-gate results
 docs/week2_results.md   Phase 2 feature table, baselines, and split summary
+docs/week3_results.md   dev LOFO, CPU decision overhead, and holdout gates
 conftest.py             adds repo root and src/ to sys.path for pytest
 data/features_*.csv     Phase 2 feature/label dataset
 data/features_*.meta.json  dataset versions, hashes, and split manifest
@@ -95,12 +105,13 @@ TASKS.md                actionable project plan and definition of done
   dataset over 55 configurations, and frozen dev/held-out families. See
   [docs/week2_results.md](docs/week2_results.md) and
   [docs/features.md](docs/features.md).
-- Phase 3-4: stubs. `model.py`, `selector.py`, and `auto_loop.py` raise
-  `NotImplementedError`.
-- Tests: `pytest -q` passes (197 tests on 2026-11-17); it covers workload
-  correctness across factors, sweep enumeration/schema, measurement-row units,
-  oracle aggregation, the risk gate, feature values/parity/no-compile, baseline
-  policies, dataset aggregation/join/metadata, and frozen splits.
+- Phase 3 implementation is complete. The two frozen holdout gates **failed**.
+  Both models chose factor 1 on the entire holdout grid. The report includes
+  dev LOFO calibration and CPU decision overhead.
+  [Week 3 results](docs/week3_results.md)
+- Phase 4 is pending. `auto_scan` and `auto_fori_loop` are stubs.
+- `pytest -q` passes (229 tests on 2026-11-17). Coverage includes fitting and
+  holdout exclusion, policy and cache behavior, evaluation, and earlier phases.
 - Target hardware: CPU-only on Apple M2; see
   [docs/hardware.md](docs/hardware.md) for the decision, deadline, and
   reproduction steps.

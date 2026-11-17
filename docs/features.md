@@ -127,6 +127,9 @@ Units and definitions:
 | `body_hash` | str | First 16 hex characters of SHA-256 over the canonical body Jaxpr text; structural, factor-independent. |
 | `extraction_ms` | float | Wall time of tracing plus feature computation for this call. |
 
+The Phase 2 audit (Finding 3) found that `max_out_degree` has zero variance
+in dataset version 2. Phase 3 excludes it from the cost regressions.
+
 ## What is and is not captured
 
 Captured:
@@ -171,7 +174,7 @@ Extraction only calls `jax.make_jaxpr` and Python feature code. It never calls
 `.lower()`, `.compile()`, `jax.jit`, or any timing loop. `tests/test_features.py`
 monkeypatches `jax.jit` to fail during extraction to guard this property.
 
-Measured over the 220 configurations in
+Measured over the 220 configuration/factor rows in
 `data/features_cpu_2026-11-17.csv` (Apple M2 CPU, JAX/jaxlib 0.12.0.1,
 2026-11-17, dataset version 2), `extraction_ms` was:
 
@@ -184,7 +187,8 @@ Measured over the 220 configurations in
 The metadata sidecar for every dataset records these statistics. Traced
 functions are small and use static shapes, so cost is milliseconds, not
 seconds. Extraction cost is not included in the sweep's reported compile or
-warm timings; Phase 3 will add it to end-to-end decision overhead (T3.4).
+warm timings. Phase 3 includes it in the selector decision charge.
+[Week 3 results](week3_results.md)
 
 ## Dataset join
 

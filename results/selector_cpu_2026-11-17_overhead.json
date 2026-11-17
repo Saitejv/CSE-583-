@@ -1,0 +1,122 @@
+{
+  "backend": "cpu",
+  "architecture": "arm64",
+  "python_version": "3.13.2",
+  "jax_version": "0.12.0.1",
+  "jaxlib_version": "0.12.0.1",
+  "model_version": "cpu-ridge-v1-7d1bfd3b3d66fd5b",
+  "feature_version": 1,
+  "repeats_per_loop": 50,
+  "per_loop": {
+    "scalar_recurrence/scalar/T=1024": {
+      "extraction_ms": {
+        "median": 0.485604,
+        "p95": 0.5112084
+      },
+      "prediction_policy_ms": {
+        "median": 0.0282085,
+        "p95": 0.038303649999999995
+      },
+      "miss_ms": {
+        "median": 0.5225,
+        "p95": 0.6015311
+      },
+      "trace_then_hit_ms": {
+        "median": 0.2169995,
+        "p95": 0.22262325
+      },
+      "known_signature_hit_ms": {
+        "median": 0.004583,
+        "p95": 0.00508765
+      }
+    },
+    "elementwise_sine/n1024/T=100": {
+      "extraction_ms": {
+        "median": 0.4141455,
+        "p95": 0.46637514999999996
+      },
+      "prediction_policy_ms": {
+        "median": 0.027396,
+        "p95": 0.029053950000000002
+      },
+      "miss_ms": {
+        "median": 0.4394585,
+        "p95": 0.5326893999999998
+      },
+      "trace_then_hit_ms": {
+        "median": 0.1963955,
+        "p95": 0.22469785
+      },
+      "known_signature_hit_ms": {
+        "median": 0.0045,
+        "p95": 0.004795649999999999
+      }
+    },
+    "reduction_vector/n256/T=256": {
+      "extraction_ms": {
+        "median": 0.492125,
+        "p95": 0.5268520499999999
+      },
+      "prediction_policy_ms": {
+        "median": 0.027833,
+        "p95": 0.029425299999999998
+      },
+      "miss_ms": {
+        "median": 0.516875,
+        "p95": 0.6130713499999998
+      },
+      "trace_then_hit_ms": {
+        "median": 0.227396,
+        "p95": 0.23817529999999998
+      },
+      "known_signature_hit_ms": {
+        "median": 0.004625,
+        "p95": 0.00475
+      }
+    },
+    "dense_matvec/n64/T=256": {
+      "extraction_ms": {
+        "median": 0.4751875,
+        "p95": 0.5129918499999999
+      },
+      "prediction_policy_ms": {
+        "median": 0.028271,
+        "p95": 0.029929499999999998
+      },
+      "miss_ms": {
+        "median": 0.4994995,
+        "p95": 0.55156685
+      },
+      "trace_then_hit_ms": {
+        "median": 0.2260835,
+        "p95": 0.25526424999999997
+      },
+      "known_signature_hit_ms": {
+        "median": 0.004625,
+        "p95": 0.005
+      }
+    }
+  },
+  "pooled": {
+    "extraction_ms": {
+      "median": 0.4822915,
+      "p95": 0.51376075
+    },
+    "prediction_policy_ms": {
+      "median": 0.027917,
+      "p95": 0.031533299999999986
+    },
+    "miss_ms": {
+      "median": 0.5091045000000001,
+      "p95": 0.5790690499999996
+    },
+    "trace_then_hit_ms": {
+      "median": 0.221792,
+      "p95": 0.2413476
+    },
+    "known_signature_hit_ms": {
+      "median": 0.004583,
+      "p95": 0.004958
+    }
+  }
+}

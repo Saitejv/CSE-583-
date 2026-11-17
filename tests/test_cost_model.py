@@ -119,10 +119,11 @@ def test_evaluate_cli_smoke_on_four_configs(tmp_path, dev, monkeypatch):
     }))
     monkeypatch.setattr(evaluate, "GATE_LOG", tmp_path / "gate.jsonl")
     output = tmp_path / "selector_cpu_test"
-    assert evaluate.main([
+    args = [
         "--data", str(data), "--model", str(model_path), "--overhead", str(overhead_path),
         "--out", str(output), "--bootstraps", "20",
-    ]) == 0
+    ]
+    assert evaluate.main(args) == 0
     with output.with_suffix(".csv").open(newline="") as handle:
         table = list(csv.DictReader(handle))
     assert len(table) == 5 * len(evaluate.R_GRID) * len(evaluate.B_GRID) * len(evaluate.POLICIES)
@@ -131,3 +132,14 @@ def test_evaluate_cli_smoke_on_four_configs(tmp_path, dev, monkeypatch):
     assert {row["policy"] for row in table} == set(evaluate.POLICIES)
     assert "Dev leave-one-family-out" in output.with_suffix(".md").read_text()
     assert not evaluate.GATE_LOG.exists()
+
+    def blocked_forecast(*args, **kwargs):
+        pytest.fail("a repeat gate must refuse to predict")
+
+    monkeypatch.setattr(evaluate, "forecast", blocked_forecast)
+    gate_entry = json.dumps({"status": "started", "model_version": model.version}) + "\n"
+    evaluate.GATE_LOG.write_text(gate_entry)
+    with pytest.raises(SystemExit) as error:
+        evaluate.main([*args, "--holdout-gate"])
+    assert error.value.code == 2
+    assert evaluate.GATE_LOG.read_text() == gate_entry
