@@ -1,0 +1,3276 @@
+{
+  "bootstrap_config_draws": 2000,
+  "bootstrap_seed": 583,
+  "calibration": {
+    "absolute": {
+      "log_cold_ms": {
+        "factor_ratio_log_mae": 0.1278271033944765,
+        "log_mae": 0.16811775299160137,
+        "mean_absolute_relative_error": 0.16767015175744956,
+        "median_predicted_over_measured": 1.022832985994009,
+        "p90_absolute_log_error": 0.32487455362619133,
+        "within_25_percent": 0.8020833333333334
+      },
+      "log_warm_us": {
+        "factor_ratio_log_mae": 0.12019550586565317,
+        "log_mae": 0.7867283330787423,
+        "mean_absolute_relative_error": 1.4103870683840436,
+        "median_predicted_over_measured": 2.2470191614279917,
+        "p90_absolute_log_error": 1.3414683288209814,
+        "within_25_percent": 0.16666666666666666
+      }
+    },
+    "configurations": 24,
+    "measured_warm_faster_fraction": 0.3888888888888889,
+    "warm_relative": {
+      "bias_log": -0.0216770092426058,
+      "direction_agreement": 0.5972222222222222,
+      "mae_log": 0.12019550586565317,
+      "within_10_percent": 0.625
+    },
+    "warm_relative_by_factor": {
+      "2": {
+        "bias_log": -0.0254095690928392,
+        "direction_agreement": 0.5,
+        "mae_log": 0.06675076869754253,
+        "within_10_percent": 0.8333333333333334
+      },
+      "4": {
+        "bias_log": -0.016169699166630115,
+        "direction_agreement": 0.625,
+        "mae_log": 0.1079588254449488,
+        "within_10_percent": 0.625
+      },
+      "8": {
+        "bias_log": -0.023451759468348085,
+        "direction_agreement": 0.6666666666666666,
+        "mae_log": 0.18587692345446816,
+        "within_10_percent": 0.4166666666666667
+      }
+    },
+    "warm_relative_zero": {
+      "bias_log": -0.08534153924152636,
+      "direction_agreement": 0.013888888888888888,
+      "mae_log": 0.12692970361403144,
+      "within_10_percent": 0.6805555555555556
+    }
+  },
+  "families_feasible_long": {
+    "histogram": {
+      "bootstrap": {
+        "regret": {
+          "ci95": [
+            0.0041248500708298,
+            0.05699093259238097
+          ],
+          "median": 0.014583991977714539
+        },
+        "speedup_vs_factor_1": {
+          "ci95": [
+            1.0005724462120238,
+            1.0523641027310608
+          ],
+          "median": 1.01643454175272
+        },
+        "speedup_vs_llvm_size": {
+          "ci95": [
+            1.0659926477498982,
+            1.3625309958751806
+          ],
+          "median": 1.1776980659625915
+        }
+      },
+      "configurations": 6,
+      "regressions": {
+        "factor_1": {
+          "at_least_1_percent": 0,
+          "configurations": 6,
+          "median_fraction": 0.004070093179836309,
+          "settings": 14,
+          "worst_fraction": 0.008742659678374842
+        },
+        "llvm_size": {
+          "at_least_1_percent": 0,
+          "configurations": 0,
+          "median_fraction": null,
+          "settings": 0,
+          "worst_fraction": 0.0
+        }
+      },
+      "settings": 24,
+      "win_configurations": 5,
+      "win_savings_fraction": {
+        "factor_1": {
+          "max": 0.09986087263551036,
+          "median": 0.04423922113782963,
+          "min": 0.019234899571412556
+        },
+        "llvm_size": {
+          "max": 0.2651431477988534,
+          "median": 0.08270346854739608,
+          "min": 0.04805427830453479
+        }
+      },
+      "win_settings": 10,
+      "win_settings_at_least_1_percent_vs_both": 10
+    },
+    "masked_read": {
+      "bootstrap": {
+        "regret": {
+          "ci95": [
+            0.00605734277577874,
+            0.13558933286017116
+          ],
+          "median": 0.012807780551277126
+        },
+        "speedup_vs_factor_1": {
+          "ci95": [
+            0.8975832038715891,
+            0.9940043325413126
+          ],
+          "median": 0.9873946046218081
+        },
+        "speedup_vs_llvm_size": {
+          "ci95": [
+            1.503301105852172,
+            2.7085525291796646
+          ],
+          "median": 1.8288090364903373
+        }
+      },
+      "configurations": 6,
+      "regressions": {
+        "factor_1": {
+          "at_least_1_percent": 13,
+          "configurations": 6,
+          "median_fraction": 0.013336010818757016,
+          "settings": 20,
+          "worst_fraction": 0.4169821165755918
+        },
+        "llvm_size": {
+          "at_least_1_percent": 0,
+          "configurations": 0,
+          "median_fraction": null,
+          "settings": 0,
+          "worst_fraction": 0.0
+        }
+      },
+      "settings": 20,
+      "win_configurations": 0,
+      "win_savings_fraction": {},
+      "win_settings": 0,
+      "win_settings_at_least_1_percent_vs_both": 0
+    },
+    "ring_buffer": {
+      "bootstrap": {
+        "regret": {
+          "ci95": [
+            0.013785364252793308,
+            0.04388585443501741
+          ],
+          "median": 0.019472588638120847
+        },
+        "speedup_vs_factor_1": {
+          "ci95": [
+            0.9869327730782131,
+            0.9904610919288632
+          ],
+          "median": 0.9888056953906297
+        },
+        "speedup_vs_llvm_size": {
+          "ci95": [
+            0.9910631987705355,
+            1.0197236956325977
+          ],
+          "median": 1.0056956325590232
+        }
+      },
+      "configurations": 6,
+      "regressions": {
+        "factor_1": {
+          "at_least_1_percent": 12,
+          "configurations": 6,
+          "median_fraction": 0.017192153822033207,
+          "settings": 22,
+          "worst_fraction": 0.024566782670172538
+        },
+        "llvm_size": {
+          "at_least_1_percent": 6,
+          "configurations": 5,
+          "median_fraction": 0.02370206080831916,
+          "settings": 10,
+          "worst_fraction": 0.07050673173396937
+        }
+      },
+      "settings": 24,
+      "win_configurations": 0,
+      "win_savings_fraction": {},
+      "win_settings": 0,
+      "win_settings_at_least_1_percent_vs_both": 0
+    },
+    "strided_read": {
+      "bootstrap": {
+        "regret": {
+          "ci95": [
+            0.012527639059649487,
+            0.029624233412803347
+          ],
+          "median": 0.021255088593723326
+        },
+        "speedup_vs_factor_1": {
+          "ci95": [
+            0.9715690159006525,
+            0.9888736543975822
+          ],
+          "median": 0.9792728567180025
+        },
+        "speedup_vs_llvm_size": {
+          "ci95": [
+            1.1199684103508165,
+            1.1594584024076746
+          ],
+          "median": 1.1416489855542964
+        }
+      },
+      "configurations": 6,
+      "regressions": {
+        "factor_1": {
+          "at_least_1_percent": 18,
+          "configurations": 6,
+          "median_fraction": 0.016442004715440328,
+          "settings": 22,
+          "worst_fraction": 0.060204990752603216
+        },
+        "llvm_size": {
+          "at_least_1_percent": 0,
+          "configurations": 0,
+          "median_fraction": null,
+          "settings": 0,
+          "worst_fraction": 0.0
+        }
+      },
+      "settings": 24,
+      "win_configurations": 1,
+      "win_savings_fraction": {
+        "factor_1": {
+          "max": 0.0030493420595653076,
+          "median": 0.0030493420595653076,
+          "min": 0.0030493420595653076
+        },
+        "llvm_size": {
+          "max": 0.05074296020787339,
+          "median": 0.05074296020787339,
+          "min": 0.05074296020787339
+        }
+      },
+      "win_settings": 2,
+      "win_settings_at_least_1_percent_vs_both": 0
+    }
+  },
+  "gate_passed": true,
+  "provenance": {
+    "artifact_sha256": "e1f88ef91875f4712ea848f31394000a78cbe079a0c4a0ed32cd3982615b98eb",
+    "freeze_commit": "ad45dc9354aa586513beb3a988257c6301d1f802",
+    "model_version": "cpu-recovery-v1-607aa4f6077e111b",
+    "protocol_sha256": "1bd65e438fc4dfaf410e83e5a16820b42c1802f3e1b74d7a2eea0f482d57de02",
+    "raw_sha256": "6c03b1f091d779e35eae3277ee46739b4f8458db937e7219897841d80ade3848",
+    "started_utc": "2026-11-17T23:57:31Z"
+  },
+  "settings": [
+    {
+      "B_ms": "unlimited",
+      "R": 1,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 24,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7877440093834653,
+            "median_regret": 1.190261127464272,
+            "median_speedup_vs_factor_1": 0.45656670565847135,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06929513778137845,
+            "median_regret": 0.06907827585757575,
+            "median_speedup_vs_factor_1": 0.935386774533514,
+            "median_speedup_vs_llvm_size": 2.0994235659561773
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.06706593928531945,
+              0.07101074023598875
+            ],
+            "median": 0.06907827585757575
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9336974527255049,
+              0.9371492081077597
+            ],
+            "median": 0.935386774533514
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.6835259465524446,
+              3.0669834512601604
+            ],
+            "median": 2.0994235659561773
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 24,
+            "configurations": 24,
+            "median_fraction": 0.06907827585757575,
+            "settings": 24,
+            "worst_fraction": 0.09911199748883748
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 24,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": "unlimited",
+      "R": 10,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 24,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7775684068757016,
+            "median_regret": 1.1859519567899997,
+            "median_speedup_vs_factor_1": 0.4574667456950247,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06895454825258505,
+            "median_regret": 0.06875107217524523,
+            "median_speedup_vs_factor_1": 0.9356729213436247,
+            "median_speedup_vs_llvm_size": 2.0956235135944477
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.06671721739443259,
+              0.07053557876426497
+            ],
+            "median": 0.06875107217524523
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9341118780510919,
+              0.9374555727548897
+            ],
+            "median": 0.9356729213436247
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.6819052843465796,
+              3.0278792364200866
+            ],
+            "median": 2.0956235135944477
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 24,
+            "configurations": 24,
+            "median_fraction": 0.06875107217524523,
+            "settings": 24,
+            "worst_fraction": 0.09881388993780837
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 24,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": "unlimited",
+      "R": 100,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 24,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.6869772867575576,
+            "median_regret": 1.1212990638952114,
+            "median_speedup_vs_factor_1": 0.47145851157271057,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06582867696549749,
+            "median_regret": 0.06556491850449331,
+            "median_speedup_vs_factor_1": 0.9384693646191352,
+            "median_speedup_vs_llvm_size": 2.038685823775307
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.06341959687679921,
+              0.0682545406000914
+            ],
+            "median": 0.06556491850449331
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9361064821107623,
+              0.9403625840044147
+            ],
+            "median": 0.9384693646191352
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.6661536630373532,
+              2.7140030368473256
+            ],
+            "median": 2.038685823775307
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 24,
+            "configurations": 24,
+            "median_fraction": 0.06556491850449331,
+            "settings": 24,
+            "worst_fraction": 0.09596293683197987
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 24,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": "unlimited",
+      "R": 1000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 24,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.2080317773577065,
+            "median_regret": 0.7245702722940934,
+            "median_speedup_vs_factor_1": 0.5813381171803998,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.046982684195750794,
+            "median_regret": 0.049477635136690234,
+            "median_speedup_vs_factor_1": 0.9528549903184185,
+            "median_speedup_vs_llvm_size": 1.6850969486537963
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.04082381482839059,
+              0.05164770304829879
+            ],
+            "median": 0.049477635136690234
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.950888780819419,
+              0.9607774012788883
+            ],
+            "median": 0.9528549903184185
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.5355376785916235,
+              1.8056093997791818
+            ],
+            "median": 1.6850969486537963
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 24,
+            "configurations": 24,
+            "median_fraction": 0.049477635136690234,
+            "settings": 24,
+            "worst_fraction": 0.07564715011383583
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 24,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": "unlimited",
+      "R": 10000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 24,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 0.8333333333333334,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0077411057324632175,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.4864831811962332,
+            "median_regret": 0.25520564109551835,
+            "median_speedup_vs_factor_1": 0.7966822140698038,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 20,
+              "2": 3,
+              "4": 1
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "selector": {
+            "agreement": 0.8333333333333334,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.02074242623915859,
+            "median_regret": 0.015254081380115192,
+            "median_speedup_vs_factor_1": 0.9863816976815027,
+            "median_speedup_vs_llvm_size": 1.2430556242467725
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.011516104751064682,
+              0.01936391539682924
+            ],
+            "median": 0.015254081380115192
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9839012834534199,
+              0.9913331119741061
+            ],
+            "median": 0.9863816976815027
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.0792580484439755,
+              1.3474871139810871
+            ],
+            "median": 1.2430556242467725
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 14,
+            "configurations": 24,
+            "median_fraction": 0.013806539353394154,
+            "settings": 24,
+            "worst_fraction": 0.024566782670172538
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 24,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": "unlimited",
+      "R": 100000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 24,
+        "paired_wins": 6,
+        "policies": {
+          "factor_1": {
+            "agreement": 0.5,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.023998848696445908,
+            "median_regret": 0.002419244853311242,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.090936870020593
+          },
+          "llvm_size": {
+            "agreement": 0.20833333333333334,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.2803547376529178,
+            "median_regret": 0.09460612122078282,
+            "median_speedup_vs_factor_1": 0.9166523066877383,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 12,
+              "2": 10,
+              "4": 2
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0024192448533111,
+            "median_speedup_vs_llvm_size": 1.094606121220783
+          },
+          "selector": {
+            "agreement": 0.375,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 9,
+              "2": 15
+            },
+            "mean_positive_regret": 0.04104174029755142,
+            "median_regret": 0.019644781380620646,
+            "median_speedup_vs_factor_1": 0.9979426464610872,
+            "median_speedup_vs_llvm_size": 1.0722510094533426
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.0031356556630310894,
+              0.03199751043508403
+            ],
+            "median": 0.019644781380620646
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9826107675675613,
+              0.9990622931490943
+            ],
+            "median": 0.9979426464610872
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.0463349608229502,
+              1.1405531688738615
+            ],
+            "median": 1.0722510094533426
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 8,
+            "configurations": 17,
+            "median_fraction": 0.003170152753259048,
+            "settings": 17,
+            "worst_fraction": 0.4169821165755918
+          },
+          "llvm_size": {
+            "at_least_1_percent": 3,
+            "configurations": 5,
+            "median_fraction": 0.02370206080831916,
+            "settings": 5,
+            "worst_fraction": 0.07050673173396937
+          }
+        },
+        "settings": 24,
+        "win_configurations": 6,
+        "win_savings_fraction": {
+          "factor_1": {
+            "max": 0.09986087263551036,
+            "median": 0.03306236039821314,
+            "min": 0.0030493420595653076
+          },
+          "llvm_size": {
+            "max": 0.2651431477988534,
+            "median": 0.07662072411736448,
+            "min": 0.04805427830453479
+          }
+        },
+        "win_settings": 6,
+        "win_settings_at_least_1_percent_vs_both": 5
+      }
+    },
+    {
+      "B_ms": 1,
+      "R": 1,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7877440093834653,
+            "median_regret": 1.190261127464272,
+            "median_speedup_vs_factor_1": 0.45656670565847135,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06929513778137845,
+            "median_regret": 0.06907827585757575,
+            "median_speedup_vs_factor_1": 0.935386774533514,
+            "median_speedup_vs_llvm_size": 2.0994235659561773
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 1,
+      "R": 10,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7775684068757016,
+            "median_regret": 1.1859519567899997,
+            "median_speedup_vs_factor_1": 0.4574667456950247,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06895454825258505,
+            "median_regret": 0.06875107217524523,
+            "median_speedup_vs_factor_1": 0.9356729213436247,
+            "median_speedup_vs_llvm_size": 2.0956235135944477
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 1,
+      "R": 100,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.6869772867575576,
+            "median_regret": 1.1212990638952114,
+            "median_speedup_vs_factor_1": 0.47145851157271057,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06582867696549749,
+            "median_regret": 0.06556491850449331,
+            "median_speedup_vs_factor_1": 0.9384693646191352,
+            "median_speedup_vs_llvm_size": 2.038685823775307
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 1,
+      "R": 1000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.2080317773577065,
+            "median_regret": 0.7245702722940934,
+            "median_speedup_vs_factor_1": 0.5813381171803998,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.046982684195750794,
+            "median_regret": 0.049477635136690234,
+            "median_speedup_vs_factor_1": 0.9528549903184185,
+            "median_speedup_vs_llvm_size": 1.6850969486537963
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 1,
+      "R": 10000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.47777875180693247,
+            "median_regret": 0.25520564109551835,
+            "median_speedup_vs_factor_1": 0.7966822140698038,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.012973030755137865,
+            "median_regret": 0.013806539353394154,
+            "median_speedup_vs_factor_1": 0.9863816976815027,
+            "median_speedup_vs_llvm_size": 1.2430556242467725
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 1,
+      "R": 100000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.090936870020593
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.26637606509132916,
+            "median_regret": 0.09093687002059314,
+            "median_speedup_vs_factor_1": 0.9166523066877383,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.090936870020593
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0015906937721776222,
+            "median_regret": 0.0016860892808971961,
+            "median_speedup_vs_factor_1": 0.9983167551604608,
+            "median_speedup_vs_llvm_size": 1.0891800100174622
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 10,
+      "R": 1,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7877440093834653,
+            "median_regret": 1.190261127464272,
+            "median_speedup_vs_factor_1": 0.45656670565847135,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06929513778137845,
+            "median_regret": 0.06907827585757575,
+            "median_speedup_vs_factor_1": 0.935386774533514,
+            "median_speedup_vs_llvm_size": 2.0994235659561773
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 10,
+      "R": 10,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7775684068757016,
+            "median_regret": 1.1859519567899997,
+            "median_speedup_vs_factor_1": 0.4574667456950247,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06895454825258505,
+            "median_regret": 0.06875107217524523,
+            "median_speedup_vs_factor_1": 0.9356729213436247,
+            "median_speedup_vs_llvm_size": 2.0956235135944477
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 10,
+      "R": 100,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.6869772867575576,
+            "median_regret": 1.1212990638952114,
+            "median_speedup_vs_factor_1": 0.47145851157271057,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06582867696549749,
+            "median_regret": 0.06556491850449331,
+            "median_speedup_vs_factor_1": 0.9384693646191352,
+            "median_speedup_vs_llvm_size": 2.038685823775307
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 10,
+      "R": 1000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.2080317773577065,
+            "median_regret": 0.7245702722940934,
+            "median_speedup_vs_factor_1": 0.5813381171803998,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.046982684195750794,
+            "median_regret": 0.049477635136690234,
+            "median_speedup_vs_factor_1": 0.9528549903184185,
+            "median_speedup_vs_llvm_size": 1.6850969486537963
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 10,
+      "R": 10000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.47777875180693247,
+            "median_regret": 0.25520564109551835,
+            "median_speedup_vs_factor_1": 0.7966822140698038,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.012973030755137865,
+            "median_regret": 0.013806539353394154,
+            "median_speedup_vs_factor_1": 0.9863816976815027,
+            "median_speedup_vs_llvm_size": 1.2430556242467725
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 10,
+      "R": 100000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 24,
+        "paired_feasible_settings": 0,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.090936870020593
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.26637606509132916,
+            "median_regret": 0.09093687002059314,
+            "median_speedup_vs_factor_1": 0.9166523066877383,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.090936870020593
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 1.0,
+            "budget_violations": 24,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0015906937721776222,
+            "median_regret": 0.0016860892808971961,
+            "median_speedup_vs_factor_1": 0.9983167551604608,
+            "median_speedup_vs_llvm_size": 1.0891800100174622
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": null,
+        "configurations": 0,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 0,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 100,
+      "R": 1,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 22,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.08333333333333333,
+            "budget_violations": 2,
+            "budget_violations_when_feasible": 2,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7877440093834653,
+            "median_regret": 1.190261127464272,
+            "median_speedup_vs_factor_1": 0.45656670565847135,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.190261127464272
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06929513778137845,
+            "median_regret": 0.06907827585757575,
+            "median_speedup_vs_factor_1": 0.935386774533514,
+            "median_speedup_vs_llvm_size": 2.0994235659561773
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.06705562295919876,
+              0.08349291177736229
+            ],
+            "median": 0.06753599130203614
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9230704181422866,
+              0.9371582684947224
+            ],
+            "median": 0.9367365874751247
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.6526816338019614,
+              2.179851608925079
+            ],
+            "median": 2.0917385906826613
+          }
+        },
+        "configurations": 22,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 22,
+            "configurations": 22,
+            "median_fraction": 0.06753599130203614,
+            "settings": 22,
+            "worst_fraction": 0.09911199748883748
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 22,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 100,
+      "R": 10,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 22,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.08333333333333333,
+            "budget_violations": 2,
+            "budget_violations_when_feasible": 2,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.7775684068757016,
+            "median_regret": 1.1859519567899997,
+            "median_speedup_vs_factor_1": 0.4574667456950247,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1859519567899994
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06895454825258505,
+            "median_regret": 0.06875107217524523,
+            "median_speedup_vs_factor_1": 0.9356729213436247,
+            "median_speedup_vs_llvm_size": 2.0956235135944477
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.06670046782388206,
+              0.083158031528341
+            ],
+            "median": 0.06733080493438381
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9233546241044766,
+              0.9374702928930424
+            ],
+            "median": 0.9369166637611339
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.6505871508422287,
+              2.17436103872754
+            ],
+            "median": 2.0855143991720664
+          }
+        },
+        "configurations": 22,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 22,
+            "configurations": 22,
+            "median_fraction": 0.06733080493438381,
+            "settings": 22,
+            "worst_fraction": 0.09881388993780837
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 22,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 100,
+      "R": 100,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 22,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.08333333333333333,
+            "budget_violations": 2,
+            "budget_violations_when_feasible": 2,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.6869772867575576,
+            "median_regret": 1.1212990638952114,
+            "median_speedup_vs_factor_1": 0.47145851157271057,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 2.1212990638952114
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.06582867696549749,
+            "median_regret": 0.06556491850449331,
+            "median_speedup_vs_factor_1": 0.9384693646191352,
+            "median_speedup_vs_llvm_size": 2.038685823775307
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.06334542438723645,
+              0.08006702400274479
+            ],
+            "median": 0.06534594053566567
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9259838869957695,
+              0.9404281779613245
+            ],
+            "median": 0.9386622341674988
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.630387589584966,
+              2.1223123025034027
+            ],
+            "median": 2.0130835278777157
+          }
+        },
+        "configurations": 22,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 22,
+            "configurations": 22,
+            "median_fraction": 0.06534594053566567,
+            "settings": 22,
+            "worst_fraction": 0.09596293683197987
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 22,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 100,
+      "R": 1000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 22,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.08333333333333333,
+            "budget_violations": 2,
+            "budget_violations_when_feasible": 2,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 1.2080317773577065,
+            "median_regret": 0.7245702722940934,
+            "median_speedup_vs_factor_1": 0.5813381171803998,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7245702722940934
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.046982684195750794,
+            "median_regret": 0.049477635136690234,
+            "median_speedup_vs_factor_1": 0.9528549903184185,
+            "median_speedup_vs_llvm_size": 1.6850969486537963
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.04214594930137383,
+              0.058719846456717115
+            ],
+            "median": 0.04958750319971572
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9445813721605402,
+              0.9595584962647243
+            ],
+            "median": 0.9527552497810698
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.4822087452161599,
+              1.7921224281005403
+            ],
+            "median": 1.5763601332465829
+          }
+        },
+        "configurations": 22,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 22,
+            "configurations": 22,
+            "median_fraction": 0.04958750319971572,
+            "settings": 22,
+            "worst_fraction": 0.07564715011383583
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 22,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 100,
+      "R": 10000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 22,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 0.8333333333333334,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.0077411057324632175,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.08333333333333333,
+            "budget_violations": 2,
+            "budget_violations_when_feasible": 2,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.4864831811962332,
+            "median_regret": 0.25520564109551835,
+            "median_speedup_vs_factor_1": 0.7966822140698038,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 20,
+              "2": 3,
+              "4": 1
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.2552056410955184
+          },
+          "selector": {
+            "agreement": 0.8333333333333334,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.02074242623915859,
+            "median_regret": 0.015254081380115192,
+            "median_speedup_vs_factor_1": 0.9863816976815027,
+            "median_speedup_vs_llvm_size": 1.2430556242467725
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.013336010818757016,
+              0.019903035996066847
+            ],
+            "median": 0.015852686172505348
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9838239617812299,
+              0.9903969147392888
+            ],
+            "median": 0.9858212464199951
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.0583412903658693,
+              1.2742121057000915
+            ],
+            "median": 1.2328652518001781
+          }
+        },
+        "configurations": 22,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 14,
+            "configurations": 22,
+            "median_fraction": 0.014382693083603182,
+            "settings": 22,
+            "worst_fraction": 0.024566782670172538
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 22,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    },
+    {
+      "B_ms": 100,
+      "R": 100000,
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 22,
+        "paired_wins": 6,
+        "policies": {
+          "factor_1": {
+            "agreement": 0.5,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 24
+            },
+            "mean_positive_regret": 0.023998848696445908,
+            "median_regret": 0.002419244853311242,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.090936870020593
+          },
+          "llvm_size": {
+            "agreement": 0.20833333333333334,
+            "budget_violation_rate": 0.08333333333333333,
+            "budget_violations": 2,
+            "budget_violations_when_feasible": 2,
+            "factor_counts": {
+              "2": 6,
+              "4": 6,
+              "8": 12
+            },
+            "mean_positive_regret": 0.2803547376529178,
+            "median_regret": 0.09460612122078282,
+            "median_speedup_vs_factor_1": 0.9166523066877383,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 12,
+              "2": 10,
+              "4": 2
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0024192448533111,
+            "median_speedup_vs_llvm_size": 1.094606121220783
+          },
+          "selector": {
+            "agreement": 0.375,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 9,
+              "2": 15
+            },
+            "mean_positive_regret": 0.04104174029755142,
+            "median_regret": 0.019644781380620646,
+            "median_speedup_vs_factor_1": 0.9979426464610872,
+            "median_speedup_vs_llvm_size": 1.0722510094533426
+          }
+        },
+        "settings": 24
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.0031529042081450687,
+              0.03199751043508403
+            ],
+            "median": 0.019644781380620646
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9826107675675613,
+              1.0030586689875554
+            ],
+            "median": 0.9979426464610872
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.027952786866913,
+              1.0953974199686511
+            ],
+            "median": 1.067099567234206
+          }
+        },
+        "configurations": 22,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 7,
+            "configurations": 15,
+            "median_fraction": 0.003170152753259048,
+            "settings": 15,
+            "worst_fraction": 0.10366946960362178
+          },
+          "llvm_size": {
+            "at_least_1_percent": 3,
+            "configurations": 5,
+            "median_fraction": 0.02370206080831916,
+            "settings": 5,
+            "worst_fraction": 0.07050673173396937
+          }
+        },
+        "settings": 22,
+        "win_configurations": 6,
+        "win_savings_fraction": {
+          "factor_1": {
+            "max": 0.09986087263551036,
+            "median": 0.03306236039821314,
+            "min": 0.0030493420595653076
+          },
+          "llvm_size": {
+            "max": 0.2651431477988534,
+            "median": 0.07662072411736448,
+            "min": 0.04805427830453479
+          }
+        },
+        "win_settings": 6,
+        "win_settings_at_least_1_percent_vs_both": 5
+      }
+    }
+  ],
+  "strata": {
+    "all": {
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 288,
+        "paired_feasible_settings": 276,
+        "paired_wins": 12,
+        "policies": {
+          "factor_1": {
+            "agreement": 0.9444444444444444,
+            "budget_violation_rate": 0.5,
+            "budget_violations": 288,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 576
+            },
+            "mean_positive_regret": 0.002644996202409094,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7796810347788512
+          },
+          "llvm_size": {
+            "agreement": 0.017361111111111112,
+            "budget_violation_rate": 0.5208333333333334,
+            "budget_violations": 300,
+            "budget_violations_when_feasible": 12,
+            "factor_counts": {
+              "2": 144,
+              "4": 144,
+              "8": 288
+            },
+            "mean_positive_regret": 1.2026363080413562,
+            "median_regret": 0.7796810347788512,
+            "median_speedup_vs_factor_1": 0.5619024112070721,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.5,
+            "budget_violations": 288,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 544,
+              "2": 26,
+              "4": 6
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.7796810347788512
+          },
+          "selector": {
+            "agreement": 0.9340277777777778,
+            "budget_violation_rate": 0.5,
+            "budget_violations": 288,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 546,
+              "2": 30
+            },
+            "mean_positive_regret": 0.04820583212120409,
+            "median_regret": 0.045710405726415715,
+            "median_speedup_vs_factor_1": 0.9579703831020785,
+            "median_speedup_vs_llvm_size": 1.670534349780377
+          }
+        },
+        "settings": 576
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.05328971738938171,
+              0.06832367620162616
+            ],
+            "median": 0.05878543454012347
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9360499154201005,
+              0.9495394052102375
+            ],
+            "median": 0.9445369939605958
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.6050109577100182,
+              2.253062732473933
+            ],
+            "median": 1.8642693844677525
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 227,
+            "configurations": 24,
+            "median_fraction": 0.049477635136690234,
+            "settings": 262,
+            "worst_fraction": 0.4169821165755918
+          },
+          "llvm_size": {
+            "at_least_1_percent": 6,
+            "configurations": 5,
+            "median_fraction": 0.02370206080831916,
+            "settings": 10,
+            "worst_fraction": 0.07050673173396937
+          }
+        },
+        "settings": 276,
+        "win_configurations": 6,
+        "win_savings_fraction": {
+          "factor_1": {
+            "max": 0.09986087263551036,
+            "median": 0.03306236039821314,
+            "min": 0.0030493420595653076
+          },
+          "llvm_size": {
+            "max": 0.2651431477988534,
+            "median": 0.07662072411736448,
+            "min": 0.04805427830453479
+          }
+        },
+        "win_settings": 12,
+        "win_settings_at_least_1_percent_vs_both": 10
+      }
+    },
+    "feasible_long": {
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 92,
+        "paired_wins": 12,
+        "policies": {
+          "factor_1": {
+            "agreement": 0.6666666666666666,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 96
+            },
+            "mean_positive_regret": 0.015869977214454562,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.1392578564295077
+          },
+          "llvm_size": {
+            "agreement": 0.10416666666666667,
+            "budget_violation_rate": 0.041666666666666664,
+            "budget_violations": 4,
+            "budget_violations_when_feasible": 4,
+            "factor_counts": {
+              "2": 24,
+              "4": 24,
+              "8": 48
+            },
+            "mean_positive_regret": 0.38341895942457555,
+            "median_regret": 0.16471329687311043,
+            "median_speedup_vs_factor_1": 0.8781147678242168,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 64,
+              "2": 26,
+              "4": 6
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.1647132968731104
+          },
+          "selector": {
+            "agreement": 0.6041666666666666,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 66,
+              "2": 30
+            },
+            "mean_positive_regret": 0.030892083268355006,
+            "median_regret": 0.016402065243457442,
+            "median_speedup_vs_factor_1": 0.9908650133566974,
+            "median_speedup_vs_llvm_size": 1.1179752944212562
+          }
+        },
+        "settings": 96
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.013868467711715793,
+              0.02428441409301045
+            ],
+            "median": 0.017010085758922877
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.983296403247569,
+              0.9940090040369567
+            ],
+            "median": 0.9901729652848539
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.0775746197093667,
+              1.346300105205692
+            ],
+            "median": 1.149982409517192
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 43,
+            "configurations": 24,
+            "median_fraction": 0.013806539353394154,
+            "settings": 78,
+            "worst_fraction": 0.4169821165755918
+          },
+          "llvm_size": {
+            "at_least_1_percent": 6,
+            "configurations": 5,
+            "median_fraction": 0.02370206080831916,
+            "settings": 10,
+            "worst_fraction": 0.07050673173396937
+          }
+        },
+        "settings": 92,
+        "win_configurations": 6,
+        "win_savings_fraction": {
+          "factor_1": {
+            "max": 0.09986087263551036,
+            "median": 0.03306236039821314,
+            "min": 0.0030493420595653076
+          },
+          "llvm_size": {
+            "max": 0.2651431477988534,
+            "median": 0.07662072411736448,
+            "min": 0.04805427830453479
+          }
+        },
+        "win_settings": 12,
+        "win_settings_at_least_1_percent_vs_both": 10
+      }
+    },
+    "oracle_improves_long": {
+      "metrics": {
+        "configurations": 12,
+        "no_measured_feasible_settings": 0,
+        "paired_feasible_settings": 32,
+        "paired_wins": 12,
+        "policies": {
+          "factor_1": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 32
+            },
+            "mean_positive_regret": 0.04760993164336369,
+            "median_regret": 0.02548117222585833,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.0564459699503979
+          },
+          "llvm_size": {
+            "agreement": 0.3125,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 10,
+              "4": 2,
+              "8": 20
+            },
+            "mean_positive_regret": 0.14197182545638243,
+            "median_regret": 0.09857580411409295,
+            "median_speedup_vs_factor_1": 0.9466025746140955,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "2": 26,
+              "4": 6
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0254811722258583,
+            "median_speedup_vs_llvm_size": 1.098575804114093
+          },
+          "selector": {
+            "agreement": 0.3125,
+            "budget_violation_rate": 0.0,
+            "budget_violations": 0,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 18,
+              "2": 14
+            },
+            "mean_positive_regret": 0.029053317459616493,
+            "median_regret": 0.022087645817119972,
+            "median_speedup_vs_factor_1": 0.9988034404819608,
+            "median_speedup_vs_llvm_size": 1.0671162406703136
+          }
+        },
+        "settings": 32
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.003237556217580817,
+              0.05699093259238097
+            ],
+            "median": 0.01775785358777221
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9979426464610872,
+              1.021013945071438
+            ],
+            "median": 1.003327280033297
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              0.983939298959741,
+              1.0927787172184253
+            ],
+            "median": 1.0539330618312865
+          }
+        },
+        "configurations": 12,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 0,
+            "configurations": 9,
+            "median_fraction": 0.0020751380644472572,
+            "settings": 18,
+            "worst_fraction": 0.004201914505300053
+          },
+          "llvm_size": {
+            "at_least_1_percent": 6,
+            "configurations": 5,
+            "median_fraction": 0.02370206080831916,
+            "settings": 10,
+            "worst_fraction": 0.07050673173396937
+          }
+        },
+        "settings": 32,
+        "win_configurations": 6,
+        "win_savings_fraction": {
+          "factor_1": {
+            "max": 0.09986087263551036,
+            "median": 0.03306236039821314,
+            "min": 0.0030493420595653076
+          },
+          "llvm_size": {
+            "max": 0.2651431477988534,
+            "median": 0.07662072411736448,
+            "min": 0.04805427830453479
+          }
+        },
+        "win_settings": 12,
+        "win_settings_at_least_1_percent_vs_both": 10
+      }
+    },
+    "outside_feasible_long": {
+      "metrics": {
+        "configurations": 24,
+        "no_measured_feasible_settings": 288,
+        "paired_feasible_settings": 184,
+        "paired_wins": 0,
+        "policies": {
+          "factor_1": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.6,
+            "budget_violations": 288,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 480
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.8082700501725821
+          },
+          "llvm_size": {
+            "agreement": 0.0,
+            "budget_violation_rate": 0.6166666666666667,
+            "budget_violations": 296,
+            "budget_violations_when_feasible": 8,
+            "factor_counts": {
+              "2": 120,
+              "4": 120,
+              "8": 240
+            },
+            "mean_positive_regret": 1.3664797777647122,
+            "median_regret": 0.8082700501725821,
+            "median_speedup_vs_factor_1": 0.5530159680096343,
+            "median_speedup_vs_llvm_size": 1.0
+          },
+          "measured_oracle": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.6,
+            "budget_violations": 288,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 480
+            },
+            "mean_positive_regret": 0.0,
+            "median_regret": 0.0,
+            "median_speedup_vs_factor_1": 1.0,
+            "median_speedup_vs_llvm_size": 1.8082700501725821
+          },
+          "selector": {
+            "agreement": 1.0,
+            "budget_violation_rate": 0.6,
+            "budget_violations": 288,
+            "budget_violations_when_feasible": 0,
+            "factor_counts": {
+              "1": 480
+            },
+            "mean_positive_regret": 0.05166858189177391,
+            "median_regret": 0.05765463350357891,
+            "median_speedup_vs_factor_1": 0.9455155962594175,
+            "median_speedup_vs_llvm_size": 1.6940495200328654
+          }
+        },
+        "settings": 480
+      },
+      "paired": {
+        "bootstrap": {
+          "regret": {
+            "ci95": [
+              0.0650684071356159,
+              0.06935905944894516
+            ],
+            "median": 0.06714385707839521
+          },
+          "speedup_vs_factor_1": {
+            "ci95": [
+              0.9351405947373033,
+              0.9389090783796522
+            ],
+            "median": 0.9370836000167874
+          },
+          "speedup_vs_llvm_size": {
+            "ci95": [
+              1.6740294736919665,
+              2.8709411366337063
+            ],
+            "median": 2.0675767287756868
+          }
+        },
+        "configurations": 24,
+        "regressions": {
+          "factor_1": {
+            "at_least_1_percent": 184,
+            "configurations": 24,
+            "median_fraction": 0.06695511842150159,
+            "settings": 184,
+            "worst_fraction": 0.09911199748883748
+          },
+          "llvm_size": {
+            "at_least_1_percent": 0,
+            "configurations": 0,
+            "median_fraction": null,
+            "settings": 0,
+            "worst_fraction": 0.0
+          }
+        },
+        "settings": 184,
+        "win_configurations": 0,
+        "win_savings_fraction": {},
+        "win_settings": 0,
+        "win_settings_at_least_1_percent_vs_both": 0
+      }
+    }
+  }
+}
