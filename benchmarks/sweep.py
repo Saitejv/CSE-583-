@@ -72,9 +72,21 @@ def _max_abs_diff(a: Any, b: Any) -> float:
 def _allclose(a: Any, b: Any, *, atol: float, rtol: float) -> bool:
     pairs = zip(_leaves(a), _leaves(b), strict=True)
     return all(
-        bool(np.allclose(x, y, atol=atol, rtol=rtol, equal_nan=True))
+        bool(np.allclose(x, y, atol=atol, rtol=rtol, equal_nan=False))
         for x, y in pairs
     )
+
+
+def _all_finite(tree: Any) -> bool:
+    """Return whether every output leaf is finite.
+
+    Non-finite outputs mean the workload itself diverged (for example, a dense
+    recurrence with spectral radius > 1 at a large trip count). Such
+    configurations are not valid correctness references or performance labels,
+    so the sweep marks them incorrect and the dataset builder drops them.
+    """
+
+    return all(bool(np.isfinite(leaf).all()) for leaf in _leaves(tree))
 
 
 def _warm_backend() -> None:
@@ -190,8 +202,10 @@ def measure_config(
     end_to_end_ms = cold_total_ms + e2e_calls_ms
 
     if workload.factor == 1:
-        correct = True
+        correct = _all_finite(last_output)
         max_diff = 0.0
+        if not correct:
+            notes.append("non-finite output at u=1; configuration excluded")
     else:
         reference = build_workload(
             config["workload"],
@@ -201,13 +215,23 @@ def measure_config(
         )
         reference_compiled = jax.jit(reference.fn).lower(*reference.args).compile()
         reference_output = _run_once(reference_compiled, reference.args)
-        correct = _allclose(
-            last_output,
-            reference_output,
-            atol=reference.atol,
-            rtol=reference.rtol,
+        output_finite = _all_finite(last_output)
+        reference_finite = _all_finite(reference_output)
+        correct = (
+            output_finite
+            and reference_finite
+            and _allclose(
+                last_output,
+                reference_output,
+                atol=reference.atol,
+                rtol=reference.rtol,
+            )
         )
         max_diff = _max_abs_diff(last_output, reference_output)
+        if not reference_finite:
+            notes.append("non-finite output at u=1; configuration excluded")
+        elif not output_finite:
+            notes.append(f"non-finite output at u={workload.factor}")
 
     notes.append(f"pilot_call_us={pilot_us * 1e6:.3f}")
     notes.append(f"adaptive_samples={sample_count}")

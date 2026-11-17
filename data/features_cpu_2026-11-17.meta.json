@@ -50,8 +50,8 @@
       "scalar_recurrence"
     ]
   },
-  "created_utc": "2026-11-17T22:16:07Z",
-  "dataset_version": 1,
+  "created_utc": "2026-11-17T22:52:57Z",
+  "dataset_version": 2,
   "dev_families": [
     "recurrence",
     "elementwise",
@@ -60,13 +60,13 @@
   ],
   "device": "cpu:0",
   "extraction_ms": {
-    "mean": 1.330849585688806,
-    "median": 1.0202915000263602,
-    "p95": 2.070131187792867
+    "mean": 0.7527301214974035,
+    "median": 0.5608545034192502,
+    "p95": 1.1284107691608365
   },
-  "extraction_ms_mean": 1.330849585688806,
-  "extraction_ms_median": 1.0202915000263602,
-  "extraction_ms_p95": 2.070131187792867,
+  "extraction_ms_mean": 0.7527301214974035,
+  "extraction_ms_median": 0.5608545034192502,
+  "extraction_ms_p95": 1.1284107691608365,
   "families": [
     "dense_linear_algebra",
     "elementwise",
@@ -133,7 +133,7 @@
     "extraction_ms"
   ],
   "feature_version": 1,
-  "git_commit": "0ad979d",
+  "git_commit": "6cde169",
   "held_out_families": [
     "indexed_memory",
     "iterative_solver"
@@ -159,11 +159,11 @@
     "log_cold_ms",
     "log_warm_us"
   ],
-  "n_dropped_rows": 0,
+  "n_dropped_rows": 12,
   "n_raw_rows": 672,
-  "n_rows": 224,
-  "n_unique_configs": 56,
-  "n_valid_rows": 672,
+  "n_rows": 220,
+  "n_unique_configs": 55,
+  "n_valid_rows": 660,
   "r_calls": 100,
   "raw_files": [
     {
@@ -174,7 +174,7 @@
     {
       "path": "results/raw/sweep_cpu_2026-11-17_shapes.csv",
       "row_count": 240,
-      "sha256": "e028324f33aaa0f2603275b0510da62d49d671201eb420db0e6ab34340ff21be"
+      "sha256": "e15d695469ae42bfc9307f90a879417400432abb3e94470756b4fc01476eb635"
     }
   ],
   "split_manifest": {

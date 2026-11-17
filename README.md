@@ -86,16 +86,18 @@ TASKS.md                actionable project plan and definition of done
 - Phase 1: complete. Six loop families, fresh-process factor sweep with
   correctness checks, measured oracle, and Week 1 risk gate. The 2026-11-17 CPU
   run collected 672 measurements over 56 configurations (3 process repeats,
-  0 errors, 672/672 correct) and the risk gate **passes** with useful distinct
-  factors 1, 2, and 8. See [docs/week1_results.md](docs/week1_results.md).
-- Phase 2: complete. Static Jaxpr features (mean 1.33 ms, median 1.02 ms per
-  configuration), factor-1/fixed/LLVM-size baselines, a 224-row feature/label
-  dataset over 56 configurations, and frozen dev/held-out families. See
+  0 errors); 660/672 rows are correct and 12 rows are excluded because the
+  `dense_matvec`/`n32`/`T=1000` workload diverges to `NaN`. The risk gate
+  **passes** with useful distinct factors 1, 2, and 8. See
+  [docs/week1_results.md](docs/week1_results.md).
+- Phase 2: complete. Static Jaxpr features (mean 0.75 ms, median 0.56 ms per
+  configuration), factor-1/fixed/LLVM-size baselines, a 220-row feature/label
+  dataset over 55 configurations, and frozen dev/held-out families. See
   [docs/week2_results.md](docs/week2_results.md) and
   [docs/features.md](docs/features.md).
 - Phase 3-4: stubs. `model.py`, `selector.py`, and `auto_loop.py` raise
   `NotImplementedError`.
-- Tests: `pytest -q` passes (186 tests on 2026-11-17); it covers workload
+- Tests: `pytest -q` passes (197 tests on 2026-11-17); it covers workload
   correctness across factors, sweep enumeration/schema, measurement-row units,
   oracle aggregation, the risk gate, feature values/parity/no-compile, baseline
   policies, dataset aggregation/join/metadata, and frozen splits.

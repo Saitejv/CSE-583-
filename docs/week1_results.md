@@ -33,9 +33,9 @@ make oracle
 |---|---|
 | Primary raw CSV | `results/raw/sweep_cpu_2026-11-17.csv` (432 rows) |
 | Secondary-shape raw CSV | `results/raw/sweep_cpu_2026-11-17_shapes.csv` (240 rows) |
-| Unique configurations | 56 (36 primary + 20 shape) |
+| Unique configurations | 56 (36 primary + 20 shape); 55 valid |
 | Total measurements | 672 rows, 3 fresh-process repeats each |
-| Correctness | 672/672 rows `correct=True`; 0 error rows |
+| Correctness | 660/672 rows `correct=True`; 0 error rows. The 12 excluded rows are `dense_matvec`/`n32`/`T=1000`, whose `float32` state diverges to `NaN` |
 | Oracle | `results/oracle_cpu_2026-11-17.csv` / `.md` |
 | Risk gate | `results/risk_gate_cpu_2026-11-17.md` |
 | Total-cost views | `results/oracle_cpu_2026-11-17_R{1000,10000}.csv` |
@@ -60,7 +60,7 @@ least 1.05x over factor 1. For a dominant factor of 1, the gain is
 | `elementwise_sine` | 1 | 1.000 | 2.010x | 1.028x | 1 | yes |
 | `jacobi_solver` | 1 | 1.000 | 1.580x | 1.388x | 1 | yes |
 | `reduction_vector` | 1 | 0.875 | 1.107x | 1.010x | 1 | yes |
-| `dense_matvec` | 4 | 0.300 | 1.011x | 1.003x | 1 | no |
+| `dense_matvec` | 4 | 0.333 | 1.011x | 1.003x | 1 | no |
 
 The useful workloads select three distinct factors (`1`, `2`, `8`), so the gate
 passes. The dense matrix-vector family shows no usable signal, which is itself
@@ -108,11 +108,14 @@ Observations:
 
 ## Total-cost caveat
 
-The project objective is `C(u) + R * T(u)`. At `R=100` (the sweep default) and
-even `R=1000`, compilation dominates on this CPU: the oracle's total-cost choice
-is `u=1` for every workload. At `R=10000`, the median total gain becomes 1.052x
-for scalar recurrence (dominant total factor 4) and 1.044x for indexed update
-(dominant factor 2); other workloads remain at 1.0.
+The project objective is `C(u) + R * T(u)`. At `R=100` (the sweep default),
+compilation dominates on this CPU: the total-cost oracle chooses `u=1` for 54 of
+the 55 valid configurations. The one exception is `elementwise_sine`/`n1024`/
+`T=100`, where the non-dividing `u=2` shows a 1.26x total gain. At `R=1000` the
+oracle still chooses `u=1` for 48/55 configurations (5 choose `u=2`, 2 choose
+`u=4`). At `R=10000`, the median total gain becomes 1.049x for scalar
+recurrence (dominant total factor 4) and 1.044x for indexed update (dominant
+factor 2); other workloads remain at 1.0.
 
 This is a real tradeoff, not a contradiction: warm-only choices are useful, but
 the selector must incorporate `R` and the compile budget `B`. Phase 3/4 should
@@ -138,9 +141,10 @@ the oracle and gate artifacts under `results/` are kept.
 - Three fresh-process repeats per configuration; adaptive warm samples reduce
   but do not eliminate timing noise.
 - Correctness compares only the final loop output, within `atol=1e-4`,
-  `rtol=1e-5`.
+  `rtol=1e-5`, and requires finite outputs. The `dense_matvec`/`n32`/`T=1000`
+  configuration diverges to `NaN` and is excluded from the dataset.
 - The shape sweep covers two trip counts (`256`, `1000`), not the full grid.
 - The gate is warm-latency based; the total-cost view is reported separately
   and is compilation-dominated at the default `R`.
-- Phase 2 has not started: no Jaxpr features, learned model, baselines, or
-  held-out split are implemented yet.
+- This report covers Phase 1 only; Phase 2 is summarized in
+  [week2_results.md](week2_results.md).

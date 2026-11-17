@@ -1,6 +1,6 @@
 # Week 1 risk gate (cpu)
 
-- Generated: 2026-11-17T19:35:33Z
+- Generated: 2026-11-17T22:52:57Z
 - Raw source: `results/raw/sweep_cpu_2026-11-17.csv`, `results/raw/sweep_cpu_2026-11-17_shapes.csv`
 - Decision: **PASS**
 - Criterion: at least two workloads with distinct dominant warm factors, each dominant for >= 50% of configurations and with a median warm gain >= 1.05x over factor 1. For a dominant factor of 1, the gain compares u=1 against the worst candidate factor (the regression avoided by not over-unrolling).
@@ -11,7 +11,7 @@
 
 For a dominant factor greater than 1, the gain column is `u=1 / chosen` (speedup over the default). For a dominant factor of 1, it is `worst other candidate / u=1`, the regression avoided by not over-unrolling. The total columns use the same rule on `cold_median_ms + R * warm_median_us / 1000`.
 
-| dense_matvec | dense_linear_algebra | 10 | 4 | 0.300 | 1.0106 | 1.0033 | 1 | 1.9147 | no |
+| dense_matvec | dense_linear_algebra | 9 | 4 | 0.333 | 1.0106 | 1.0033 | 1 | 1.9028 | no |
 | elementwise_sine | elementwise | 10 | 1 | 1.000 | 2.0103 | 1.0281 | 1 | 1.8641 | yes |
 | indexed_update | indexed_memory | 10 | 2 | 0.600 | 1.0662 | 1.0279 | 1 | 1.7233 | yes |
 | jacobi_solver | iterative_solver | 10 | 1 | 1.000 | 1.5804 | 1.3876 | 1 | 7.7593 | yes |

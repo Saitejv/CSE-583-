@@ -102,10 +102,10 @@ rounded at write time (`6` decimals for milliseconds, `3` for microseconds,
 | `r_calls` | int | calls | `R` used for the end-to-end measurement (`--r-calls`). |
 | `stablehlo_bytes` | int | bytes | UTF-8 text length of `lowered.as_text()` (StableHLO text), not a binary artifact size. |
 | `hlo_bytes` | int or empty | bytes | UTF-8 text length of `compiled.as_text()` (optimized HLO text), not a binary artifact size. Empty when the text is unavailable; a note records the exception type. |
-| `correct` | bool | - | `allclose` of the final output against a freshly built `u=1` reference; `True` by definition for `factor == 1`. |
-| `max_abs_diff` | float | absolute | Maximum absolute difference over all output leaves, computed in `float64`; `0.0` for `factor == 1`. |
+| `correct` | bool | - | `allclose` of the final output against a freshly built `u=1` reference, and finite outputs; for `factor == 1`, finiteness of the final output (there is no comparison). |
+| `max_abs_diff` | float | absolute | Maximum absolute difference over all output leaves, computed in `float64`; `0.0` for `factor == 1`. May be `NaN` when the measured output is non-finite. |
 | `error` | str | - | Empty on success. Child exception as `Type: message`, or a harness-failure message including the child exit code and stderr tail. |
-| `notes` | str | - | Semicolon-separated diagnostics: `pilot_call_us=<float>`, `adaptive_samples=<int>`, optional `optimized HLO text unavailable: <Exception>`, or `measurement failed in child process` / `harness failure`. |
+| `notes` | str | - | Semicolon-separated diagnostics: `pilot_call_us=<float>`, `adaptive_samples=<int>`, optional `optimized HLO text unavailable: <Exception>`, non-finite-output markers (`non-finite output at u=1; configuration excluded`, `non-finite output at u=<u>`), or `measurement failed in child process` / `harness failure`. |
 
 ## Measurement protocol
 
@@ -180,23 +180,35 @@ the `cold_total_ms` from the same row; process startup is excluded.
 
 ### Correctness
 
-For `factor == 1`, `correct` is set to `True` and `max_abs_diff` to `0.0`
-without a comparison. For every other factor, after all timing is finished:
+For every row, first require every output leaf to be finite
+(`numpy.isfinite`). A non-finite output means the workload itself diverged (for
+example, a dense recurrence whose `float32` state overflows at a large trip
+count), so it is not a valid correctness reference or performance label.
+
+For `factor == 1`, `correct` is the finiteness of the final output and
+`max_abs_diff` is `0.0` (there is no comparison). For every other factor, after
+all timing is finished:
 
 1. Rebuild the same workload at `factor=1`.
 2. `jit(...).lower(...).compile()` and run it once, synchronized.
-3. Compare the measured row's final output (the last synchronized output from
-   the warm or end-to-end loop) against the reference with
-   `numpy.allclose(..., atol, rtol, equal_nan=True)`.
-4. Use the workload spec's `atol` / `rtol` (currently `1e-4` / `1e-5` for all
+3. Require both the measured row's final output and the reference output to be
+   finite.
+4. Compare them with `numpy.allclose(..., atol, rtol, equal_nan=False)`.
+5. Use the workload spec's `atol` / `rtol` (currently `1e-4` / `1e-5` for all
    workloads).
-5. Compute `max_abs_diff` by casting every paired leaf to `float64`,
+6. Compute `max_abs_diff` by casting every paired leaf to `float64`,
    subtracting, taking the per-leaf maximum, then the maximum over leaves.
 
 Only the final loop output is compared, not intermediate iterations. The
 reference compilation happens after all reported timings, so it does not affect
-them. A factor whose result is not close is marked `correct=False` and is
-dropped by the oracle.
+them. A row whose output is non-finite, or whose result is not close to a finite
+reference, is marked `correct=False` with an explanatory `notes` marker; the
+oracle and dataset builder drop it.
+
+The original Week 1 sweep used `equal_nan=True` and marked `factor == 1` correct
+unconditionally, so a divergent configuration (`dense_matvec`/`n32`/`T=1000`)
+was incorrectly accepted. The harness was fixed on 2026-11-17, those 12 raw rows
+were re-measured, and the dataset was rebuilt (dataset version 2).
 
 ### Failure rows
 
@@ -349,7 +361,7 @@ python -m benchmarks.sweep --backend cpu \
 
 python -m benchmarks.sweep --backend cpu \
     --out "results/raw/sweep_cpu_${DATE}_shapes.csv" \
-    --shapes secondary --trip-counts 256,1000 --repeats 2
+    --shapes secondary --trip-counts 256,1000 --repeats 3
 
 python -m benchmarks.oracle \
     --raw "results/raw/sweep_cpu_${DATE}.csv" \
@@ -463,3 +475,6 @@ Caveats:
   single `R=100` sweep). Phase 3/4 rebuild the table for each `R`/`B` setting.
 - Labels are CPU-only and come from the Week 1 fresh-process sweep; do not mix
   them with GPU rows or different split versions.
+- Dataset version 2 (2026-11-17 follow-up) drops the 12 raw rows for
+  `dense_matvec`/`n32`/`T=1000` because that workload diverges to `NaN`. The
+  `correct` gate now requires finite outputs; see the correctness section.

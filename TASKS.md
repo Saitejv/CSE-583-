@@ -79,13 +79,15 @@ process_repeat, trace_ms, lower_ms, compile_ms, cold_total_ms, warm_median_us,
 warm_p95_us, end_to_end_ms_R, stablehlo_bytes, hlo_bytes, correct, notes
 ```
 
-Acceptance: reproducible sweep command; >=6 families; all factors valid/correct; oracle table reproduced from raw data in one script; gate decision documented. **Met 2026-11-17**: 672/672 rows correct, 0 errors, 56 configurations, 3 process repeats; see `docs/week1_results.md`.
+Acceptance: reproducible sweep command; >=6 families; all factors valid/correct; oracle table reproduced from raw data in one script; gate decision documented. **Met 2026-11-17**: 660/672 rows correct (12 excluded for a divergent `NaN` configuration), 0 errors, 55 valid configurations, 3 process repeats; see `docs/week1_results.md`.
 
 ### Week 1 outcome (2026-11-17)
 
 - Data: 672 measurements over 56 configurations (six families, primary and
   secondary shapes, trip counts 16/64/100/256/1000/1024, factors 1/2/4/8),
-  three fresh-process repeats, all correct.
+  three fresh-process repeats. 660 rows are correct; the 12 rows for
+  `dense_matvec`/`n32`/`T=1000` are excluded because the `float32` state
+  overflows to `NaN`, leaving 55 valid configurations.
 - Gate: PASS. Scalar recurrence favors `u=8` (1.32-1.35x warm at large trip
   counts), indexed update favors `u=2` (1.07x median), sine/Jacobi/reduction
   favor `u=1`; dense matvec has no useful signal.
@@ -112,13 +114,13 @@ Acceptance: reproducible sweep command; >=6 families; all factors valid/correct;
 - [x] T2.5 Dataset builder: join features and sweep labels by configuration key; stable schema; deduplicate; version data and config.
 - [x] T2.6 Define leave-one-family-out splits now; freeze the held-out families before model work.
 
-Acceptance: feature table for all swept configs; tests pass; baseline heuristic implemented and documented; held-out families frozen and recorded. **Met 2026-11-17**: 224-row dataset over 56 configurations (`data/features_cpu_2026-11-17.csv`), 186 tests pass, `llvm_size` baseline documented, split version 1 frozen. See `docs/week2_results.md`.
+Acceptance: feature table for all swept configs; tests pass; baseline heuristic implemented and documented; held-out families frozen and recorded. **Met 2026-11-17**: 220-row dataset over 55 configurations (`data/features_cpu_2026-11-17.csv`), 197 tests pass, `llvm_size` baseline documented, split version 1 frozen. See `docs/week2_results.md`.
 
 ### Week 2 outcome (2026-11-17)
 
-- Features: `src/jax_unroll/features.py` extracts trip/remainder structure, operation mix, tensor footprint, dependence proxies, and work proxies from `jax.make_jaxpr` for `scan` and static-bound `fori_loop` (which traces to `scan` in JAX 0.12; the counter is excluded from state features). No candidate is lowered or compiled. Median extraction cost 1.02 ms (p95 2.07 ms) over 224 configurations.
-- Dataset: `benchmarks/dataset.py` joins features with the Week 1 sweep medians into `data/features_cpu_2026-11-17.csv` (224 rows x 78 columns, 56 configurations, 672 raw rows, 0 dropped) plus a versioned metadata sidecar with raw-file hashes and the split manifest. `B`/`R` context columns are empty until the Phase 3 R/B grid.
-- Baselines: `src/jax_unroll/baselines.py` implements factor 1, fixed 2/4/8, and an LLVM `UnrollThreshold`-style size heuristic. Warm-only sanity check over 56 configurations: factor 1 is the best median warm baseline (1.000x), while `llvm_size` over-unrolls small scan bodies (0.848x median, 46/56 choices u=8). The measured warm oracle uses u=1 31/56, u=2 9/56, u=4 7/56, u=8 9/56; this gap is Phase 3 work.
+- Features: `src/jax_unroll/features.py` extracts trip/remainder structure, operation mix, tensor footprint, dependence proxies, and work proxies from `jax.make_jaxpr` for `scan` and static-bound `fori_loop` (which traces to `scan` in JAX 0.12; the counter is excluded from state features). It also locates loops through `jit`/`pjit` wrappers and supports bare bodies with an explicit `body_num_xs`. No candidate is lowered or compiled. Median extraction cost 0.56 ms (p95 1.13 ms) over 220 configurations.
+- Dataset: `benchmarks/dataset.py` joins features with the Week 1 sweep medians into `data/features_cpu_2026-11-17.csv` (220 rows x 78 columns, 55 configurations, 672 raw rows, 12 dropped as non-finite) plus a versioned metadata sidecar (dataset version 2) with raw-file hashes and the split manifest. `B`/`R` context columns are empty until the Phase 3 R/B grid.
+- Baselines: `src/jax_unroll/baselines.py` implements factor 1, fixed 2/4/8, and an LLVM `UnrollThreshold`-style size heuristic. Warm-only sanity check over 55 configurations: factor 1 is the best median warm baseline (1.000x), while `llvm_size` over-unrolls small scan bodies (0.842x median, 45/55 choices u=8). The measured warm oracle uses u=1 31/55, u=2 9/55, u=4 7/55, u=8 8/55; this gap is Phase 3 work.
 - Splits: split version 1 frozen before model work. Dev = recurrence, elementwise, reduction, dense_linear_algebra; held out = indexed_memory, iterative_solver. LOFO folds over dev families only; see `docs/splits.md`.
 - Full report: `docs/week2_results.md`; feature definitions: `docs/features.md`.
 

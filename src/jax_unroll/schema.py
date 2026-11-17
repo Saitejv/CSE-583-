@@ -16,7 +16,7 @@ TRIP_COUNTS: tuple[int, ...] = (16, 64, 100, 256, 1000, 1024)
 REMAINDER_TRIP_COUNTS: tuple[int, ...] = (100, 1000)
 
 FEATURE_VERSION = 1
-DATASET_VERSION = 1
+DATASET_VERSION = 2
 
 SWEEP_COLUMNS: tuple[str, ...] = (
     "workload",

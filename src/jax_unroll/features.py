@@ -9,7 +9,10 @@ JAX 0.12 traces ``lax.fori_loop`` with Python-integer bounds to the ``scan``
 primitive, so a ``fori_loop`` body is handled by the same code path as
 ``scan``; its integer counter is excluded from the loop-carried state features.
 Dynamic-bound ``fori_loop`` / ``while_loop`` bodies trace to ``while`` and are
-recognized but not fully characterized (see ``docs/features.md``).
+recognized but not fully characterized (see ``docs/features.md``). The fori
+counter is stripped only when the caller requests ``loop_kind="fori_loop"``;
+with no requested kind, the traced primitive is reported as ``loop_kind``
+(``scan`` or ``while``) and the carry is counted as-is.
 """
 
 from __future__ import annotations
@@ -58,7 +61,6 @@ _ELEMENTWISE_PRIMITIVES = frozenset(
         "clamp",
         "complex",
         "conj",
-        "convert_element_type",
         "cos",
         "cosh",
         "digamma",
@@ -187,30 +189,66 @@ def _json_shapes(avals: Sequence[Any]) -> str:
     )
 
 
+def _iter_loop_candidates(
+    jaxpr: core.Jaxpr,
+) -> list[tuple[core.JaxprEqn, str]]:
+    """Collect loop equations, looking through jit/pjit wrappers.
+
+    A jitted loop function traces to a top-level ``jit`` equation whose nested
+    Jaxpr contains the ``scan``/``while``; descending into those wrappers is
+    required for ``extract_features(jax.jit(fn), ...)`` to work. Nested loops
+    inside a loop body are not searched once a loop equation is found.
+    """
+    candidates: list[tuple[core.JaxprEqn, str]] = []
+    for eqn in jaxpr.eqns:
+        primitive = str(eqn.primitive)
+        if primitive in _LOOP_PRIMITIVES:
+            candidates.append((eqn, primitive))
+        elif primitive in _INLINED_PRIMITIVES and "jaxpr" in eqn.params:
+            candidates.extend(_iter_loop_candidates(_as_jaxpr(eqn.params["jaxpr"])))
+    return candidates
+
+
 def _find_loop_eqn(
     jaxpr: core.Jaxpr,
     requested_kind: str | None,
 ) -> tuple[core.JaxprEqn, str]:
-    candidates = [
-        eqn for eqn in jaxpr.eqns if str(eqn.primitive) in _LOOP_PRIMITIVES
-    ]
+    candidates = _iter_loop_candidates(jaxpr)
     if not candidates:
         raise FeatureExtractionError(
             "no scan/while loop found in traced function; pass body_fn=... for a "
             "bare loop body"
         )
+    if len(candidates) > 1:
+        raise FeatureExtractionError(
+            f"found {len(candidates)} scan/while loops in the traced function; "
+            "feature extraction supports exactly one top-level loop per function"
+        )
     if requested_kind == "scan":
-        for eqn in candidates:
-            if str(eqn.primitive) == "scan":
+        for eqn, primitive in candidates:
+            if primitive == "scan":
                 return eqn, "scan"
+        raise FeatureExtractionError(
+            "requested loop_kind='scan' but the traced function contains only a "
+            "while loop; dynamic trip counts are out of scope, so pass "
+            "loop_kind='fori_loop' or use a static-bound loop"
+        )
     if requested_kind == "fori_loop":
-        for eqn in candidates:
-            if str(eqn.primitive) == "scan":
+        for eqn, primitive in candidates:
+            if primitive == "scan":
                 return eqn, "scan"
-        for eqn in candidates:
-            if str(eqn.primitive) == "while":
+        for eqn, primitive in candidates:
+            if primitive == "while":
                 return eqn, "while"
-    return candidates[0], str(candidates[0].primitive)
+    if requested_kind == "while":
+        for eqn, primitive in candidates:
+            if primitive == "while":
+                return eqn, "while"
+        raise FeatureExtractionError(
+            "requested loop_kind='while' but the traced function contains only a "
+            "scan loop; use loop_kind='scan' or 'fori_loop'"
+        )
+    return candidates[0]
 
 
 def _as_jaxpr(value: Any) -> core.Jaxpr:
@@ -266,12 +304,23 @@ def extract_loop_body(
     body_fn: Callable[..., Any] | None = None,
     body_args: Sequence[Any] = (),
     body_num_consts: int = 0,
+    body_num_xs: int = 0,
 ) -> LoopBody:
     """Trace ``fn`` (or ``body_fn``) and return its loop-body structure.
 
-    ``fn`` must contain exactly one top-level ``scan`` or ``while`` loop. When a
-    bare body is supplied through ``body_fn``, the caller states how many leading
-    body inputs are closed-over constants via ``body_num_consts``.
+    ``fn`` must contain exactly one ``scan`` or ``while`` loop; loops behind
+    ``jit``/``pjit`` wrappers are found by descending into the wrapper, and a
+    function with more than one loop raises ``FeatureExtractionError``. When a
+    bare body is supplied through ``body_fn``, the caller states how many
+    leading body inputs are closed-over constants via ``body_num_consts`` and
+    how many trailing body inputs are scanned values via ``body_num_xs``; the
+    remaining inputs are loop-carried state.
+
+    With ``loop_kind=None`` the reported kind is the traced primitive
+    (``scan`` or ``while``) and the carry is counted as-is. Pass
+    ``loop_kind="fori_loop"`` to mark a loop whose carry starts with the
+    ``fori_loop`` counter; only then is that counter stripped from the
+    loop-carried state and output features.
     """
 
     if loop_kind not in {None, "scan", "fori_loop", "while"}:
@@ -286,16 +335,21 @@ def extract_loop_body(
         jaxpr = closed.jaxpr
         kind = loop_kind or "scan"
         num_consts = int(body_num_consts)
+        num_xs = int(body_num_xs)
         if num_consts < 0 or num_consts > len(jaxpr.invars):
             raise ValueError("body_num_consts must be within the body input count")
-        num_carry = len(jaxpr.invars) - num_consts
+        if num_xs < 0 or num_consts + num_xs > len(jaxpr.invars):
+            raise ValueError(
+                "body_num_consts + body_num_xs must be within the body input count"
+            )
+        num_carry = len(jaxpr.invars) - num_consts - num_xs
         return LoopBody(
             loop_kind=kind,
             loop_primitive="body",
             jaxpr=jaxpr,
             num_consts=num_consts,
             num_carry=num_carry,
-            num_xs=0,
+            num_xs=num_xs,
             unroll=None,
             source="body",
         )
@@ -304,7 +358,11 @@ def extract_loop_body(
         raise ValueError("fn or body_fn is required")
     closed = jax.make_jaxpr(fn)(*args)
     eqn, primitive = _find_loop_eqn(closed.jaxpr, loop_kind)
-    kind = loop_kind or ("fori_loop" if primitive == "while" else "scan")
+    # With no requested kind, report the traced primitive verbatim ("scan" or
+    # "while") and count the carry as-is. Counter stripping in
+    # ``extract_features`` only applies to an explicitly requested
+    # ``loop_kind="fori_loop"``, whose loop carries the counter first.
+    kind = loop_kind or primitive
     if primitive == "scan":
         return _parse_scan(eqn, kind)
     return _parse_while(eqn, kind)
@@ -460,12 +518,15 @@ def extract_features(
     body_fn: Callable[..., Any] | None = None,
     body_args: Sequence[Any] = (),
     body_num_consts: int = 0,
+    body_num_xs: int = 0,
 ) -> dict[str, Any]:
     """Return static features for one ``(loop, trip_count, factor)`` configuration.
 
     ``fn`` is traced with :func:`jax.make_jaxpr`; no candidate factor is
-    compiled or timed. When ``body_fn`` is given, it is traced as a bare loop
-    body instead of locating a ``scan``/``while`` equation inside ``fn``.
+    compiled or timed. ``fn`` may be plain or wrapped in ``jax.jit``; the loop
+    is located through ``jit``/``pjit`` wrappers. When ``body_fn`` is given, it
+    is traced as a bare loop body instead of locating a ``scan``/``while``
+    equation inside ``fn``.
     """
 
     _validate_like("trip_count", trip_count)
@@ -487,6 +548,7 @@ def extract_features(
         body_fn=body_fn,
         body_args=body_args,
         body_num_consts=body_num_consts,
+        body_num_xs=body_num_xs,
     )
     jaxpr = loop.jaxpr
 
@@ -504,9 +566,10 @@ def extract_features(
         value.aval
         for value in invars[loop.num_consts + loop.num_carry :]
     ]
-    state_outvars = (
-        outvars[1:] if loop.loop_kind == "fori_loop" and len(outvars) > 1 else outvars
-    )
+    if loop.loop_kind == "fori_loop":
+        state_outvars = outvars[1:] if loop.source == "loop" else outvars
+    else:
+        state_outvars = outvars
     out_avals = [value.aval for value in state_outvars]
     all_input_avals = [value.aval for value in invars]
 

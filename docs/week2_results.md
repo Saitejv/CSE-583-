@@ -18,7 +18,9 @@ leave-one-family-out splits. No cost model or selector has been trained yet;
 
 ## Dataset
 
-Built from the Week 1 CPU sweeps (no new measurements):
+Built from the Week 1 CPU sweeps, with the 12 rows of the divergent
+`dense_matvec`/`n32`/`T=1000` configuration re-measured under the fixed
+correctness gate (dataset version 2):
 
 ```bash
 make dataset
@@ -30,12 +32,12 @@ make dataset
 
 | Property | Value |
 |---|---|
-| Raw rows | 672 (0 dropped, 672 correct) |
-| Dataset rows (configuration x factor) | 224 |
-| Unique configurations (excluding factor) | 56 |
+| Raw rows | 672 (12 dropped, 660 correct) |
+| Dataset rows (configuration x factor) | 220 |
+| Unique configurations (excluding factor) | 55 |
 | Columns | 78 (`DATASET_COLUMNS`) |
 | Families | 6 |
-| Dev rows / holdout rows | 144 / 80 |
+| Dev rows / holdout rows | 140 / 80 |
 | Backend / device | cpu / cpu:0 |
 | JAX / jaxlib | 0.12.0.1 / 0.12.0.1 |
 | Labels | Median `C` (`cold_median_ms`), `T` (`warm_median_us`), end-to-end at `R=100`; natural-log labels included |
@@ -45,6 +47,13 @@ versions, git commit, raw file SHA-256 hashes, row counts, device/backend,
 derived build config (workloads, families, variants, trip counts, factors,
 `R`), extraction timing, and the full frozen split manifest. The CSV has a `split`
 column (`dev`/`holdout`) so Phase 3 can filter without re-deriving splits.
+
+The 12 dropped raw rows are one divergent configuration,
+`dense_matvec`/`n32`/`T=1000` (all four factors, three repeats each): its
+`float32` state overflows to `NaN`, so it has no finite `u=1` reference and is
+not a valid correctness label. This is a property of the numerical workload,
+not a harness failure. The follow-up audit that found it is recorded in
+[`phase2_audit.md`](phase2_audit.md).
 
 `B` and `R` feature columns are empty in this dataset because the Week 1 sweeps
 used no budget and a single `R=100` horizon. Phase 3/4 will rebuild candidate
@@ -70,12 +79,12 @@ only the 32x32 grid state. `docs/features.md` defines every column.
 
 ## Extraction cost
 
-Over all 224 dataset rows (`extraction_ms`, one `jax.make_jaxpr` trace plus
+Over all 220 dataset rows (`extraction_ms`, one `jax.make_jaxpr` trace plus
 feature computation per row, Apple M2 CPU):
 
 | Mean | Median | p95 |
 |---:|---:|---:|
-| 1.33 ms | 1.02 ms | 2.07 ms |
+| 0.75 ms | 0.56 ms | 1.13 ms |
 
 Extraction never lowers, compiles, or times a factor; `tests/test_features.py`
 asserts this by making `jax.jit` raise during extraction. These numbers are
@@ -94,26 +103,27 @@ end-to-end cost).
   (default 128 equations), else 1. It ignores remainder, memory, and
   dependences.
 
-On all 56 measured configurations (warm latency only; Phase 2 has no learned
+On all 55 measured configurations (warm latency only; Phase 2 has no learned
 selector, so this is a baseline probe, not the final evaluation):
 
 | Policy | Median warm gain vs `u=1` | Mean warm gain | Factor agreement with warm oracle | Choices |
 |---|---:|---:|---:|---|
-| `factor_1` | 1.000x | 1.000x | 55.4% | 56 x `u=1` |
-| `factor_2` | 0.994x | 0.952x | 16.1% | 56 x `u=2` |
-| `factor_4` | 0.975x | 0.885x | 12.5% | 56 x `u=4` |
-| `factor_8` | 0.848x | 0.820x | 16.1% | 56 x `u=8` |
-| `llvm_size` | 0.848x | 0.824x | 16.1% | 46 x `u=8`, 10 x `u=4` |
+| `factor_1` | 1.000x | 1.000x | 56.4% | 55 x `u=1` |
+| `factor_2` | 0.993x | 0.951x | 16.4% | 55 x `u=2` |
+| `factor_4` | 0.970x | 0.883x | 12.7% | 55 x `u=4` |
+| `factor_8` | 0.842x | 0.816x | 14.5% | 55 x `u=8` |
+| `llvm_size` | 0.842x | 0.820x | 14.5% | 45 x `u=8`, 10 x `u=4` |
 
-The measured warm oracle chooses `u=1` for 31/56 configurations, `u=2` for 9,
-`u=4` for 7, and `u=8` for 9. The size heuristic over-unrolls small scan bodies
+The measured warm oracle chooses `u=1` for 31/55 configurations, `u=2` for 9,
+`u=4` for 7, and `u=8` for 8. The size heuristic over-unrolls small scan bodies
 (most have only 2-3 equations) and therefore loses to `u=1` on median warm
 latency, while the scalar-recurrence and indexed-memory families contain the
-real gains. At `R=100`, compilation dominates and the total-cost oracle chooses
-`u=1` for 55/56 configurations; Phase 3 must sweep `R` and `B` rather than
-inherit this horizon. These are exactly the cases the learned selector has to
-separate using static features (dependences, operation mix, footprint, trip
-structure).
+real gains. At `R=100`, compilation dominates: the total-cost oracle chooses
+`u=1` for 54/55 configurations, with a single `u=2` choice for the non-dividing
+`elementwise_sine`/`n1024`/`T=100` case (1.26x total gain). Phase 3 must sweep
+`R` and `B` rather than inherit this horizon. These are exactly the cases the
+learned selector has to separate using static features (dependences, operation
+mix, footprint, trip structure).
 
 ## Frozen splits
 
@@ -131,7 +141,7 @@ change control.
 
 ```bash
 source .venv/bin/activate
-make test          # 186 passed on 2026-11-17
+make test          # 197 passed on 2026-11-17
 make dataset       # rebuild data/features_cpu_2026-11-17.csv + metadata
 ```
 
@@ -144,7 +154,9 @@ dataset builder are deterministic for a fixed JAX/device.
 
 - CPU-only Apple M2 results; no GPU claims.
 - Labels come from the Week 1 `R=100` sweeps, already aggregated over three
-  fresh-process repeats per configuration.
+  fresh-process repeats per configuration. The 12 rows for
+  `dense_matvec`/`n32`/`T=1000` are excluded because the workload itself produces
+  non-finite outputs (see above); dataset version 2 records this rebuild.
 - `B`/`R` context columns are unpopulated in this dataset; Phase 3 will build
   the `R`/`B` grid from the same sweep harness.
 - `body_hash` is structural and factor-independent; shapes, constants, and trip

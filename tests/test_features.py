@@ -189,6 +189,158 @@ def test_extract_loop_body_without_loop_raises():
         )
 
 
+def test_jitted_function_loop_is_found():
+    width = 8
+
+    def step(carry, x):
+        return jnp.sin(carry + x), None
+
+    def fn(init, xs_val):
+        carry, _ = lax.scan(step, init, xs_val, unroll=2)
+        return carry
+
+    args = (
+        jnp.zeros((width,), dtype=jnp.float32),
+        jnp.ones((16, width), dtype=jnp.float32),
+    )
+    plain = extract_features(fn, args, loop_kind="scan", trip_count=16, factor=2)
+    jitted = extract_features(
+        jax.jit(fn), args, loop_kind="scan", trip_count=16, factor=2
+    )
+
+    assert jitted["loop_primitive"] == "scan"
+    for column in FEATURE_COLUMNS:
+        if column == "extraction_ms":
+            continue
+        assert jitted[column] == plain[column], column
+
+
+def test_scan_kind_requested_for_dynamic_loop_raises():
+    def body(i, carry):
+        return carry + 1.0
+
+    def dynamic_fn(carry):
+        upper = jnp.asarray(16)
+        return lax.fori_loop(0, upper, body, carry)
+
+    with pytest.raises(FeatureExtractionError, match="dynamic trip counts"):
+        extract_features(
+            dynamic_fn,
+            (jnp.zeros((4,), dtype=jnp.float32),),
+            loop_kind="scan",
+            trip_count=16,
+            factor=1,
+        )
+
+
+def test_raw_while_loop_counts_carry_without_requested_kind():
+    def fn(carry):
+        def body(c):
+            a, b = c
+            return (a + 1.0, b * 2.0)
+
+        return lax.while_loop(lambda c: c[0] < 10, body, carry)
+
+    args = ((jnp.float32(0.0), jnp.ones(4)),)
+    inferred = extract_features(fn, args, trip_count=16, factor=1)
+    explicit = extract_features(fn, args, loop_kind="while", trip_count=16, factor=1)
+
+    assert inferred["loop_kind"] == "while"
+    for features in (inferred, explicit):
+        assert features["loop_primitive"] == "while"
+        assert features["num_carry"] == 2
+        assert features["num_loop_carried"] == 2
+        assert features["carry_bytes"] == 4 + 4 * 4
+        assert features["output_bytes"] == 4 + 4 * 4
+
+
+def test_single_carry_while_loop_is_not_treated_as_fori_counter():
+    def fn(carry):
+        return lax.while_loop(lambda c: c < 10, lambda c: c + 1.0, carry)
+
+    features = extract_features(
+        fn, (jnp.float32(0.0),), trip_count=16, factor=1
+    )
+    assert features["loop_kind"] == "while"
+    assert features["num_loop_carried"] == 1
+    assert features["carry_bytes"] == 4
+    assert features["output_bytes"] == 4
+
+
+def test_unrequested_kind_reports_traced_primitive():
+    # A static-bound fori_loop traces to scan; with no requested kind the
+    # reported kind is the traced primitive and the carry is counted as-is,
+    # so the counter stays in the (upper-bound) loop-carried state.
+    def fn(init):
+        return lax.fori_loop(0, 16, lambda i, c: c + 1.0, init)
+
+    features = extract_features(fn, (jnp.zeros(4,),), trip_count=16, factor=1)
+    assert features["loop_kind"] == "scan"
+    assert features["loop_primitive"] == "scan"
+    assert features["num_loop_carried"] == features["num_carry"]
+
+
+def test_dynamic_fori_loop_strips_counter_when_requested():
+    def fn(carry):
+        upper = jnp.asarray(16)
+        return lax.fori_loop(0, upper, lambda i, c: c + 1.0, carry)
+
+    loop = extract_loop_body(fn, (jnp.zeros(4,),), loop_kind="fori_loop")
+    features = extract_features(
+        fn, (jnp.zeros(4,),), loop_kind="fori_loop", trip_count=16, factor=1
+    )
+    assert loop.loop_primitive == "while"
+    assert features["loop_primitive"] == "while"
+    # The leading counter is stripped; any remaining bound scalars leave
+    # num_loop_carried as an upper bound (documented for dynamic loops).
+    assert features["num_loop_carried"] == features["num_carry"] - 1
+
+
+def test_multiple_loops_raise():
+    def fn(init, xs):
+        c1, _ = lax.scan(lambda c, x: (c + x, None), init, xs)
+        c2, _ = lax.scan(lambda c, x: (c * x, None), c1, xs)
+        return c2
+
+    args = (jnp.zeros(4,), jnp.ones((8, 4)))
+    with pytest.raises(FeatureExtractionError, match="exactly one"):
+        extract_features(fn, args, trip_count=16, factor=1)
+    with pytest.raises(FeatureExtractionError, match="exactly one"):
+        extract_loop_body(fn, args)
+
+
+def test_bare_scan_body_separates_xs_from_carry():
+    width = 4
+
+    def step(carry, x):
+        return carry + x, None
+
+    features = extract_features(
+        body_fn=step,
+        body_args=(jnp.zeros((width,)), jnp.ones((width,))),
+        loop_kind="scan",
+        trip_count=16,
+        factor=2,
+        body_num_xs=1,
+    )
+    assert features["loop_primitive"] == "body"
+    assert features["num_carry"] == 1
+    assert features["num_loop_carried"] == 1
+    assert features["num_xs"] == 1
+    assert features["carry_bytes"] == width * 4
+    assert features["xs_bytes"] == width * 4
+
+    with pytest.raises(ValueError, match="body_num_consts \\+ body_num_xs"):
+        extract_features(
+            body_fn=step,
+            body_args=(jnp.zeros((width,)), jnp.ones((width,))),
+            loop_kind="scan",
+            trip_count=16,
+            factor=2,
+            body_num_xs=3,
+        )
+
+
 def test_bare_body_extraction():
     width = 4
 
@@ -244,3 +396,44 @@ def test_invalid_arguments_are_rejected():
             trip_count=1,
             factor=1,
         )
+
+
+def test_bare_body_fori_loop_multi_carry():
+    def multi_carry_body(i, carry):
+        a, b = carry
+        return a + i.astype(jnp.float32), b * 2.0
+
+    features = extract_features(
+        body_fn=multi_carry_body,
+        body_args=(jnp.int32(0), (jnp.zeros(4, dtype=jnp.float32), jnp.zeros(8, dtype=jnp.float32))),
+        loop_kind="fori_loop",
+        trip_count=16,
+        factor=2,
+    )
+    assert features["loop_kind"] == "fori_loop"
+    assert features["loop_primitive"] == "body"
+    assert features["num_loop_carried"] == 2
+    assert features["carry_bytes"] == (4 + 8) * 4
+    assert features["output_bytes"] == (4 + 8) * 4
+    assert features["output_elements"] == 12
+    assert features["output_shapes"] == "[[4],[8]]"
+
+
+def test_fori_loop_empty_carry():
+    def empty_carry_fn():
+        return lax.fori_loop(0, 16, lambda i, _: (), ())
+
+    features = extract_features(
+        empty_carry_fn,
+        (),
+        loop_kind="fori_loop",
+        trip_count=16,
+        factor=1,
+    )
+    assert features["loop_kind"] == "fori_loop"
+    assert features["num_loop_carried"] == 0
+    assert features["carry_bytes"] == 0
+    assert features["output_bytes"] == 0
+    assert features["output_elements"] == 0
+    assert features["output_shapes"] == "[]"
+

@@ -2,7 +2,6 @@ workload,family,variant,loop_kind,backend,device,trip_count,shape,dtype,divides_
 dense_matvec,dense_linear_algebra,n128,scan,cpu,cpu:0,256,"{""carry"":[128],""matrix"":[128,128],""xs"":[256,128]}",float32,True,3,31.348499,275.646,8,275.25,1.001439,1,2787.808499,2787.808499,1.0,0
 dense_matvec,dense_linear_algebra,n128,scan,cpu,cpu:0,1000,"{""carry"":[128],""matrix"":[128,128],""xs"":[1000,128]}",float32,True,3,32.524709,1032.979,4,1022.125,1.010619,4,10268.621416,10362.314709,1.009124,1
 dense_matvec,dense_linear_algebra,n32,scan,cpu,cpu:0,256,"{""carry"":[32],""matrix"":[32,32],""xs"":[256,32]}",float32,True,3,33.597291,35.708,8,34.791,1.026357,1,390.677291,390.677291,1.0,0
-dense_matvec,dense_linear_algebra,n32,scan,cpu,cpu:0,1000,"{""carry"":[32],""matrix"":[32,32],""xs"":[1000,32]}",float32,True,3,31.424792,90.125,8,86.771,1.038653,1,932.674792,932.674792,1.0,0
 dense_matvec,dense_linear_algebra,n64,scan,cpu,cpu:0,16,"{""carry"":[64],""matrix"":[64,64],""xs"":[16,64]}",float32,True,3,26.619166,16.375,4,16.02,1.02216,1,190.369166,190.369166,1.0,0
 dense_matvec,dense_linear_algebra,n64,scan,cpu,cpu:0,64,"{""carry"":[64],""matrix"":[64,64],""xs"":[64,64]}",float32,True,3,26.933,33.916,1,33.916,1.0,1,366.093,366.093,1.0,1
 dense_matvec,dense_linear_algebra,n64,scan,cpu,cpu:0,100,"{""carry"":[64],""matrix"":[64,64],""xs"":[100,64]}",float32,True,3,27.090792,43.395,2,43.333,1.001431,1,461.040792,461.040792,1.0,0

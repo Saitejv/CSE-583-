@@ -5,9 +5,16 @@ import io
 from collections import Counter
 
 import jax
+import numpy as np
 import pytest
 
-from benchmarks.sweep import _empty_row, enumerate_configs, measure_config
+from benchmarks.sweep import (
+    _all_finite,
+    _allclose,
+    _empty_row,
+    enumerate_configs,
+    measure_config,
+)
 from benchmarks.workloads import WORKLOADS
 from jax_unroll.schema import FACTORS, SWEEP_COLUMNS, TRIP_COUNTS
 
@@ -36,6 +43,24 @@ def test_sweep_columns_match_dictwriter_header():
     assert parsed[0] == list(SWEEP_COLUMNS)
     assert len(parsed[1]) == len(SWEEP_COLUMNS)
     assert parsed[1][0] == "scalar_recurrence"
+
+
+def test_correctness_rejects_nan_and_nonfinite_outputs():
+    good = np.array([1.0, 2.0])
+    nan = np.array([1.0, np.nan])
+    inf = np.array([1.0, np.inf])
+
+    assert _all_finite(good) is True
+    assert _all_finite(nan) is False
+    assert _all_finite(inf) is False
+
+    assert _allclose(good, good, atol=1e-4, rtol=1e-5) is True
+    assert _allclose(nan, nan, atol=1e-4, rtol=1e-5) is False
+    assert _allclose(good, np.array([1.0, 2.5]), atol=1e-4, rtol=1e-5) is False
+    # np.allclose treats matching infinities as equal; _all_finite is the
+    # separate gate that rejects them in the measurement path.
+    assert _allclose(inf, inf, atol=1e-4, rtol=1e-5) is True
+    assert not (_all_finite(inf) and _allclose(inf, inf, atol=1e-4, rtol=1e-5))
 
 
 def test_enumerate_configs_repeat_count_and_total():

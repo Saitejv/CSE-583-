@@ -21,27 +21,38 @@ workload = build_workload("scalar_recurrence", trip_count=100, factor=4)
 features = extract_features_from_workload(workload, B=250.0, R=1000)
 
 # Or extract from any function containing one top-level scan/while loop:
+# (plain or wrapped in jax.jit; jit/pjit wrappers are descended into)
 features = extract_features(
     fn, (init, xs), loop_kind="scan", trip_count=100, factor=4
 )
 
 # Or from a bare loop body whose call signature is (carry, x) / (i, carry):
+# body_num_consts counts leading closed-over constants; body_num_xs counts
+# trailing scanned values. The remaining inputs are loop-carried state.
 features = extract_features(
     body_fn=step, body_args=(init, x0), loop_kind="scan",
-    trip_count=100, factor=4, body_num_consts=0,
+    trip_count=100, factor=4, body_num_consts=0, body_num_xs=1,
 )
 
 loop = extract_loop_body(fn, (init, xs), loop_kind="scan")
 ```
 
-`loop_kind` is the requested/known kind (`scan` or `fori_loop`); it is part of
-the dataset join key. `loop_primitive` records what tracing actually found:
-`scan` (including static-bound `fori_loop` in JAX 0.12), `while` (dynamic
-bounds), or `body` (bare-body extraction).
+`loop_kind` is the requested kind (`scan`, `fori_loop`, or `while`); it is part
+of the dataset join key. With `loop_kind=None`, the traced primitive is reported
+verbatim (`scan` or `while`) and the carry is counted as-is. `loop_primitive`
+records what tracing actually found: `scan` (including static-bound
+`fori_loop` in JAX 0.12), `while` (dynamic bounds), or `body` (bare-body
+extraction). Passing `loop_kind="fori_loop"` marks a loop whose carry starts
+with the `fori_loop` counter; only then is that counter stripped from the
+loop-carried state and output features. Note that a static-bound `fori_loop`
+requested as `loop_kind="scan"` also keeps the counter in the carry.
 
-Extraction raises `FeatureExtractionError` when no loop is found and
-`ValueError` for invalid trip counts, factors, budgets, or unknown loop kinds.
-It does not silently fall back; the Phase 3 selector owns fallback behavior.
+Extraction raises `FeatureExtractionError` when no loop is found, when the
+traced function contains more than one `scan`/`while` loop, when the requested
+`loop_kind` does not match the loop that was found (for example `scan`
+requested for a dynamic-bound `while`), and for unsupported loop containers. `ValueError` is raised for invalid trip counts, factors, budgets,
+unknown loop kinds, or inconsistent `body_num_consts`/`body_num_xs`. It does not
+silently fall back; the Phase 3 selector owns fallback behavior.
 
 ## Feature groups
 
@@ -52,7 +63,7 @@ Units and definitions:
 
 | Column | Type | Definition |
 |---|---|---|
-| `loop_kind` | str | Requested loop kind: `scan` or `fori_loop`. |
+| `loop_kind` | str | Requested loop kind (`scan`, `fori_loop`, or `while`); with `loop_kind=None` this is the traced primitive (`scan` or `while`). |
 | `loop_primitive` | str | Traced container: `scan`, `while`, or `body`. |
 | `trip_count` | int | Static trip count `T`. |
 | `factor` | int | Candidate unroll factor `u`. |
@@ -121,6 +132,8 @@ Units and definitions:
 Captured:
 
 - Static body structure for `lax.scan` and static-bound `lax.fori_loop`.
+- Loops behind `jit`/`pjit` wrappers: tracing descends into the wrapper to find
+  the `scan`/`while` equation.
 - In JAX 0.12, `fori_loop` with Python-integer bounds traces to `scan`; the
   counter is identified by loop kind and removed from carry/output state
   features. It remains in raw `num_carry`, `num_invars`, and `num_outvars`.
@@ -140,9 +153,14 @@ Not captured:
   inlined.
 - Dynamic trip counts and dynamic-bound `fori_loop`: these trace to `while`.
   They are recognized (`loop_primitive == "while"`) but the while body also
-  carries bound/counter values, so `num_loop_carried` is an upper bound and
+  carries bound/counter values. Without a requested kind the raw carry is
+  counted as-is, so `num_loop_carried` is an upper bound; with an explicitly
+  requested `loop_kind="fori_loop"` the leading counter is stripped, though any
+  remaining bound scalars still leave `num_loop_carried` as an upper bound, and
   tail/remainder features do not describe XLA's runtime behavior. This project
   is scoped to fixed trip counts.
+- Functions with more than one top-level `scan`/`while` loop: extraction
+  raises instead of guessing.
 - Autodiff/transpose-specific effects and arbitrary nested user control flow.
 - Cost-model targets: `C(u)` and `T(u)` are measurement labels joined later by
   `benchmarks/dataset.py`, not features.
@@ -153,15 +171,15 @@ Extraction only calls `jax.make_jaxpr` and Python feature code. It never calls
 `.lower()`, `.compile()`, `jax.jit`, or any timing loop. `tests/test_features.py`
 monkeypatches `jax.jit` to fail during extraction to guard this property.
 
-Measured over the 224 configurations in
+Measured over the 220 configurations in
 `data/features_cpu_2026-11-17.csv` (Apple M2 CPU, JAX/jaxlib 0.12.0.1,
-2026-11-17), `extraction_ms` was:
+2026-11-17, dataset version 2), `extraction_ms` was:
 
 | Statistic | Value |
 |---|---:|
-| Mean | 1.33 ms |
-| Median | 1.02 ms |
-| p95 | 2.07 ms |
+| Mean | 0.75 ms |
+| Median | 0.56 ms |
+| p95 | 1.13 ms |
 
 The metadata sidecar for every dataset records these statistics. Traced
 functions are small and use static shapes, so cost is milliseconds, not
