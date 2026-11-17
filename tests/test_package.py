@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 import jax_unroll
-from jax_unroll import auto_loop, features, model, selector
+from jax_unroll import auto_loop, features
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,22 +22,6 @@ def test_phase_two_feature_api_is_implemented():
     assert callable(features.extract_features)
     assert callable(features.extract_features_from_workload)
     assert callable(features.extract_loop_body)
-
-
-def test_cost_model_stubs_are_phase_three():
-    cost_model = model.CostModel()
-    with pytest.raises(NotImplementedError, match="Phase 3"):
-        cost_model.fit()
-    with pytest.raises(NotImplementedError, match="Phase 3"):
-        cost_model.predict()
-
-
-def test_select_factor_is_a_phase_three_stub():
-    with pytest.raises(NotImplementedError) as excinfo:
-        selector.select_factor()
-    message = str(excinfo.value)
-    assert "Phase 3" in message
-    assert "T3.3" in message
 
 
 def test_auto_scan_is_a_phase_four_stub():

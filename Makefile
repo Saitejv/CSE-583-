@@ -15,9 +15,13 @@ SWEEP_ARGS ?= --repeats 3
 SHAPE_ARGS ?= --shapes secondary --trip-counts 256,1000 --repeats 3
 ORACLE_ARGS ?= --r-calls 100
 DATASET_OUT ?= data/features_$(BACKEND)_$(DATE).csv
+MODEL_DATA ?= data/features_cpu_2026-11-17.csv
+MODEL_DIR ?= models
+MODEL_OUT := $(MODEL_DIR)/cost_cpu.json
+OVERHEAD_OUT ?= results/selector_cpu_$(DATE)_overhead.json
 RAW_FILES ?= $(filter-out %_quick.csv,$(wildcard results/raw/sweep_$(BACKEND)_*.csv))
 
-.PHONY: help test list sweep sweep-shapes sweep-all oracle dataset quick train evaluate clean-results
+.PHONY: help test list sweep sweep-shapes sweep-all oracle dataset quick train decision-overhead evaluate clean-results
 
 help:
 	@echo "make test         run pytest"
@@ -28,8 +32,9 @@ help:
 	@echo "make oracle       aggregate raw rows into oracle table + risk gate"
 	@echo "make dataset      join static features with sweep labels (Phase 2)"
 	@echo "make quick        small smoke sweep (use for harness checks)"
-	@echo "make train        Phase 3 placeholder"
-	@echo "make evaluate     Phase 4 placeholder"
+	@echo "make train        train and freeze a dev-only cost model"
+	@echo "make decision-overhead   measure the static selector on CPU"
+	@echo "make evaluate     evaluate dev LOFO policies (holdout is an explicit gate)"
 
 test:
 	$(PYTHON) -m pytest -q
@@ -61,10 +66,16 @@ quick:
 		--repeats 1 --limit 12 --sample-budget-ms 50 --r-calls 5
 
 train:
-	$(PYTHON) -m jax_unroll.train --data $(SWEEP_OUT) --out models/
+	$(PYTHON) -m jax_unroll.train --data $(MODEL_DATA) --out $(MODEL_DIR)
 
-evaluate:
-	$(PYTHON) -m benchmarks.evaluate --config configs/default.yaml
+decision-overhead:
+	$(PYTHON) -m benchmarks.decision_overhead --model $(MODEL_OUT) --out $(OVERHEAD_OUT)
+
+$(OVERHEAD_OUT): $(MODEL_OUT)
+	$(PYTHON) -m benchmarks.decision_overhead --model $(MODEL_OUT) --out $@
+
+evaluate: $(OVERHEAD_OUT)
+	$(PYTHON) -m benchmarks.evaluate --data $(MODEL_DATA) --model $(MODEL_OUT) --overhead $(OVERHEAD_OUT)
 
 clean-results:
 	rm -f results/raw/sweep_$(BACKEND)_$(DATE)*.csv
