@@ -1,0 +1,255 @@
+{
+  "backend": "cpu",
+  "config": {
+    "backend": "cpu",
+    "builder": "benchmarks.dataset",
+    "factors": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "families": [
+      "dense_linear_algebra",
+      "elementwise",
+      "indexed_memory",
+      "iterative_solver",
+      "recurrence",
+      "reduction"
+    ],
+    "r_calls": 100,
+    "raw_files": [
+      "results/raw/sweep_cpu_2026-11-17.csv",
+      "results/raw/sweep_cpu_2026-11-17_shapes.csv"
+    ],
+    "trip_counts": [
+      16,
+      64,
+      100,
+      256,
+      1000,
+      1024
+    ],
+    "variants": [
+      "n1024",
+      "n128",
+      "n16",
+      "n256",
+      "n32",
+      "n4096",
+      "n64",
+      "scalar",
+      "vector8"
+    ],
+    "workloads": [
+      "dense_matvec",
+      "elementwise_sine",
+      "indexed_update",
+      "jacobi_solver",
+      "reduction_vector",
+      "scalar_recurrence"
+    ]
+  },
+  "created_utc": "2026-11-17T22:16:07Z",
+  "dataset_version": 1,
+  "dev_families": [
+    "recurrence",
+    "elementwise",
+    "reduction",
+    "dense_linear_algebra"
+  ],
+  "device": "cpu:0",
+  "extraction_ms": {
+    "mean": 1.330849585688806,
+    "median": 1.0202915000263602,
+    "p95": 2.070131187792867
+  },
+  "extraction_ms_mean": 1.330849585688806,
+  "extraction_ms_median": 1.0202915000263602,
+  "extraction_ms_p95": 2.070131187792867,
+  "families": [
+    "dense_linear_algebra",
+    "elementwise",
+    "indexed_memory",
+    "iterative_solver",
+    "recurrence",
+    "reduction"
+  ],
+  "feature_columns": [
+    "loop_kind",
+    "loop_primitive",
+    "trip_count",
+    "factor",
+    "full_chunks",
+    "remainder",
+    "remainder_ratio",
+    "divides_evenly",
+    "has_tail",
+    "factor_over_trip",
+    "backend",
+    "device",
+    "dtype_bits",
+    "B",
+    "R",
+    "num_consts",
+    "num_carry",
+    "num_loop_carried",
+    "num_xs",
+    "num_invars",
+    "num_outvars",
+    "num_equations",
+    "unrolled_equations",
+    "eq_elementwise",
+    "eq_dot",
+    "eq_reduce",
+    "eq_gather_scatter",
+    "eq_convert",
+    "eq_other",
+    "carry_bytes",
+    "xs_bytes",
+    "const_bytes",
+    "input_bytes",
+    "output_bytes",
+    "intermediate_bytes",
+    "max_tensor_bytes",
+    "bytes_moved_proxy",
+    "input_elements",
+    "output_elements",
+    "carry_elements",
+    "max_rank",
+    "carry_shapes",
+    "const_shapes",
+    "input_shapes",
+    "output_shapes",
+    "dtypes",
+    "longest_path",
+    "max_out_degree",
+    "num_feed_forward_values",
+    "dependence_density",
+    "flops_proxy",
+    "arithmetic_intensity_proxy",
+    "equations_per_iteration",
+    "body_hash",
+    "extraction_ms"
+  ],
+  "feature_version": 1,
+  "git_commit": "0ad979d",
+  "held_out_families": [
+    "indexed_memory",
+    "iterative_solver"
+  ],
+  "jax_version": "0.12.0.1",
+  "jaxlib_version": "0.12.0.1",
+  "label_columns": [
+    "repeats",
+    "divides_trip",
+    "correct_all",
+    "trace_median_ms",
+    "lower_median_ms",
+    "compile_median_ms",
+    "cold_median_ms",
+    "warm_median_us",
+    "warm_p95_us",
+    "warm_min_us",
+    "warm_std_us",
+    "stablehlo_bytes_median",
+    "hlo_bytes_median",
+    "end_to_end_median_ms",
+    "r_calls",
+    "log_cold_ms",
+    "log_warm_us"
+  ],
+  "n_dropped_rows": 0,
+  "n_raw_rows": 672,
+  "n_rows": 224,
+  "n_unique_configs": 56,
+  "n_valid_rows": 672,
+  "r_calls": 100,
+  "raw_files": [
+    {
+      "path": "results/raw/sweep_cpu_2026-11-17.csv",
+      "row_count": 432,
+      "sha256": "7991a9b0a770d632c5d0e70106f5c688834619262c094ee23e638dec96fa7460"
+    },
+    {
+      "path": "results/raw/sweep_cpu_2026-11-17_shapes.csv",
+      "row_count": 240,
+      "sha256": "e028324f33aaa0f2603275b0510da62d49d671201eb420db0e6ab34340ff21be"
+    }
+  ],
+  "split_manifest": {
+    "all_families": [
+      "recurrence",
+      "elementwise",
+      "reduction",
+      "dense_linear_algebra",
+      "indexed_memory",
+      "iterative_solver"
+    ],
+    "dev_families": [
+      "recurrence",
+      "elementwise",
+      "reduction",
+      "dense_linear_algebra"
+    ],
+    "final_dev": [
+      "recurrence",
+      "elementwise",
+      "reduction",
+      "dense_linear_algebra"
+    ],
+    "final_holdout": [
+      "indexed_memory",
+      "iterative_solver"
+    ],
+    "frozen_date": "2026-11-17",
+    "held_out_families": [
+      "indexed_memory",
+      "iterative_solver"
+    ],
+    "lofo_folds": {
+      "lofo_dense_linear_algebra": {
+        "test": [
+          "dense_linear_algebra"
+        ],
+        "train": [
+          "recurrence",
+          "elementwise",
+          "reduction"
+        ]
+      },
+      "lofo_elementwise": {
+        "test": [
+          "elementwise"
+        ],
+        "train": [
+          "recurrence",
+          "reduction",
+          "dense_linear_algebra"
+        ]
+      },
+      "lofo_recurrence": {
+        "test": [
+          "recurrence"
+        ],
+        "train": [
+          "elementwise",
+          "reduction",
+          "dense_linear_algebra"
+        ]
+      },
+      "lofo_reduction": {
+        "test": [
+          "reduction"
+        ],
+        "train": [
+          "recurrence",
+          "elementwise",
+          "dense_linear_algebra"
+        ]
+      }
+    },
+    "split_version": 1
+  },
+  "split_version": 1
+}
