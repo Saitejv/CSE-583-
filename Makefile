@@ -21,7 +21,7 @@ MODEL_OUT := $(MODEL_DIR)/cost_cpu.json
 OVERHEAD_OUT ?= results/selector_cpu_$(DATE)_overhead.json
 RAW_FILES ?= $(filter-out %_quick.csv,$(wildcard results/raw/sweep_$(BACKEND)_*.csv))
 
-.PHONY: help test list sweep sweep-shapes sweep-all oracle dataset quick train decision-overhead evaluate clean-results
+.PHONY: help test list sweep sweep-shapes sweep-all oracle dataset quick train decision-overhead evaluate recovery-train recovery-verify verify-week3 clean-results
 
 help:
 	@echo "make test         run pytest"
@@ -35,6 +35,9 @@ help:
 	@echo "make train        train and freeze a dev-only cost model"
 	@echo "make decision-overhead   measure the static selector on CPU"
 	@echo "make evaluate     evaluate dev LOFO policies (holdout is an explicit gate)"
+	@echo "make recovery-train   reproduce frozen recovery dev outputs without overwriting"
+	@echo "make recovery-verify  verify the one-shot recovery confirmation record"
+	@echo "make verify-week3     rebuild and replay the archived dataset and gates"
 
 test:
 	$(PYTHON) -m pytest -q
@@ -76,6 +79,21 @@ $(OVERHEAD_OUT): $(MODEL_OUT)
 
 evaluate: $(OVERHEAD_OUT)
 	$(PYTHON) -m benchmarks.evaluate --data $(MODEL_DATA) --model $(MODEL_OUT) --overhead $(OVERHEAD_OUT)
+
+recovery-train:
+	@set -e; scratch=$$(mktemp -d); trap 'rm -rf "$$scratch"' EXIT; \
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.recovery_train --joined "$$scratch/dev.csv" \
+		--model-out "$$scratch/cost_cpu_recovery_v1.json" --results "$$scratch"; \
+	cmp "$$scratch/cost_cpu_recovery_v1.json" models/cost_cpu_recovery_v1.json; \
+	for file in dev.csv dev.meta.json; do cmp "$$scratch/$$file" "data/recovery/$$file"; done; \
+	for file in dev_pairs.csv dev_report.json; do cmp "$$scratch/$$file" "results/recovery/$$file"; done; \
+	echo "Reproduced the frozen model, dev dataset, and dev evaluation byte for byte"
+
+recovery-verify:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.verify_recovery
+
+verify-week3:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.verify_week3
 
 clean-results:
 	rm -f results/raw/sweep_$(BACKEND)_$(DATE)*.csv

@@ -144,9 +144,17 @@ Acceptance: feature table for all swept configs; tests pass; baseline heuristic 
 
 Acceptance gate **failed** on 2026-11-17. Both frozen versions selected factor 1 on all 20 held-out configurations across the R/B grid. Neither beat both baselines on a matched setting. The regret, confidence intervals, decision overhead, and dev-only retry are documented in [Week 3 results](docs/week3_results.md).
 
+### Phase 3 recovery handoff (2026-11-17)
+
+- [x] Freeze a [separate recovery protocol](docs/recovery_protocol.md), expand dev with six additional memory-access bodies, and reserve four distinct confirmation bodies. Keep the original holdout and frozen records unchanged.
+- [x] Compare factor-relative warm calibration in seven grouped dev LOFO folds and freeze the selected expanded-dev model before confirmation collection.
+- [x] Score the fresh confirmation once with decision overhead. **Pass:** 12 paired wins over both baselines, six distinct configurations; 0.990× median feasible long-horizon speedup against factor 1.
+- [x] Deliver the [Phase 4 handoff](docs/phase4_handoff.md), reproducible evidence, and tests. **Factor 1 is the default; learned policy is opt-in only.**
+
 ## Phase 4 - JAX integration and held-out evaluation (Week 4)
 
 - [ ] T4.1 Implement opt-in `auto_scan(f, init, xs, *, B, R, ...)` and `auto_fori_loop(lower, upper, body_fun, init_val, ...)`:
+  - keep the factor-1 default and make the recovered CPU policy explicitly opt-in
   - inspect body/features at trace time
   - select `u` and call existing `lax.scan` / `lax.fori_loop` with `unroll=u`
   - preserve JAX semantics and pytree handling; static trip count only
@@ -196,17 +204,15 @@ Acceptance: another student can clone, install, run the sweep and demo, and repr
 - Which application-style iterative workload best fits the 4-week budget?
 - Preferred `R` default and budget `B` values for the demo?
 - Predict `C(u)`/`T(u)` vs directly classify the best factor? (Start with regression; compare.)
-- Resolved in Week 3. Commit versioned model JSON under `models/` and aggregate tables, timings and gate log under `results/`. Keep raw sweep measurements gitignored under `results/raw/`.
+- Committed model JSON and gate evidence are immutable. The two archived Week 3 sweep inputs and the recovery measurements are tracked; other raw sweep outputs under `results/raw/` remain gitignored.
 
 ## Commands
 
 ```bash
 source .venv/bin/activate
-python -m pytest -q
-# run today:
-python -m benchmarks.dataset --raw results/raw/sweep_cpu_2026-11-17.csv results/raw/sweep_cpu_2026-11-17_shapes.csv --out data/features_cpu_2026-11-17.csv
-# full sweep:
-# python -m benchmarks.sweep --backend cpu --out results/raw/sweep.csv
-python -m jax_unroll.train --data data/features_cpu_2026-11-17.csv --out models/
-make evaluate
+make test
+make quick
+make recovery-train
+make recovery-verify
+make verify-week3
 ```

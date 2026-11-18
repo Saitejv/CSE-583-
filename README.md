@@ -2,7 +2,9 @@
 
 CSE 583 Advanced Compilers course project, Group 10 (Saitej Velaga, Maanas Pavuluri, Jack McClure).
 
-We automatically choose a partial unroll factor for fixed-trip-count `lax.scan` / `lax.fori_loop` loops using static Jaxpr features and a lightweight cost model, instead of benchmarking every candidate factor at decision time. The selector minimizes predicted `C(u) + R * T(u)` subject to a compilation budget.
+The opt-in selector chooses a partial unroll factor for fixed-trip-count `lax.scan` / `lax.fori_loop` loops using static Jaxpr features and a lightweight cost model, instead of benchmarking every candidate factor at decision time. The selector minimizes predicted `C(u) + R * T(u) / 1000` (cold ms and warm µs) under a cold budget. The automatic wrappers are still stubs.
+
+**Phase 4 decision: keep factor 1 as the default.** The recovered CPU model passed its fresh gate with 12 paired wins on six configurations, but median feasible long-horizon speedup vs factor 1 was 0.990×. Use the learned policy only as an opt-in integration or demo path; see the [Phase 4 handoff](docs/phase4_handoff.md).
 
 ## Source of truth
 
@@ -36,15 +38,13 @@ source .venv/bin/activate
 make test           # pytest suite
 make list           # print the workload registry as JSON
 make quick          # small smoke sweep (8 measurements)
-make sweep          # primary-shape factor sweep, 3 process repeats
-make sweep-shapes   # secondary shape variants at T=256,1000, 3 repeats
-make oracle         # aggregate raw rows into oracle table + risk-gate report
-make dataset        # join static features with sweep labels (Phase 2)
-make train          # train the cost model with dev-only LOFO
-make evaluate       # compare dev policies over the R/B grid
+make recovery-train  # reproduce the recovery join, dev LOFO and frozen model
+make recovery-verify # verify fresh confirmation from recorded factors, no new gate
+make verify-week3    # rebuild and replay the archived data and both old gates
 ```
 
-`make sweep` and `make sweep-shapes` write to `results/raw/` (gitignored);
+`make sweep` and `make sweep-shapes` write to `results/raw/` (gitignored
+apart from the two exact Week 3 input sweeps retained for verification);
 `make oracle` writes `results/oracle_<backend>_<date>.csv/.md` and
 `results/risk_gate_<backend>_<date>.md`; `make dataset` writes
 `data/features_<backend>_<date>.csv` and a `.meta.json` sidecar. See
@@ -55,10 +55,14 @@ protocol, and the aggregation/gate rules,
 [docs/splits.md](docs/splits.md) for the frozen held-out families, and
 [docs/week2_results.md](docs/week2_results.md) for the Phase 2 summary.
 
-`make train` reads the committed version-2 dataset and writes
-`models/cost_cpu.json`. `make evaluate` produces CSV and Markdown dev LOFO
-comparisons. The two frozen holdout evaluations and overhead measurements are
-linked from [docs/week3_results.md](docs/week3_results.md).
+Use scratch paths for new sweeps, joins, and legacy training (for example,
+`make train MODEL_DIR=/tmp/jax-unroll-legacy`); do not overwrite the frozen
+inputs, models, or gate records. The two original holdout evaluations are
+linked from [Week 3 results](docs/week3_results.md). The separate [recovery
+protocol](docs/recovery_protocol.md) fixes the expanded dev and fresh
+confirmation workloads. Recovery measurements and joins are under
+`data/recovery/`, the opt-in model is `models/cost_cpu_recovery_v1.json`,
+and paired evidence and the one-shot ledger are under `results/recovery/`.
 
 ## Layout
 
@@ -81,10 +85,11 @@ docs/hardware.md        target-hardware decision (CPU-only)
 docs/week1_results.md   Week 1 sweep, oracle, and risk-gate results
 docs/week2_results.md   Phase 2 feature table, baselines, and split summary
 docs/week3_results.md   dev LOFO, CPU decision overhead, and holdout gates
+docs/phase4_handoff.md  recovery evidence, supported domain, and integration API
 conftest.py             adds repo root and src/ to sys.path for pytest
 data/features_*.csv     Phase 2 feature/label dataset
 data/features_*.meta.json  dataset versions, hashes, and split manifest
-results/raw/            generated measurements (gitignored)
+results/raw/            generated measurements and two archived Week 3 inputs
 results/                oracle and risk-gate outputs
 TASKS.md                actionable project plan and definition of done
 ```
@@ -109,8 +114,11 @@ TASKS.md                actionable project plan and definition of done
   Both models chose factor 1 on the entire holdout grid. The report includes
   dev LOFO calibration and CPU decision overhead.
   [Week 3 results](docs/week3_results.md)
+- Phase 3 recovery is complete. The separate fresh confirmation gate
+  **passed** for a subset, not for overall speed versus factor 1.
+  [Phase 4 handoff](docs/phase4_handoff.md)
 - Phase 4 is pending. `auto_scan` and `auto_fori_loop` are stubs.
-- `pytest -q` passes (229 tests on 2026-11-17). Coverage includes fitting and
+- `pytest -q` passes (234 tests on 2026-11-17). Coverage includes fitting and
   holdout exclusion, policy and cache behavior, evaluation, and earlier phases.
 - Target hardware: CPU-only on Apple M2; see
   [docs/hardware.md](docs/hardware.md) for the decision, deadline, and
