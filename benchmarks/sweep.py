@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import importlib
 import json
 import math
 import os
@@ -123,6 +124,16 @@ def _adaptive_sample_count(
     return max(min_samples, min(max_samples, count)), per_call
 
 
+def _resolve_builder(module_name: str | None) -> Any:
+    if not module_name:
+        return build_workload
+    module = importlib.import_module(module_name)
+    builder = getattr(module, "build_workload", None)
+    if builder is None:
+        raise AttributeError(f"{module_name} does not define build_workload")
+    return builder
+
+
 def measure_config(
     config: dict[str, Any],
     *,
@@ -131,8 +142,9 @@ def measure_config(
     min_samples: int,
     max_samples: int,
     r_calls: int,
+    builder: Any = build_workload,
 ) -> dict[str, Any]:
-    workload: Workload = build_workload(
+    workload: Workload = builder(
         config["workload"],
         int(config["trip_count"]),
         int(config["factor"]),
@@ -208,7 +220,7 @@ def measure_config(
         if not correct:
             notes.append("non-finite output at u=1; configuration excluded")
     else:
-        reference = build_workload(
+        reference = builder(
             config["workload"],
             int(config["trip_count"]),
             1,
@@ -369,6 +381,7 @@ def _child(command_config: dict[str, Any], args: argparse.Namespace) -> int:
                 min_samples=args.min_samples,
                 max_samples=args.max_samples,
                 r_calls=args.r_calls,
+                builder=_resolve_builder(args.workload_module),
             )
     except Exception as exc:
         row = _empty_row(command_config)
@@ -403,6 +416,8 @@ def _launch(config: dict[str, Any], args: argparse.Namespace) -> tuple[dict[str,
         "--r-calls",
         str(args.r_calls),
     ]
+    if args.workload_module:
+        command.extend(["--workload-module", args.workload_module])
     env = os.environ.copy()
     project_root = str(Path(__file__).resolve().parents[1])
     source_root = str(Path(project_root) / "src")
@@ -540,6 +555,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--append", action="store_true")
     parser.add_argument("--list", action="store_true", help="print the workload registry")
     parser.add_argument("--single-json", default=None, help=argparse.SUPPRESS)
+    parser.add_argument("--workload-module", default=None, help=argparse.SUPPRESS)
     return parser
 
 

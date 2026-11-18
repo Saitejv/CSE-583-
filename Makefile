@@ -21,7 +21,7 @@ MODEL_OUT := $(MODEL_DIR)/cost_cpu.json
 OVERHEAD_OUT ?= results/selector_cpu_$(DATE)_overhead.json
 RAW_FILES ?= $(filter-out %_quick.csv,$(wildcard results/raw/sweep_$(BACKEND)_*.csv))
 
-.PHONY: help test list sweep sweep-shapes sweep-all oracle dataset quick train decision-overhead evaluate recovery-train recovery-verify verify-week3 clean-results
+.PHONY: help test list sweep sweep-shapes sweep-all oracle dataset quick train decision-overhead evaluate recovery-train recovery-verify verify-week3 corpus-validate corpus-manifest corpus-smoke corpus-full clean-results
 
 help:
 	@echo "make test         run pytest"
@@ -38,6 +38,10 @@ help:
 	@echo "make recovery-train   reproduce frozen recovery dev outputs without overwriting"
 	@echo "make recovery-verify  verify the one-shot recovery confirmation record"
 	@echo "make verify-week3     rebuild and replay the archived dataset and gates"
+	@echo "make corpus-validate  statically validate the expanded development corpus"
+	@echo "make corpus-manifest  regenerate benchmarks/corpus/manifest.json"
+	@echo "make corpus-smoke     run the 96-row smoke tier through the CPU harness"
+	@echo "make corpus-full      run the full expanded corpus (not for a quick check)"
 
 test:
 	$(PYTHON) -m pytest -q
@@ -94,6 +98,20 @@ recovery-verify:
 
 verify-week3:
 	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.verify_week3
+
+corpus-validate:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.corpus.validate
+
+corpus-manifest:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.corpus.manifest --out benchmarks/corpus/manifest.json
+
+corpus-smoke:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.corpus.sweep --tier smoke \
+		--out results/raw/corpus_smoke_$(BACKEND)_$(DATE).csv
+
+corpus-full:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.corpus.sweep --tier full \
+		--out results/raw/corpus_full_$(BACKEND)_$(DATE).csv
 
 clean-results:
 	rm -f results/raw/sweep_$(BACKEND)_$(DATE)*.csv
