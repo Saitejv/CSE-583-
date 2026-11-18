@@ -1,0 +1,1787 @@
+{
+  "body_count": 47,
+  "corpus_version": 1,
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "families": [
+    {
+      "bodies": 6,
+      "family": "indirect_gather",
+      "smoke_bodies": 1,
+      "workloads": [
+        "gather_duplicate_index",
+        "gather_masked_window",
+        "gather_multi_table",
+        "gather_row_pool",
+        "gather_scalar_table",
+        "gather_sorted_blocks"
+      ]
+    },
+    {
+      "bodies": 5,
+      "family": "indirect_scatter",
+      "smoke_bodies": 2,
+      "workloads": [
+        "scatter_collision_add",
+        "scatter_min_update",
+        "scatter_permutation",
+        "scatter_two_tables",
+        "scatter_unique_rows"
+      ]
+    },
+    {
+      "bodies": 5,
+      "family": "locality_access",
+      "smoke_bodies": 1,
+      "workloads": [
+        "locality_block_reuse",
+        "locality_permutation_read",
+        "locality_random_window",
+        "locality_stream_contiguous",
+        "locality_stride_sample"
+      ]
+    },
+    {
+      "bodies": 5,
+      "family": "dependent_indexing",
+      "smoke_bodies": 1,
+      "workloads": [
+        "dep_bucket_stateful",
+        "dep_linked_list",
+        "dep_parallel_chains",
+        "dep_pointer_chase",
+        "dep_two_level_indirection"
+      ]
+    },
+    {
+      "bodies": 5,
+      "family": "rolling_window",
+      "smoke_bodies": 2,
+      "workloads": [
+        "rolling_conv1d_fir",
+        "rolling_dot_two_streams",
+        "rolling_extreme_max",
+        "rolling_mean_shift",
+        "rolling_variance_moments"
+      ]
+    },
+    {
+      "bodies": 4,
+      "family": "stencil",
+      "smoke_bodies": 1,
+      "workloads": [
+        "stencil_anisotropic_2d",
+        "stencil_diffusion_1d_fori",
+        "stencil_five_point_2d",
+        "stencil_nine_point_2d"
+      ]
+    },
+    {
+      "bodies": 4,
+      "family": "streaming_reduction",
+      "smoke_bodies": 1,
+      "workloads": [
+        "streaming_decayed_extrema",
+        "streaming_logsumexp",
+        "streaming_running_mean",
+        "streaming_welford_var"
+      ]
+    },
+    {
+      "bodies": 4,
+      "family": "segmented_scan",
+      "smoke_bodies": 1,
+      "workloads": [
+        "segment_carry_ema",
+        "segment_max_reset",
+        "segment_sum_reset",
+        "segment_weighted_mean"
+      ]
+    },
+    {
+      "bodies": 5,
+      "family": "stateful_recurrence",
+      "smoke_bodies": 1,
+      "workloads": [
+        "stateful_coupled_oscillator",
+        "stateful_gru_gate",
+        "stateful_lstm_cell",
+        "stateful_scalar_iir",
+        "stateful_vector_iir"
+      ]
+    },
+    {
+      "bodies": 4,
+      "family": "control_arithmetic",
+      "smoke_bodies": 1,
+      "workloads": [
+        "control_bisection_bracket",
+        "control_lowrank_update",
+        "control_polynomial_forcing",
+        "control_transcendental"
+      ]
+    }
+  ],
+  "family_count": 10,
+  "feature_caveats": [
+    {
+      "reason": "Feature schema v1 classifies lax.scatter but not scatter-add; eq_gather_scatter is zero for this body.",
+      "workload": "scatter_collision_add"
+    },
+    {
+      "reason": "Feature schema v1 classifies lax.scatter but not scatter-min; the scatter primitive is not counted.",
+      "workload": "scatter_min_update"
+    }
+  ],
+  "jax_pin": "0.12.0.1",
+  "related_groups": {
+    "collision_memory": [
+      "gather_duplicate_index",
+      "scatter_collision_add",
+      "scatter_min_update"
+    ],
+    "coupled_dynamics": [
+      "stateful_coupled_oscillator"
+    ],
+    "dependent_chain": [
+      "dep_linked_list",
+      "dep_parallel_chains",
+      "dep_pointer_chase",
+      "dep_two_level_indirection"
+    ],
+    "elementwise_control": [
+      "control_polynomial_forcing",
+      "control_transcendental"
+    ],
+    "gated_recurrences": [
+      "stateful_gru_gate",
+      "stateful_lstm_cell"
+    ],
+    "iir_filters": [
+      "stateful_scalar_iir",
+      "stateful_vector_iir"
+    ],
+    "lowrank_control": [
+      "control_lowrank_update"
+    ],
+    "masked_memory": [
+      "gather_masked_window"
+    ],
+    "ordered_gather": [
+      "gather_sorted_blocks"
+    ],
+    "permutation_memory": [
+      "locality_permutation_read",
+      "scatter_permutation"
+    ],
+    "random_row_gather": [
+      "gather_row_pool"
+    ],
+    "random_scalar_gather": [
+      "gather_scalar_table"
+    ],
+    "random_window_locality": [
+      "locality_random_window"
+    ],
+    "reuse_locality": [
+      "locality_block_reuse"
+    ],
+    "rolling_extrema": [
+      "rolling_extreme_max"
+    ],
+    "rolling_moments": [
+      "rolling_mean_shift",
+      "rolling_variance_moments"
+    ],
+    "rolling_weighted_windows": [
+      "rolling_conv1d_fir",
+      "rolling_dot_two_streams"
+    ],
+    "root_finding_control": [
+      "control_bisection_bracket"
+    ],
+    "segmented_carry": [
+      "segment_carry_ema"
+    ],
+    "segmented_reset": [
+      "segment_max_reset",
+      "segment_sum_reset",
+      "segment_weighted_mean"
+    ],
+    "select_gather": [
+      "gather_multi_table"
+    ],
+    "sequential_locality": [
+      "locality_stream_contiguous"
+    ],
+    "split_table_memory": [
+      "scatter_two_tables"
+    ],
+    "stateful_dependent": [
+      "dep_bucket_stateful"
+    ],
+    "stencil_axis_aligned": [
+      "stencil_diffusion_1d_fori",
+      "stencil_five_point_2d"
+    ],
+    "stencil_wide_support": [
+      "stencil_anisotropic_2d",
+      "stencil_nine_point_2d"
+    ],
+    "streaming_extrema": [
+      "streaming_decayed_extrema"
+    ],
+    "streaming_moments": [
+      "streaming_running_mean",
+      "streaming_welford_var"
+    ],
+    "streaming_normalizers": [
+      "streaming_logsumexp"
+    ],
+    "strided_locality": [
+      "locality_stride_sample"
+    ],
+    "unique_update": [
+      "scatter_unique_rows"
+    ]
+  },
+  "tiers": {
+    "full": {
+      "command": "make corpus-full",
+      "description": "Every body and variant at all four trips and factors.",
+      "factors": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "measurements": 4560,
+      "process_repeats": 3,
+      "selection": "all bodies, all variants, trips 64/100/256/1023, all factors, three process repeats",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ]
+    },
+    "smoke": {
+      "command": "make corpus-smoke",
+      "description": "One primary variant per smoke body, divisible and remainder trips.",
+      "factors": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "measurements": 96,
+      "process_repeats": 1,
+      "selection": "tier=smoke, primary variant, trips 64 and 100, all factors, one process repeat",
+      "trip_counts": [
+        64,
+        100
+      ]
+    }
+  },
+  "unsupported": [
+    {
+      "case": "dynamic_trip_fori",
+      "detection": "jaxpr",
+      "reason": "fori_loop bounds must be static integers"
+    },
+    {
+      "case": "while_pointer_chase",
+      "detection": "jaxpr",
+      "reason": "lax.while_loop has a data-dependent trip count"
+    },
+    {
+      "case": "nested_scan",
+      "detection": "jaxpr",
+      "reason": "a scan inside a scan is nested control flow"
+    },
+    {
+      "case": "nested_cond",
+      "detection": "jaxpr",
+      "reason": "lax.cond inside a scan is nested control flow"
+    },
+    {
+      "case": "dynamic_scan_length",
+      "detection": "jaxpr",
+      "reason": "scan length must be a static Python integer"
+    },
+    {
+      "case": "dynamic_nonzero_shape",
+      "detection": "jaxpr",
+      "reason": "dynamic output shapes are not jittable in this corpus"
+    },
+    {
+      "case": "debug_print_effect",
+      "detection": "jaxpr",
+      "reason": "effectful debug printing is outside the timing domain"
+    }
+  ],
+  "workloads": [
+    {
+      "atol": 0.0001,
+      "body_hash": "7dfa8be8bf326d7e",
+      "description": "Branchless bisection bracket update for a cubic root.",
+      "family": "control_arithmetic",
+      "loop_kind": "scan",
+      "mechanism": "Each trip evaluates the cubic residual at the bracket midpoint and uses a sign comparison plus select to move the low or high endpoint.",
+      "primary_variant": "vec4",
+      "provenance": {
+        "adaptation": "Branchless bracket-update rule reimplemented from the documentation; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://jaxopt.github.io/stable/_autosummary/jaxopt.Bisection.html"
+      },
+      "related_group": "root_finding_control",
+      "rtol": 1e-05,
+      "seed": 583424,
+      "structural_difference": "Data-dependent control through select rather than dense arithmetic: the scalar or 4-lane carry holds a bracket, the body performs no indexed memory access, and the dependency chain is one comparison and two selects per element.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "scalar": "scalar target and scalar bracket",
+        "vec4": "4-element target and bracket"
+      },
+      "workload": "control_bisection_bracket"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "27c1e0ef5fba5d74",
+      "description": "Decaying matrix carry updated by rank-one outer products.",
+      "family": "control_arithmetic",
+      "loop_kind": "scan",
+      "mechanism": "rank-one matrix update with multiplicative contraction",
+      "primary_variant": "n8",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "lowrank_control",
+      "rtol": 1e-05,
+      "seed": 583425,
+      "structural_difference": "The carry is a small matrix and each step updates it with an outer product, so there is no matrix-vector contraction and no indexed memory.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n16": "16x16 matrix carry with 16-element rank-one vectors",
+        "n8": "8x8 matrix carry with 8-element rank-one vectors"
+      },
+      "workload": "control_lowrank_update"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "f681c8897fc1eab2",
+      "description": "Elementwise polynomial recurrence with quadratic and bilinear forcing.",
+      "family": "control_arithmetic",
+      "loop_kind": "scan",
+      "mechanism": "polynomial elementwise map with a decaying carry",
+      "primary_variant": "n512",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "elementwise_control",
+      "rtol": 1e-05,
+      "seed": 583422,
+      "structural_difference": "Pure elementwise arithmetic with no neighbor, segment, or gate logic; it isolates polynomial arithmetic from memory-access effects.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n2048": "2048-element vector carry and stream",
+        "n512": "512-element vector carry and stream"
+      },
+      "workload": "control_polynomial_forcing"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "5f1701e8b0a33f04",
+      "description": "Elementwise recurrence mixing sine, cosine, and tanh.",
+      "family": "control_arithmetic",
+      "loop_kind": "scan",
+      "mechanism": "bounded transcendental map with a linear carry decay",
+      "primary_variant": "n512",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "elementwise_control",
+      "rtol": 1e-05,
+      "seed": 583423,
+      "structural_difference": "Adds three transcendental operations per element with no memory structure, separating transcendental cost from structured dependencies.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n2048": "2048-element vector carry and stream",
+        "n512": "512-element vector carry and stream"
+      },
+      "workload": "control_transcendental"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "3dfdd0baf9f8d36b",
+      "description": "Counter-assisted bucket traversal.",
+      "family": "dependent_indexing",
+      "loop_kind": "fori_loop",
+      "mechanism": "Rows are read from a bucket table; the next bucket depends on the previous row statistic and the loop counter, while a vector accumulator integrates tanh(row).",
+      "primary_variant": "b64",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "stateful_dependent",
+      "rtol": 1e-05,
+      "seed": 583320,
+      "structural_difference": "Loop state (the counter) and a row statistic both steer a two-dimensional bucket traversal with vector carry; there is no scalar pointer chain.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "b16": "16 buckets x 8 features",
+        "b64": "64 buckets x 8 features"
+      },
+      "workload": "dep_bucket_stateful"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "8ca6a5835e2ecde1",
+      "description": "Linked-list pointer chase over a static next-pointer table.",
+      "family": "dependent_indexing",
+      "loop_kind": "fori_loop",
+      "mechanism": "An integer next-pointer table walks a fixed cycle while payload loads feed a decaying scalar accumulator.",
+      "primary_variant": "n1024",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "dependent_chain",
+      "rtol": 1e-05,
+      "seed": 583319,
+      "structural_difference": "Address transitions come from an indirection table rather than payload arithmetic or buckets, giving pointer-chasing traversal.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n1024": "1024-node list",
+        "n256": "256-node list"
+      },
+      "workload": "dep_linked_list"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "67f2e1060bcc2fb3",
+      "description": "Eight parallel dependent pointer chains.",
+      "family": "dependent_indexing",
+      "loop_kind": "scan",
+      "mechanism": "Eight lane pointers each advance using their own loaded value while an eight-lane accumulator integrates the payload.",
+      "primary_variant": "n1024",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "dependent_chain",
+      "rtol": 1e-05,
+      "seed": 583317,
+      "structural_difference": "Vector pointer state and vector carry run eight independent payload-derived chains per trip instead of one scalar chain.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n1024": "1024-entry table, 8 parallel chains",
+        "n256": "256-entry table, 8 parallel chains"
+      },
+      "workload": "dep_parallel_chains"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "701c5a9c41ceb135",
+      "description": "Scalar pointer chase with payload-derived addresses.",
+      "family": "dependent_indexing",
+      "loop_kind": "fori_loop",
+      "mechanism": "The next index is the previous index advanced by one plus a bucket of the previous loaded value; a scalar accumulator decays and adds the payload.",
+      "primary_variant": "n1024",
+      "provenance": {
+        "adaptation": "Dependent gather traversal reimplemented from the message-passing description; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://github.com/google-deepmind/jraph/blob/master/jraph/_src/models.py"
+      },
+      "related_group": "dependent_chain",
+      "rtol": 1e-05,
+      "seed": 583316,
+      "structural_difference": "Address transition depends on the loaded float payload, forming a single dependent chain with no index stream.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n1024": "1024-entry payload table",
+        "n256": "256-entry payload table"
+      },
+      "workload": "dep_pointer_chase"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "e5301464ea826df9",
+      "description": "Two-level dependent indirection.",
+      "family": "dependent_indexing",
+      "loop_kind": "fori_loop",
+      "mechanism": "A first load yields the address for a second load; the chain index combines both levels and a scalar accumulator integrates the payload.",
+      "primary_variant": "large",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "dependent_chain",
+      "rtol": 1e-05,
+      "seed": 583318,
+      "structural_difference": "Load-to-address dependency inside one trip gives two dependent loads, not just a payload-derived index update.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "large": "512-entry first level, 1024-entry second level",
+        "small": "64-entry first level, 128-entry second level"
+      },
+      "workload": "dep_two_level_indirection"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "46d9dc167f9ceb7b",
+      "description": "Duplicate-row gather with replicated row addresses and a paired weighted reduction.",
+      "family": "indirect_gather",
+      "loop_kind": "scan",
+      "mechanism": "Each trip gathers 8 rows whose 4 base row indices each appear twice, adds the replicated row pairs, then reduces with per-row gains into a scalar carry.",
+      "primary_variant": "d1024",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "collision_memory",
+      "rtol": 1e-05,
+      "seed": 583303,
+      "structural_difference": "Within-trip 2-way row-address duplication stresses replicated 2D loads and combines duplicate payloads before reduction, unlike a one-dimensional element gather.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "d1024": "1024x4 table, 8 row loads with 2-way row duplicates",
+        "d128": "128x4 table, 8 row loads with 2-way row duplicates"
+      },
+      "workload": "gather_duplicate_index"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "27baae612f7dce10",
+      "description": "Masked vector gather with out-of-bounds fill lanes.",
+      "family": "indirect_gather",
+      "loop_kind": "scan",
+      "mechanism": "Eight random table loads per trip are attempted; masked lanes redirect to an out-of-bounds sentinel and return fill value zero before the weighted sum enters a scalar carry.",
+      "primary_variant": "m1024",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "masked_memory",
+      "rtol": 1e-05,
+      "seed": 583305,
+      "structural_difference": "The mask changes the address set itself: disabled lanes issue out-of-bounds fill gathers instead of in-bounds loads whose payload is later zeroed.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "m1024": "1024-entry table with 8 masked loads",
+        "m128": "128-entry table with 8 masked loads"
+      },
+      "workload": "gather_masked_window"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "5372f6bc065de5e1",
+      "description": "Two-table gather selected per trip by a predicate.",
+      "family": "indirect_gather",
+      "loop_kind": "scan",
+      "mechanism": "Loads rows at independent indices from two tables and selects one with a Boolean stream before a vector update.",
+      "primary_variant": "t512",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "select_gather",
+      "rtol": 1e-05,
+      "seed": 583302,
+      "structural_difference": "Two distinct table bases and two indexed reads per trip gated by a data-dependent selector; the loaded rows are not combined arithmetically.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "t512": "two 512-row x 4-feature tables",
+        "t64": "two 64-row x 4-feature tables"
+      },
+      "workload": "gather_multi_table"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "41bddaa2f9604030",
+      "description": "Row gather with in-row pooling feeding an 8-lane recurrence.",
+      "family": "indirect_gather",
+      "loop_kind": "scan",
+      "mechanism": "Each trip loads a 16-wide row at a random row index, folds it to 8 lanes by pairwise addition, and applies a tanh-scaled vector update.",
+      "primary_variant": "rows512",
+      "provenance": {
+        "adaptation": "Documented gather semantics reimplemented from scratch; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://docs.jax.dev/en/latest/_autosummary/jax.lax.gather.html"
+      },
+      "related_group": "random_row_gather",
+      "rtol": 1e-05,
+      "seed": 583301,
+      "structural_difference": "Two-dimensional table with a row gather plus partial reduction; vector carry of 8 lanes instead of a scalar, and random row addresses.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "rows512": "512 rows x 16 features",
+        "rows64": "64 rows x 16 features"
+      },
+      "workload": "gather_row_pool"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "d0d69ab5d538827a",
+      "description": "Scalar table lookup with data-dependent 1-D indices feeding a scalar recurrence.",
+      "family": "indirect_gather",
+      "loop_kind": "scan",
+      "mechanism": "One random scalar load from a 1-D table per trip; carry = 0.9*carry + value*gain.",
+      "primary_variant": "n512",
+      "provenance": {
+        "adaptation": "Documented gather semantics reimplemented from scratch; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://docs.jax.dev/en/latest/_autosummary/jax.lax.gather.html"
+      },
+      "related_group": "random_scalar_gather",
+      "rtol": 1e-05,
+      "seed": 583300,
+      "structural_difference": "Single scalar payload and scalar carry; the address stream is an unconstrained random 1-D index with no vector lanes or reduction.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n2048": "2048-entry scalar table",
+        "n512": "512-entry scalar table",
+        "n64": "64-entry scalar table"
+      },
+      "workload": "gather_scalar_table"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "cc4e1bce01a30d92",
+      "description": "Sorted contiguous block gather with pairwise pooling.",
+      "family": "indirect_gather",
+      "loop_kind": "scan",
+      "mechanism": "Monotone sorted block starts select 8 consecutive elements per trip, pool adjacent pairs, and drive a 4-lane recurrence.",
+      "primary_variant": "b2048",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "ordered_gather",
+      "rtol": 1e-05,
+      "seed": 583304,
+      "structural_difference": "Addresses advance in sorted order with static intra-block offsets and pairwise pooling; sequential spatial locality with no collisions, unlike the random scalar and row gathers.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "b2048": "2048-entry table, 8-wide sorted blocks",
+        "b256": "256-entry table, 8-wide sorted blocks"
+      },
+      "workload": "gather_sorted_blocks"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "55ba8c9ef4eaf764",
+      "description": "Colliding additive scatter into a 2D grid.",
+      "family": "indirect_scatter",
+      "loop_kind": "scan",
+      "mechanism": "Twelve random (row, column) index pairs per trip may repeat; updates are added into the addressed cells after a 0.99 decay of the whole grid.",
+      "primary_variant": "g32x128",
+      "provenance": {
+        "adaptation": "Documented scatter semantics reimplemented from scratch; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://docs.jax.dev/en/latest/_autosummary/jax.lax.scatter.html"
+      },
+      "related_group": "collision_memory",
+      "rtol": 1e-05,
+      "seed": 583307,
+      "structural_difference": "Two-dimensional scatter-add with row/column collisions, rather than a one-dimensional duplicate-index accumulator.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "g16x64": "16x64 grid, 12 colliding 2D adds",
+        "g32x128": "32x128 grid, 12 colliding 2D adds"
+      },
+      "workload": "scatter_collision_add"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "4684007d6f6af89f",
+      "description": "Colliding min-reduction scatter.",
+      "family": "indirect_scatter",
+      "loop_kind": "fori_loop",
+      "mechanism": "Twelve random indices per trip apply elementwise minimum updates to the addressed slots.",
+      "primary_variant": "s1024",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "collision_memory",
+      "rtol": 1e-05,
+      "seed": 583308,
+      "structural_difference": "Monotone min reduction with duplicate indices resolves repeated addresses by reduction rather than addition or overwrite; the fori_loop body indexes its streams with the counter.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "s1024": "1024 slots, 12 colliding min updates",
+        "s256": "256 slots, 12 colliding min updates"
+      },
+      "workload": "scatter_min_update"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "bf042f03e492f16b",
+      "description": "Dense block-local permutation scatter.",
+      "family": "indirect_scatter",
+      "loop_kind": "scan",
+      "mechanism": "Every trip moves every element to a fixed permuted position after a tanh update driven by a scalar stream.",
+      "primary_variant": "p512",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "permutation_memory",
+      "rtol": 1e-05,
+      "seed": 583310,
+      "structural_difference": "Full-width permutation scatter writes each slot exactly once at static unique addresses, in contrast to sparse data-dependent uniqueness.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "p128": "128-element block-local permutation",
+        "p512": "512-element block-local permutation"
+      },
+      "workload": "scatter_permutation"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "73bdc7f3a40824c9",
+      "description": "Predicate-directed read-modify-write across two tables.",
+      "family": "indirect_scatter",
+      "loop_kind": "scan",
+      "mechanism": "Eight unique indices per trip read both tables; a Boolean lane sends the blended tanh update to the left table when true and to the right table when false, while both tables are read and written each trip.",
+      "primary_variant": "t1024",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "split_table_memory",
+      "rtol": 1e-05,
+      "seed": 583309,
+      "structural_difference": "Two simultaneous table gathers and two unique scatters per trip with predicate-directed destinations, instead of one table and one masked payload write.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "t1024": "two 1024-slot tables, 8 predicate-directed writes",
+        "t256": "two 256-slot tables, 8 predicate-directed writes"
+      },
+      "workload": "scatter_two_tables"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "092a80df704ebbf9",
+      "description": "Read-modify-write of unique table rows.",
+      "family": "indirect_scatter",
+      "loop_kind": "scan",
+      "mechanism": "Each trip reads 4 distinct rows, applies tanh(current+update) to an 8-wide row vector, and writes the rows back with a unique-index set.",
+      "primary_variant": "r512",
+      "provenance": {
+        "adaptation": "Documented scatter semantics reimplemented from scratch; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://docs.jax.dev/en/latest/_autosummary/jax.lax.scatter.html"
+      },
+      "related_group": "unique_update",
+      "rtol": 1e-05,
+      "seed": 583306,
+      "structural_difference": "Row-granularity unique-index scatter with 2D read-modify-write payloads, contrasting with element-granularity sparse updates.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "r128": "128 rows of width 8, 4 unique row writes",
+        "r512": "512 rows of width 8, 4 unique row writes"
+      },
+      "workload": "scatter_unique_rows"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "06e5b5374aa119a6",
+      "description": "Hot-row reuse via repeated reads and writes.",
+      "family": "locality_access",
+      "loop_kind": "fori_loop",
+      "mechanism": "A tiny working set of rows is revisited by counter-indexed reads and in-place tanh updates.",
+      "primary_variant": "hot8x32",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "reuse_locality",
+      "rtol": 1e-05,
+      "seed": 583314,
+      "structural_difference": "High temporal reuse of a few contiguous rows with read-modify-write; addresses stay in a small hot set instead of sweeping the table.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "hot4x16": "4 hot rows x 16 features",
+        "hot8x32": "8 hot rows x 32 features"
+      },
+      "workload": "locality_block_reuse"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "4d5616b25beaed79",
+      "description": "Full-table permutation read.",
+      "family": "locality_access",
+      "loop_kind": "scan",
+      "mechanism": "Every trip reads the entire table through a fixed permutation and reduces it with static weights.",
+      "primary_variant": "n512",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "permutation_memory",
+      "rtol": 1e-05,
+      "seed": 583315,
+      "structural_difference": "All elements are consumed each trip for maximum reuse across trips, but in scrambled order rather than in windows or blocks.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n128": "128-element permuted read",
+        "n512": "512-element permuted read"
+      },
+      "workload": "locality_permutation_read"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "3b263c46367a318a",
+      "description": "Random contiguous window read.",
+      "family": "locality_access",
+      "loop_kind": "scan",
+      "mechanism": "An eight-wide contiguous window is loaded from a random base per trip and drives a vector recurrence.",
+      "primary_variant": "n2048",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "random_window_locality",
+      "rtol": 1e-05,
+      "seed": 583313,
+      "structural_difference": "Contiguous windows improve within-window locality, but random bases remove the sequential streaming reuse of the streaming body and differ from strided sampling.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n2048": "2048-element table, random 8-wide windows",
+        "n256": "256-element table, random 8-wide windows"
+      },
+      "workload": "locality_random_window"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "7919bf313abef409",
+      "description": "Sequential streaming read of adjacent window pairs.",
+      "family": "locality_access",
+      "loop_kind": "scan",
+      "mechanism": "Each trip reads two adjacent eight-wide windows, compares their sums with tanh, and advances the start by one window width.",
+      "primary_variant": "n2048",
+      "provenance": {
+        "adaptation": "Grid-access pattern reimplemented from the project description; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://github.com/google/jax-cfd"
+      },
+      "related_group": "sequential_locality",
+      "rtol": 1e-05,
+      "seed": 583311,
+      "structural_difference": "Two adjacent contiguous windows per trip create a sequential contrast reduction, unlike a single random-window sum.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n2048": "2048-element table, adjacent 8-wide window pairs",
+        "n256": "256-element table, adjacent 8-wide window pairs"
+      },
+      "workload": "locality_stream_contiguous"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "dca15c0cf64e46e4",
+      "description": "Fixed-stride sampled read.",
+      "family": "locality_access",
+      "loop_kind": "scan",
+      "mechanism": "Each trip samples 8 elements spaced five apart from a random base and updates a vector carry.",
+      "primary_variant": "n2048",
+      "provenance": {
+        "adaptation": "Independent body written for this corpus; no external code reused.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "strided_locality",
+      "rtol": 1e-05,
+      "seed": 583312,
+      "structural_difference": "A constant nonzero stride inside each sample lowers cache-line use even though the sample pattern is fixed; distinct from contiguous windows.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n2048": "2048-element table, stride-5 samples",
+        "n256": "256-element table, stride-5 samples"
+      },
+      "workload": "locality_stride_sample"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "40119cc62109d611",
+      "description": "Fixed-kernel 1D FIR filter over a shift-register history.",
+      "family": "rolling_window",
+      "loop_kind": "scan",
+      "mechanism": "weighted tap sum over a shifted sample history",
+      "primary_variant": "k8",
+      "provenance": {
+        "adaptation": "Windowed-reduction semantics reimplemented as a scan from scratch; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://docs.jax.dev/en/latest/_autosummary/jax.lax.reduce_window.html"
+      },
+      "related_group": "rolling_weighted_windows",
+      "rtol": 1e-05,
+      "seed": 583401,
+      "structural_difference": "Uses a fixed nonuniform kernel and only a history carry; unlike the sliding mean it has no running sum that can be updated incrementally.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "k16": "16-tap FIR history and kernel",
+        "k8": "8-tap FIR history and kernel"
+      },
+      "workload": "rolling_conv1d_fir"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "72ced0c0aa678457",
+      "description": "Windowed dot product of two synchronized input streams.",
+      "family": "rolling_window",
+      "loop_kind": "scan",
+      "mechanism": "two shift registers with a per-step inner product",
+      "primary_variant": "w16",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "rolling_weighted_windows",
+      "rtol": 1e-05,
+      "seed": 583404,
+      "structural_difference": "Two independent windows advance together and are multiplied pairwise; there is no fixed kernel and no scalar accumulator across steps.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w16": "two synchronized 16-sample windows",
+        "w8": "two synchronized 8-sample windows"
+      },
+      "workload": "rolling_dot_two_streams"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "feaabc5ee3075340",
+      "description": "Rolling maximum over a shift-register window.",
+      "family": "rolling_window",
+      "loop_kind": "scan",
+      "mechanism": "Each trip shifts the window, performs a full max reduction inside the loop body, and carries the resulting window maximum.",
+      "primary_variant": "w16",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "rolling_extrema",
+      "rtol": 1e-05,
+      "seed": 583402,
+      "structural_difference": "The window reduction is a max computed every trip, so old samples cannot be removed with an incremental subtraction; the loop carries both the window and its current extremum.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w16": "16-sample window with a scalar input stream",
+        "w32": "32-sample window with a scalar input stream"
+      },
+      "workload": "rolling_extreme_max"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "4be08e0baa23ef48",
+      "description": "Sliding mean over a shift register with an incremental sum.",
+      "family": "rolling_window",
+      "loop_kind": "scan",
+      "mechanism": "shift-register window plus subtract-old/add-new running sum",
+      "primary_variant": "w8",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "rolling_moments",
+      "rtol": 1e-05,
+      "seed": 583400,
+      "structural_difference": "Carries the whole window and a scalar sum, so the window shift and the moment update are separate dependencies; no per-step window reduction.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w16": "16-sample window with a scalar input stream",
+        "w8": "8-sample window with a scalar input stream"
+      },
+      "workload": "rolling_mean_shift"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "0c233a2678ff756e",
+      "description": "Sliding variance from incrementally updated first and second moments.",
+      "family": "rolling_window",
+      "loop_kind": "scan",
+      "mechanism": "window carry plus running sum and sum-of-squares",
+      "primary_variant": "w12",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "rolling_moments",
+      "rtol": 1e-05,
+      "seed": 583403,
+      "structural_difference": "Tracks two moment accumulators alongside the window and cancels the departed sample in both; the final variance adds a subtractive coupling.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w12": "12-sample window with scalar sum and sum-of-squares state",
+        "w24": "24-sample window with scalar sum and sum-of-squares state"
+      },
+      "workload": "rolling_variance_moments"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "561a21c726e2a135",
+      "description": "Segment-gated exponential average that carries state across boundaries.",
+      "family": "segmented_scan",
+      "loop_kind": "scan",
+      "mechanism": "boundary-dependent blend without discarding prior state",
+      "primary_variant": "w4_short",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "segmented_carry",
+      "rtol": 1e-05,
+      "seed": 583416,
+      "structural_difference": "Unlike the reset bodies it never zeroes the accumulator: a new segment uses a different blend coefficient, so state propagates across segments.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w4_short": "4-channel values with 2-5 step segments",
+        "w8_long": "8-channel values with 8-20 step segments"
+      },
+      "workload": "segment_carry_ema"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "fa047c790b093c63",
+      "description": "Segmented maximum that resets at each segment boundary.",
+      "family": "segmented_scan",
+      "loop_kind": "scan",
+      "mechanism": "segment-id-gated max reset",
+      "primary_variant": "w4_short",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "segmented_reset",
+      "rtol": 1e-05,
+      "seed": 583414,
+      "structural_difference": "Shares the segment-boundary select with the segmented sum but reduces with a compare-select, so the accumulator is non-invertible.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w4_short": "4-channel values with 2-5 step segments",
+        "w8_long": "8-channel values with 8-20 step segments"
+      },
+      "workload": "segment_max_reset"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "abd3c0a6d27c5d91",
+      "description": "Segmented sum that resets at each segment boundary.",
+      "family": "segmented_scan",
+      "loop_kind": "scan",
+      "mechanism": "segment-id-gated additive reset",
+      "primary_variant": "w4_short",
+      "provenance": {
+        "adaptation": "Segmented-scan semantics reimplemented sequentially from the documentation; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://docs.jax.dev/en/latest/_autosummary/jax.ops.segment_sum.html"
+      },
+      "related_group": "segmented_reset",
+      "rtol": 1e-05,
+      "seed": 583413,
+      "structural_difference": "A carried segment id selects between starting a new accumulator and continuing it; the dependency chain restarts at every boundary.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w4_short": "4-channel values with 2-5 step segments",
+        "w8_long": "8-channel values with 8-20 step segments"
+      },
+      "workload": "segment_sum_reset"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "b53b5de652de9b1b",
+      "description": "Segmented weighted mean with numerator and denominator resets.",
+      "family": "segmented_scan",
+      "loop_kind": "scan",
+      "mechanism": "two segment-local accumulators followed by a ratio",
+      "primary_variant": "w4_short",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "segmented_reset",
+      "rtol": 1e-05,
+      "seed": 583415,
+      "structural_difference": "Tracks a weight total alongside the weighted sum and normalizes once; the state has twice the width and a division at the output.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "w4_short": "4-channel values and weights with 2-5 step segments",
+        "w8_long": "8-channel values and weights with 8-20 step segments"
+      },
+      "workload": "segment_weighted_mean"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "36c4292c0636c330",
+      "description": "Damped coupled-oscillator ring driven through a fori_loop.",
+      "family": "stateful_recurrence",
+      "loop_kind": "fori_loop",
+      "mechanism": "position-velocity state with neighbor coupling and weak damping",
+      "primary_variant": "n8",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "coupled_dynamics",
+      "rtol": 1e-05,
+      "seed": 583421,
+      "structural_difference": "Two wide carries form a second-order system with spatial coupling and a loop-counter-driven fori_loop; it is the longest dependency chain here.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n4": "4-oscillator ring",
+        "n8": "8-oscillator ring"
+      },
+      "workload": "stateful_coupled_oscillator"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "14e481cdfae4f6e9",
+      "description": "GRU-like gated recurrence with reset and update gates.",
+      "family": "stateful_recurrence",
+      "loop_kind": "scan",
+      "mechanism": "sigmoid gates over dense input and hidden projections",
+      "primary_variant": "n4",
+      "provenance": {
+        "adaptation": "LSTM/GRU cell equations reimplemented without Flax modules; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://github.com/google/flax/blob/main/examples/seq2seq/models.py"
+      },
+      "related_group": "gated_recurrences",
+      "rtol": 1e-05,
+      "seed": 583419,
+      "structural_difference": "Adds two multiplicative gates and a tanh candidate around the carry; the nonlinear gating makes the chain longer than either IIR body.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n4": "4-element hidden state and input",
+        "n8": "8-element hidden state and input"
+      },
+      "workload": "stateful_gru_gate"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "477a53e7da3db574",
+      "description": "LSTM-like cell with input, forget, output, and candidate gates.",
+      "family": "stateful_recurrence",
+      "loop_kind": "scan",
+      "mechanism": "two-state gated cell recurrence",
+      "primary_variant": "n4",
+      "provenance": {
+        "adaptation": "LSTM/GRU cell equations reimplemented without Flax modules; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://github.com/google/flax/blob/main/examples/seq2seq/models.py"
+      },
+      "related_group": "gated_recurrences",
+      "rtol": 1e-05,
+      "seed": 583420,
+      "structural_difference": "Carries both cell and hidden state with three sigmoid gates; the cell path is an additional long dependency that the GRU body does not have.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n4": "4-element cell and hidden state",
+        "n8": "8-element cell and hidden state"
+      },
+      "workload": "stateful_lstm_cell"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "ad3faf9bd772ee4b",
+      "description": "First-order scalar low-pass IIR recurrence normalized to unit DC gain.",
+      "family": "stateful_recurrence",
+      "loop_kind": "scan",
+      "mechanism": "scalar one-pole linear recurrence",
+      "primary_variant": "scalar",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "iir_filters",
+      "rtol": 1e-05,
+      "seed": 583417,
+      "structural_difference": "A single scalar carry with a short unit-step chain; the companion vector body widens the carry and adds neighbor coupling.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "scalar": "scalar carry and scalar input stream",
+        "vec4": "four independent scalar channels"
+      },
+      "workload": "stateful_scalar_iir"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "411f0c9d0cb0c0d3",
+      "description": "Wide vector IIR with nearest-neighbor state coupling.",
+      "family": "stateful_recurrence",
+      "loop_kind": "scan",
+      "mechanism": "shift-coupled vector one-pole recurrence",
+      "primary_variant": "n8",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "iir_filters",
+      "rtol": 1e-05,
+      "seed": 583418,
+      "structural_difference": "The carry is a vector and each component also reads a rolled neighbor, producing a wide carry with cross-channel dependencies rather than independent channels.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n16": "16-element coupled vector carry",
+        "n8": "8-element coupled vector carry"
+      },
+      "workload": "stateful_vector_iir"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "9325bc60f21907cf",
+      "description": "Anisotropic 2D stencil with a distance-two horizontal term.",
+      "family": "stencil",
+      "loop_kind": "fori_loop",
+      "mechanism": "unequal axis weights plus a radius-two x-direction Laplacian",
+      "primary_variant": "n16",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "stencil_wide_support",
+      "rtol": 1e-05,
+      "seed": 583408,
+      "structural_difference": "Combines asymmetric axis coefficients with a second-neighbor tap, so its dependency radius is two on one axis and one on the other.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n16": "16x16 periodic grid",
+        "n24": "24x24 periodic grid"
+      },
+      "workload": "stencil_anisotropic_2d"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "69a400ab1277cea6",
+      "description": "Periodic 1D three-point diffusion via static-bound fori_loop.",
+      "family": "stencil",
+      "loop_kind": "fori_loop",
+      "mechanism": "nearest-neighbor 1D Laplacian update",
+      "primary_variant": "n128",
+      "provenance": {
+        "adaptation": "Finite-difference stencil reimplemented from the project description; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://github.com/google/jax-cfd"
+      },
+      "related_group": "stencil_axis_aligned",
+      "rtol": 1e-05,
+      "seed": 583405,
+      "structural_difference": "One-axis dependency with radius one and a loop-counter-driven fori_loop; the other stencils are 2D grids with larger neighborhoods.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n128": "128-point periodic 1D grid",
+        "n256": "256-point periodic 1D grid"
+      },
+      "workload": "stencil_diffusion_1d_fori"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "d2ada2b09762a5d3",
+      "description": "Periodic 2D five-point diffusion stencil.",
+      "family": "stencil",
+      "loop_kind": "fori_loop",
+      "mechanism": "axis-neighbor 2D Laplacian with radius-one support",
+      "primary_variant": "n16",
+      "provenance": {
+        "adaptation": "Finite-difference stencil reimplemented from the project description; no code copied.",
+        "kind": "public-inspired",
+        "license": "Apache-2.0",
+        "source": "https://github.com/google/jax-cfd"
+      },
+      "related_group": "stencil_axis_aligned",
+      "rtol": 1e-05,
+      "seed": 583406,
+      "structural_difference": "Touches four axis neighbors in two dimensions; unlike the 1D body it has a two-axis dependency pattern and a larger per-step tensor.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n16": "16x16 periodic grid",
+        "n32": "32x32 periodic grid"
+      },
+      "workload": "stencil_five_point_2d"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "ec4b0504e3c0eceb",
+      "description": "Periodic 2D nine-point stencil with diagonal coupling.",
+      "family": "stencil",
+      "loop_kind": "fori_loop",
+      "mechanism": "axis plus diagonal neighbor average with a center weight",
+      "primary_variant": "n16",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "stencil_wide_support",
+      "rtol": 1e-05,
+      "seed": 583407,
+      "structural_difference": "Adds four diagonal neighbors and a weighted center, giving a denser dependency fan-in than the five-point body at the same grid size.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "n16": "16x16 periodic grid",
+        "n24": "24x24 periodic grid"
+      },
+      "workload": "stencil_nine_point_2d"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "6b8bc27b5fb371f4",
+      "description": "Decaying running maximum and minimum without explicit resets.",
+      "family": "streaming_reduction",
+      "loop_kind": "scan",
+      "mechanism": "forgetful max/min compare-and-select state",
+      "primary_variant": "scalar",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "streaming_extrema",
+      "rtol": 1e-05,
+      "seed": 583411,
+      "structural_difference": "Uses multiplicative decay plus a compare-select instead of additive updates; the two extrema are independent scalar or small-vector carries.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "scalar": "scalar stream with scalar maximum and minimum",
+        "vec8": "8-channel stream with vector extrema"
+      },
+      "workload": "streaming_decayed_extrema"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "61d1d9863bd26675",
+      "description": "Online log-sum-exp normalizer with a running maximum.",
+      "family": "streaming_reduction",
+      "loop_kind": "scan",
+      "mechanism": "max-shifted exponential accumulation",
+      "primary_variant": "scalar",
+      "provenance": {
+        "adaptation": "Online-softmax reduction reimplemented from the paper algorithm; no code copied.",
+        "kind": "public-inspired",
+        "license": "Paper algorithm; FlashAttention repository is BSD-3-Clause",
+        "source": "https://arxiv.org/abs/2205.14135"
+      },
+      "related_group": "streaming_normalizers",
+      "rtol": 1e-05,
+      "seed": 583412,
+      "structural_difference": "Carries a maximum and a shifted exponential sum that are updated with two transcendentals; unlike mean and variance it is a normalizer, not a moment.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "scalar": "scalar stream with scalar normalizer state",
+        "vec8": "8-channel stream with vector normalizer state"
+      },
+      "workload": "streaming_logsumexp"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "4bef25b30eece6ce",
+      "description": "Whole-stream online mean with a growing sample count.",
+      "family": "streaming_reduction",
+      "loop_kind": "scan",
+      "mechanism": "incremental mean update with a scalar count carry",
+      "primary_variant": "scalar",
+      "provenance": {
+        "adaptation": "No adaptation; written independently for the structured corpus.",
+        "kind": "original",
+        "license": "No repository license file; original code",
+        "source": "Original implementation for this corpus"
+      },
+      "related_group": "streaming_moments",
+      "rtol": 1e-05,
+      "seed": 583409,
+      "structural_difference": "No fixed window; the divisor grows with the trip count, so the update uses division by a carried count instead of a constant window length.",
+      "tier": "smoke",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "scalar": "scalar stream and scalar mean state",
+        "vec8": "8-channel stream with an 8-element mean vector"
+      },
+      "workload": "streaming_running_mean"
+    },
+    {
+      "atol": 0.0001,
+      "body_hash": "aa869cd58cb815a3",
+      "description": "Online Welford variance with mean, second moment, and count.",
+      "family": "streaming_reduction",
+      "loop_kind": "scan",
+      "mechanism": "stable single-pass variance update",
+      "primary_variant": "scalar",
+      "provenance": {
+        "adaptation": "Welford update reimplemented from the documented algorithm; no code copied.",
+        "kind": "public-inspired",
+        "license": "BSD-2-Clause",
+        "source": "https://github.com/jvf/welford"
+      },
+      "related_group": "streaming_moments",
+      "rtol": 1e-05,
+      "seed": 583410,
+      "structural_difference": "Carries three coupled scalars or vectors and updates the second moment from the change in mean; deeper state and a different reduction identity.",
+      "tier": "full",
+      "trip_counts": [
+        64,
+        100,
+        256,
+        1023
+      ],
+      "variants": {
+        "scalar": "scalar stream and scalar moment state",
+        "vec8": "8-channel stream with vector moment state"
+      },
+      "workload": "streaming_welford_var"
+    }
+  ]
+}
