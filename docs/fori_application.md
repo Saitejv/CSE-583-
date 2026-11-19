@@ -32,6 +32,21 @@ Seconds sum all configurations in a cohort and average three independent process
 
 Daily returns and elevation data come from Matplotlib's bundled samples. The covariance and grid interpolation have development analogues in the earlier synthetic covariance and Voronoi benchmarks. The signal grid accounts for most of the gain. The terrain candidate took .858, .852, and 1.502 s versus native's 1.023, 1.021, and 1.040 s. Keep the existing choice there pending stronger evidence. [Every configuration](../results/fori_application/transfer_cases.csv) · [Full and opportunity totals](../results/fori_application/transfer_totals.csv)
 
+## Held-out families
+
+At 5,000 calls the engine saved **2.155 s (2.0%)** across all 24 held-out configurations, winning all three process repeats against both native and the previous selector. Spectral unmixing alone consumed 97.074 s of native's 108.216 s. The four configurations per family give full-cohort pooled and equal-workload totals identical weights.
+
+| Direct cohort | Calls | Native 1 | Compact warm | Previous | Application engine | Oracle |
+|---|---:|---:|---:|---:|---:|---:|
+| All 24 | 300 | 7.461 | 7.591 | 7.541 | 7.471 | 6.950 |
+| All 24 | 5,000 | 108.216 | 108.340 | 107.415 | 106.061 | 102.739 |
+| 16 warm opportunities, pooled | 5,000 | 9.660 | 9.123 | 8.191 | 6.983 | 4.057 |
+| 16 warm opportunities, equal-workload | 5,000 | 7.991 | 7.546 | 6.801 | 5.835 | 3.440 |
+
+Inventory lost-sales simulation saved 1.453 s and flood duration saved 1.185 s relative to native. The revised rule changed two decisions relative to the previous policy, both on large inventories. Eight configurations achieved at least 1.05× speedup, and four slowed by over 3%. The worst median slowdown was 35.2% on the large 255-step warranty ladder, which lost 0.108 s. Keep native for this configuration.
+
+The engine recovered 39.3% of native-to-oracle headroom on all 24 and 47.8% on the opportunity subset. Two cases explain 1.948 s of the remaining 3.322 s. The large 1,024-step flood simulation took 1.093 s longer with factor 2 than the directly timed oracle at factor 8. The small 1,024-step inventory simulation took 0.855 s longer with factor 1 than the oracle at factor 4. [All configurations](../results/fori_application/holdout_cases.csv) · [Both subsets and weighting schemes](../results/fori_application/holdout_totals.csv) · [Raw process measurements](../results/fori_application/holdout_live.json)
+
 ## Long-horizon extension
 
 After seeing the 5,000-call application results, we specified a 20,000-call extension on every configuration in both four-application cohorts. It uses the same inputs, calibrated policy, five arms, three repeats, and cold budget. The oracle selects the minimum of the four existing native timing curves at 20,000 calls. The extension has separate direct result files.
