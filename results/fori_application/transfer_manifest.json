@@ -1,0 +1,48 @@
+{
+  "source": "0b28e2348a1d0e7a58d269c4509de85ab3856e41b99fa40633e47c66ce41c7c4",
+  "inputs": {
+    "weighted_covariance": [
+      "59b2668bb4bcf212284d064794a30f307255756c165e82a583a08ed1e722a23a",
+      "42391858d603884137e804cdcbbb7506ace6f44fbf108d45cf81859192a28403",
+      "6edd9f6f9cc92cded36e6c4a580933f9c9f1b90562b46903b806f21902a1a54f",
+      "967eedb2dc77a95e6270119ece23d9f47ca97c3b18ffa7d391d34e461b284f4c"
+    ],
+    "signal_grid": [
+      "d1ce15cff1c3ae1a69cba8548f7cc117e2fde757dd93fc8047b03ee5b00e26c7",
+      "dd8aee91abc71a432d1964fe59c16585064bdbdafb077dd67dafa80e12677ae0",
+      "3a2f7ceb7fab5f6e98f44a0a2f7b4524dc23f9ac358b875ea92a99db7d7cbff2",
+      "7ef9d34c5b1dbce7571033099575952b148be1ad24ebaa9d60c8f8b00c714d06",
+      "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+    ],
+    "terrain_interpolation": [
+      "b1076c763a3263e1eb6f3fb36d063ae6857737a2751796f05ba32843ed2b190b",
+      "d9655077a5a3e7aa283b659f6f4eccc24ff9c275cac2eb84a765d3a2976c6e9e",
+      "2e2fd7cb48ffd24a20fa660287c3a93bfdca404e05600ed3a9a629e7029e5c71",
+      "6cf9c8b270dccdb08cf23af51dac5d3481830558054e1230c926605ad0479d1a",
+      "abe75dd79c2aef1481a30a3415312d4d483015b310fc84b02640b40c4520e6b0",
+      "87b1120e0481afca06fcc259607febc9ad2d442e22b08ab636e872883f79fcff",
+      "f6e28ad1753237d42be72be187a88f09a269097eeda24bcf12908db6bd361246"
+    ],
+    "recursive_least_squares": [
+      "f0c74464d229bc436851057d76b45f11365e8f02bb974b3613135536975fe5a1",
+      "36dea7b461b3787c3c92970a7edeb979e8404ffb2bf294bd9a9313d9c3b33a52",
+      "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0",
+      "7b75313359399d16a3d1cabce38d5c7225fc9b14120fa94b2502b2eabadaed87"
+    ]
+  },
+  "policy": "37628c6c2134f06bcc118dda16aa2cc7714651b43adbf2d3a8a8d4b00a493ffe",
+  "arms": [
+    "native",
+    "warm",
+    "previous",
+    "candidate",
+    "oracle"
+  ],
+  "calls": [
+    300,
+    5000
+  ],
+  "repeats": 3,
+  "scope": "three streamed applications plus a dot-product control"
+}

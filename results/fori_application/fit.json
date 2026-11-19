@@ -1,0 +1,589 @@
+{
+  "policy": {
+    "min_calls": 1800,
+    "decision_ms": 3.2005205,
+    "matrix_min_calls": 1000,
+    "matrix_bytes": 2048,
+    "max_index_ops": 2,
+    "matrix_factor": 2
+  },
+  "model_version": "0b0be528eca313661d88d32b8320200872b522e4230e06d3f5fb4557f32141d1",
+  "configurations": 626,
+  "families": 63,
+  "groups": 51,
+  "calls": [
+    300,
+    1000,
+    5000,
+    20000
+  ],
+  "grouped_saved_vs_previous_s": [
+    -0.31994920451533654,
+    -0.34394570130757846,
+    -0.020120832041829524,
+    0.8253137617514381
+  ],
+  "folds": [
+    {
+      "group": "13",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "23",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "9",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "2",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "18",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "11",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "3",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "5",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "7",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "22",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 4,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "21",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "19",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "12",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "17",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "16",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "25",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "24",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "20",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "14",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "4",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "1",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "8",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "6",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 300,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 4
+      }
+    },
+    {
+      "group": "15",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "10",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "0",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "26",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "27",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "28",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "29",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "30",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "31",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "32",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "33",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "emission_forward",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "manhattan_voronoi",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "polynomial_value_derivative",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "reservoir_balance",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "schmitt_edges",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "synaptic_eligibility",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "triangle_area",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "union_labels",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "lagged_empirical_cdf",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "panel_drawdown",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "saturating_photodetector",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "optical_compositing",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 300,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "quantization_error_feedback",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "indexed_order_depth",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "online_centroid_assignment",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "paired_rating_updates",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    },
+    {
+      "group": "cyclic_pressure_scheduler",
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 2,
+        "matrix_factor": 2
+      }
+    }
+  ]
+}

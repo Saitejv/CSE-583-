@@ -44,3 +44,8 @@ Verified the full CPU test suite (**1,225 passed**) and reproduced the summaries
 ## 6. Expand the family-grouped training and evaluation corpus
 
 - [x] Used three OpenCode free-model sessions and two agy CLI sessions to draft native loop bodies. Retained 13 bodies, froze 28 training and 24 held-out configurations, and collected 624 per-factor process measurements on CPU. On training data, 20 of 28 configurations had a repeat-supported warm gain of at least 1.05×. Verified outputs, graph equivalence, label units and split isolation. All four focused tests passed. [Corpus, data loader and commands](docs/fori_agent_cases.md)
+
+## 7. Validate and package the real-data application policy
+
+- [x] Checkpointed the existing code on `origin/main` at `eea8cea` before fitting. Compared 37 horizon-policy configurations on 626 development cases and kept the compact estimator. The revised rule accepts two indexed operations on qualifying matrix carries. The installed wheel includes the model and a deferred `application_engine()` factory.
+- [x] Timed four real-data applications in fresh CPU processes. At 5,000 calls, 1.395 s versus native's 1.514 s saved 7.8%, below the predeclared 10% target. A separately frozen real-data transfer test took 3.184 s versus 5.287 s native and 5.305 s for the previous rule. The signal grid and weighted covariance won all three repeats. [Workloads, limits and reproducible commands](docs/fori_application.md)

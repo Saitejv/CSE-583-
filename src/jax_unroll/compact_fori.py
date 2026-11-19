@@ -89,3 +89,18 @@ class CompactForiPredictor:
         costs = tree_costs(row, **self._arrays)
         costs[1:, 1] *= np.exp(self.margin)
         return {factor: LogCosts(*np.log(pair)) for factor, pair in zip(FACTORS, costs, strict=True)}
+
+
+def application_engine():
+    """Create a shared CPU fori_loop engine with deferred loading of the bundled model.
+
+    Pass this engine and the expected invocation count R to auto_fori_loop.
+    B, when supplied, bounds predicted cold specialization cost in milliseconds.
+    The calibration uses Apple M2 CPU timings.
+    """
+    from jax_unroll.selector import DecisionEngine, HorizonPolicy
+
+    rule = HorizonPolicy(min_calls=1800, decision_ms=3.2005205, matrix_min_calls=1000,
+                         matrix_bytes=2048, max_index_ops=2, matrix_factor=2)
+    return DecisionEngine(model_loader=lambda: CompactForiPredictor.load(
+        Path(__file__).with_name("data") / "fori_cpu.npz"), payoff=rule)

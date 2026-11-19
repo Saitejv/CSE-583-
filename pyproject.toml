@@ -20,3 +20,6 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
+
+[tool.setuptools.package-data]
+jax_unroll = ["data/*.npz"]

@@ -1,0 +1,310 @@
+[
+  {
+    "cohort": "applications",
+    "workload": "class_pixel_peaks",
+    "variant": "real",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "applications",
+    "workload": "neighborhood_contrast",
+    "variant": "real",
+    "trip_count": 81,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "applications",
+    "workload": "online_regression",
+    "variant": "real",
+    "trip_count": 442,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "applications",
+    "workload": "threshold_curves",
+    "variant": "real",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 2
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "adaptive_unmixing",
+    "variant": "large",
+    "trip_count": 255,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "adaptive_unmixing",
+    "variant": "large",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "adaptive_unmixing",
+    "variant": "small",
+    "trip_count": 255,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "adaptive_unmixing",
+    "variant": "small",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "bitplane_motion",
+    "variant": "large",
+    "trip_count": 255,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "bitplane_motion",
+    "variant": "large",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "bitplane_motion",
+    "variant": "small",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "bitplane_motion",
+    "variant": "small",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "flood_duration",
+    "variant": "large",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 8,
+      "5000": 8
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "flood_duration",
+    "variant": "large",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 8,
+      "5000": 8
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "flood_duration",
+    "variant": "small",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 8
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "flood_duration",
+    "variant": "small",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 2,
+      "5000": 8
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "inventory_lost_sales",
+    "variant": "large",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 2,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "inventory_lost_sales",
+    "variant": "large",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 2,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "inventory_lost_sales",
+    "variant": "small",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 4,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "inventory_lost_sales",
+    "variant": "small",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 4,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "queue_workload",
+    "variant": "large",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 2
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "queue_workload",
+    "variant": "large",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 2,
+      "5000": 2
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "queue_workload",
+    "variant": "small",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "queue_workload",
+    "variant": "small",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "warranty_ladder",
+    "variant": "large",
+    "trip_count": 255,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "warranty_ladder",
+    "variant": "large",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "warranty_ladder",
+    "variant": "small",
+    "trip_count": 255,
+    "opportunity": true,
+    "oracle": {
+      "300": 1,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "holdout",
+    "workload": "warranty_ladder",
+    "variant": "small",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "300": 4,
+      "5000": 4
+    }
+  }
+]

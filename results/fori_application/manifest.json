@@ -1,0 +1,180 @@
+{
+  "applications": [
+    {
+      "name": "threshold_curves",
+      "variant": "real",
+      "trip": 1024,
+      "input_hashes": [
+        "4da8e0f6fd0020f3d868365799804aa49fd51ea84a3c5a9f138f4d2c311234c4",
+        "e07974044364d5ec55ea63e117ea1a05cf3534325248a6a9b450bad0cc933e8f",
+        "f41b830dbae01e744bae82ecc61c7e6c3a77b07a6bf39763b8ec912b67cc106d",
+        "8ce8ba8e726ee8925e6560d86ac35be1097691d1cfac888e6bd20e804ea9eb15"
+      ]
+    },
+    {
+      "name": "neighborhood_contrast",
+      "variant": "real",
+      "trip": 81,
+      "input_hashes": [
+        "a38f7f5f60e4b71827578c41ee2b59d997019308506aa5e7a3567fdff264307b"
+      ]
+    },
+    {
+      "name": "online_regression",
+      "variant": "real",
+      "trip": 442,
+      "input_hashes": [
+        "f0c74464d229bc436851057d76b45f11365e8f02bb974b3613135536975fe5a1",
+        "36dea7b461b3787c3c92970a7edeb979e8404ffb2bf294bd9a9313d9c3b33a52",
+        "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0"
+      ]
+    },
+    {
+      "name": "class_pixel_peaks",
+      "variant": "real",
+      "trip": 1024,
+      "input_hashes": [
+        "15412cff312d67bbcdd25189270ee69fa6e8e7009bac488d20c977a5e08cf931",
+        "6fa77f8f27fc85820f6ad8a3b1fd60dbb6228181b38c460f30e1ec9e95873e4c"
+      ]
+    }
+  ],
+  "application_code": "654fcf8d8ecf02efd8f4b27516d35886cca7b42d519c467d939743b7a78b70d6",
+  "holdout": [
+    [
+      "queue_workload",
+      "small",
+      255
+    ],
+    [
+      "queue_workload",
+      "small",
+      1024
+    ],
+    [
+      "queue_workload",
+      "large",
+      255
+    ],
+    [
+      "queue_workload",
+      "large",
+      1024
+    ],
+    [
+      "inventory_lost_sales",
+      "small",
+      255
+    ],
+    [
+      "inventory_lost_sales",
+      "small",
+      1024
+    ],
+    [
+      "inventory_lost_sales",
+      "large",
+      255
+    ],
+    [
+      "inventory_lost_sales",
+      "large",
+      1024
+    ],
+    [
+      "warranty_ladder",
+      "small",
+      255
+    ],
+    [
+      "warranty_ladder",
+      "small",
+      1024
+    ],
+    [
+      "warranty_ladder",
+      "large",
+      255
+    ],
+    [
+      "warranty_ladder",
+      "large",
+      1024
+    ],
+    [
+      "bitplane_motion",
+      "small",
+      255
+    ],
+    [
+      "bitplane_motion",
+      "small",
+      1024
+    ],
+    [
+      "bitplane_motion",
+      "large",
+      255
+    ],
+    [
+      "bitplane_motion",
+      "large",
+      1024
+    ],
+    [
+      "flood_duration",
+      "small",
+      255
+    ],
+    [
+      "flood_duration",
+      "small",
+      1024
+    ],
+    [
+      "flood_duration",
+      "large",
+      255
+    ],
+    [
+      "flood_duration",
+      "large",
+      1024
+    ],
+    [
+      "adaptive_unmixing",
+      "small",
+      255
+    ],
+    [
+      "adaptive_unmixing",
+      "small",
+      1024
+    ],
+    [
+      "adaptive_unmixing",
+      "large",
+      255
+    ],
+    [
+      "adaptive_unmixing",
+      "large",
+      1024
+    ]
+  ],
+  "agent_split": "5fef09fd19c783613760c547c9cd103e74dc6e94052444fec1965bf5bdb0e9e1",
+  "primary_calls": 5000,
+  "horizons": [
+    300,
+    5000
+  ],
+  "arms": [
+    "native",
+    "warm",
+    "previous",
+    "candidate",
+    "oracle"
+  ],
+  "repeats": 3,
+  "success": "At least 10% pooled savings vs native and faster in all three repeats on real applications; report each case and full separate agent holdout."
+}

@@ -6,6 +6,26 @@ The experimental selector chooses a partial unroll factor for fixed-trip-count l
 
 Two opt-in compile-once reductions improved warm full-caller latency on Apple M2. Native JAX is the general default, and learned selection remains experimental. [Final evaluation and reproduction guide](docs/final_report.md) · [Final slides](docs/phase5_slides.pptx)
 
+For repeated CPU applications, the installed package includes the compact model and its calibrated matrix-update policy. Create one shared engine outside the jitted caller, then pass the expected number of invocations and optional cold budget to the wrapper. [Application measurements and supported use cases](docs/fori_application.md)
+
+```python
+import jax
+import jax.numpy as jnp
+from jax_unroll.auto_loop import auto_fori_loop
+from jax_unroll.compact_fori import application_engine
+
+engine = application_engine()
+
+@jax.jit
+def weighted_gram(samples, weights):
+    def add_sample(i, gram):
+        row = samples[i]
+        return gram + weights[i] * jnp.outer(row, row)
+
+    zero = jnp.zeros((samples.shape[1], samples.shape[1]), dtype=samples.dtype)
+    return auto_fori_loop(0, samples.shape[0], add_sample, zero, R=5000, B=125, engine=engine)
+```
+
 ## Source of truth
 
 - `CSE583_Cost_Aware_JAX_Loop_Unrolling_Proposal.docx` -- proposal, scope, algorithm, evaluation plan
@@ -100,7 +120,7 @@ TASKS.md                actionable project plan and definition of done
 
 Two [compile-once reduction specializations](docs/compile_once_reductions.md) beat native JAX on measured Apple M2 shapes. For the original twelve library configurations, use native JAX by default. The [library deployment benchmark](docs/library_deployment.md) covers actual public functions, held-out inputs, and calibration costs.
 
-For static `jax.lax.fori_loop`, use [`auto_fori_loop` with the expansion-trained CPU predictor](docs/fori_predictor.md) to select an unroll factor for the existing loop body. On 192 configurations the live wrapper measured 1.12× pooled warm speedup with a median 4.35 ms trace-time decision. The [paired-trip predictor evaluation](docs/targeted_predictor.md) compares eight model designs and four fixed factors.
+The earlier static `jax.lax.fori_loop` benchmark used [`auto_fori_loop` with the expansion-trained CPU predictor](docs/fori_predictor.md) to select an unroll factor for the existing loop body. On 192 configurations the live wrapper measured 1.12× pooled warm speedup with a median 4.35 ms trace-time decision. The [paired-trip predictor evaluation](docs/targeted_predictor.md) compares eight model designs and four fixed factors.
 
 The [prediction follow-up](docs/fori_prediction_update.md) adds 19 generated workloads and evaluates a static refit and a shorter-trip profile correction.
 
