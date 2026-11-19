@@ -24,20 +24,12 @@ def test_phase_two_feature_api_is_implemented():
     assert callable(features.extract_loop_body)
 
 
-def test_auto_scan_is_a_phase_four_stub():
+def test_auto_scan_is_deferred():
     with pytest.raises(NotImplementedError) as excinfo:
         auto_loop.auto_scan(lambda carry, x: (carry, None), 0.0, [1.0])
     message = str(excinfo.value)
     assert "Phase 4" in message
     assert "auto_scan" in message
-
-
-def test_auto_fori_loop_is_a_phase_four_stub():
-    with pytest.raises(NotImplementedError) as excinfo:
-        auto_loop.auto_fori_loop(0, 4, lambda i, carry: carry, 0.0)
-    message = str(excinfo.value)
-    assert "Phase 4" in message
-    assert "auto_fori_loop" in message
 
 
 @pytest.mark.parametrize(

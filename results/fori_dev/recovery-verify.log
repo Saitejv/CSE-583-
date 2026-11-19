@@ -1,0 +1,3 @@
+JAX_PLATFORMS=cpu .venv/bin/python -m benchmarks.verify_recovery
+Verified the one-shot confirmation record: passed
+Reproduced the confirmation dataset and metadata byte for byte, without model scoring

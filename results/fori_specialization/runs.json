@@ -1,0 +1,2343 @@
+{
+  "machine": "arm64",
+  "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+  "jax": "0.12.0.1",
+  "jaxlib": "0.12.0.1",
+  "backend": "cpu",
+  "summary": {
+    "write_multitap_delay_ring": {
+      "paired_warm_speedup_vs_factor_1": 5.3600879008220605,
+      "paired_warm_speedup_vs_fastest_native": 1.5047279298594065,
+      "paired_warm_speedup_vs_specialized_factor_1": 5.345764614846516,
+      "min_paired_warm_speedup_vs_factor_1": 1.884798239794083,
+      "pooled_warm_speedup_vs_factor_1": 8.21614867972269
+    },
+    "eval_dense_attention_block_step": {
+      "paired_warm_speedup_vs_factor_1": 2.1168987611013503,
+      "paired_warm_speedup_vs_fastest_native": 2.037870363087961,
+      "paired_warm_speedup_vs_specialized_factor_1": 1.0241392125264481,
+      "min_paired_warm_speedup_vs_factor_1": 1.6723330447784688,
+      "pooled_warm_speedup_vs_factor_1": 2.283615056906333
+    },
+    "eval_app_ct_backprojection_step": {
+      "paired_warm_speedup_vs_factor_1": 2.6602025164395395,
+      "paired_warm_speedup_vs_fastest_native": 2.418268091151595,
+      "paired_warm_speedup_vs_specialized_factor_1": 1.1308047705067916,
+      "min_paired_warm_speedup_vs_factor_1": 1.7044080520666982,
+      "pooled_warm_speedup_vs_factor_1": 3.189000375221734
+    },
+    "eval_write_waveguide_mesh": {
+      "paired_warm_speedup_vs_factor_1": 1.3553889803144905,
+      "paired_warm_speedup_vs_fastest_native": 1.0070553684720007,
+      "paired_warm_speedup_vs_specialized_factor_1": 1.1712487261986861,
+      "min_paired_warm_speedup_vs_factor_1": 1.1228346955961757,
+      "pooled_warm_speedup_vs_factor_1": 1.5419346170787929
+    }
+  },
+  "runs": [
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 74,
+      "first_ms": {
+        "native_2": 41.936,
+        "native_1": 24.408208,
+        "specialized_factor_1": 34.019791,
+        "native_4": 70.825167,
+        "specialized": 59.4145,
+        "native_8": 167.035
+      },
+      "warm_us": {
+        "native_2": 23.65654054054054,
+        "native_1": 37.185810810810814,
+        "specialized_factor_1": 36.51295945945946,
+        "native_4": 17.394702702702702,
+        "specialized": 8.810243243243244,
+        "native_8": 27.467337837837835
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 50,
+      "first_ms": {
+        "specialized": 71.190291,
+        "specialized_factor_1": 31.888834,
+        "native_1": 27.630542,
+        "native_2": 52.805375,
+        "native_4": 103.033042,
+        "native_8": 245.316833
+      },
+      "warm_us": {
+        "specialized": 9.2825,
+        "specialized_factor_1": 59.305,
+        "native_1": 58.61166,
+        "native_2": 9.0925,
+        "native_4": 8.44584,
+        "native_8": 8.64668
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_2": 56.101625,
+        "native_1": 25.727916,
+        "specialized_factor_1": 33.799583,
+        "specialized": 67.171958,
+        "native_4": 101.058584,
+        "native_8": 239.583458
+      },
+      "warm_us": {
+        "native_2": 8.639,
+        "native_1": 14.665359375,
+        "specialized_factor_1": 14.6155625,
+        "specialized": 7.4736328125,
+        "native_4": 8.0423203125,
+        "native_8": 8.193359375
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "native_2": 57.587875,
+        "specialized": 70.162042,
+        "native_4": 106.242833,
+        "native_1": 26.465167,
+        "native_8": 238.746583,
+        "specialized_factor_1": 34.054541
+      },
+      "warm_us": {
+        "native_2": 12.577357142857142,
+        "specialized": 9.904714285714286,
+        "native_4": 24.523785714285715,
+        "native_1": 211.04171428571428,
+        "native_8": 23.196428571428573,
+        "specialized_factor_1": 211.1487857142857
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 13,
+      "first_ms": {
+        "specialized_factor_1": 35.698,
+        "native_8": 165.445667,
+        "native_4": 72.365916,
+        "native_1": 25.062792,
+        "native_2": 38.784208,
+        "specialized": 61.173834
+      },
+      "warm_us": {
+        "specialized_factor_1": 211.5897692307692,
+        "native_8": 50.910230769230765,
+        "native_4": 61.50323076923077,
+        "native_1": 211.25,
+        "native_2": 112.54169230769232,
+        "specialized": 16.003153846153847
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "specialized_factor_1": 35.804875,
+        "native_2": 40.6795,
+        "native_8": 164.365334,
+        "native_4": 72.847292,
+        "native_1": 24.893375,
+        "specialized": 59.9265
+      },
+      "warm_us": {
+        "specialized_factor_1": 59.61224489795919,
+        "native_2": 34.185367346938776,
+        "native_8": 27.45408163265306,
+        "native_4": 21.27210204081633,
+        "native_1": 58.884367346938774,
+        "specialized": 10.722795918367346
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "specialized_factor_1": 35.332917,
+        "native_1": 26.430667,
+        "native_8": 234.579125,
+        "native_2": 53.425333,
+        "native_4": 105.141875,
+        "specialized": 69.183709
+      },
+      "warm_us": {
+        "specialized_factor_1": 36.64418421052631,
+        "native_1": 37.18201315789474,
+        "native_8": 23.54496052631579,
+        "native_2": 11.70503947368421,
+        "native_4": 23.732447368421052,
+        "specialized": 8.086065789473684
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_8": 167.254958,
+        "native_4": 72.572916,
+        "native_1": 25.134333,
+        "specialized": 62.214792,
+        "native_2": 39.044958,
+        "specialized_factor_1": 31.266709
+      },
+      "warm_us": {
+        "native_8": 9.6484375,
+        "native_4": 9.80240625,
+        "native_1": 14.7669296875,
+        "specialized": 7.8037109375,
+        "native_2": 11.4290390625,
+        "specialized_factor_1": 14.6878203125
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 27.317708,
+        "native_1": 17.626792,
+        "specialized_factor_1": 53.059334,
+        "native_4": 32.509333,
+        "specialized": 32.444625,
+        "native_8": 52.312875
+      },
+      "warm_us": {
+        "native_2": 500.8668,
+        "native_1": 518.525,
+        "specialized_factor_1": 246.7416,
+        "native_4": 487.21659999999997,
+        "specialized": 185.9332,
+        "native_8": 464.25840000000005
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 3,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized": 56.858542,
+        "specialized_factor_1": 37.786959,
+        "native_1": 18.636375,
+        "native_2": 31.020083,
+        "native_4": 50.107958,
+        "native_8": 102.260625
+      },
+      "warm_us": {
+        "specialized": 222.0668,
+        "specialized_factor_1": 222.9916,
+        "native_1": 594.8416,
+        "native_2": 569.2166,
+        "native_4": 563.8581999999999,
+        "native_8": 550.2416
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 3,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_2": 34.896375,
+        "native_1": 18.041791,
+        "specialized_factor_1": 54.498625,
+        "specialized": 63.804959,
+        "native_4": 49.820875,
+        "native_8": 84.419458
+      },
+      "warm_us": {
+        "native_2": 140.20415,
+        "native_1": 145.89375,
+        "specialized_factor_1": 93.95625,
+        "specialized": 85.5979,
+        "native_4": 135.5021,
+        "native_8": 133.3125
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 3,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 36.538875,
+        "specialized": 53.823541,
+        "native_4": 51.685708,
+        "native_1": 20.132042,
+        "native_8": 103.733167,
+        "specialized_factor_1": 38.571833
+      },
+      "warm_us": {
+        "native_2": 2218.96875,
+        "specialized": 673.9895,
+        "native_4": 2168.28125,
+        "native_1": 2334.5625,
+        "native_8": 2115.86475,
+        "specialized_factor_1": 681.08325
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 41.282334,
+        "native_8": 54.168208,
+        "native_4": 35.282375,
+        "native_1": 19.824958,
+        "native_2": 24.216583,
+        "specialized": 32.122459
+      },
+      "warm_us": {
+        "specialized_factor_1": 687.052,
+        "native_8": 2106.229,
+        "native_4": 2152.29175,
+        "native_1": 2309.302,
+        "native_2": 2215.375,
+        "specialized": 597.59375
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 40.9925,
+        "native_2": 23.760334,
+        "native_8": 51.489792,
+        "native_4": 32.414583,
+        "native_1": 17.937875,
+        "specialized": 31.790584
+      },
+      "warm_us": {
+        "specialized_factor_1": 222.3584,
+        "native_2": 569.4831999999999,
+        "native_8": 543.9584,
+        "native_4": 554.2,
+        "native_1": 590.4581999999999,
+        "specialized": 191.2918
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 3,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 57.594,
+        "native_1": 18.975208,
+        "native_8": 83.793333,
+        "native_2": 31.5025,
+        "native_4": 49.771834,
+        "specialized": 63.224042
+      },
+      "warm_us": {
+        "specialized_factor_1": 245.9,
+        "native_1": 517.0084,
+        "native_8": 463.725,
+        "native_2": 498.03340000000003,
+        "native_4": 480.425,
+        "specialized": 216.8666
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_8": 55.82025,
+        "native_4": 31.973292,
+        "native_1": 17.488458,
+        "specialized": 34.547834,
+        "native_2": 24.037458,
+        "specialized_factor_1": 48.25875
+      },
+      "warm_us": {
+        "native_8": 131.00215789473685,
+        "native_4": 134.7522105263158,
+        "native_1": 143.70173684210525,
+        "specialized": 74.50221052631579,
+        "native_2": 139.35305263157895,
+        "specialized_factor_1": 93.96052631578948
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 3,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 58.58725,
+        "native_8": 104.84275,
+        "native_4": 53.586834,
+        "native_2": 33.223,
+        "specialized_factor_1": 38.534792,
+        "native_1": 20.32475
+      },
+      "warm_us": {
+        "specialized": 675.875,
+        "native_8": 2121.84375,
+        "native_4": 2162.52075,
+        "native_2": 2219.16675,
+        "specialized_factor_1": 684.35425,
+        "native_1": 2320.01025
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized": 37.772917,
+        "native_8": 52.691167,
+        "native_2": 22.975625,
+        "native_1": 17.769458,
+        "native_4": 31.953292,
+        "specialized_factor_1": 35.635208
+      },
+      "warm_us": {
+        "specialized": 196.2332,
+        "native_8": 543.3834,
+        "native_2": 572.95,
+        "native_1": 596.475,
+        "native_4": 556.325,
+        "specialized_factor_1": 219.9418
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 28.748209,
+        "specialized": 34.894916,
+        "native_8": 53.495959,
+        "native_4": 33.840208,
+        "specialized_factor_1": 35.646167,
+        "native_1": 20.183416
+      },
+      "warm_us": {
+        "native_2": 2217.177,
+        "specialized": 597.6355,
+        "native_8": 2106.09375,
+        "native_4": 2157.625,
+        "specialized_factor_1": 685.5625,
+        "native_1": 2308.33325
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 3,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 34.973,
+        "specialized": 64.967875,
+        "native_4": 49.542084,
+        "specialized_factor_1": 51.619875,
+        "native_8": 85.965292,
+        "native_1": 18.732
+      },
+      "warm_us": {
+        "native_2": 499.99159999999995,
+        "specialized": 216.875,
+        "native_4": 482.08340000000004,
+        "specialized_factor_1": 244.2666,
+        "native_8": 467.6084,
+        "native_1": 522.6832
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 55.304792,
+        "specialized": 33.173167,
+        "native_4": 34.270875,
+        "native_2": 23.655459,
+        "native_1": 17.781667,
+        "native_8": 51.703625
+      },
+      "warm_us": {
+        "specialized_factor_1": 243.9084,
+        "specialized": 185.3582,
+        "native_4": 480.1834,
+        "native_2": 499.3,
+        "native_1": 519.825,
+        "native_8": 466.29179999999997
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 3,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_4": 53.090583,
+        "native_8": 85.877833,
+        "native_1": 19.113833,
+        "specialized": 64.746541,
+        "native_2": 30.852792,
+        "specialized_factor_1": 51.723625
+      },
+      "warm_us": {
+        "native_4": 136.96052631578948,
+        "native_8": 132.91447368421052,
+        "native_1": 146.00657894736844,
+        "specialized": 85.09426315789473,
+        "native_2": 140.68421052631578,
+        "specialized_factor_1": 91.068
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 20,
+      "first_ms": {
+        "specialized": 38.918959,
+        "specialized_factor_1": 48.64425,
+        "native_1": 18.163041,
+        "native_2": 22.629583,
+        "native_4": 31.678791,
+        "native_8": 51.531292
+      },
+      "warm_us": {
+        "specialized": 74.1167,
+        "specialized_factor_1": 89.04585,
+        "native_1": 143.8042,
+        "native_2": 139.30415,
+        "native_4": 134.09789999999998,
+        "native_8": 130.85
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 3,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_8": 105.273625,
+        "native_2": 31.520708,
+        "native_4": 50.838541,
+        "native_1": 18.507666,
+        "specialized_factor_1": 41.825667,
+        "specialized": 51.30075
+      },
+      "warm_us": {
+        "native_8": 548.2085,
+        "native_2": 572.64575,
+        "native_4": 565.1355,
+        "native_1": 603.15625,
+        "specialized_factor_1": 223.354,
+        "specialized": 216.28125
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 18,
+      "first_ms": {
+        "native_2": 80.093042,
+        "native_1": 35.850208,
+        "specialized_factor_1": 25.472958,
+        "native_4": 174.918542,
+        "specialized": 28.13025,
+        "native_8": 404.370958
+      },
+      "warm_us": {
+        "native_2": 148.24305555555557,
+        "native_1": 148.86805555555557,
+        "specialized_factor_1": 64.44672222222222,
+        "native_4": 137.79861111111111,
+        "specialized": 61.476888888888894,
+        "native_8": 138.65277777777777
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "specialized": 38.412541,
+        "specialized_factor_1": 27.636541,
+        "native_1": 82.188417,
+        "native_2": 206.321625,
+        "native_4": 392.134334,
+        "native_8": 1105.401875
+      },
+      "warm_us": {
+        "specialized": 45.00909375,
+        "specialized_factor_1": 45.94790625,
+        "native_1": 88.27471875,
+        "native_2": 88.828125,
+        "native_4": 88.01040625,
+        "native_8": 91.591125
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 53,
+      "first_ms": {
+        "native_2": 96.897791,
+        "native_1": 37.03075,
+        "specialized_factor_1": 31.864,
+        "specialized": 36.099875,
+        "native_4": 194.18875,
+        "native_8": 446.153041
+      },
+      "warm_us": {
+        "native_2": 50.972490566037735,
+        "native_1": 50.66901886792453,
+        "specialized_factor_1": 30.609283018867924,
+        "specialized": 30.06132075471698,
+        "native_4": 51.764150943396224,
+        "native_8": 52.82075471698113
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 10,
+      "first_ms": {
+        "native_2": 211.314209,
+        "specialized": 33.915667,
+        "native_4": 392.881875,
+        "native_1": 82.803375,
+        "native_8": 1098.384416,
+        "specialized_factor_1": 27.828375
+      },
+      "warm_us": {
+        "native_2": 295.6,
+        "specialized": 121.4333,
+        "native_4": 287.2708,
+        "native_1": 298.0917,
+        "native_8": 291.0292,
+        "specialized_factor_1": 122.3416
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "specialized_factor_1": 29.346292,
+        "native_8": 1059.23225,
+        "native_4": 366.400584,
+        "native_1": 83.444084,
+        "native_2": 156.818667,
+        "specialized": 26.093875
+      },
+      "warm_us": {
+        "specialized_factor_1": 121.28711111111112,
+        "native_8": 289.98611111111114,
+        "native_4": 283.92133333333334,
+        "native_1": 298.8517777777777,
+        "native_2": 294.3008888888889,
+        "specialized": 117.42133333333332
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "specialized_factor_1": 31.130583,
+        "native_2": 156.457916,
+        "native_8": 1066.972167,
+        "native_4": 365.3305,
+        "native_1": 83.749458,
+        "specialized": 28.102208
+      },
+      "warm_us": {
+        "specialized_factor_1": 45.5611875,
+        "native_2": 89.57421875,
+        "native_8": 88.87109375,
+        "native_4": 85.46353125,
+        "native_1": 88.88409375,
+        "specialized": 43.99090625
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "specialized_factor_1": 27.088042,
+        "native_1": 36.655125,
+        "native_8": 436.497083,
+        "native_2": 94.061375,
+        "native_4": 193.485542,
+        "specialized": 30.846125
+      },
+      "warm_us": {
+        "specialized_factor_1": 64.25442105263159,
+        "native_1": 148.85305263157895,
+        "native_8": 140.25436842105265,
+        "native_2": 151.9781052631579,
+        "native_4": 140.66005263157896,
+        "specialized": 63.80478947368422
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 53,
+      "first_ms": {
+        "native_8": 404.769333,
+        "native_4": 181.20425,
+        "native_1": 37.843833,
+        "specialized": 30.131417,
+        "native_2": 77.845291,
+        "specialized_factor_1": 26.841083
+      },
+      "warm_us": {
+        "native_8": 49.889150943396224,
+        "native_4": 48.47483018867925,
+        "native_1": 50.87264150943396,
+        "specialized": 29.555811320754717,
+        "native_2": 51.25235849056604,
+        "specialized_factor_1": 30.33411320754717
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 90.021167,
+        "native_1": 133.833958,
+        "native_2": 254.596209,
+        "native_8": 1158.043417,
+        "specialized": 142.224958,
+        "native_4": 580.640791
+      },
+      "warm_us": {
+        "specialized_factor_1": 2704.823,
+        "native_1": 3641.4375,
+        "native_2": 2330.16675,
+        "native_8": 2399.7395,
+        "specialized": 2245.58325,
+        "native_4": 2302.25
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_4": 566.958458,
+        "specialized": 149.962792,
+        "specialized_factor_1": 78.493541,
+        "native_8": 1150.711,
+        "native_1": 131.686875,
+        "native_2": 252.365833
+      },
+      "warm_us": {
+        "native_4": 587.91675,
+        "specialized": 576.89575,
+        "specialized_factor_1": 693.823,
+        "native_8": 612.4375,
+        "native_1": 922.979,
+        "native_2": 598.698
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 297.985208,
+        "specialized_factor_1": 146.539959,
+        "native_1": 145.74575,
+        "native_8": 1119.377708,
+        "specialized": 293.416708,
+        "native_4": 580.560375
+      },
+      "warm_us": {
+        "native_2": 431.775,
+        "specialized_factor_1": 493.275,
+        "native_1": 491.475,
+        "native_8": 425.3832,
+        "specialized": 429.4832,
+        "native_4": 427.925
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 151.435125,
+        "native_1": 146.257625,
+        "native_8": 1061.53525,
+        "native_4": 546.295625,
+        "native_2": 278.494958,
+        "specialized": 278.255625
+      },
+      "warm_us": {
+        "specialized_factor_1": 495.59159999999997,
+        "native_1": 493.7332,
+        "native_8": 423.4918,
+        "native_4": 428.5082,
+        "native_2": 428.15840000000003,
+        "specialized": 430.875
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_1": 147.755084,
+        "specialized_factor_1": 145.727791,
+        "native_2": 279.755625,
+        "native_4": 541.425,
+        "native_8": 1056.667,
+        "specialized": 279.174042
+      },
+      "warm_us": {
+        "native_1": 136.1627142857143,
+        "specialized_factor_1": 135.98014285714288,
+        "native_2": 120.67461904761905,
+        "native_4": 118.92857142857143,
+        "native_8": 118.27180952380952,
+        "specialized": 121.06742857142856
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 81.663583,
+        "native_1": 130.952917,
+        "native_2": 235.838667,
+        "native_8": 1098.927708,
+        "native_4": 550.331375,
+        "specialized": 127.705458
+      },
+      "warm_us": {
+        "specialized_factor_1": 697.15625,
+        "native_1": 926.3335,
+        "native_2": 601.2395,
+        "native_8": 614.77075,
+        "native_4": 588.90625,
+        "specialized": 577.07275
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 83.958292,
+        "native_4": 529.815,
+        "specialized": 131.520125,
+        "native_8": 1093.615625,
+        "native_2": 238.105875,
+        "native_1": 132.136417
+      },
+      "warm_us": {
+        "specialized_factor_1": 2711.5105,
+        "native_4": 2300.7395,
+        "specialized": 2243.19775,
+        "native_8": 2396.39575,
+        "native_2": 2334.0105,
+        "native_1": 3636.71875
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 2,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_2": 295.042208,
+        "specialized": 293.131,
+        "native_8": 1120.236167,
+        "specialized_factor_1": 147.5575,
+        "native_1": 145.626166,
+        "native_4": 592.593958
+      },
+      "warm_us": {
+        "native_2": 118.75795238095237,
+        "specialized": 118.871,
+        "native_8": 118.77180952380952,
+        "specialized_factor_1": 134.379,
+        "native_1": 134.36509523809525,
+        "native_4": 118.39480952380953
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 10,
+      "first_ms": {
+        "specialized_factor_1": 30.898,
+        "native_1": 81.648917,
+        "native_2": 207.638292,
+        "native_8": 1099.696166,
+        "specialized": 35.9255,
+        "native_4": 387.126958
+      },
+      "warm_us": {
+        "specialized_factor_1": 122.0083,
+        "native_1": 296.35,
+        "native_2": 295.3917,
+        "native_8": 290.42920000000004,
+        "specialized": 121.4709,
+        "native_4": 285.5958
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "native_4": 395.398542,
+        "specialized": 36.957417,
+        "specialized_factor_1": 27.459584,
+        "native_8": 1100.529125,
+        "native_1": 85.748167,
+        "native_2": 205.414875
+      },
+      "warm_us": {
+        "native_4": 88.01953125,
+        "specialized": 45.44009375,
+        "specialized_factor_1": 45.7799375,
+        "native_8": 90.640625,
+        "native_1": 87.7799375,
+        "native_2": 89.71484375
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_2": 95.719333,
+        "specialized_factor_1": 25.187625,
+        "native_1": 37.158625,
+        "native_8": 438.765208,
+        "specialized": 32.448875,
+        "native_4": 193.076375
+      },
+      "warm_us": {
+        "native_2": 150.71926315789474,
+        "specialized_factor_1": 63.80921052631579,
+        "native_1": 148.71273684210524,
+        "native_8": 139.60742105263157,
+        "specialized": 63.298210526315785,
+        "native_4": 140.20615789473686
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 18,
+      "first_ms": {
+        "specialized_factor_1": 28.530875,
+        "native_1": 36.978,
+        "native_8": 401.296625,
+        "native_4": 178.469625,
+        "native_2": 78.216,
+        "specialized": 28.705292
+      },
+      "warm_us": {
+        "specialized_factor_1": 64.28933333333333,
+        "native_1": 149.11111111111111,
+        "native_8": 138.31944444444443,
+        "native_4": 139.21527777777777,
+        "native_2": 149.75694444444443,
+        "specialized": 62.15972222222222
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 53,
+      "first_ms": {
+        "native_1": 39.524709,
+        "specialized_factor_1": 29.054625,
+        "native_2": 80.0965,
+        "native_4": 177.88475,
+        "native_8": 399.424459,
+        "specialized": 30.739458
+      },
+      "warm_us": {
+        "native_1": 50.29401886792453,
+        "specialized_factor_1": 29.934735849056604,
+        "native_2": 50.13207547169811,
+        "native_4": 48.86007547169811,
+        "native_8": 49.71147169811321,
+        "specialized": 28.546377358490563
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "specialized_factor_1": 31.242625,
+        "native_1": 81.266708,
+        "native_2": 156.253958,
+        "native_8": 1064.181417,
+        "native_4": 364.97725,
+        "specialized": 30.293959
+      },
+      "warm_us": {
+        "specialized_factor_1": 44.828125,
+        "native_1": 88.388,
+        "native_2": 88.17578125,
+        "native_8": 88.54296875,
+        "native_4": 85.20703125,
+        "specialized": 43.38803125
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "specialized_factor_1": 29.125959,
+        "native_4": 365.539833,
+        "specialized": 27.080917,
+        "native_8": 1076.968208,
+        "native_2": 161.218708,
+        "native_1": 83.069792
+      },
+      "warm_us": {
+        "specialized_factor_1": 124.59722222222221,
+        "native_4": 286.8982222222223,
+        "specialized": 118.11566666666667,
+        "native_8": 290.4953333333333,
+        "native_2": 298.30555555555554,
+        "native_1": 299.26388888888886
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 53,
+      "first_ms": {
+        "native_2": 92.972417,
+        "specialized": 40.80025,
+        "native_8": 430.590584,
+        "specialized_factor_1": 31.983792,
+        "native_1": 37.101417,
+        "native_4": 193.09775
+      },
+      "warm_us": {
+        "native_2": 51.4583396226415,
+        "specialized": 29.96933962264151,
+        "native_8": 52.549528301886795,
+        "specialized_factor_1": 30.536943396226416,
+        "native_1": 50.11871698113208,
+        "native_4": 50.70832075471698
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 146.182667,
+        "native_8": 1161.651208,
+        "native_4": 566.173791,
+        "native_2": 258.818083,
+        "specialized_factor_1": 81.890375,
+        "native_1": 135.452625
+      },
+      "warm_us": {
+        "specialized": 2243.67725,
+        "native_8": 2401.698,
+        "native_4": 2301.1665,
+        "native_2": 2333.79175,
+        "specialized_factor_1": 2704.646,
+        "native_1": 3635.2085
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 133.591208,
+        "native_8": 1096.801375,
+        "native_2": 237.095458,
+        "native_1": 130.035334,
+        "native_4": 524.21725,
+        "specialized_factor_1": 80.325667
+      },
+      "warm_us": {
+        "specialized": 577.41675,
+        "native_8": 616.1875,
+        "native_2": 599.7605,
+        "native_1": 924.51025,
+        "native_4": 590.052,
+        "specialized_factor_1": 693.90625
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 240.352958,
+        "specialized": 129.143,
+        "native_8": 1104.09675,
+        "native_4": 528.176292,
+        "specialized_factor_1": 80.13525,
+        "native_1": 133.81425
+      },
+      "warm_us": {
+        "native_2": 2340.76025,
+        "specialized": 2239.21875,
+        "native_8": 2399.052,
+        "native_4": 2307.552,
+        "specialized_factor_1": 2714.6145,
+        "native_1": 3640.95825
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 6,
+      "first_ms": {
+        "native_2": 296.204208,
+        "specialized": 293.543958,
+        "native_4": 590.531417,
+        "specialized_factor_1": 146.563875,
+        "native_8": 1123.70925,
+        "native_1": 146.799166
+      },
+      "warm_us": {
+        "native_2": 427.8541666666667,
+        "specialized": 430.9098333333333,
+        "native_4": 429.2708333333333,
+        "specialized_factor_1": 494.132,
+        "native_8": 423.986,
+        "native_1": 494.7431666666667
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 6,
+      "first_ms": {
+        "specialized_factor_1": 150.068125,
+        "specialized": 277.407291,
+        "native_4": 539.582917,
+        "native_2": 278.324667,
+        "native_1": 145.625916,
+        "native_8": 1062.165292
+      },
+      "warm_us": {
+        "specialized_factor_1": 491.2291666666667,
+        "specialized": 427.7431666666667,
+        "native_4": 428.368,
+        "native_2": 428.1666666666667,
+        "native_1": 492.1596666666667,
+        "native_8": 424.5486666666667
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_4": 587.133791,
+        "native_8": 1121.354458,
+        "native_1": 146.62575,
+        "specialized": 293.463166,
+        "native_2": 293.338583,
+        "specialized_factor_1": 146.427333
+      },
+      "warm_us": {
+        "native_4": 119.748,
+        "native_8": 119.77976190476191,
+        "native_1": 134.92061904761906,
+        "specialized": 120.16071428571429,
+        "native_2": 120.1587142857143,
+        "specialized_factor_1": 135.14680952380954
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 21,
+      "first_ms": {
+        "specialized": 284.392333,
+        "specialized_factor_1": 146.562291,
+        "native_1": 146.52025,
+        "native_2": 277.628166,
+        "native_4": 539.667125,
+        "native_8": 1062.02275
+      },
+      "warm_us": {
+        "specialized": 119.89480952380953,
+        "specialized_factor_1": 135.4067619047619,
+        "native_1": 136.6627142857143,
+        "native_2": 119.93057142857144,
+        "native_4": 119.92857142857143,
+        "native_8": 119.74804761904763
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_8": 1160.297167,
+        "native_2": 253.241083,
+        "native_4": 571.75475,
+        "native_1": 133.167792,
+        "specialized_factor_1": 78.048167,
+        "specialized": 152.588042
+      },
+      "warm_us": {
+        "native_8": 611.073,
+        "native_2": 595.1665,
+        "native_4": 588.71875,
+        "native_1": 921.90625,
+        "specialized_factor_1": 690.5835,
+        "specialized": 574.38525
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 6,
+      "first_ms": {
+        "native_2": 281.43775,
+        "native_1": 150.388333,
+        "specialized_factor_1": 145.758833,
+        "native_4": 542.423208,
+        "specialized": 279.028459,
+        "native_8": 1058.445708
+      },
+      "warm_us": {
+        "native_2": 429.0693333333333,
+        "native_1": 491.6111666666667,
+        "specialized_factor_1": 491.5971666666667,
+        "native_4": 425.7638333333333,
+        "specialized": 427.8055,
+        "native_8": 423.9305
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 146.014166,
+        "specialized_factor_1": 82.987833,
+        "native_1": 131.005167,
+        "native_2": 253.235833,
+        "native_4": 572.080417,
+        "native_8": 1148.220583
+      },
+      "warm_us": {
+        "specialized": 575.15625,
+        "specialized_factor_1": 688.71875,
+        "native_1": 922.27075,
+        "native_2": 594.39575,
+        "native_4": 588.17725,
+        "native_8": 609.52075
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_2": 296.461084,
+        "native_1": 145.8935,
+        "specialized_factor_1": 144.9395,
+        "specialized": 292.32325,
+        "native_4": 600.014917,
+        "native_8": 1115.775958
+      },
+      "warm_us": {
+        "native_2": 119.44047619047619,
+        "native_1": 136.1984285714286,
+        "specialized_factor_1": 135.64880952380952,
+        "specialized": 120.30557142857144,
+        "native_4": 120.43452380952381,
+        "native_8": 119.92461904761905
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 263.074416,
+        "specialized": 146.974,
+        "native_4": 569.704834,
+        "native_1": 133.874333,
+        "native_8": 1162.327166,
+        "specialized_factor_1": 80.142584
+      },
+      "warm_us": {
+        "native_2": 2333.28125,
+        "specialized": 2237.3125,
+        "native_4": 2301.4165,
+        "native_1": 3638.38525,
+        "native_8": 2397.89575,
+        "specialized_factor_1": 2720.52075
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 83.613292,
+        "native_8": 1093.455125,
+        "native_4": 526.378208,
+        "native_1": 133.479417,
+        "native_2": 236.291583,
+        "specialized": 128.463291
+      },
+      "warm_us": {
+        "specialized_factor_1": 2711.40625,
+        "native_8": 2402.52075,
+        "native_4": 2307.91675,
+        "native_1": 3659.625,
+        "native_2": 2349.85425,
+        "specialized": 2246.64575
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 81.562541,
+        "native_2": 237.590042,
+        "native_8": 1100.570709,
+        "native_4": 524.833,
+        "native_1": 130.934125,
+        "specialized": 128.168583
+      },
+      "warm_us": {
+        "specialized_factor_1": 694.20825,
+        "native_2": 600.0625,
+        "native_8": 617.03125,
+        "native_4": 591.375,
+        "native_1": 925.34375,
+        "specialized": 576.55225
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 148.554208,
+        "native_1": 145.487834,
+        "native_8": 1119.844542,
+        "native_2": 293.534708,
+        "native_4": 583.490542,
+        "specialized": 293.973708
+      },
+      "warm_us": {
+        "specialized_factor_1": 494.15,
+        "native_1": 492.7334,
+        "native_8": 424.375,
+        "native_2": 428.53340000000003,
+        "native_4": 426.7668,
+        "specialized": 432.4834
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 2,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_8": 1059.309583,
+        "native_4": 542.99525,
+        "native_1": 145.986583,
+        "specialized": 281.583375,
+        "native_2": 277.014125,
+        "specialized_factor_1": 145.0505
+      },
+      "warm_us": {
+        "native_8": 119.46039999999999,
+        "native_4": 118.99375,
+        "native_1": 136.0646,
+        "specialized": 119.88539999999999,
+        "native_2": 121.08955,
+        "specialized_factor_1": 135.65
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "specialized_factor_1": 36.816083,
+        "native_1": 26.955666,
+        "native_2": 53.607958,
+        "native_8": 247.321792,
+        "specialized": 70.797083,
+        "native_4": 106.369209
+      },
+      "warm_us": {
+        "specialized_factor_1": 210.9077142857143,
+        "native_1": 212.84528571428572,
+        "native_2": 12.267857142857142,
+        "native_8": 24.014928571428573,
+        "specialized": 9.875,
+        "native_4": 23.592285714285715
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "native_4": 105.379208,
+        "specialized": 70.584458,
+        "specialized_factor_1": 32.22725,
+        "native_8": 245.410958,
+        "native_1": 28.234958,
+        "native_2": 53.873584
+      },
+      "warm_us": {
+        "native_4": 8.262755102040815,
+        "specialized": 9.295061224489796,
+        "specialized_factor_1": 59.38775510204081,
+        "native_8": 8.431979591836734,
+        "native_1": 58.71257142857143,
+        "native_2": 9.115632653061224
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "native_2": 55.638042,
+        "specialized_factor_1": 35.767791,
+        "native_1": 26.279333,
+        "native_8": 233.833917,
+        "specialized": 70.244084,
+        "native_4": 103.720375
+      },
+      "warm_us": {
+        "native_2": 11.901315789473685,
+        "specialized_factor_1": 36.65953947368421,
+        "native_1": 37.36128947368422,
+        "native_8": 22.540565789473682,
+        "specialized": 8.111289473684211,
+        "native_4": 22.769184210526316
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "specialized_factor_1": 36.464666,
+        "native_1": 26.7495,
+        "native_8": 164.15675,
+        "native_4": 72.845834,
+        "native_2": 38.903125,
+        "specialized": 62.038667
+      },
+      "warm_us": {
+        "specialized_factor_1": 36.53782894736842,
+        "native_1": 37.237381578947364,
+        "native_8": 27.44792105263158,
+        "native_4": 17.348684210526315,
+        "native_2": 23.714907894736843,
+        "specialized": 8.820184210526316
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_1": 29.118458,
+        "specialized_factor_1": 33.427125,
+        "native_2": 39.13625,
+        "native_4": 71.785667,
+        "native_8": 164.270541,
+        "specialized": 62.395083
+      },
+      "warm_us": {
+        "native_1": 14.7884140625,
+        "specialized_factor_1": 14.751296875,
+        "native_2": 11.427734375,
+        "native_4": 9.818359375,
+        "native_8": 9.74446875,
+        "specialized": 7.8209609375
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "specialized_factor_1": 35.652875,
+        "native_1": 26.68675,
+        "native_2": 38.537042,
+        "native_8": 164.191541,
+        "native_4": 72.677583,
+        "specialized": 62.117875
+      },
+      "warm_us": {
+        "specialized_factor_1": 59.44642857142857,
+        "native_1": 58.70067346938775,
+        "native_2": 33.949816326530616,
+        "native_8": 26.78655102040816,
+        "native_4": 21.227040816326532,
+        "specialized": 10.631816326530613
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "specialized_factor_1": 35.673875,
+        "native_4": 73.598791,
+        "specialized": 60.189542,
+        "native_8": 165.1805,
+        "native_2": 39.530375,
+        "native_1": 26.194
+      },
+      "warm_us": {
+        "specialized_factor_1": 211.07442857142857,
+        "native_4": 61.3155,
+        "specialized": 16.01192857142857,
+        "native_8": 51.514857142857146,
+        "native_2": 111.85121428571429,
+        "native_1": 211.38992857142858
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_2": 56.716583,
+        "specialized": 70.234041,
+        "native_8": 242.627625,
+        "specialized_factor_1": 32.926875,
+        "native_1": 25.618084,
+        "native_4": 106.157458
+      },
+      "warm_us": {
+        "native_2": 8.7216796875,
+        "specialized": 7.5139921875,
+        "native_8": 7.9889296875,
+        "specialized_factor_1": 14.792640625,
+        "native_1": 14.7151640625,
+        "native_4": 7.8405
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "specialized": 37.616041,
+        "native_8": 1105.21575,
+        "native_4": 390.815541,
+        "native_2": 211.944959,
+        "specialized_factor_1": 27.112584,
+        "native_1": 82.051167
+      },
+      "warm_us": {
+        "specialized": 122.37955555555556,
+        "native_8": 294.0833333333333,
+        "native_4": 288.12955555555556,
+        "native_2": 298.1296666666667,
+        "specialized_factor_1": 123.81022222222222,
+        "native_1": 299.06477777777775
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "specialized": 32.224083,
+        "native_8": 1063.470334,
+        "native_2": 159.097375,
+        "native_1": 81.804542,
+        "native_4": 365.901917,
+        "specialized_factor_1": 28.297542
+      },
+      "warm_us": {
+        "specialized": 43.58853125,
+        "native_8": 88.7174375,
+        "native_2": 87.7486875,
+        "native_1": 89.90884375,
+        "native_4": 86.0169375,
+        "specialized_factor_1": 44.58071875
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "native_2": 159.962209,
+        "specialized": 27.661,
+        "native_8": 1070.590041,
+        "native_4": 365.487666,
+        "specialized_factor_1": 25.900333,
+        "native_1": 83.894333
+      },
+      "warm_us": {
+        "native_2": 297.59722222222223,
+        "specialized": 119.24077777777778,
+        "native_8": 289.7546666666667,
+        "native_4": 285.6481111111111,
+        "specialized_factor_1": 124.12033333333333,
+        "native_1": 300.5416666666667
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_2": 92.6435,
+        "specialized": 32.40125,
+        "native_4": 193.745083,
+        "specialized_factor_1": 23.541417,
+        "native_8": 437.691709,
+        "native_1": 39.395542
+      },
+      "warm_us": {
+        "native_2": 150.31363157894737,
+        "specialized": 65.02852631578948,
+        "native_4": 141.86842105263156,
+        "specialized_factor_1": 64.80484210526316,
+        "native_8": 141.24563157894735,
+        "native_1": 148.97147368421054
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "specialized_factor_1": 27.0635,
+        "specialized": 26.802584,
+        "native_4": 179.310083,
+        "native_2": 78.5705,
+        "native_1": 36.296541,
+        "native_8": 402.643791
+      },
+      "warm_us": {
+        "specialized_factor_1": 64.08331578947369,
+        "specialized": 61.81578947368421,
+        "native_4": 140.07457894736842,
+        "native_2": 149.92978947368422,
+        "native_1": 150.5,
+        "native_8": 138.18421052631578
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 52,
+      "first_ms": {
+        "native_4": 193.863666,
+        "native_8": 442.586542,
+        "native_1": 37.767375,
+        "specialized": 39.910042,
+        "native_2": 91.194792,
+        "specialized_factor_1": 30.127542
+      },
+      "warm_us": {
+        "native_4": 52.22034615384616,
+        "native_8": 52.82613461538462,
+        "native_1": 51.078538461538464,
+        "specialized": 30.07773076923077,
+        "native_2": 51.72355769230769,
+        "specialized_factor_1": 30.556096153846152
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 53,
+      "first_ms": {
+        "specialized": 32.457834,
+        "specialized_factor_1": 26.654542,
+        "native_1": 36.81,
+        "native_2": 77.929458,
+        "native_4": 178.119083,
+        "native_8": 409.199875
+      },
+      "warm_us": {
+        "specialized": 29.202830188679247,
+        "specialized_factor_1": 30.418245283018866,
+        "native_1": 50.673735849056605,
+        "native_2": 51.29322641509434,
+        "native_4": 48.511792452830186,
+        "native_8": 50.66901886792453
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "native_8": 1110.935041,
+        "native_2": 207.388708,
+        "native_4": 397.2185,
+        "native_1": 83.108,
+        "specialized_factor_1": 29.552167,
+        "specialized": 33.117625
+      },
+      "warm_us": {
+        "native_8": 91.069,
+        "native_2": 88.68621875,
+        "native_4": 89.263,
+        "native_1": 87.3671875,
+        "specialized_factor_1": 46.0208125,
+        "specialized": 45.59246875
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "specialized": 72.947166,
+        "native_8": 239.193875,
+        "native_4": 109.042375,
+        "native_2": 55.206875,
+        "specialized_factor_1": 33.908958,
+        "native_1": 26.307625
+      },
+      "warm_us": {
+        "specialized": 10.767857142857142,
+        "native_8": 22.836285714285715,
+        "native_4": 23.360071428571427,
+        "native_2": 12.383928571428571,
+        "specialized_factor_1": 210.98514285714288,
+        "native_1": 211.45535714285714
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "specialized": 64.965125,
+        "native_8": 165.654,
+        "native_2": 39.419041,
+        "native_1": 25.062541,
+        "native_4": 73.174125,
+        "specialized_factor_1": 31.473792
+      },
+      "warm_us": {
+        "specialized": 10.701530612244898,
+        "native_8": 26.675183673469387,
+        "native_2": 34.06377551020408,
+        "native_1": 59.08842857142857,
+        "native_4": 21.324836734693875,
+        "specialized_factor_1": 59.359693877551024
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "native_2": 42.485625,
+        "specialized": 62.710583,
+        "native_8": 164.902958,
+        "native_4": 72.736875,
+        "specialized_factor_1": 31.832042,
+        "native_1": 27.28775
+      },
+      "warm_us": {
+        "native_2": 112.26185714285714,
+        "specialized": 16.014857142857142,
+        "native_8": 51.99107142857143,
+        "native_4": 61.282785714285716,
+        "specialized_factor_1": 211.60114285714286,
+        "native_1": 212.25592857142857
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 77,
+      "first_ms": {
+        "native_2": 55.779959,
+        "specialized": 70.976458,
+        "native_4": 105.452375,
+        "specialized_factor_1": 32.632792,
+        "native_8": 242.575042,
+        "native_1": 28.378375
+      },
+      "warm_us": {
+        "native_2": 11.755415584415585,
+        "specialized": 8.071974025974026,
+        "native_4": 23.327376623376622,
+        "specialized_factor_1": 36.65314285714285,
+        "native_8": 22.836038961038962,
+        "native_1": 37.28084415584416
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "specialized_factor_1": 36.223416,
+        "specialized": 61.92125,
+        "native_4": 74.265458,
+        "native_2": 39.126167,
+        "native_1": 25.250167,
+        "native_8": 164.477541
+      },
+      "warm_us": {
+        "specialized_factor_1": 36.65405263157895,
+        "specialized": 9.007671052631578,
+        "native_4": 17.567973684210525,
+        "native_2": 23.752184210526316,
+        "native_1": 37.19353947368421,
+        "native_8": 27.449552631578946
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_4": 106.277709,
+        "native_8": 240.312583,
+        "native_1": 27.10925,
+        "specialized": 70.563708,
+        "native_2": 52.371709,
+        "specialized_factor_1": 32.367333
+      },
+      "warm_us": {
+        "native_4": 8.0306015625,
+        "native_8": 8.1363984375,
+        "native_1": 14.728515625,
+        "specialized": 7.5517578125,
+        "native_2": 8.6184921875,
+        "specialized_factor_1": 14.654625
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "specialized": 65.103125,
+        "specialized_factor_1": 31.910083,
+        "native_1": 28.190458,
+        "native_2": 39.279292,
+        "native_4": 72.282459,
+        "native_8": 164.063625
+      },
+      "warm_us": {
+        "specialized": 7.8186875,
+        "specialized_factor_1": 14.699875,
+        "native_1": 14.7366484375,
+        "native_2": 11.418625,
+        "native_4": 9.828453125,
+        "native_8": 9.595703125
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "native_8": 248.515458,
+        "native_2": 53.001167,
+        "native_4": 103.936208,
+        "native_1": 26.401708,
+        "specialized_factor_1": 34.257958,
+        "specialized": 69.22525
+      },
+      "warm_us": {
+        "native_8": 8.60287755102041,
+        "native_2": 9.10969387755102,
+        "native_4": 8.351204081632654,
+        "native_1": 58.52636734693877,
+        "specialized_factor_1": 59.28316326530612,
+        "specialized": 9.362244897959185
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 3,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 45.862291,
+        "native_1": 22.323417,
+        "native_2": 32.728917,
+        "native_8": 104.171583,
+        "specialized": 52.477,
+        "native_4": 52.369958
+      },
+      "warm_us": {
+        "specialized_factor_1": 681.354,
+        "native_1": 2336.2915,
+        "native_2": 2215.03125,
+        "native_8": 2116.6665,
+        "specialized": 676.61475,
+        "native_4": 2162.8645
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 3,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_4": 58.393917,
+        "specialized": 55.549958,
+        "specialized_factor_1": 38.956125,
+        "native_8": 102.765417,
+        "native_1": 19.076541,
+        "native_2": 32.029166
+      },
+      "warm_us": {
+        "native_4": 568.96875,
+        "specialized": 222.21875,
+        "specialized_factor_1": 221.83325,
+        "native_8": 552.26025,
+        "native_1": 601.302,
+        "native_2": 571.2605
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 3,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 35.109792,
+        "specialized_factor_1": 54.385917,
+        "native_1": 18.677208,
+        "native_8": 83.98275,
+        "specialized": 63.050667,
+        "native_4": 50.196459
+      },
+      "warm_us": {
+        "native_2": 498.8166,
+        "specialized_factor_1": 245.3166,
+        "native_1": 521.8834,
+        "native_8": 467.70840000000004,
+        "specialized": 217.6084,
+        "native_4": 480.6832
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 56.74575,
+        "native_1": 19.384458,
+        "native_8": 51.886292,
+        "native_4": 32.411958,
+        "native_2": 24.386042,
+        "specialized": 32.803083
+      },
+      "warm_us": {
+        "specialized_factor_1": 242.725,
+        "native_1": 518.9416,
+        "native_8": 467.9082,
+        "native_4": 481.20840000000004,
+        "native_2": 499.40840000000003,
+        "specialized": 182.28320000000002
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_1": 21.724875,
+        "specialized_factor_1": 52.485167,
+        "native_2": 23.073417,
+        "native_4": 32.025583,
+        "native_8": 51.616542,
+        "specialized": 32.724666
+      },
+      "warm_us": {
+        "native_1": 145.91447368421052,
+        "specialized_factor_1": 90.19952631578948,
+        "native_2": 141.12063157894735,
+        "native_4": 135.65347368421052,
+        "native_8": 132.43421052631578,
+        "specialized": 74.10963157894737
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 41.213583,
+        "native_1": 19.023417,
+        "native_2": 23.212666,
+        "native_8": 51.685459,
+        "native_4": 32.17625,
+        "specialized": 32.523125
+      },
+      "warm_us": {
+        "specialized_factor_1": 226.1355,
+        "native_1": 594.79175,
+        "native_2": 571.08325,
+        "native_8": 549.427,
+        "native_4": 558.86475,
+        "specialized": 195.052
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 42.558833,
+        "native_4": 35.893625,
+        "specialized": 32.366916,
+        "native_8": 53.915167,
+        "native_2": 24.820458,
+        "native_1": 19.8255
+      },
+      "warm_us": {
+        "specialized_factor_1": 679.65625,
+        "native_4": 2153.6875,
+        "specialized": 591.05225,
+        "native_8": 2107.53125,
+        "native_2": 2217.927,
+        "native_1": 2311.23975
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 3,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_2": 34.743084,
+        "specialized": 64.9125,
+        "native_8": 84.810958,
+        "specialized_factor_1": 52.370916,
+        "native_1": 19.898709,
+        "native_4": 49.110916
+      },
+      "warm_us": {
+        "native_2": 140.69521052631578,
+        "specialized": 84.88815789473684,
+        "native_8": 133.25215789473685,
+        "specialized_factor_1": 91.557,
+        "native_1": 146.16226315789476,
+        "native_4": 134.89257894736843
+      }
+    }
+  ]
+}

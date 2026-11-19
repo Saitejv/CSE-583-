@@ -305,6 +305,7 @@ def extract_loop_body(
     body_args: Sequence[Any] = (),
     body_num_consts: int = 0,
     body_num_xs: int = 0,
+    closed_jaxpr: Any = None,
 ) -> LoopBody:
     """Trace ``fn`` (or ``body_fn``) and return its loop-body structure.
 
@@ -315,6 +316,8 @@ def extract_loop_body(
     leading body inputs are closed-over constants via ``body_num_consts`` and
     how many trailing body inputs are scanned values via ``body_num_xs``; the
     remaining inputs are loop-carried state.
+
+    Pass `closed_jaxpr` to inspect an already captured `jax.make_jaxpr` result.
 
     With ``loop_kind=None`` the reported kind is the traced primitive
     (``scan`` or ``while``) and the carry is counted as-is. Pass
@@ -328,9 +331,9 @@ def extract_loop_body(
             f"loop_kind must be 'scan', 'fori_loop', 'while', or None, got {loop_kind!r}"
         )
 
+    if sum(value is not None for value in (fn, body_fn, closed_jaxpr)) != 1:
+        raise ValueError("pass exactly one of fn, body_fn, or closed_jaxpr")
     if body_fn is not None:
-        if fn is not None:
-            raise ValueError("pass either fn or body_fn, not both")
         closed = jax.make_jaxpr(body_fn)(*body_args)
         jaxpr = closed.jaxpr
         kind = loop_kind or "scan"
@@ -354,9 +357,7 @@ def extract_loop_body(
             source="body",
         )
 
-    if fn is None:
-        raise ValueError("fn or body_fn is required")
-    closed = jax.make_jaxpr(fn)(*args)
+    closed = jax.make_jaxpr(fn)(*args) if closed_jaxpr is None else closed_jaxpr
     eqn, primitive = _find_loop_eqn(closed.jaxpr, loop_kind)
     # With no requested kind, report the traced primitive verbatim ("scan" or
     # "while") and count the carry as-is. Counter stripping in
@@ -519,6 +520,8 @@ def extract_features(
     body_args: Sequence[Any] = (),
     body_num_consts: int = 0,
     body_num_xs: int = 0,
+    closed_jaxpr: Any = None,
+    feature_block: Callable[[LoopBody], Mapping[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Return static features for one ``(loop, trip_count, factor)`` configuration.
 
@@ -527,6 +530,9 @@ def extract_features(
     is located through ``jit``/``pjit`` wrappers. When ``body_fn`` is given, it
     is traced as a bare loop body instead of locating a ``scan``/``while``
     equation inside ``fn``.
+
+    An optional ``feature_block`` can derive additional columns from the same
+    traced loop. Its keys must be disjoint from the base schema.
     """
 
     _validate_like("trip_count", trip_count)
@@ -549,6 +555,7 @@ def extract_features(
         body_args=body_args,
         body_num_consts=body_num_consts,
         body_num_xs=body_num_xs,
+        closed_jaxpr=closed_jaxpr,
     )
     jaxpr = loop.jaxpr
 
@@ -664,7 +671,13 @@ def extract_features(
         raise FeatureExtractionError(
             f"feature extractor omitted columns: {sorted(missing)}"
         )
-    return {column: features[column] for column in FEATURE_COLUMNS}
+    result = {column: features[column] for column in FEATURE_COLUMNS}
+    if feature_block is not None:
+        extra = feature_block(loop)
+        if result.keys() & extra.keys():
+            raise FeatureExtractionError("additional features overlap the base schema")
+        result.update(extra)
+    return result
 
 
 def extract_features_from_workload(

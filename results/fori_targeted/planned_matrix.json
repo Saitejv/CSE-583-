@@ -1,0 +1,27 @@
+{
+  "planned_configs": 4608,
+  "planned_raw_rows": 4608,
+  "bodies": 48,
+  "train_bodies": 24,
+  "eval_bodies": 24,
+  "sizes": [
+    "small",
+    "large"
+  ],
+  "trip_counts": [
+    255,
+    256,
+    1023,
+    1024
+  ],
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "repeats": 3,
+  "seed": 58342,
+  "split_hash": "ef84fb5935d16804cc1264128d093598f862767500e1e77fe141992ca8a6ed27",
+  "frozen_at": "2026-11-18T11:25:12.428342"
+}

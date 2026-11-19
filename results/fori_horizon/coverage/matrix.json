@@ -1,0 +1,37 @@
+{
+  "source_sha256": "7ec196309779b04fc510e3cff11d04b6bb30a38dea16a9c8c8028c91fb95bfb3",
+  "policy_sha256": "ca2cdc04fa60ddfa541192c359c6fb855b1d640c529b180427ea0efe75f49069",
+  "cases": [
+    [
+      "lagged_empirical_cdf",
+      "lagged_empirical_cdf",
+      "panel",
+      256
+    ],
+    [
+      "saturating_photodetector",
+      "saturating_photodetector",
+      "panel",
+      256
+    ],
+    [
+      "panel_drawdown",
+      "panel_drawdown",
+      "panel",
+      256
+    ]
+  ],
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "horizons": [
+    1000,
+    5000,
+    20000
+  ],
+  "repeats": 3,
+  "reason": "First two transfer probes had two indexing operations. Exercise one-stream matrix updates."
+}

@@ -1,0 +1,350 @@
+{
+  "direct": {
+    "1": {
+      "native": {
+        "pooled_ms_per_process": 231.28479133333335,
+        "pooled_speedup_vs_native": 1.0,
+        "pooled_speedup_vs_incumbent": 5.298930886324571,
+        "workload_speedup_vs_native": 1.0,
+        "slowdowns": 0,
+        "slowdowns_over_3pct": 0,
+        "median_slowdown_over_3pct": null,
+        "worst_ratio_vs_native": 1.0,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 0.0
+      },
+      "incumbent": {
+        "pooled_ms_per_process": 1225.5621243333335,
+        "pooled_speedup_vs_native": 0.1887173132566779,
+        "pooled_speedup_vs_incumbent": 1.0,
+        "workload_speedup_vs_native": 0.15648029737869643,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 6.444052803378595,
+        "worst_ratio_vs_native": 11.75157459042732,
+        "factors": {
+          "1": 4,
+          "2": 1,
+          "4": 1,
+          "8": 0
+        },
+        "median_decision_ms": 4.65275
+      },
+      "refit": {
+        "pooled_ms_per_process": 1254.5723606666666,
+        "pooled_speedup_vs_native": 0.18435348855480208,
+        "pooled_speedup_vs_incumbent": 0.9768763945047241,
+        "workload_speedup_vs_native": 0.15221288297466257,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 6.670020521945224,
+        "worst_ratio_vs_native": 11.967413365804395,
+        "factors": {
+          "1": 4,
+          "2": 1,
+          "4": 1,
+          "8": 0
+        },
+        "median_decision_ms": 7.0006045
+      },
+      "guarded_incumbent": {
+        "pooled_ms_per_process": 1177.018847,
+        "pooled_speedup_vs_native": 0.1965004994803905,
+        "pooled_speedup_vs_incumbent": 1.0412425658748465,
+        "workload_speedup_vs_native": 0.1627524741283361,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 6.371174670265351,
+        "worst_ratio_vs_native": 10.546377974727312,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 0.0053755
+      },
+      "guarded_refit": {
+        "pooled_ms_per_process": 1228.8382356666668,
+        "pooled_speedup_vs_native": 0.18821418850777963,
+        "pooled_speedup_vs_incumbent": 0.9973339767283885,
+        "workload_speedup_vs_native": 0.1586965012163698,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 6.6539227055432715,
+        "worst_ratio_vs_native": 10.738654045007864,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 0.0052295
+      }
+    },
+    "300": {
+      "native": {
+        "pooled_ms_per_process": 305.041722,
+        "pooled_speedup_vs_native": 1.0,
+        "pooled_speedup_vs_incumbent": 4.270467966783027,
+        "workload_speedup_vs_native": 1.0,
+        "slowdowns": 0,
+        "slowdowns_over_3pct": 0,
+        "median_slowdown_over_3pct": null,
+        "worst_ratio_vs_native": 1.0,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 0.0
+      },
+      "incumbent": {
+        "pooled_ms_per_process": 1302.6709023333333,
+        "pooled_speedup_vs_native": 0.2341663742190079,
+        "pooled_speedup_vs_incumbent": 1.0,
+        "workload_speedup_vs_native": 0.18835692192054274,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 5.662765489119191,
+        "worst_ratio_vs_native": 10.141297932385092,
+        "factors": {
+          "1": 4,
+          "2": 1,
+          "4": 1,
+          "8": 0
+        },
+        "median_decision_ms": 4.6313335
+      },
+      "refit": {
+        "pooled_ms_per_process": 1331.2977359999998,
+        "pooled_speedup_vs_native": 0.22913110550050544,
+        "pooled_speedup_vs_incumbent": 0.9784970462334907,
+        "workload_speedup_vs_native": 0.1841079390976977,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 5.8214755552744535,
+        "worst_ratio_vs_native": 10.329268104598599,
+        "factors": {
+          "1": 4,
+          "2": 1,
+          "4": 1,
+          "8": 0
+        },
+        "median_decision_ms": 6.9333124999999995
+      },
+      "guarded_incumbent": {
+        "pooled_ms_per_process": 1257.1135966666666,
+        "pooled_speedup_vs_native": 0.24265247214638486,
+        "pooled_speedup_vs_incumbent": 1.0362396093618471,
+        "workload_speedup_vs_native": 0.19570399097958666,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 5.588455812844948,
+        "worst_ratio_vs_native": 9.349170925999035,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 4.6547295
+      },
+      "guarded_refit": {
+        "pooled_ms_per_process": 1328.9723883333334,
+        "pooled_speedup_vs_native": 0.22953202389897157,
+        "pooled_speedup_vs_incumbent": 0.9802091554114342,
+        "workload_speedup_vs_native": 0.1891854000194833,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 5.8091541693249855,
+        "worst_ratio_vs_native": 9.820987506980567,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 7.1692915
+      }
+    },
+    "5000": {
+      "native": {
+        "pooled_ms_per_process": 1464.4936516666667,
+        "pooled_speedup_vs_native": 1.0,
+        "pooled_speedup_vs_incumbent": 1.6866400164013002,
+        "workload_speedup_vs_native": 1.0,
+        "slowdowns": 0,
+        "slowdowns_over_3pct": 0,
+        "median_slowdown_over_3pct": null,
+        "worst_ratio_vs_native": 1.0,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 0.0
+      },
+      "incumbent": {
+        "pooled_ms_per_process": 2470.0735966666666,
+        "pooled_speedup_vs_native": 0.5928947435586464,
+        "pooled_speedup_vs_incumbent": 1.0,
+        "workload_speedup_vs_native": 0.42572956666036765,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 2.554246207267414,
+        "worst_ratio_vs_native": 3.9182104922167578,
+        "factors": {
+          "1": 4,
+          "2": 1,
+          "4": 1,
+          "8": 0
+        },
+        "median_decision_ms": 4.6669789999999995
+      },
+      "refit": {
+        "pooled_ms_per_process": 2514.2528193333333,
+        "pooled_speedup_vs_native": 0.582476686674248,
+        "pooled_speedup_vs_incumbent": 0.9824284883656287,
+        "workload_speedup_vs_native": 0.4201702989740557,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 2.58405201642425,
+        "worst_ratio_vs_native": 4.03064029285281,
+        "factors": {
+          "1": 4,
+          "2": 1,
+          "4": 1,
+          "8": 0
+        },
+        "median_decision_ms": 7.263854500000001
+      },
+      "guarded_incumbent": {
+        "pooled_ms_per_process": 2417.746305666667,
+        "pooled_speedup_vs_native": 0.6057267663833111,
+        "pooled_speedup_vs_incumbent": 1.0216430031874544,
+        "workload_speedup_vs_native": 0.4395502424446519,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 2.5036557694637414,
+        "worst_ratio_vs_native": 3.800623934522625,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 4.565896
+      },
+      "guarded_refit": {
+        "pooled_ms_per_process": 2481.9159443333333,
+        "pooled_speedup_vs_native": 0.5900657735852709,
+        "pooled_speedup_vs_incumbent": 0.9952285460377073,
+        "workload_speedup_vs_native": 0.42757600677562835,
+        "slowdowns": 6,
+        "slowdowns_over_3pct": 6,
+        "median_slowdown_over_3pct": 2.5793609196925344,
+        "worst_ratio_vs_native": 4.007757756146796,
+        "factors": {
+          "1": 6,
+          "2": 0,
+          "4": 0,
+          "8": 0
+        },
+        "median_decision_ms": 7.3480004999999995
+      }
+    }
+  },
+  "extrapolated": {
+    "20000": {
+      "native": {
+        "pooled_ms_per_process": 5163.945417019738,
+        "pooled_speedup_vs_native": 1.0,
+        "pooled_speedup_vs_incumbent": 1.1971263661337233
+      },
+      "incumbent": {
+        "pooled_ms_per_process": 6181.895211989732,
+        "pooled_speedup_vs_native": 0.8353337026813897,
+        "pooled_speedup_vs_incumbent": 1.0
+      },
+      "refit": {
+        "pooled_ms_per_process": 6212.110641897846,
+        "pooled_speedup_vs_native": 0.8312706766990411,
+        "pooled_speedup_vs_incumbent": 0.9951360444702441
+      },
+      "guarded_incumbent": {
+        "pooled_ms_per_process": 6117.198071019738,
+        "pooled_speedup_vs_native": 0.8441684178061782,
+        "pooled_speedup_vs_incumbent": 1.0105762704131647
+      },
+      "guarded_refit": {
+        "pooled_ms_per_process": 6181.367709686405,
+        "pooled_speedup_vs_native": 0.8354049879491341,
+        "pooled_speedup_vs_incumbent": 1.0000853374735337
+      }
+    },
+    "100000": {
+      "native": {
+        "pooled_ms_per_process": 24894.354832236117,
+        "pooled_speedup_vs_native": 1.0,
+        "pooled_speedup_vs_incumbent": 1.0435408885045578
+      },
+      "incumbent": {
+        "pooled_ms_per_process": 25978.27716037941,
+        "pooled_speedup_vs_native": 0.9582758193912708,
+        "pooled_speedup_vs_incumbent": 1.0
+      },
+      "refit": {
+        "pooled_ms_per_process": 25934.019028908584,
+        "pooled_speedup_vs_native": 0.9599111809275086,
+        "pooled_speedup_vs_incumbent": 1.0017065666305516
+      },
+      "guarded_incumbent": {
+        "pooled_ms_per_process": 25847.607486236117,
+        "pooled_speedup_vs_native": 0.9631202750773893,
+        "pooled_speedup_vs_incumbent": 1.0050553875910129
+      },
+      "guarded_refit": {
+        "pooled_ms_per_process": 25911.777124902783,
+        "pooled_speedup_vs_native": 0.9607351403277986,
+        "pooled_speedup_vs_incumbent": 1.002566401955222
+      }
+    }
+  },
+  "break_even": {
+    "native": {
+      "pooled_calls": null,
+      "configurations_with_break_even": []
+    },
+    "incumbent": {
+      "pooled_calls": null,
+      "configurations_with_break_even": []
+    },
+    "refit": {
+      "pooled_calls": 9638103,
+      "configurations_with_break_even": [
+        {
+          "workload": "compressed_trie_walk",
+          "size": "small",
+          "trip": 256,
+          "calls": 3394068
+        }
+      ]
+    },
+    "guarded_incumbent": {
+      "pooled_calls": null,
+      "configurations_with_break_even": []
+    },
+    "guarded_refit": {
+      "pooled_calls": null,
+      "configurations_with_break_even": []
+    }
+  }
+}

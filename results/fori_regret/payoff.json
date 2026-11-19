@@ -1,0 +1,35 @@
+{
+  "quantile": 0.8,
+  "configurations": 104,
+  "model_load_shared_across": 6,
+  "models": {
+    "incumbent": {
+      "version": "d6237149afe8f6ee9f802c310c5f35a73910d0e8359d23aa9c3100dd50ff21d2",
+      "eligible_forecasts": 78,
+      "policy": {
+        "warm_effect_margin": 0.09446430434653719,
+        "baseline_warm_margin": 1.5234068682537192,
+        "extra_cold_ms": 8.249812564782026,
+        "candidate_cold_ms": 13.532890958206451,
+        "decision_ms": 8.611625,
+        "model_load_ms": 165.07715283333332
+      },
+      "median_load_ms": 990.462917,
+      "decision_ms_at_quantile": 8.611625
+    },
+    "refit": {
+      "version": "40f9ac4ffa9157f0afca78c207d080c352357514e1a40a1b77fbb3741678845d",
+      "eligible_forecasts": 85,
+      "policy": {
+        "warm_effect_margin": 0.10902627831747402,
+        "baseline_warm_margin": 1.3173529324918283,
+        "extra_cold_ms": 9.68130438991193,
+        "candidate_cold_ms": 14.899070962217188,
+        "decision_ms": 9.913583,
+        "model_load_ms": 168.49434033333333
+      },
+      "median_load_ms": 1010.966042,
+      "decision_ms_at_quantile": 9.913583
+    }
+  }
+}

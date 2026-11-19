@@ -1,0 +1,283 @@
+{
+  "grid_calls": [
+    300,
+    1000,
+    2000,
+    5000,
+    20000
+  ],
+  "configurations": 581,
+  "folds": [
+    {
+      "arm": "crossover",
+      "fold": 0,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": null,
+        "matrix_bytes": null,
+        "max_index_ops": 0,
+        "matrix_factor": 2
+      },
+      "families": [
+        "index_memory",
+        "locality_indexing",
+        "one_dimensional_acoustic_scattering",
+        "one_dimensional_indexed_deposit",
+        "scalar_control",
+        "scatter",
+        "sparse_linear_algebra",
+        "streaming_reduction",
+        "writes_state"
+      ]
+    },
+    {
+      "arm": "crossover",
+      "fold": 1,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": null,
+        "matrix_bytes": null,
+        "max_index_ops": 0,
+        "matrix_factor": 2
+      },
+      "families": [
+        "application_kernels",
+        "dependent_indexing",
+        "lane_wise_arithmetic",
+        "likelihood_feedback",
+        "numerical_simulation",
+        "optimization_estimation",
+        "recurrence",
+        "saturating_signal",
+        "streaming_compression"
+      ]
+    },
+    {
+      "arm": "crossover",
+      "fold": 2,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": null,
+        "matrix_bytes": null,
+        "max_index_ops": 0,
+        "matrix_factor": 2
+      },
+      "families": [
+        "associative_state_writes",
+        "dependency_parallelism",
+        "discounted_cost_reduction",
+        "gather",
+        "graph_mesh",
+        "integer_word_mixing",
+        "signal_processing",
+        "stateful_recurrence",
+        "write_conflict"
+      ]
+    },
+    {
+      "arm": "crossover",
+      "fold": 3,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": null,
+        "matrix_bytes": null,
+        "max_index_ops": 0,
+        "matrix_factor": 2
+      },
+      "families": [
+        "branches_masks",
+        "compensated_integration",
+        "control_arithmetic",
+        "dynamic_programming",
+        "indirect_gather",
+        "indirect_scatter",
+        "locality_access",
+        "reduction",
+        "scheduling_control",
+        "streamed_cross_products"
+      ]
+    },
+    {
+      "arm": "crossover",
+      "fold": 4,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": null,
+        "matrix_bytes": null,
+        "max_index_ops": 0,
+        "matrix_factor": 2
+      },
+      "families": [
+        "branch_control",
+        "dense_linear_algebra",
+        "dense_reductions",
+        "elementwise",
+        "numeric_reduce",
+        "rolling_window",
+        "state_space_matrix_vector",
+        "tiled_tensor",
+        "window"
+      ]
+    },
+    {
+      "arm": "candidate",
+      "fold": 0,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 1,
+        "matrix_factor": 2
+      },
+      "families": [
+        "index_memory",
+        "locality_indexing",
+        "one_dimensional_acoustic_scattering",
+        "one_dimensional_indexed_deposit",
+        "scalar_control",
+        "scatter",
+        "sparse_linear_algebra",
+        "streaming_reduction",
+        "writes_state"
+      ]
+    },
+    {
+      "arm": "candidate",
+      "fold": 1,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 1,
+        "matrix_factor": 2
+      },
+      "families": [
+        "application_kernels",
+        "dependent_indexing",
+        "lane_wise_arithmetic",
+        "likelihood_feedback",
+        "numerical_simulation",
+        "optimization_estimation",
+        "recurrence",
+        "saturating_signal",
+        "streaming_compression"
+      ]
+    },
+    {
+      "arm": "candidate",
+      "fold": 2,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 1,
+        "matrix_factor": 2
+      },
+      "families": [
+        "associative_state_writes",
+        "dependency_parallelism",
+        "discounted_cost_reduction",
+        "gather",
+        "graph_mesh",
+        "integer_word_mixing",
+        "signal_processing",
+        "stateful_recurrence",
+        "write_conflict"
+      ]
+    },
+    {
+      "arm": "candidate",
+      "fold": 3,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": 1000,
+        "matrix_bytes": 2048,
+        "max_index_ops": 1,
+        "matrix_factor": 2
+      },
+      "families": [
+        "branches_masks",
+        "compensated_integration",
+        "control_arithmetic",
+        "dynamic_programming",
+        "indirect_gather",
+        "indirect_scatter",
+        "locality_access",
+        "reduction",
+        "scheduling_control",
+        "streamed_cross_products"
+      ]
+    },
+    {
+      "arm": "candidate",
+      "fold": 4,
+      "policy": {
+        "min_calls": 1800,
+        "decision_ms": 3.2005205,
+        "matrix_min_calls": null,
+        "matrix_bytes": null,
+        "max_index_ops": 0,
+        "matrix_factor": 2
+      },
+      "families": [
+        "branch_control",
+        "dense_linear_algebra",
+        "dense_reductions",
+        "elementwise",
+        "numeric_reduce",
+        "rolling_window",
+        "state_space_matrix_vector",
+        "tiled_tensor",
+        "window"
+      ]
+    }
+  ],
+  "budget_ms": 125.0,
+  "model_version": "0b0be528eca313661d88d32b8320200872b522e4230e06d3f5fb4557f32141d1",
+  "crossover": {
+    "min_calls": 1800,
+    "decision_ms": 3.2005205,
+    "matrix_min_calls": null,
+    "matrix_bytes": null,
+    "max_index_ops": 0,
+    "matrix_factor": 2
+  },
+  "crossover_grouped_replay_s": [
+    25.14277815484843,
+    48.51249223509559,
+    86.29568646989384,
+    184.66068002201064,
+    676.4856477825947
+  ],
+  "candidate": {
+    "min_calls": 1800,
+    "decision_ms": 3.2005205,
+    "matrix_min_calls": 1000,
+    "matrix_bytes": 2048,
+    "max_index_ops": 1,
+    "matrix_factor": 2
+  },
+  "candidate_grouped_replay_s": [
+    25.14277815484843,
+    48.69317361909559,
+    86.29568646989384,
+    184.66068002201064,
+    676.4856477825947
+  ],
+  "native_replay_s": [
+    25.14277815484843,
+    48.51249223509559,
+    81.8977980640201,
+    182.05371555079364,
+    682.8333029846614
+  ]
+}

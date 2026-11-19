@@ -2,29 +2,24 @@
 
 CSE 583 Advanced Compilers course project, Group 10 (Saitej Velaga, Maanas Pavuluri, Jack McClure).
 
-The opt-in selector chooses a partial unroll factor for fixed-trip-count `lax.scan` / `lax.fori_loop` loops using static Jaxpr features and a lightweight cost model, instead of benchmarking every candidate factor at decision time. The selector minimizes predicted `C(u) + R * T(u) / 1000` (cold ms and warm µs) under a cold budget. The automatic wrappers are still stubs.
+The experimental selector chooses a partial unroll factor for fixed-trip-count loops using static Jaxpr features and a lightweight cost model. It minimizes predicted `C(u) + R * T(u) / 1000` (cold ms and warm µs) under a cold budget. Project-owned static loops can opt in through `auto_fori_loop`.
 
-**Phase 4 decision: keep factor 1 as the default.** The recovered CPU model passed its fresh gate with 12 paired wins on six configurations, but median feasible long-horizon speedup vs factor 1 was 0.990×. Use the learned policy only as an opt-in integration or demo path; see the [Phase 4 handoff](docs/phase4_handoff.md).
+Two opt-in compile-once reductions improved warm full-caller latency on Apple M2. Native JAX is the general default, and learned selection remains experimental. [Final evaluation and reproduction guide](docs/final_report.md) · [Final slides](docs/phase5_slides.pptx)
 
 ## Source of truth
 
 - `CSE583_Cost_Aware_JAX_Loop_Unrolling_Proposal.docx` -- proposal, scope, algorithm, evaluation plan
-- `group10_slides.pdf` / `CSE 583 Presentation - Google Slides.pdf` -- presentation (identical content)
+- `group10_slides.pdf` / `CSE 583 Presentation - Google Slides.pdf` -- original proposal presentation (identical content)
 
 ## Environment
 
-Pinned in `requirements.txt`: Python 3.13, JAX/jaxlib 0.12.0.1 (CPU backend on Apple M2), NumPy, pandas, scikit-learn, matplotlib, pytest. A `.venv` is already created.
+Use Python 3.13 and the pinned dependencies in `requirements.txt`. Published measurements use JAX/jaxlib 0.12.0.1 on Apple M2 CPU.
 
 ```bash
+uv venv --python 3.13 .venv
 source .venv/bin/activate
-python -m jax_unroll
-```
-
-To recreate from scratch:
-
-```bash
-uv venv .venv
 uv pip install -r requirements.txt
+python -m jax_unroll
 ```
 
 `requirements.txt` installs the project in editable mode (`-e .`). The Makefile
@@ -41,6 +36,9 @@ make quick          # small smoke sweep (8 measurements)
 make recovery-train  # reproduce the recovery join, dev LOFO and frozen model
 make recovery-verify # verify fresh confirmation from recorded factors, no new gate
 make verify-week3    # rebuild and replay the archived data and both old gates
+make phase5-demo     # run the reduction comparisons and learned fori_loop example
+make phase5-replay   # regenerate the headline tables from archived process measurements
+make phase4-evaluate # run fresh isolated CPU timings under results/raw/phase4/
 ```
 
 `make sweep` and `make sweep-shapes` write to `results/raw/` (gitignored
@@ -75,6 +73,7 @@ src/jax_unroll/schema.py shared SWEEP/ORACLE/DATASET column contract and paths
 benchmarks/             workload definitions, factor-sweep harness, oracle
 benchmarks/dataset.py   feature/label dataset builder (Phase 2)
 benchmarks/evaluate.py  offline CPU policy comparison and frozen holdout gate
+benchmarks/phase5.py   final live demo and replay of archived full-caller timings
 models/                 versioned CPU cost-model JSON
 tests/                  pytest suite
 Makefile                test/list/sweep/oracle/dataset targets and output paths
@@ -86,6 +85,9 @@ docs/week1_results.md   Week 1 sweep, oracle, and risk-gate results
 docs/week2_results.md   Phase 2 feature table, baselines, and split summary
 docs/week3_results.md   dev LOFO, CPU decision overhead, and holdout gates
 docs/phase4_handoff.md  recovery evidence, supported domain, and integration API
+docs/phase4_report.md   compile-once deployment, learned evaluation, and compiler audit
+docs/final_report.md    final evaluation and reproduction guide
+docs/phase5_slides.pptx final presentation
 conftest.py             adds repo root and src/ to sys.path for pytest
 data/features_*.csv     Phase 2 feature/label dataset
 data/features_*.meta.json  dataset versions, hashes, and split manifest
@@ -95,6 +97,20 @@ TASKS.md                actionable project plan and definition of done
 ```
 
 ## Status
+
+Two [compile-once reduction specializations](docs/compile_once_reductions.md) beat native JAX on measured Apple M2 shapes. For the original twelve library configurations, use native JAX by default. The [library deployment benchmark](docs/library_deployment.md) covers actual public functions, held-out inputs, and calibration costs.
+
+For static `jax.lax.fori_loop`, use [`auto_fori_loop` with the expansion-trained CPU predictor](docs/fori_predictor.md) to select an unroll factor for the existing loop body. On 192 configurations the live wrapper measured 1.12× pooled warm speedup with a median 4.35 ms trace-time decision. The [paired-trip predictor evaluation](docs/targeted_predictor.md) compares eight model designs and four fixed factors.
+
+The [prediction follow-up](docs/fori_prediction_update.md) adds 19 generated workloads and evaluates a static refit and a shorter-trip profile correction.
+
+The proposal-aligned CPU evaluation covers new loops with repeatable unrolling gains and retains cases that favor factor 1. It measures the wrapper at multiple call counts and includes a NumPy-only export of the incumbent to reduce cold startup. [Coverage, end-to-end results and reproduction](docs/fori_proposal_evaluation.md)
+
+The [workload-specific experiment](docs/fori_specialization.md) benchmarks manually restructured versions of six loops through a separate opt-in builder.
+
+The [66-workload CPU model](docs/all_workload_prediction.md) selects unroll factors from static features and runs through the decision engine.
+
+An opt-in CPU profile predictor is available for recurring workloads. See the [usage example and fresh validation results](docs/profile_prediction.md).
 
 - Phase 0: complete. Pinned environment with editable package install, package
   skeleton, shared schema, and Makefile targets.
@@ -117,9 +133,12 @@ TASKS.md                actionable project plan and definition of done
 - Phase 3 recovery is complete. The separate fresh confirmation gate
   **passed** for a subset, not for overall speed versus factor 1.
   [Phase 4 handoff](docs/phase4_handoff.md)
-- Phase 4 is pending. `auto_scan` and `auto_fori_loop` are stubs.
-- `pytest -q` passes (234 tests on 2026-11-17). Coverage includes fitting and
-  holdout exclusion, policy and cache behavior, evaluation, and earlier phases.
+- Phase 4 integrates the compile-once M2 reduction path and `auto_fori_loop`.
+  The learned path remains experimental. [Phase 4 report](docs/phase4_report.md)
+- Phase 5 provides the final demo, exact replay of the published full-caller
+  tables, and the course presentation. [Final report](docs/final_report.md)
+- The pytest suite covers wrapper correctness, JIT reuse, fitting and holdout
+  exclusion, policy and cache behavior, evaluation, and earlier phases.
 - Target hardware: CPU-only on Apple M2; see
   [docs/hardware.md](docs/hardware.md) for the decision, deadline, and
   reproduction steps.

@@ -1,0 +1,250 @@
+{
+  "fresh": {
+    "configurations": 32,
+    "bodies": 8,
+    "repeat_supported_opportunities": 16,
+    "oracle_factor_counts": {
+      "1": 16,
+      "2": 4,
+      "4": 2,
+      "8": 10
+    },
+    "policies": {
+      "oracle": {
+        "pooled_speedup": 1.0252923934238085,
+        "geometric_speedup": 1.123585017123121,
+        "wins_over_5pct": 16,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "minimum_median": {
+        "pooled_speedup": 1.0327921170090928,
+        "geometric_speedup": 1.1263564579236063,
+        "wins_over_5pct": 16,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "incumbent": {
+        "pooled_speedup": 1.0046071093604838,
+        "geometric_speedup": 1.0511512247121142,
+        "wins_over_5pct": 12,
+        "slowdowns_over_3pct": 1,
+        "worst_time_ratio": 1.0804131672941404
+      },
+      "size_heuristic": {
+        "pooled_speedup": 0.9881555224323931,
+        "geometric_speedup": 1.0367004691330066,
+        "wins_over_5pct": 15,
+        "slowdowns_over_3pct": 8,
+        "worst_time_ratio": 2.1109723328256376
+      },
+      "payoff_1": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_300": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_5000": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      }
+    }
+  },
+  "historical_control": {
+    "configurations": 2,
+    "bodies": 2,
+    "repeat_supported_opportunities": 2,
+    "oracle_factor_counts": {
+      "1": 0,
+      "2": 1,
+      "4": 1,
+      "8": 0
+    },
+    "policies": {
+      "oracle": {
+        "pooled_speedup": 1.7794504478071862,
+        "geometric_speedup": 2.4855165521072298,
+        "wins_over_5pct": 2,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 0.6398151765450014
+      },
+      "minimum_median": {
+        "pooled_speedup": 1.7794504478071862,
+        "geometric_speedup": 2.4855165521072298,
+        "wins_over_5pct": 2,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 0.6398151765450014
+      },
+      "incumbent": {
+        "pooled_speedup": 1.3953331754359521,
+        "geometric_speedup": 1.244862605636133,
+        "wins_over_5pct": 1,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "size_heuristic": {
+        "pooled_speedup": 1.753975398291654,
+        "geometric_speedup": 2.387745973068967,
+        "wins_over_5pct": 2,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 0.6452933019653636
+      },
+      "payoff_1": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_300": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_5000": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      }
+    }
+  },
+  "proposal_control": {
+    "configurations": 4,
+    "bodies": 4,
+    "repeat_supported_opportunities": 1,
+    "oracle_factor_counts": {
+      "1": 3,
+      "2": 0,
+      "4": 0,
+      "8": 1
+    },
+    "policies": {
+      "oracle": {
+        "pooled_speedup": 1.0132223617141478,
+        "geometric_speedup": 1.074052700521152,
+        "wins_over_5pct": 1,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "minimum_median": {
+        "pooled_speedup": 1.0132223617141478,
+        "geometric_speedup": 1.074052700521152,
+        "wins_over_5pct": 1,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "incumbent": {
+        "pooled_speedup": 1.007346155751704,
+        "geometric_speedup": 1.038093434526155,
+        "wins_over_5pct": 1,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "size_heuristic": {
+        "pooled_speedup": 0.5527263186794644,
+        "geometric_speedup": 0.7573404707323348,
+        "wins_over_5pct": 1,
+        "slowdowns_over_3pct": 2,
+        "worst_time_ratio": 2.0812536350658273
+      },
+      "payoff_1": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_300": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_5000": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      }
+    }
+  },
+  "regression_control": {
+    "configurations": 3,
+    "bodies": 3,
+    "repeat_supported_opportunities": 0,
+    "oracle_factor_counts": {
+      "1": 3,
+      "2": 0,
+      "4": 0,
+      "8": 0
+    },
+    "policies": {
+      "oracle": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "minimum_median": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "incumbent": {
+        "pooled_speedup": 0.6317829498847982,
+        "geometric_speedup": 0.7055267218062639,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 3,
+        "worst_time_ratio": 1.6750093736044076
+      },
+      "size_heuristic": {
+        "pooled_speedup": 0.6317829498847982,
+        "geometric_speedup": 0.7055267218062639,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 3,
+        "worst_time_ratio": 1.6750093736044076
+      },
+      "payoff_1": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_300": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      },
+      "payoff_5000": {
+        "pooled_speedup": 1.0,
+        "geometric_speedup": 1.0,
+        "wins_over_5pct": 0,
+        "slowdowns_over_3pct": 0,
+        "worst_time_ratio": 1.0
+      }
+    }
+  }
+}

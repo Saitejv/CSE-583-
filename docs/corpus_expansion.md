@@ -258,6 +258,10 @@ edits.
 
 ## Recommendation
 
+Follow-up: the [47-body long-trip pilot](corpus_pilot_results.md) ran after
+this handoff. It does not support scaling the existing feature design to the
+full timing tier yet.
+
 Run the **smoke tier first**. It costs 96 fresh-process measurements, covers all
 10 families and 12 representative bodies, and completed in 0.7-1.2 minutes with
 96/96 correctness passes on the target CPU. Use it to verify the harness and

@@ -1,0 +1,29 @@
+{
+  "model": "incumbent",
+  "version": "0b0be528eca313661d88d32b8320200872b522e4230e06d3f5fb4557f32141d1",
+  "policy": {
+    "bands": [
+      {
+        "upper_warm_us": 15.0,
+        "warm_margin": 0.005340902377796184,
+        "extra_cold_ms": 0.11587368723361813,
+        "candidate_cold_ms": 1.0680060155426876
+      },
+      {
+        "upper_warm_us": 60.0,
+        "warm_margin": 0.028264790384479474,
+        "extra_cold_ms": 0.0,
+        "candidate_cold_ms": 0.0
+      },
+      {
+        "upper_warm_us": null,
+        "warm_margin": 0.00809881218929962,
+        "extra_cold_ms": 1.5555540304333952,
+        "candidate_cold_ms": 9.269400312067553
+      }
+    ],
+    "decision_ms": 6.069437,
+    "model_load_ms": 0.548243
+  },
+  "cold_budget_ms": 125
+}

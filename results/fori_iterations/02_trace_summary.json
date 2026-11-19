@@ -1,0 +1,14 @@
+{
+  "trace_lower_ms": {
+    "original": 6.069437,
+    "reused": 5.6576875,
+    "median_paired_saving_ms": 0.0777909999999995,
+    "pooled_speedup": 1.2001155498634808
+  },
+  "first_ms": {
+    "original": 28.742854,
+    "reused": 25.2747295,
+    "median_paired_saving_ms": 0.09968749999999993,
+    "pooled_speedup": 1.097440718071314
+  }
+}

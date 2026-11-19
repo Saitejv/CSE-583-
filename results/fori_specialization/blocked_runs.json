@@ -1,0 +1,3509 @@
+{
+  "machine": "arm64",
+  "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+  "jax": "0.12.0.1",
+  "jaxlib": "0.12.0.1",
+  "backend": "cpu",
+  "summary": {
+    "write_multitap_delay_ring": {
+      "paired_warm_speedup_vs_factor_1": 5.368533811417668,
+      "paired_warm_speedup_vs_fastest_native": 1.515191443449501,
+      "paired_warm_speedup_vs_specialized_factor_1": 5.355394860653305,
+      "min_paired_warm_speedup_vs_factor_1": 1.8884789281008596,
+      "pooled_warm_speedup_vs_factor_1": 8.220633243046429
+    },
+    "eval_dense_attention_block_step": {
+      "paired_warm_speedup_vs_factor_1": 2.1143223999902596,
+      "paired_warm_speedup_vs_fastest_native": 2.03398744025619,
+      "paired_warm_speedup_vs_specialized_factor_1": 1.024432525809706,
+      "min_paired_warm_speedup_vs_factor_1": 1.6423436733055592,
+      "pooled_warm_speedup_vs_factor_1": 2.2844590197975676
+    },
+    "eval_app_ct_backprojection_step": {
+      "paired_warm_speedup_vs_factor_1": 2.71825654386303,
+      "paired_warm_speedup_vs_fastest_native": 2.4725553575380315,
+      "paired_warm_speedup_vs_specialized_factor_1": 1.172639144367878,
+      "min_paired_warm_speedup_vs_factor_1": 1.663126177024482,
+      "pooled_warm_speedup_vs_factor_1": 3.2890881537779664
+    },
+    "eval_write_waveguide_mesh": {
+      "paired_warm_speedup_vs_factor_1": 2.6311407111039173,
+      "paired_warm_speedup_vs_fastest_native": 1.9546083359157242,
+      "paired_warm_speedup_vs_specialized_factor_1": 2.6302040285780133,
+      "min_paired_warm_speedup_vs_factor_1": 2.219355466848408,
+      "pooled_warm_speedup_vs_factor_1": 2.8490588289155307
+    },
+    "eval_dense_horner_matrix_poly": {
+      "paired_warm_speedup_vs_factor_1": 5.803116803939542,
+      "paired_warm_speedup_vs_fastest_native": 5.753647871107984,
+      "paired_warm_speedup_vs_specialized_factor_1": 5.802301265340852,
+      "min_paired_warm_speedup_vs_factor_1": 3.250120413087722,
+      "pooled_warm_speedup_vs_factor_1": 7.198074895983026
+    },
+    "eval_write_pic_charge_deposit": {
+      "paired_warm_speedup_vs_factor_1": 4.633882645976201,
+      "paired_warm_speedup_vs_fastest_native": 4.633299097030875,
+      "paired_warm_speedup_vs_specialized_factor_1": 4.63370019663668,
+      "min_paired_warm_speedup_vs_factor_1": 1.2216173862839705,
+      "pooled_warm_speedup_vs_factor_1": 8.54248046271854
+    }
+  },
+  "runs": [
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 13,
+      "first_ms": {
+        "specialized": 73.272083,
+        "native_8": 250.430542,
+        "native_4": 103.598959,
+        "native_2": 53.000375,
+        "specialized_factor_1": 33.620416,
+        "native_1": 26.295959
+      },
+      "warm_us": {
+        "specialized": 10.278846153846155,
+        "native_8": 24.17953846153846,
+        "native_4": 24.451923076923077,
+        "native_2": 12.490384615384615,
+        "specialized_factor_1": 211.5353076923077,
+        "native_1": 213.72753846153847
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 50,
+      "first_ms": {
+        "specialized": 64.912334,
+        "native_8": 165.915583,
+        "native_2": 39.527542,
+        "native_1": 25.232167,
+        "native_4": 73.678541,
+        "specialized_factor_1": 31.709583
+      },
+      "warm_us": {
+        "specialized": 10.94584,
+        "native_8": 28.1525,
+        "native_2": 34.1275,
+        "native_1": 59.2225,
+        "native_4": 21.49416,
+        "specialized_factor_1": 59.77332
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "native_2": 42.824084,
+        "specialized": 62.447,
+        "native_8": 165.643,
+        "native_4": 74.531708,
+        "specialized_factor_1": 32.235834,
+        "native_1": 27.464459
+      },
+      "warm_us": {
+        "native_2": 112.40771428571429,
+        "specialized": 16.26192857142857,
+        "native_8": 52.092285714285715,
+        "native_4": 61.470214285714285,
+        "specialized_factor_1": 211.8125,
+        "native_1": 212.48514285714288
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 75,
+      "first_ms": {
+        "native_2": 57.075584,
+        "specialized": 71.775458,
+        "native_4": 105.342834,
+        "specialized_factor_1": 32.944459,
+        "native_8": 245.079083,
+        "native_1": 28.018834
+      },
+      "warm_us": {
+        "native_2": 11.958893333333334,
+        "specialized": 8.087773333333333,
+        "native_4": 23.733880000000003,
+        "specialized_factor_1": 36.780559999999994,
+        "native_8": 22.98944,
+        "native_1": 37.42888
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 71,
+      "first_ms": {
+        "specialized_factor_1": 35.667166,
+        "specialized": 60.261708,
+        "native_4": 73.660125,
+        "native_2": 38.770583,
+        "native_1": 25.074125,
+        "native_8": 166.060917
+      },
+      "warm_us": {
+        "specialized_factor_1": 37.824521126760565,
+        "specialized": 9.243549295774649,
+        "native_4": 18.585084507042254,
+        "native_2": 24.221830985915496,
+        "native_1": 38.14905633802817,
+        "native_8": 28.559859154929576
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_4": 107.688125,
+        "native_8": 244.840958,
+        "native_1": 26.885167,
+        "specialized": 69.663959,
+        "native_2": 53.894583,
+        "specialized_factor_1": 32.160583
+      },
+      "warm_us": {
+        "native_4": 8.0013046875,
+        "native_8": 8.1302109375,
+        "native_1": 14.7529296875,
+        "specialized": 7.543625,
+        "native_2": 8.7099609375,
+        "specialized_factor_1": 14.6721953125
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "specialized": 65.079042,
+        "specialized_factor_1": 31.678958,
+        "native_1": 26.774541,
+        "native_2": 38.756583,
+        "native_4": 72.170125,
+        "native_8": 164.718583
+      },
+      "warm_us": {
+        "specialized": 7.836265625,
+        "specialized_factor_1": 14.7376328125,
+        "native_1": 14.8333359375,
+        "native_2": 11.472328125,
+        "native_4": 9.8548125,
+        "native_8": 10.282875
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "native_8": 246.704083,
+        "native_2": 54.033875,
+        "native_4": 106.221291,
+        "native_1": 26.516958,
+        "specialized_factor_1": 34.129292,
+        "specialized": 68.169875
+      },
+      "warm_us": {
+        "native_8": 8.806122448979592,
+        "native_2": 9.174326530612245,
+        "native_4": 8.53742857142857,
+        "native_1": 58.95918367346938,
+        "specialized_factor_1": 59.54675510204081,
+        "specialized": 9.363959183673469
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "native_2": 42.286459,
+        "native_1": 24.829666,
+        "specialized_factor_1": 34.173292,
+        "native_4": 72.549708,
+        "specialized": 60.597542,
+        "native_8": 166.764917
+      },
+      "warm_us": {
+        "native_2": 23.682013157894737,
+        "native_1": 37.11677631578947,
+        "specialized_factor_1": 36.581697368421054,
+        "native_4": 17.377184210526316,
+        "specialized": 8.859105263157895,
+        "native_8": 29.106355263157894
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "specialized": 74.151375,
+        "specialized_factor_1": 32.432458,
+        "native_1": 27.089833,
+        "native_2": 52.166291,
+        "native_4": 109.599208,
+        "native_8": 250.071084
+      },
+      "warm_us": {
+        "specialized": 9.26957142857143,
+        "specialized_factor_1": 59.44642857142857,
+        "native_1": 58.74318367346939,
+        "native_2": 9.051877551020409,
+        "native_4": 8.443040816326532,
+        "native_8": 8.528061224489797
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_2": 58.874417,
+        "native_1": 26.3495,
+        "specialized_factor_1": 34.68175,
+        "specialized": 68.623375,
+        "native_4": 105.520667,
+        "native_8": 238.992916
+      },
+      "warm_us": {
+        "native_2": 8.5481796875,
+        "native_1": 14.6181640625,
+        "specialized_factor_1": 14.6044921875,
+        "specialized": 7.470375,
+        "native_4": 7.8736953125,
+        "native_8": 8.04134375
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "native_2": 56.748666,
+        "specialized": 70.235125,
+        "native_4": 106.402458,
+        "native_1": 26.638083,
+        "native_8": 236.829625,
+        "specialized_factor_1": 34.593292
+      },
+      "warm_us": {
+        "native_2": 12.931571428571429,
+        "specialized": 10.0,
+        "native_4": 24.366071428571427,
+        "native_1": 212.0922857142857,
+        "native_8": 23.636928571428573,
+        "specialized_factor_1": 211.58335714285712
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "specialized_factor_1": 35.925958,
+        "native_8": 165.458667,
+        "native_4": 73.343125,
+        "native_1": 25.992667,
+        "native_2": 38.823084,
+        "specialized": 60.612583
+      },
+      "warm_us": {
+        "specialized_factor_1": 211.40178571428572,
+        "native_8": 51.63092857142857,
+        "native_4": 61.19342857142857,
+        "native_1": 212.01192857142857,
+        "native_2": 111.77085714285714,
+        "specialized": 15.860071428571429
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "specialized_factor_1": 35.857791,
+        "native_2": 40.757875,
+        "native_8": 164.972792,
+        "native_4": 73.225125,
+        "native_1": 25.472417,
+        "specialized": 60.718166
+      },
+      "warm_us": {
+        "specialized_factor_1": 59.623285714285714,
+        "native_2": 33.980428571428575,
+        "native_8": 27.462591836734692,
+        "native_4": 21.269571428571428,
+        "native_1": 58.92857142857143,
+        "specialized": 10.667510204081633
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "specialized_factor_1": 35.837583,
+        "native_1": 27.25775,
+        "native_8": 241.496417,
+        "native_2": 58.105583,
+        "native_4": 108.53425,
+        "specialized": 69.671209
+      },
+      "warm_us": {
+        "specialized_factor_1": 36.69407894736842,
+        "native_1": 37.13322368421053,
+        "native_8": 23.11403947368421,
+        "native_2": 11.641447368421053,
+        "native_4": 23.628842105263157,
+        "specialized": 7.999447368421053
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_8": 167.160542,
+        "native_4": 72.435125,
+        "native_1": 25.466292,
+        "specialized": 62.733209,
+        "native_2": 39.188167,
+        "specialized_factor_1": 31.274834
+      },
+      "warm_us": {
+        "native_8": 9.6826171875,
+        "native_4": 9.7913359375,
+        "native_1": 14.751625,
+        "specialized": 7.7802734375,
+        "native_2": 11.41015625,
+        "specialized_factor_1": 14.6588515625
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 10,
+      "first_ms": {
+        "specialized_factor_1": 35.847792,
+        "native_1": 83.855583,
+        "native_2": 210.659458,
+        "native_8": 1084.200875,
+        "specialized": 34.45525,
+        "native_4": 387.076625
+      },
+      "warm_us": {
+        "specialized_factor_1": 122.62089999999999,
+        "native_1": 298.72909999999996,
+        "native_2": 298.3584,
+        "native_8": 290.8375,
+        "specialized": 121.68339999999999,
+        "native_4": 286.25829999999996
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "native_4": 398.409791,
+        "specialized": 34.833833,
+        "specialized_factor_1": 27.481375,
+        "native_8": 1117.298083,
+        "native_1": 84.885666,
+        "native_2": 206.746417
+      },
+      "warm_us": {
+        "native_4": 87.37628125,
+        "specialized": 45.09634375,
+        "specialized_factor_1": 45.509125,
+        "native_8": 90.2916875,
+        "native_1": 87.26171875,
+        "native_2": 88.737
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_2": 93.4055,
+        "specialized_factor_1": 25.203458,
+        "native_1": 36.952917,
+        "native_8": 433.642083,
+        "specialized": 34.564625,
+        "native_4": 196.0045
+      },
+      "warm_us": {
+        "native_2": 150.26973684210526,
+        "specialized_factor_1": 63.96710526315789,
+        "native_1": 147.69515789473687,
+        "native_8": 139.7587894736842,
+        "specialized": 63.57236842105263,
+        "native_4": 140.30484210526313
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "specialized_factor_1": 27.99875,
+        "native_1": 37.201209,
+        "native_8": 398.155708,
+        "native_4": 179.253875,
+        "native_2": 78.646417,
+        "specialized": 28.833084
+      },
+      "warm_us": {
+        "specialized_factor_1": 63.31142105263158,
+        "native_1": 147.67978947368422,
+        "native_8": 138.16663157894735,
+        "native_4": 136.6008947368421,
+        "native_2": 148.3333157894737,
+        "specialized": 60.68857894736842
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 52,
+      "first_ms": {
+        "native_1": 39.658125,
+        "specialized_factor_1": 28.368625,
+        "native_2": 78.250875,
+        "native_4": 178.850417,
+        "native_8": 404.838667,
+        "specialized": 31.050542
+      },
+      "warm_us": {
+        "native_1": 50.04886538461538,
+        "specialized_factor_1": 30.258019230769232,
+        "native_2": 50.33092307692308,
+        "native_4": 47.616980769230764,
+        "native_8": 49.486384615384615,
+        "specialized": 28.709134615384617
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 31,
+      "first_ms": {
+        "specialized_factor_1": 31.407042,
+        "native_1": 81.916417,
+        "native_2": 157.724167,
+        "native_8": 1071.006834,
+        "native_4": 368.68575,
+        "specialized": 31.016291
+      },
+      "warm_us": {
+        "specialized_factor_1": 46.70429032258065,
+        "native_1": 91.52016129032258,
+        "native_2": 90.31987096774193,
+        "native_8": 89.37364516129031,
+        "native_4": 88.02687096774194,
+        "specialized": 44.780903225806455
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "specialized_factor_1": 30.015959,
+        "native_4": 364.800375,
+        "specialized": 26.529084,
+        "native_8": 1063.334958,
+        "native_2": 159.505625,
+        "native_1": 83.883958
+      },
+      "warm_us": {
+        "specialized_factor_1": 123.301,
+        "native_4": 286.213,
+        "specialized": 119.426,
+        "native_8": 289.52777777777777,
+        "native_2": 298.51855555555557,
+        "native_1": 300.625
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 52,
+      "first_ms": {
+        "native_2": 96.390542,
+        "specialized": 39.954583,
+        "native_8": 434.827375,
+        "specialized_factor_1": 32.539375,
+        "native_1": 37.046542,
+        "native_4": 191.578333
+      },
+      "warm_us": {
+        "native_2": 53.16026923076923,
+        "specialized": 31.46394230769231,
+        "native_8": 53.354173076923075,
+        "specialized_factor_1": 32.32532692307692,
+        "native_1": 51.958326923076925,
+        "native_4": 52.30528846153846
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 72.059875,
+        "native_8": 87.38275,
+        "native_4": 52.259083,
+        "native_2": 40.112875,
+        "specialized_factor_1": 32.657709,
+        "native_1": 32.58175
+      },
+      "warm_us": {
+        "specialized": 142.677,
+        "native_8": 1362.9585,
+        "native_4": 1360.89575,
+        "native_2": 1367.75,
+        "specialized_factor_1": 1364.51025,
+        "native_1": 1361.90625
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 8,
+      "first_ms": {
+        "specialized": 51.817666,
+        "native_8": 59.872583,
+        "native_2": 37.036083,
+        "native_1": 31.037417,
+        "native_4": 40.5455,
+        "specialized_factor_1": 31.82425
+      },
+      "warm_us": {
+        "specialized": 84.317625,
+        "native_8": 353.125,
+        "native_2": 352.80725,
+        "native_1": 353.489625,
+        "native_4": 351.84375,
+        "specialized_factor_1": 352.979125
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 37.096959,
+        "specialized": 54.2705,
+        "native_8": 61.547666,
+        "native_4": 42.271125,
+        "specialized_factor_1": 33.076916,
+        "native_1": 32.390541
+      },
+      "warm_us": {
+        "native_2": 1365.09375,
+        "specialized": 134.125,
+        "native_8": 1358.08325,
+        "native_4": 1356.09375,
+        "specialized_factor_1": 1361.1145,
+        "native_1": 1361.4375
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 51.784041,
+        "specialized": 72.839375,
+        "native_4": 69.154375,
+        "specialized_factor_1": 46.021667,
+        "native_8": 118.865875,
+        "native_1": 45.224792
+      },
+      "warm_us": {
+        "native_2": 499.375,
+        "specialized": 57.725,
+        "native_4": 492.7582,
+        "specialized_factor_1": 497.5332,
+        "native_8": 490.15,
+        "native_1": 500.66679999999997
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 45.633041,
+        "specialized": 65.562375,
+        "native_4": 55.855167,
+        "native_2": 48.669417,
+        "native_1": 46.27925,
+        "native_8": 79.085
+      },
+      "warm_us": {
+        "specialized_factor_1": 498.75,
+        "specialized": 55.8834,
+        "native_4": 492.59159999999997,
+        "native_2": 498.6168,
+        "native_1": 498.375,
+        "native_8": 491.95840000000004
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_4": 68.676458,
+        "native_8": 119.595084,
+        "native_1": 44.903667,
+        "specialized": 74.133458,
+        "native_2": 51.243417,
+        "specialized_factor_1": 46.150917
+      },
+      "warm_us": {
+        "native_4": 135.6625,
+        "native_8": 136.5333,
+        "native_1": 136.5,
+        "specialized": 41.9104,
+        "native_2": 137.18125,
+        "specialized_factor_1": 136.69164999999998
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 19,
+      "first_ms": {
+        "specialized": 64.562083,
+        "specialized_factor_1": 44.720125,
+        "native_1": 44.402125,
+        "native_2": 48.821042,
+        "native_4": 54.982208,
+        "native_8": 77.549042
+      },
+      "warm_us": {
+        "specialized": 40.02410526315789,
+        "specialized_factor_1": 138.99342105263156,
+        "native_1": 137.59868421052633,
+        "native_2": 136.98905263157897,
+        "native_4": 136.4078947368421,
+        "native_8": 136.82678947368422
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 32,
+      "calls_per_block": 8,
+      "first_ms": {
+        "native_8": 84.660208,
+        "native_2": 36.903625,
+        "native_4": 53.878167,
+        "native_1": 31.874292,
+        "specialized_factor_1": 31.130667,
+        "specialized": 63.652833
+      },
+      "warm_us": {
+        "native_8": 353.671875,
+        "native_2": 353.21875,
+        "native_4": 352.15625,
+        "native_1": 353.015625,
+        "specialized_factor_1": 352.75,
+        "specialized": 93.69275
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 68.643125,
+        "native_8": 105.67975,
+        "native_4": 52.594334,
+        "native_2": 33.140583,
+        "specialized_factor_1": 41.034667,
+        "native_1": 20.754417
+      },
+      "warm_us": {
+        "specialized": 619.40625,
+        "native_8": 2112.1145,
+        "native_4": 2160.0625,
+        "native_2": 2210.4895,
+        "specialized_factor_1": 677.125,
+        "native_1": 2333.1875
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized": 38.04125,
+        "native_8": 52.453042,
+        "native_2": 23.154958,
+        "native_1": 18.747042,
+        "native_4": 32.163417,
+        "specialized_factor_1": 35.425959
+      },
+      "warm_us": {
+        "specialized": 192.6918,
+        "native_8": 542.0334,
+        "native_2": 568.7584,
+        "native_1": 594.2,
+        "native_4": 554.4416,
+        "specialized_factor_1": 220.575
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 28.90725,
+        "specialized": 39.165917,
+        "native_8": 53.806458,
+        "native_4": 34.141125,
+        "specialized_factor_1": 35.56275,
+        "native_1": 20.390542
+      },
+      "warm_us": {
+        "native_2": 2213.95825,
+        "specialized": 581.58325,
+        "native_8": 2106.84375,
+        "native_4": 2155.729,
+        "specialized_factor_1": 695.479,
+        "native_1": 2308.42725
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 35.35325,
+        "specialized": 61.250084,
+        "native_4": 50.912417,
+        "specialized_factor_1": 55.1965,
+        "native_8": 87.760667,
+        "native_1": 19.787542
+      },
+      "warm_us": {
+        "native_2": 501.2418,
+        "specialized": 191.84179999999998,
+        "native_4": 481.33340000000004,
+        "specialized_factor_1": 237.5832,
+        "native_8": 466.8,
+        "native_1": 521.8666
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 55.483417,
+        "specialized": 33.815334,
+        "native_4": 34.793417,
+        "native_2": 23.699,
+        "native_1": 18.267708,
+        "native_8": 52.620208
+      },
+      "warm_us": {
+        "specialized_factor_1": 237.975,
+        "specialized": 184.25820000000002,
+        "native_4": 481.8084,
+        "native_2": 500.075,
+        "native_1": 519.6334,
+        "native_8": 465.8166
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_4": 53.60325,
+        "native_8": 84.694875,
+        "native_1": 18.847459,
+        "specialized": 63.414875,
+        "native_2": 32.772208,
+        "specialized_factor_1": 55.191875
+      },
+      "warm_us": {
+        "native_4": 135.67105263157896,
+        "native_8": 132.9977894736842,
+        "native_1": 144.8772105263158,
+        "specialized": 85.489,
+        "native_2": 139.41005263157896,
+        "specialized_factor_1": 96.45836842105263
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 8,
+      "calls_per_block": 20,
+      "first_ms": {
+        "specialized": 38.751666,
+        "specialized_factor_1": 49.143208,
+        "native_1": 18.566917,
+        "native_2": 23.001833,
+        "native_4": 31.646875,
+        "native_8": 51.643417
+      },
+      "warm_us": {
+        "specialized": 77.63544999999999,
+        "specialized_factor_1": 98.1521,
+        "native_1": 144.275,
+        "native_2": 140.04585,
+        "native_4": 135.0021,
+        "native_8": 131.5229
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_8": 105.843875,
+        "native_2": 32.133542,
+        "native_4": 51.260375,
+        "native_1": 18.961875,
+        "specialized_factor_1": 42.313458,
+        "specialized": 59.12425
+      },
+      "warm_us": {
+        "native_8": 551.10425,
+        "native_2": 571.59375,
+        "native_4": 566.3335,
+        "native_1": 600.97925,
+        "specialized_factor_1": 219.46875,
+        "specialized": 209.8335
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 45.87325,
+        "native_1": 22.231833,
+        "native_2": 32.700625,
+        "native_8": 105.010541,
+        "specialized": 63.459041,
+        "native_4": 53.648542
+      },
+      "warm_us": {
+        "specialized_factor_1": 717.57275,
+        "native_1": 2336.09375,
+        "native_2": 2219.34375,
+        "native_8": 2119.46875,
+        "specialized": 644.15625,
+        "native_4": 2170.802
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_4": 54.931291,
+        "specialized": 59.837291,
+        "specialized_factor_1": 41.28275,
+        "native_8": 102.00025,
+        "native_1": 19.19925,
+        "native_2": 31.021834
+      },
+      "warm_us": {
+        "native_4": 564.34375,
+        "specialized": 204.323,
+        "specialized_factor_1": 220.94775,
+        "native_8": 549.96875,
+        "native_1": 598.60425,
+        "native_2": 568.54175
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 35.403459,
+        "specialized_factor_1": 54.577584,
+        "native_1": 18.820583,
+        "native_8": 85.457375,
+        "specialized": 64.120916,
+        "native_4": 51.097666
+      },
+      "warm_us": {
+        "native_2": 499.9334,
+        "specialized_factor_1": 237.20839999999998,
+        "native_1": 523.0332,
+        "native_8": 468.74159999999995,
+        "specialized": 191.8,
+        "native_4": 480.8584
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 56.221375,
+        "native_1": 20.564167,
+        "native_8": 52.508792,
+        "native_4": 33.140458,
+        "native_2": 24.93575,
+        "specialized": 33.887666
+      },
+      "warm_us": {
+        "specialized_factor_1": 236.25,
+        "native_1": 517.0834,
+        "native_8": 463.7,
+        "native_4": 481.5332,
+        "native_2": 498.74159999999995,
+        "specialized": 184.75
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_1": 21.796333,
+        "specialized_factor_1": 52.954709,
+        "native_2": 23.36425,
+        "native_4": 32.081583,
+        "native_8": 51.374125,
+        "specialized": 33.03425
+      },
+      "warm_us": {
+        "native_1": 144.39165,
+        "specialized_factor_1": 95.69375,
+        "native_2": 140.36045000000001,
+        "native_4": 134.83335,
+        "native_8": 130.9,
+        "specialized": 77.3375
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 41.577125,
+        "native_1": 19.608709,
+        "native_2": 23.339083,
+        "native_8": 52.5835,
+        "native_4": 32.842875,
+        "specialized": 32.939334
+      },
+      "warm_us": {
+        "specialized_factor_1": 222.19775,
+        "native_1": 595.875,
+        "native_2": 570.23975,
+        "native_8": 546.89575,
+        "native_4": 555.302,
+        "specialized": 193.2085
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 42.291417,
+        "native_4": 35.308458,
+        "specialized": 36.933,
+        "native_8": 54.338291,
+        "native_2": 24.925166,
+        "native_1": 19.988
+      },
+      "warm_us": {
+        "specialized_factor_1": 681.54175,
+        "native_4": 2157.84375,
+        "specialized": 589.5835,
+        "native_8": 2106.09375,
+        "native_2": 2213.6145,
+        "native_1": 2311.01025
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 8,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_2": 38.959875,
+        "specialized": 65.729375,
+        "native_8": 88.061459,
+        "specialized_factor_1": 55.862708,
+        "native_1": 20.200333,
+        "native_4": 50.250917
+      },
+      "warm_us": {
+        "native_2": 140.22289999999998,
+        "specialized": 85.62289999999999,
+        "native_8": 133.1,
+        "specialized_factor_1": 96.7542,
+        "native_1": 145.56664999999998,
+        "native_4": 136.61875
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 27.878916,
+        "native_1": 18.171625,
+        "specialized_factor_1": 53.906375,
+        "native_4": 33.050125,
+        "specialized": 33.493417,
+        "native_8": 52.520583
+      },
+      "warm_us": {
+        "native_2": 517.4084,
+        "native_1": 537.0168000000001,
+        "specialized_factor_1": 259.0582,
+        "native_4": 497.00840000000005,
+        "specialized": 200.4334,
+        "native_8": 488.79159999999996
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 63.329584,
+        "specialized_factor_1": 41.813791,
+        "native_1": 19.50125,
+        "native_2": 32.4945,
+        "native_4": 50.92025,
+        "native_8": 102.840084
+      },
+      "warm_us": {
+        "specialized": 198.4585,
+        "specialized_factor_1": 221.802,
+        "native_1": 599.7085,
+        "native_2": 569.052,
+        "native_4": 564.0105,
+        "native_8": 549.32275
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_2": 35.444042,
+        "native_1": 18.319541,
+        "specialized_factor_1": 54.49025,
+        "specialized": 61.976708,
+        "native_4": 50.457208,
+        "native_8": 85.00775
+      },
+      "warm_us": {
+        "native_2": 141.00657894736844,
+        "native_1": 145.25,
+        "specialized_factor_1": 98.55047368421052,
+        "specialized": 87.33552631578948,
+        "native_4": 135.61842105263156,
+        "native_8": 132.8727894736842
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 37.64275,
+        "specialized": 67.053792,
+        "native_4": 53.258666,
+        "native_1": 21.654791,
+        "native_8": 106.399334,
+        "specialized_factor_1": 41.895625
+      },
+      "warm_us": {
+        "native_2": 2219.80225,
+        "specialized": 653.3125,
+        "native_4": 2172.53125,
+        "native_1": 2319.57275,
+        "native_8": 2120.854,
+        "specialized_factor_1": 722.11475
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 42.248834,
+        "native_8": 54.813167,
+        "native_4": 35.893959,
+        "native_1": 20.245917,
+        "native_2": 24.863959,
+        "specialized": 36.904458
+      },
+      "warm_us": {
+        "specialized_factor_1": 679.91675,
+        "native_8": 2104.3645,
+        "native_4": 2150.53125,
+        "native_1": 2307.45825,
+        "native_2": 2215.0,
+        "specialized": 619.05225
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 41.464084,
+        "native_2": 24.499458,
+        "native_8": 52.2235,
+        "native_4": 33.404333,
+        "native_1": 18.500042,
+        "specialized": 32.320042
+      },
+      "warm_us": {
+        "specialized_factor_1": 229.4916,
+        "native_2": 588.1332,
+        "native_8": 544.4334,
+        "native_4": 556.0082,
+        "native_1": 596.2416,
+        "specialized": 197.58339999999998
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 58.068083,
+        "native_1": 19.695417,
+        "native_8": 84.93675,
+        "native_2": 32.219625,
+        "native_4": 50.305834,
+        "specialized": 62.368542
+      },
+      "warm_us": {
+        "specialized_factor_1": 237.8918,
+        "native_1": 521.2166,
+        "native_8": 469.1,
+        "native_2": 500.425,
+        "native_4": 482.325,
+        "specialized": 190.05
+      }
+    },
+    {
+      "workload": "eval_app_ct_backprojection_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 8,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_8": 56.324792,
+        "native_4": 32.519458,
+        "native_1": 18.147791,
+        "specialized": 35.488083,
+        "native_2": 25.018042,
+        "specialized_factor_1": 49.372333
+      },
+      "warm_us": {
+        "native_8": 132.84165,
+        "native_4": 136.00625,
+        "native_1": 145.29585,
+        "specialized": 80.32289999999999,
+        "native_2": 140.875,
+        "specialized_factor_1": 100.90205
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 35.025125,
+        "native_1": 32.684958,
+        "native_2": 38.021209,
+        "native_8": 89.395875,
+        "specialized": 66.356917,
+        "native_4": 52.373458
+      },
+      "warm_us": {
+        "specialized_factor_1": 1366.0625,
+        "native_1": 1366.573,
+        "native_2": 1364.85425,
+        "native_8": 1363.104,
+        "specialized": 143.6875,
+        "native_4": 1358.23975
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 8,
+      "first_ms": {
+        "native_4": 53.177833,
+        "specialized": 67.163209,
+        "specialized_factor_1": 33.386,
+        "native_8": 85.21775,
+        "native_1": 32.237667,
+        "native_2": 38.445542
+      },
+      "warm_us": {
+        "native_4": 353.536375,
+        "specialized": 94.3385,
+        "specialized_factor_1": 354.55725,
+        "native_8": 356.026125,
+        "native_1": 354.8385,
+        "native_2": 354.109375
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 53.107416,
+        "specialized_factor_1": 48.491417,
+        "native_1": 45.497459,
+        "native_8": 121.845167,
+        "specialized": 76.69725,
+        "native_4": 71.12575
+      },
+      "warm_us": {
+        "native_2": 501.825,
+        "specialized_factor_1": 502.03340000000003,
+        "native_1": 502.41679999999997,
+        "native_8": 499.49159999999995,
+        "specialized": 58.9834,
+        "native_4": 495.63340000000005
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 46.287458,
+        "native_1": 46.48175,
+        "native_8": 79.281792,
+        "native_4": 56.138791,
+        "native_2": 49.386709,
+        "specialized": 63.540125
+      },
+      "warm_us": {
+        "specialized_factor_1": 500.8918,
+        "native_1": 503.2,
+        "native_8": 495.375,
+        "native_4": 495.3,
+        "native_2": 499.6416,
+        "specialized": 56.791599999999995
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_1": 47.790708,
+        "specialized_factor_1": 44.7005,
+        "native_2": 49.878334,
+        "native_4": 58.023583,
+        "native_8": 80.194667,
+        "specialized": 66.412875
+      },
+      "warm_us": {
+        "native_1": 138.83545,
+        "specialized_factor_1": 138.39170000000001,
+        "native_2": 138.2,
+        "native_4": 136.58960000000002,
+        "native_8": 137.8125,
+        "specialized": 40.239599999999996
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 8,
+      "first_ms": {
+        "specialized_factor_1": 33.115625,
+        "native_1": 31.440541,
+        "native_2": 35.2345,
+        "native_8": 56.974,
+        "native_4": 41.540667,
+        "specialized": 52.070917
+      },
+      "warm_us": {
+        "specialized_factor_1": 356.69275,
+        "native_1": 355.776125,
+        "native_2": 354.474,
+        "native_8": 355.333375,
+        "native_4": 353.93225,
+        "specialized": 85.052125
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 33.8485,
+        "native_4": 43.832583,
+        "specialized": 53.267833,
+        "native_8": 61.36,
+        "native_2": 36.465,
+        "native_1": 32.257292
+      },
+      "warm_us": {
+        "specialized_factor_1": 1360.5625,
+        "native_4": 1355.10425,
+        "specialized": 134.54175,
+        "native_8": 1353.84375,
+        "native_2": 1358.8855,
+        "native_1": 1362.54175
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_2": 52.194958,
+        "specialized": 76.171125,
+        "native_8": 120.428708,
+        "specialized_factor_1": 45.38,
+        "native_1": 45.059916,
+        "native_4": 66.247
+      },
+      "warm_us": {
+        "native_2": 138.10625,
+        "specialized": 41.8625,
+        "native_8": 138.42085,
+        "specialized_factor_1": 138.1396,
+        "native_1": 139.03539999999998,
+        "native_4": 136.5729
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized": 60.832917,
+        "native_8": 446.077958,
+        "native_4": 198.521084,
+        "native_2": 103.396084,
+        "specialized_factor_1": 48.630666,
+        "native_1": 46.556792
+      },
+      "warm_us": {
+        "specialized": 30.725,
+        "native_8": 585.0165999999999,
+        "native_4": 566.15,
+        "native_2": 534.0916,
+        "specialized_factor_1": 510.33340000000004,
+        "native_1": 510.075
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 20,
+      "first_ms": {
+        "specialized": 32.054417,
+        "native_8": 315.189375,
+        "native_2": 77.357667,
+        "native_1": 45.086416,
+        "native_4": 149.053167,
+        "specialized_factor_1": 45.684833
+      },
+      "warm_us": {
+        "specialized": 16.6625,
+        "native_8": 155.775,
+        "native_2": 146.4125,
+        "native_1": 142.1875,
+        "native_4": 149.64579999999998,
+        "specialized_factor_1": 141.51045000000002
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 80.46925,
+        "specialized": 45.510416,
+        "native_8": 314.549541,
+        "native_4": 150.416917,
+        "specialized_factor_1": 45.832,
+        "native_1": 46.806833
+      },
+      "warm_us": {
+        "native_2": 531.8418,
+        "specialized": 27.7168,
+        "native_8": 552.5165999999999,
+        "native_4": 541.4,
+        "specialized_factor_1": 508.15,
+        "native_1": 508.9668
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 49,
+      "first_ms": {
+        "native_2": 96.339416,
+        "specialized": 59.3675,
+        "native_4": 191.409584,
+        "specialized_factor_1": 47.461917,
+        "native_8": 415.111708,
+        "native_1": 48.829
+      },
+      "warm_us": {
+        "native_2": 75.34524489795919,
+        "specialized": 25.63434693877551,
+        "native_4": 94.4515306122449,
+        "specialized_factor_1": 59.439632653061224,
+        "native_8": 104.4761836734694,
+        "native_1": 59.50934693877551
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 49,
+      "first_ms": {
+        "specialized_factor_1": 48.33525,
+        "specialized": 47.8705,
+        "native_4": 139.709625,
+        "native_2": 73.452833,
+        "native_1": 45.349916,
+        "native_8": 296.902167
+      },
+      "warm_us": {
+        "specialized_factor_1": 60.06973469387755,
+        "specialized": 24.516163265306123,
+        "native_4": 72.28485714285715,
+        "native_2": 59.243204081632655,
+        "native_1": 59.38265306122449,
+        "native_8": 72.9965918367347
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_4": 199.277958,
+        "native_8": 416.818417,
+        "native_1": 47.512083,
+        "specialized": 39.844917,
+        "native_2": 97.019792,
+        "specialized_factor_1": 46.816166
+      },
+      "warm_us": {
+        "native_4": 52.4641875,
+        "native_8": 62.171875,
+        "native_1": 19.328125,
+        "specialized": 14.8017578125,
+        "native_2": 35.0061796875,
+        "specialized_factor_1": 19.4423828125
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 128,
+      "first_ms": {
+        "specialized": 41.1605,
+        "specialized_factor_1": 46.936209,
+        "native_1": 45.804083,
+        "native_2": 72.733916,
+        "native_4": 139.856542,
+        "native_8": 296.927666
+      },
+      "warm_us": {
+        "specialized": 15.7239609375,
+        "specialized_factor_1": 19.21940625,
+        "native_1": 19.2086640625,
+        "native_2": 19.305015625,
+        "native_4": 33.237953125,
+        "native_8": 35.8935546875
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 256,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_8": 436.712875,
+        "native_2": 101.329375,
+        "native_4": 202.16425,
+        "native_1": 46.720958,
+        "specialized_factor_1": 45.604083,
+        "specialized": 30.020834
+      },
+      "warm_us": {
+        "native_8": 182.27085,
+        "native_2": 147.14585,
+        "native_4": 171.9625,
+        "native_1": 140.91875,
+        "specialized_factor_1": 140.08954999999997,
+        "specialized": 17.1646
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "specialized": 38.504375,
+        "native_8": 1113.678709,
+        "native_4": 386.5775,
+        "native_2": 207.102208,
+        "specialized_factor_1": 27.331916,
+        "native_1": 83.554833
+      },
+      "warm_us": {
+        "specialized": 121.08333333333333,
+        "native_8": 291.51388888888886,
+        "native_4": 285.8934444444444,
+        "native_2": 296.36111111111114,
+        "specialized_factor_1": 122.25455555555556,
+        "native_1": 298.31944444444446
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "specialized": 32.758292,
+        "native_8": 1060.74,
+        "native_2": 158.89175,
+        "native_1": 82.080166,
+        "native_4": 368.720291,
+        "specialized_factor_1": 28.652208
+      },
+      "warm_us": {
+        "specialized": 44.12890625,
+        "native_8": 87.8984375,
+        "native_2": 87.190125,
+        "native_1": 88.01171875,
+        "native_4": 85.602875,
+        "specialized_factor_1": 44.76303125
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "native_2": 161.84175,
+        "specialized": 28.154375,
+        "native_8": 1058.044208,
+        "native_4": 365.483042,
+        "specialized_factor_1": 26.0885,
+        "native_1": 84.015958
+      },
+      "warm_us": {
+        "native_2": 297.801,
+        "specialized": 118.16211111111112,
+        "native_8": 289.9398888888889,
+        "native_4": 286.4166666666667,
+        "specialized_factor_1": 122.8981111111111,
+        "native_1": 299.63422222222226
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "native_2": 96.34,
+        "specialized": 32.429708,
+        "native_4": 192.854709,
+        "specialized_factor_1": 23.689333,
+        "native_8": 441.668291,
+        "native_1": 39.639125
+      },
+      "warm_us": {
+        "native_2": 151.443,
+        "specialized": 63.90789473684211,
+        "native_4": 140.6337894736842,
+        "specialized_factor_1": 65.31357894736843,
+        "native_8": 140.94078947368422,
+        "native_1": 148.44515789473687
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "specialized_factor_1": 27.471291,
+        "specialized": 27.138625,
+        "native_4": 178.038958,
+        "native_2": 78.378958,
+        "native_1": 36.356041,
+        "native_8": 401.951
+      },
+      "warm_us": {
+        "specialized_factor_1": 64.31363157894737,
+        "specialized": 61.76315789473684,
+        "native_4": 140.55047368421054,
+        "native_2": 151.2522105263158,
+        "native_1": 149.80921052631578,
+        "native_8": 138.08552631578948
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 53,
+      "first_ms": {
+        "native_4": 199.04675,
+        "native_8": 431.856459,
+        "native_1": 37.461291,
+        "specialized": 40.050667,
+        "native_2": 91.616208,
+        "specialized_factor_1": 32.303083
+      },
+      "warm_us": {
+        "native_4": 52.029094339622645,
+        "native_8": 53.16509433962264,
+        "native_1": 50.78852830188679,
+        "specialized": 30.887584905660376,
+        "native_2": 52.23035849056604,
+        "specialized_factor_1": 30.93552830188679
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 52,
+      "first_ms": {
+        "specialized": 33.07775,
+        "specialized_factor_1": 27.159666,
+        "native_1": 37.679875,
+        "native_2": 78.18225,
+        "native_4": 178.311792,
+        "native_8": 403.0795
+      },
+      "warm_us": {
+        "specialized": 28.93028846153846,
+        "specialized_factor_1": 30.167461538461538,
+        "native_1": 50.72115384615385,
+        "native_2": 51.415076923076924,
+        "native_4": 48.8781923076923,
+        "native_8": 49.99678846153846
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 31,
+      "first_ms": {
+        "native_8": 1111.678542,
+        "native_2": 207.055,
+        "native_4": 395.83075,
+        "native_1": 83.324,
+        "specialized_factor_1": 29.941625,
+        "specialized": 33.731708
+      },
+      "warm_us": {
+        "native_8": 91.89783870967743,
+        "native_2": 89.42741935483872,
+        "native_4": 88.88306451612902,
+        "native_1": 89.62367741935483,
+        "specialized_factor_1": 45.897838709677416,
+        "specialized": 45.50535483870967
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 56.584708,
+        "native_1": 46.67225,
+        "specialized_factor_1": 46.340791,
+        "native_4": 62.173875,
+        "specialized": 72.258208,
+        "native_8": 95.533083
+      },
+      "warm_us": {
+        "native_2": 495.75,
+        "native_1": 499.5,
+        "specialized_factor_1": 500.11659999999995,
+        "native_4": 493.6416,
+        "specialized": 56.8916,
+        "native_8": 492.125
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 8,
+      "first_ms": {
+        "specialized": 70.02025,
+        "specialized_factor_1": 33.291125,
+        "native_1": 33.823666,
+        "native_2": 40.999958,
+        "native_4": 54.473167,
+        "native_8": 92.094959
+      },
+      "warm_us": {
+        "specialized": 94.75525,
+        "specialized_factor_1": 354.52075,
+        "native_1": 353.729125,
+        "native_2": 354.46875,
+        "native_4": 352.84375,
+        "native_8": 355.6355
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_2": 55.338,
+        "native_1": 46.362042,
+        "specialized_factor_1": 47.74775,
+        "specialized": 80.602792,
+        "native_4": 71.776375,
+        "native_8": 122.62925
+      },
+      "warm_us": {
+        "native_2": 137.83125,
+        "native_1": 137.65625,
+        "specialized_factor_1": 137.74375,
+        "specialized": 42.3542,
+        "native_4": 137.06664999999998,
+        "native_8": 136.9354
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 42.233709,
+        "specialized": 68.900166,
+        "native_4": 57.784791,
+        "native_1": 35.472209,
+        "native_8": 92.762875,
+        "specialized_factor_1": 34.207958
+      },
+      "warm_us": {
+        "native_2": 1364.7605,
+        "specialized": 144.6355,
+        "native_4": 1364.41675,
+        "native_1": 1365.59375,
+        "native_8": 1364.021,
+        "specialized_factor_1": 1366.4165
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 34.696459,
+        "native_8": 64.141042,
+        "native_4": 45.402125,
+        "native_1": 33.826916,
+        "native_2": 38.901666,
+        "specialized": 55.756042
+      },
+      "warm_us": {
+        "specialized_factor_1": 1370.70825,
+        "native_8": 1357.75,
+        "native_4": 1360.073,
+        "native_1": 1368.5625,
+        "native_2": 1368.33325,
+        "specialized": 135.72925
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 8,
+      "first_ms": {
+        "specialized_factor_1": 35.860834,
+        "native_2": 37.587625,
+        "native_8": 69.22975,
+        "native_4": 44.221417,
+        "native_1": 32.81725,
+        "specialized": 56.774875
+      },
+      "warm_us": {
+        "specialized_factor_1": 355.895875,
+        "native_2": 354.973875,
+        "native_8": 355.375,
+        "native_4": 353.234375,
+        "native_1": 355.9635,
+        "specialized": 85.55725
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 48.018417,
+        "native_1": 46.311042,
+        "native_8": 129.298209,
+        "native_2": 57.121583,
+        "native_4": 70.638917,
+        "specialized": 81.105875
+      },
+      "warm_us": {
+        "specialized_factor_1": 497.00840000000005,
+        "native_1": 495.20820000000003,
+        "native_8": 497.34159999999997,
+        "native_2": 498.6416,
+        "native_4": 492.2,
+        "specialized": 58.05
+      }
+    },
+    {
+      "workload": "eval_dense_horner_matrix_poly",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 32,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_8": 86.266959,
+        "native_4": 60.209417,
+        "native_1": 46.803666,
+        "specialized": 69.059166,
+        "native_2": 52.638667,
+        "specialized_factor_1": 46.300042
+      },
+      "warm_us": {
+        "native_8": 136.6125,
+        "native_4": 136.7104,
+        "native_1": 138.5604,
+        "specialized": 40.725,
+        "native_2": 137.33960000000002,
+        "specialized_factor_1": 138.08335
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 177.371542,
+        "native_8": 1165.371583,
+        "native_4": 565.713833,
+        "native_2": 256.247583,
+        "specialized_factor_1": 134.007583,
+        "native_1": 134.535583
+      },
+      "warm_us": {
+        "specialized": 1247.125,
+        "native_8": 2401.73975,
+        "native_4": 2298.927,
+        "native_2": 2335.3125,
+        "specialized_factor_1": 3640.3125,
+        "native_1": 3645.58325
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 161.440958,
+        "native_8": 1093.476333,
+        "native_2": 235.021125,
+        "native_1": 130.104416,
+        "native_4": 527.2775,
+        "specialized_factor_1": 131.429208
+      },
+      "warm_us": {
+        "specialized": 329.75,
+        "native_8": 616.604,
+        "native_2": 602.125,
+        "native_1": 927.8855,
+        "native_4": 591.375,
+        "specialized_factor_1": 925.46875
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 240.837292,
+        "specialized": 148.477,
+        "native_8": 1094.9735,
+        "native_4": 528.16225,
+        "specialized_factor_1": 134.051916,
+        "native_1": 133.134959
+      },
+      "warm_us": {
+        "native_2": 2342.92725,
+        "specialized": 1244.8125,
+        "native_8": 2403.65625,
+        "native_4": 2303.302,
+        "specialized_factor_1": 3645.8645,
+        "native_1": 3640.53125
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 6,
+      "first_ms": {
+        "native_2": 304.948833,
+        "specialized": 155.463916,
+        "native_4": 593.849,
+        "specialized_factor_1": 149.085542,
+        "native_8": 1119.419208,
+        "native_1": 146.696041
+      },
+      "warm_us": {
+        "native_2": 426.3471666666667,
+        "specialized": 188.0765,
+        "native_4": 424.5693333333333,
+        "specialized_factor_1": 489.4028333333333,
+        "native_8": 422.5346666666667,
+        "native_1": 489.0971666666667
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 6,
+      "first_ms": {
+        "specialized_factor_1": 150.483542,
+        "specialized": 140.202708,
+        "native_4": 540.991708,
+        "native_2": 278.378708,
+        "native_1": 146.141042,
+        "native_8": 1059.912667
+      },
+      "warm_us": {
+        "specialized_factor_1": 490.2568333333333,
+        "specialized": 187.99316666666667,
+        "native_4": 424.5971666666667,
+        "native_2": 427.5486666666667,
+        "native_1": 489.9515,
+        "native_8": 422.6041666666667
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_4": 589.941084,
+        "native_8": 1129.418959,
+        "native_1": 146.671167,
+        "specialized": 149.751916,
+        "native_2": 294.195666,
+        "specialized_factor_1": 148.134792
+      },
+      "warm_us": {
+        "native_4": 119.55357142857143,
+        "native_8": 119.89285714285714,
+        "native_1": 135.68452380952382,
+        "specialized": 61.136904761904766,
+        "native_2": 119.82342857142856,
+        "specialized_factor_1": 135.18452380952382
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 21,
+      "first_ms": {
+        "specialized": 138.562375,
+        "specialized_factor_1": 146.836916,
+        "native_1": 147.273625,
+        "native_2": 280.670625,
+        "native_4": 540.786958,
+        "native_8": 1063.561625
+      },
+      "warm_us": {
+        "specialized": 60.291666666666664,
+        "specialized_factor_1": 134.8452380952381,
+        "native_1": 134.9087142857143,
+        "native_2": 119.33133333333333,
+        "native_4": 118.37895238095238,
+        "native_8": 118.31747619047619
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 1,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_8": 1165.413417,
+        "native_2": 257.575333,
+        "native_4": 564.860042,
+        "native_1": 133.13825,
+        "specialized_factor_1": 130.429375,
+        "specialized": 177.02725
+      },
+      "warm_us": {
+        "native_8": 606.9375,
+        "native_2": 594.4375,
+        "native_4": 586.2085,
+        "native_1": 919.4895,
+        "specialized_factor_1": 919.66675,
+        "specialized": 326.78125
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 48,
+      "first_ms": {
+        "native_2": 76.649792,
+        "native_1": 45.316459,
+        "specialized_factor_1": 44.686291,
+        "native_4": 140.362458,
+        "specialized": 48.038542,
+        "native_8": 299.584833
+      },
+      "warm_us": {
+        "native_2": 59.993916666666664,
+        "native_1": 59.609375,
+        "specialized_factor_1": 59.769958333333335,
+        "native_4": 70.91233333333332,
+        "specialized": 24.0868125,
+        "native_8": 72.3038125
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 19,
+      "first_ms": {
+        "specialized": 33.483417,
+        "specialized_factor_1": 47.79875,
+        "native_1": 45.899875,
+        "native_2": 102.497333,
+        "native_4": 205.340583,
+        "native_8": 439.513917
+      },
+      "warm_us": {
+        "specialized": 14.914473684210527,
+        "specialized_factor_1": 140.99563157894735,
+        "native_1": 140.3421052631579,
+        "native_2": 147.66447368421052,
+        "native_4": 173.3398947368421,
+        "native_8": 182.56357894736843
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_2": 105.340625,
+        "native_1": 46.922917,
+        "specialized_factor_1": 46.68175,
+        "specialized": 40.30575,
+        "native_4": 199.871333,
+        "native_8": 416.841583
+      },
+      "warm_us": {
+        "native_2": 34.9781953125,
+        "native_1": 19.4267578125,
+        "specialized_factor_1": 19.310546875,
+        "specialized": 14.876296875,
+        "native_4": 51.6500703125,
+        "native_8": 62.6630859375
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 106.38675,
+        "specialized": 59.246709,
+        "native_4": 205.176083,
+        "native_1": 47.475541,
+        "native_8": 431.1905,
+        "specialized_factor_1": 51.566292
+      },
+      "warm_us": {
+        "native_2": 536.4834000000001,
+        "specialized": 30.3168,
+        "native_4": 567.2916,
+        "native_1": 510.725,
+        "native_8": 586.4666,
+        "specialized_factor_1": 508.29159999999996
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 51.504875,
+        "native_8": 323.071292,
+        "native_4": 150.249625,
+        "native_1": 45.990167,
+        "native_2": 77.5905,
+        "specialized": 44.804208
+      },
+      "warm_us": {
+        "specialized_factor_1": 506.65840000000003,
+        "native_8": 553.6584,
+        "native_4": 539.8834,
+        "native_1": 507.3582,
+        "native_2": 528.2584,
+        "specialized": 27.15
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 20,
+      "first_ms": {
+        "specialized_factor_1": 48.493083,
+        "native_2": 77.227833,
+        "native_8": 314.80775,
+        "native_4": 148.582125,
+        "native_1": 45.685833,
+        "specialized": 29.987041
+      },
+      "warm_us": {
+        "specialized_factor_1": 140.2167,
+        "native_2": 145.6375,
+        "native_8": 155.30835000000002,
+        "native_4": 148.56664999999998,
+        "native_1": 140.47085,
+        "specialized": 16.395799999999998
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 48,
+      "first_ms": {
+        "specialized_factor_1": 48.775583,
+        "native_1": 45.861667,
+        "native_8": 405.243625,
+        "native_2": 97.05125,
+        "native_4": 195.431583,
+        "specialized": 59.592791
+      },
+      "warm_us": {
+        "specialized_factor_1": 60.0859375,
+        "native_1": 59.782979166666664,
+        "native_8": 104.18489583333333,
+        "native_2": 74.18577083333332,
+        "native_4": 95.109375,
+        "specialized": 25.67275
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 256,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_8": 300.591333,
+        "native_4": 140.157458,
+        "native_1": 45.801917,
+        "specialized": 39.635541,
+        "native_2": 73.609542,
+        "specialized_factor_1": 45.4965
+      },
+      "warm_us": {
+        "native_8": 36.398765625,
+        "native_4": 34.1458359375,
+        "native_1": 19.390625,
+        "specialized": 14.5751953125,
+        "native_2": 19.377609375,
+        "specialized_factor_1": 19.4313125
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "specialized_factor_1": 36.946292,
+        "native_1": 27.362417,
+        "native_2": 52.807833,
+        "native_8": 245.471042,
+        "specialized": 70.6745,
+        "native_4": 108.979875
+      },
+      "warm_us": {
+        "specialized_factor_1": 210.81542857142858,
+        "native_1": 212.13685714285714,
+        "native_2": 12.309571428571429,
+        "native_8": 23.875,
+        "specialized": 9.967214285714286,
+        "native_4": 23.836285714285715
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "native_4": 106.615333,
+        "specialized": 71.609167,
+        "specialized_factor_1": 32.604709,
+        "native_8": 242.533833,
+        "native_1": 28.212541,
+        "native_2": 53.281
+      },
+      "warm_us": {
+        "native_4": 8.368204081632653,
+        "specialized": 9.245755102040816,
+        "specialized_factor_1": 59.47789795918368,
+        "native_8": 8.589285714285714,
+        "native_1": 58.57142857142857,
+        "native_2": 9.014469387755101
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "native_2": 55.380291,
+        "specialized_factor_1": 34.643583,
+        "native_1": 25.928458,
+        "native_8": 240.618583,
+        "specialized": 69.814125,
+        "native_4": 107.642
+      },
+      "warm_us": {
+        "native_2": 11.919407894736842,
+        "specialized_factor_1": 36.94023684210526,
+        "native_1": 37.41996052631578,
+        "native_8": 23.518644736842106,
+        "specialized": 8.111842105263158,
+        "native_4": 23.824565789473684
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 76,
+      "first_ms": {
+        "specialized_factor_1": 36.66225,
+        "native_1": 27.001375,
+        "native_8": 165.949583,
+        "native_4": 73.332041,
+        "native_2": 39.420375,
+        "specialized": 62.173541
+      },
+      "warm_us": {
+        "specialized_factor_1": 37.22478947368421,
+        "native_1": 37.83168421052631,
+        "native_8": 28.28125,
+        "native_4": 17.54988157894737,
+        "native_2": 24.08936842105263,
+        "specialized": 9.043855263157894
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_1": 28.749209,
+        "specialized_factor_1": 34.425708,
+        "native_2": 39.810834,
+        "native_4": 72.198167,
+        "native_8": 164.456834,
+        "specialized": 63.941959
+      },
+      "warm_us": {
+        "native_1": 15.362953125,
+        "specialized_factor_1": 15.37728125,
+        "native_2": 12.0104140625,
+        "native_4": 10.279296875,
+        "native_8": 10.029296875,
+        "specialized": 8.13509375
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 49,
+      "first_ms": {
+        "specialized_factor_1": 36.145083,
+        "native_1": 27.592667,
+        "native_2": 39.374084,
+        "native_8": 166.663,
+        "native_4": 73.58175,
+        "specialized": 62.617917
+      },
+      "warm_us": {
+        "specialized_factor_1": 59.55612244897959,
+        "native_1": 58.98555102040817,
+        "native_2": 34.109693877551024,
+        "native_8": 27.497448979591837,
+        "native_4": 21.307836734693876,
+        "specialized": 10.683673469387756
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 14,
+      "first_ms": {
+        "specialized_factor_1": 35.984584,
+        "native_4": 74.216917,
+        "specialized": 60.577459,
+        "native_8": 165.667625,
+        "native_2": 39.889917,
+        "native_1": 25.828459
+      },
+      "warm_us": {
+        "specialized_factor_1": 211.64578571428572,
+        "native_4": 61.49107142857143,
+        "specialized": 16.014857142857142,
+        "native_8": 51.982142857142854,
+        "native_2": 112.125,
+        "native_1": 211.88985714285712
+      }
+    },
+    {
+      "workload": "write_multitap_delay_ring",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 32,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_2": 55.005,
+        "specialized": 70.697959,
+        "native_8": 238.705209,
+        "specialized_factor_1": 32.852708,
+        "native_1": 25.99025,
+        "native_4": 102.492917
+      },
+      "warm_us": {
+        "native_2": 8.7001953125,
+        "specialized": 7.55240625,
+        "native_8": 8.1572265625,
+        "specialized_factor_1": 14.7392578125,
+        "native_1": 14.748703125,
+        "native_4": 8.04621875
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 137.112958,
+        "native_1": 134.465459,
+        "native_2": 257.028709,
+        "native_8": 1149.871084,
+        "specialized": 176.876,
+        "native_4": 565.696875
+      },
+      "warm_us": {
+        "specialized_factor_1": 3640.46875,
+        "native_1": 3639.83325,
+        "native_2": 2337.33325,
+        "native_8": 2398.5835,
+        "specialized": 1245.96875,
+        "native_4": 2302.5
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_4": 574.635541,
+        "specialized": 181.346333,
+        "specialized_factor_1": 135.773375,
+        "native_8": 1149.791125,
+        "native_1": 131.81375,
+        "native_2": 255.793916
+      },
+      "warm_us": {
+        "native_4": 585.125,
+        "specialized": 326.7085,
+        "specialized_factor_1": 919.46875,
+        "native_8": 606.59375,
+        "native_1": 920.021,
+        "native_2": 594.52075
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 297.721666,
+        "specialized_factor_1": 146.789167,
+        "native_1": 145.510667,
+        "native_8": 1120.500291,
+        "specialized": 155.953542,
+        "native_4": 582.020666
+      },
+      "warm_us": {
+        "native_2": 426.8582,
+        "specialized_factor_1": 490.575,
+        "native_1": 489.375,
+        "native_8": 423.525,
+        "specialized": 187.45,
+        "native_4": 424.7666
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 151.840584,
+        "native_1": 145.81075,
+        "native_8": 1062.485666,
+        "native_4": 544.494,
+        "native_2": 277.932375,
+        "specialized": 137.736709
+      },
+      "warm_us": {
+        "specialized_factor_1": 491.95,
+        "native_1": 493.2168,
+        "native_8": 422.9834,
+        "native_4": 425.95,
+        "native_2": 428.3,
+        "specialized": 188.5832
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_1": 148.949625,
+        "specialized_factor_1": 145.306,
+        "native_2": 277.116791,
+        "native_4": 539.320292,
+        "native_8": 1063.010042,
+        "specialized": 138.29375
+      },
+      "warm_us": {
+        "native_1": 135.79566666666665,
+        "specialized_factor_1": 135.875,
+        "native_2": 120.38495238095238,
+        "native_4": 119.48409523809524,
+        "native_8": 119.13490476190476,
+        "specialized": 60.63095238095238
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 135.478625,
+        "native_1": 130.247917,
+        "native_2": 234.822541,
+        "native_8": 1093.602291,
+        "native_4": 526.745708,
+        "specialized": 159.64925
+      },
+      "warm_us": {
+        "specialized_factor_1": 924.94775,
+        "native_1": 926.1875,
+        "native_2": 605.03125,
+        "native_8": 615.75,
+        "native_4": 590.20825,
+        "specialized": 328.77075
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 136.407708,
+        "native_4": 527.135292,
+        "specialized": 157.481584,
+        "native_8": 1095.7265,
+        "native_2": 239.763792,
+        "native_1": 133.933708
+      },
+      "warm_us": {
+        "specialized_factor_1": 3633.8125,
+        "native_4": 2299.52075,
+        "specialized": 1243.625,
+        "native_8": 2397.96875,
+        "native_2": 2337.86475,
+        "native_1": 3636.302
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 4,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_2": 295.331459,
+        "specialized": 149.839041,
+        "native_8": 1125.129208,
+        "specialized_factor_1": 148.344292,
+        "native_1": 145.983042,
+        "native_4": 588.166167
+      },
+      "warm_us": {
+        "native_2": 120.04761904761905,
+        "specialized": 60.72419047619047,
+        "native_8": 119.20833333333333,
+        "specialized_factor_1": 135.56747619047619,
+        "native_1": 135.39285714285714,
+        "native_4": 119.373
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 5,
+      "first_ms": {
+        "native_2": 283.003917,
+        "native_1": 146.399792,
+        "specialized_factor_1": 145.831333,
+        "native_4": 541.811625,
+        "specialized": 143.5385,
+        "native_8": 1061.8575
+      },
+      "warm_us": {
+        "native_2": 428.3668,
+        "native_1": 494.625,
+        "specialized_factor_1": 493.13340000000005,
+        "native_4": 430.25,
+        "specialized": 189.36679999999998,
+        "native_8": 423.8
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized": 169.075458,
+        "specialized_factor_1": 131.955584,
+        "native_1": 130.172084,
+        "native_2": 255.335,
+        "native_4": 568.328791,
+        "native_8": 1157.750875
+      },
+      "warm_us": {
+        "specialized": 328.19775,
+        "specialized_factor_1": 923.10425,
+        "native_1": 922.229,
+        "native_2": 596.75,
+        "native_4": 587.82275,
+        "native_8": 609.71875
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_2": 298.588875,
+        "native_1": 146.327417,
+        "specialized_factor_1": 145.414542,
+        "specialized": 154.304541,
+        "native_4": 591.770083,
+        "native_8": 1117.032125
+      },
+      "warm_us": {
+        "native_2": 118.95415,
+        "native_1": 134.68329999999997,
+        "specialized_factor_1": 134.59375,
+        "specialized": 60.175,
+        "native_4": 118.70835000000001,
+        "native_8": 118.57915
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "native_2": 260.779417,
+        "specialized": 173.988083,
+        "native_4": 579.021167,
+        "native_1": 134.169542,
+        "native_8": 1166.657292,
+        "specialized_factor_1": 134.58125
+      },
+      "warm_us": {
+        "native_2": 2330.65625,
+        "specialized": 1242.70825,
+        "native_4": 2298.125,
+        "native_1": 3636.40625,
+        "native_8": 2393.14575,
+        "specialized_factor_1": 3637.27075
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 137.944792,
+        "native_8": 1101.16375,
+        "native_4": 528.435458,
+        "native_1": 137.9755,
+        "native_2": 238.008208,
+        "specialized": 158.216959
+      },
+      "warm_us": {
+        "specialized_factor_1": 3637.58325,
+        "native_8": 2397.8855,
+        "native_4": 2297.3335,
+        "native_1": 3639.9895,
+        "native_2": 2335.823,
+        "specialized": 1242.875
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 4,
+      "first_ms": {
+        "specialized_factor_1": 133.709583,
+        "native_2": 238.337208,
+        "native_8": 1093.906833,
+        "native_4": 527.117375,
+        "native_1": 131.724375,
+        "specialized": 151.939792
+      },
+      "warm_us": {
+        "specialized_factor_1": 925.4585,
+        "native_2": 599.66675,
+        "native_8": 615.65625,
+        "native_4": 587.60425,
+        "native_1": 923.646,
+        "specialized": 327.92725
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 6,
+      "first_ms": {
+        "specialized_factor_1": 148.894667,
+        "native_1": 146.587833,
+        "native_8": 1122.430708,
+        "native_2": 294.324917,
+        "native_4": 587.884791,
+        "specialized": 150.181333
+      },
+      "warm_us": {
+        "specialized_factor_1": 488.9583333333333,
+        "native_1": 488.5625,
+        "native_8": 422.5,
+        "native_2": 426.7015,
+        "native_4": 423.618,
+        "specialized": 187.73616666666666
+      }
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 21,
+      "first_ms": {
+        "native_8": 1066.4005,
+        "native_4": 547.047042,
+        "native_1": 145.8505,
+        "specialized": 139.887875,
+        "native_2": 277.33475,
+        "specialized_factor_1": 145.44
+      },
+      "warm_us": {
+        "native_8": 117.97419047619047,
+        "native_4": 118.52180952380952,
+        "native_1": 135.3492380952381,
+        "specialized": 60.666666666666664,
+        "native_2": 120.13095238095238,
+        "specialized_factor_1": 135.05952380952382
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_2": 80.642042,
+        "native_1": 35.919791,
+        "specialized_factor_1": 25.618,
+        "native_4": 176.505417,
+        "specialized": 27.463042,
+        "native_8": 398.229584
+      },
+      "warm_us": {
+        "native_2": 147.3,
+        "native_1": 147.7979,
+        "specialized_factor_1": 63.4,
+        "native_4": 141.27915,
+        "specialized": 60.895849999999996,
+        "native_8": 137.0604
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 32,
+      "first_ms": {
+        "specialized": 38.885208,
+        "specialized_factor_1": 27.2755,
+        "native_1": 81.124792,
+        "native_2": 208.512958,
+        "native_4": 389.428416,
+        "native_8": 1122.660834
+      },
+      "warm_us": {
+        "specialized": 45.3489375,
+        "specialized_factor_1": 45.79946875,
+        "native_1": 89.60546875,
+        "native_2": 90.283875,
+        "native_4": 88.4674375,
+        "native_8": 91.165375
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 52,
+      "first_ms": {
+        "native_2": 93.440667,
+        "native_1": 37.416917,
+        "specialized_factor_1": 34.6905,
+        "specialized": 38.162458,
+        "native_4": 197.531875,
+        "native_8": 442.948792
+      },
+      "warm_us": {
+        "native_2": 54.31730769230769,
+        "native_1": 52.248384615384616,
+        "specialized_factor_1": 32.51121153846154,
+        "specialized": 31.813307692307692,
+        "native_4": 51.960730769230764,
+        "native_8": 53.36057692307692
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "native_2": 213.053125,
+        "specialized": 36.034916,
+        "native_4": 398.232958,
+        "native_1": 83.393125,
+        "native_8": 1106.996917,
+        "specialized_factor_1": 27.863542
+      },
+      "warm_us": {
+        "native_2": 298.59722222222223,
+        "specialized": 122.47677777777778,
+        "native_4": 287.4258888888889,
+        "native_1": 300.6481111111111,
+        "native_8": 292.84722222222223,
+        "specialized_factor_1": 123.10655555555556
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 9,
+      "first_ms": {
+        "specialized_factor_1": 29.398333,
+        "native_8": 1065.444875,
+        "native_4": 363.650791,
+        "native_1": 82.490542,
+        "native_2": 156.696792,
+        "specialized": 26.407292
+      },
+      "warm_us": {
+        "specialized_factor_1": 121.75466666666667,
+        "native_8": 288.8008888888889,
+        "native_4": 285.81477777777775,
+        "native_1": 299.93977777777775,
+        "native_2": 295.4583333333333,
+        "specialized": 117.93055555555556
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 31,
+      "first_ms": {
+        "specialized_factor_1": 32.385042,
+        "native_2": 157.826458,
+        "native_8": 1057.767542,
+        "native_4": 361.483959,
+        "native_1": 82.614167,
+        "specialized": 28.408417
+      },
+      "warm_us": {
+        "specialized_factor_1": 45.25674193548387,
+        "native_2": 88.5188064516129,
+        "native_8": 88.80106451612903,
+        "native_4": 85.47716129032257,
+        "native_1": 88.10080645161291,
+        "specialized": 44.055096774193544
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 19,
+      "first_ms": {
+        "specialized_factor_1": 27.212625,
+        "native_1": 37.085083,
+        "native_8": 435.81425,
+        "native_2": 94.921208,
+        "native_4": 198.592041,
+        "specialized": 31.032375
+      },
+      "warm_us": {
+        "specialized_factor_1": 64.99778947368421,
+        "native_1": 150.55484210526313,
+        "native_8": 140.67984210526313,
+        "native_2": 151.57894736842104,
+        "native_4": 140.9583157894737,
+        "specialized": 64.04605263157895
+      }
+    },
+    {
+      "workload": "eval_dense_attention_block_step",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 0,
+      "factor": 4,
+      "calls_per_block": 53,
+      "first_ms": {
+        "native_8": 402.938709,
+        "native_4": 177.621708,
+        "native_1": 36.728333,
+        "specialized": 29.956291,
+        "native_2": 78.236208,
+        "specialized_factor_1": 26.784875
+      },
+      "warm_us": {
+        "native_8": 49.79401886792453,
+        "native_4": 48.280660377358494,
+        "native_1": 49.98428301886792,
+        "specialized": 28.75864150943396,
+        "native_2": 50.1061320754717,
+        "specialized_factor_1": 29.70833962264151
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 48.8605,
+        "native_1": 45.432167,
+        "native_2": 101.337917,
+        "native_8": 430.04325,
+        "specialized": 63.337417,
+        "native_4": 201.662375
+      },
+      "warm_us": {
+        "specialized_factor_1": 508.675,
+        "native_1": 510.41659999999996,
+        "native_2": 530.7416,
+        "native_8": 586.2918000000001,
+        "specialized": 29.3334,
+        "native_4": 562.5082
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 20,
+      "first_ms": {
+        "native_4": 208.125125,
+        "specialized": 30.860959,
+        "specialized_factor_1": 46.395791,
+        "native_8": 429.333125,
+        "native_1": 48.437708,
+        "native_2": 99.633
+      },
+      "warm_us": {
+        "native_4": 171.02710000000002,
+        "specialized": 17.2271,
+        "specialized_factor_1": 140.1542,
+        "native_8": 183.46875,
+        "native_1": 140.8271,
+        "native_2": 147.8896
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 1023,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 47,
+      "first_ms": {
+        "native_2": 98.890667,
+        "specialized_factor_1": 46.192583,
+        "native_1": 45.872709,
+        "native_8": 416.334125,
+        "specialized": 60.368833,
+        "native_4": 192.938041
+      },
+      "warm_us": {
+        "native_2": 72.88563829787235,
+        "specialized_factor_1": 59.509744680851064,
+        "native_1": 59.54168085106383,
+        "native_8": 103.61348936170214,
+        "specialized": 25.437936170212765,
+        "native_4": 91.92819148936171
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 47,
+      "first_ms": {
+        "specialized_factor_1": 48.77725,
+        "native_1": 44.798125,
+        "native_8": 295.144792,
+        "native_4": 139.132625,
+        "native_2": 73.155875,
+        "specialized": 49.128625
+      },
+      "warm_us": {
+        "specialized_factor_1": 59.31204255319149,
+        "native_1": 59.288106382978725,
+        "native_8": 71.90691489361703,
+        "native_4": 69.8590425531915,
+        "native_2": 59.337765957446805,
+        "specialized": 23.91755319148936
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_1": 47.777875,
+        "specialized_factor_1": 44.610917,
+        "native_2": 72.674959,
+        "native_4": 138.318208,
+        "native_8": 295.047709,
+        "specialized": 41.308792
+      },
+      "warm_us": {
+        "native_1": 19.2975234375,
+        "specialized_factor_1": 19.22103125,
+        "native_2": 19.447921875,
+        "native_4": 33.3600234375,
+        "native_8": 36.017578125,
+        "specialized": 15.6360703125
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 256,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 20,
+      "first_ms": {
+        "specialized_factor_1": 48.151541,
+        "native_1": 44.786916,
+        "native_2": 77.1,
+        "native_8": 316.436667,
+        "native_4": 149.079708,
+        "specialized": 32.343833
+      },
+      "warm_us": {
+        "specialized_factor_1": 141.28335,
+        "native_1": 141.1646,
+        "native_2": 147.54585,
+        "native_8": 155.3271,
+        "native_4": 150.6979,
+        "specialized": 16.73125
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "large",
+      "trip": 1024,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 5,
+      "first_ms": {
+        "specialized_factor_1": 48.497583,
+        "native_4": 148.490333,
+        "specialized": 47.402333,
+        "native_8": 315.28275,
+        "native_2": 80.586292,
+        "native_1": 48.913292
+      },
+      "warm_us": {
+        "specialized_factor_1": 509.7332,
+        "native_4": 544.9418000000001,
+        "specialized": 27.625,
+        "native_8": 553.6916,
+        "native_2": 530.9581999999999,
+        "native_1": 509.1418
+      }
+    },
+    {
+      "workload": "eval_write_pic_charge_deposit",
+      "variant": "small",
+      "trip": 255,
+      "repeat": 2,
+      "factor": 256,
+      "calls_per_block": 128,
+      "first_ms": {
+        "native_2": 96.966208,
+        "specialized": 40.065292,
+        "native_8": 405.906792,
+        "specialized_factor_1": 47.254083,
+        "native_1": 45.54875,
+        "native_4": 197.72175
+      },
+      "warm_us": {
+        "native_2": 34.6800078125,
+        "specialized": 15.3642578125,
+        "native_8": 59.676109375,
+        "specialized_factor_1": 19.2216796875,
+        "native_1": 19.148109375,
+        "native_4": 49.6363984375
+      }
+    }
+  ]
+}

@@ -1,0 +1,1378 @@
+[
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_dense_matvec",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "dense_linear_algebra",
+    "original_workload": "dense_matvec",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n128": "128x128 dense matrix",
+      "n32": "32x32 dense matrix",
+      "n64": "64x64 dense matrix"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "dense_matvec",
+    "source_path": "benchmarks/workloads.py",
+    "trip_counts": [
+      16,
+      64,
+      100,
+      256,
+      1000,
+      1024
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_elementwise_sine",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "elementwise",
+    "original_workload": "elementwise_sine",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n1024": "1024-element vectors",
+      "n256": "256-element vectors",
+      "n4096": "4096-element vectors"
+    },
+    "primary_variant": "n1024",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "elementwise_sine",
+    "source_path": "benchmarks/workloads.py",
+    "trip_counts": [
+      16,
+      64,
+      100,
+      256,
+      1000,
+      1024
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_indexed_update",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indexed_memory",
+    "original_workload": "indexed_update",
+    "partition_history": "test",
+    "preserved_variants": {
+      "n1024": "1024-element tensor, 64 updates",
+      "n256": "256-element tensor, 16 updates",
+      "n4096": "4096-element tensor, 256 updates"
+    },
+    "primary_variant": "n1024",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "indexed_update",
+    "source_path": "benchmarks/workloads.py",
+    "trip_counts": [
+      16,
+      64,
+      100,
+      256,
+      1000,
+      1024
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_reduction_vector",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "reduction",
+    "original_workload": "reduction_vector",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n1024": "1024-element reduction",
+      "n256": "256-element reduction"
+    },
+    "primary_variant": "n1024",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "reduction_vector",
+    "source_path": "benchmarks/workloads.py",
+    "trip_counts": [
+      16,
+      64,
+      100,
+      256,
+      1000,
+      1024
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_scalar_recurrence",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "recurrence",
+    "original_workload": "scalar_recurrence",
+    "partition_history": "train",
+    "preserved_variants": {
+      "scalar": "scalar carry, scalar xs",
+      "vector8": "8-element vector carry"
+    },
+    "primary_variant": "scalar",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "scalar_recurrence",
+    "source_path": "benchmarks/workloads.py",
+    "trip_counts": [
+      16,
+      64,
+      100,
+      256,
+      1000,
+      1024
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_bucket_max",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "histogram",
+    "original_workload": "bucket_max",
+    "partition_history": "test",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "bucket_max",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_lookup",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "gather",
+    "original_workload": "gather_lookup",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "gather_lookup",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_rows",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "gather",
+    "original_workload": "gather_rows",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "gather_rows",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_masked_rows",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "masked_read",
+    "original_workload": "masked_rows",
+    "partition_history": "test",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "masked_rows",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_scatter_accumulate",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "scatter",
+    "original_workload": "scatter_accumulate",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "scatter_accumulate",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_scatter_blend",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "scatter",
+    "original_workload": "scatter_blend",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "scatter_blend",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_strided_mix",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "strided_read",
+    "original_workload": "strided_mix",
+    "partition_history": "test",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "strided_mix",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_window_read",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "window",
+    "original_workload": "window_read",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "window_read",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_window_replace",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "window",
+    "original_workload": "window_replace",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n512": "512 element address space",
+      "n64": "64 element address space"
+    },
+    "primary_variant": "n64",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "window_replace",
+    "source_path": "benchmarks/recovery_workloads.py",
+    "trip_counts": [
+      64,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_scalar_table",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_gather",
+    "original_workload": "gather_scalar_table",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n2048": "2048-entry scalar table",
+      "n512": "512-entry scalar table",
+      "n64": "64-entry scalar table"
+    },
+    "primary_variant": "n512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "random_scalar_gather",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_row_pool",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_gather",
+    "original_workload": "gather_row_pool",
+    "partition_history": "train",
+    "preserved_variants": {
+      "rows512": "512 rows x 16 features",
+      "rows64": "64 rows x 16 features"
+    },
+    "primary_variant": "rows512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "random_row_gather",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_multi_table",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_gather",
+    "original_workload": "gather_multi_table",
+    "partition_history": "train",
+    "preserved_variants": {
+      "t512": "two 512-row x 4-feature tables",
+      "t64": "two 64-row x 4-feature tables"
+    },
+    "primary_variant": "t512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "select_gather",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_duplicate_index",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_gather",
+    "original_workload": "gather_duplicate_index",
+    "partition_history": "train",
+    "preserved_variants": {
+      "d1024": "1024x4 table, 8 row loads with 2-way row duplicates",
+      "d128": "128x4 table, 8 row loads with 2-way row duplicates"
+    },
+    "primary_variant": "d1024",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "collision_memory",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_sorted_blocks",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_gather",
+    "original_workload": "gather_sorted_blocks",
+    "partition_history": "train",
+    "preserved_variants": {
+      "b2048": "2048-entry table, 8-wide sorted blocks",
+      "b256": "256-entry table, 8-wide sorted blocks"
+    },
+    "primary_variant": "b2048",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "ordered_gather",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_gather_masked_window",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_gather",
+    "original_workload": "gather_masked_window",
+    "partition_history": "train",
+    "preserved_variants": {
+      "m1024": "1024-entry table with 8 masked loads",
+      "m128": "128-entry table with 8 masked loads"
+    },
+    "primary_variant": "m1024",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "masked_memory",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_matched_gather",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_gather",
+    "original_workload": "matched_gather",
+    "partition_history": "train",
+    "preserved_variants": {
+      "clustered": "64-entry cluster",
+      "dispersed": "strided dispersed reads"
+    },
+    "primary_variant": "clustered",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "random_scalar_gather",
+    "source_path": "benchmarks/corpus/static_matched.py",
+    "trip_counts": [
+      1023,
+      1024
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_scatter_unique_rows",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_scatter",
+    "original_workload": "scatter_unique_rows",
+    "partition_history": "train",
+    "preserved_variants": {
+      "r128": "128 rows of width 8, 4 unique row writes",
+      "r512": "512 rows of width 8, 4 unique row writes"
+    },
+    "primary_variant": "r512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "unique_update",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_scatter_collision_add",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_scatter",
+    "original_workload": "scatter_collision_add",
+    "partition_history": "train",
+    "preserved_variants": {
+      "g16x64": "16x64 grid, 12 colliding 2D adds",
+      "g32x128": "32x128 grid, 12 colliding 2D adds"
+    },
+    "primary_variant": "g32x128",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "collision_memory",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_scatter_two_tables",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_scatter",
+    "original_workload": "scatter_two_tables",
+    "partition_history": "train",
+    "preserved_variants": {
+      "t1024": "two 1024-slot tables, 8 predicate-directed writes",
+      "t256": "two 256-slot tables, 8 predicate-directed writes"
+    },
+    "primary_variant": "t1024",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "split_table_memory",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_scatter_permutation",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_scatter",
+    "original_workload": "scatter_permutation",
+    "partition_history": "train",
+    "preserved_variants": {
+      "p128": "128-element block-local permutation",
+      "p512": "512-element block-local permutation"
+    },
+    "primary_variant": "p512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "permutation_memory",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_matched_scatter_add",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_scatter",
+    "original_workload": "matched_scatter_add",
+    "partition_history": "train",
+    "preserved_variants": {
+      "colliding": "8 buckets per iteration",
+      "unique": "256 distinct indices per iteration"
+    },
+    "primary_variant": "unique",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "collision_memory",
+    "source_path": "benchmarks/corpus/static_matched.py",
+    "trip_counts": [
+      1023,
+      1024
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_matched_scatter_min",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "indirect_scatter",
+    "original_workload": "matched_scatter_min",
+    "partition_history": "train",
+    "preserved_variants": {
+      "colliding": "8 buckets per iteration",
+      "unique": "256 distinct indices per iteration"
+    },
+    "primary_variant": "unique",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "collision_memory",
+    "source_path": "benchmarks/corpus/static_matched.py",
+    "trip_counts": [
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_locality_stream_contiguous",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "locality_access",
+    "original_workload": "locality_stream_contiguous",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n2048": "2048-element table, adjacent 8-wide window pairs",
+      "n256": "256-element table, adjacent 8-wide window pairs"
+    },
+    "primary_variant": "n2048",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "sequential_locality",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_locality_stride_sample",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "locality_access",
+    "original_workload": "locality_stride_sample",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n2048": "2048-element table, stride-5 samples",
+      "n256": "256-element table, stride-5 samples"
+    },
+    "primary_variant": "n2048",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "strided_locality",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_locality_random_window",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "locality_access",
+    "original_workload": "locality_random_window",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n2048": "2048-element table, random 8-wide windows",
+      "n256": "256-element table, random 8-wide windows"
+    },
+    "primary_variant": "n2048",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "random_window_locality",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_locality_permutation_read",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "locality_access",
+    "original_workload": "locality_permutation_read",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n128": "128-element permuted read",
+      "n512": "512-element permuted read"
+    },
+    "primary_variant": "n512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "permutation_memory",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_dep_parallel_chains",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "dependent_indexing",
+    "original_workload": "dep_parallel_chains",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n1024": "1024-entry table, 8 parallel chains",
+      "n256": "256-entry table, 8 parallel chains"
+    },
+    "primary_variant": "n1024",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "dependent_chain",
+    "source_path": "benchmarks/corpus/indirect.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_rolling_mean_shift",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "rolling_window",
+    "original_workload": "rolling_mean_shift",
+    "partition_history": "train",
+    "preserved_variants": {
+      "w16": "16-sample window with a scalar input stream",
+      "w8": "8-sample window with a scalar input stream"
+    },
+    "primary_variant": "w8",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "rolling_moments",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_rolling_conv1d_fir",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "rolling_window",
+    "original_workload": "rolling_conv1d_fir",
+    "partition_history": "train",
+    "preserved_variants": {
+      "k16": "16-tap FIR history and kernel",
+      "k8": "8-tap FIR history and kernel"
+    },
+    "primary_variant": "k8",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "rolling_weighted_windows",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_rolling_extreme_max",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "rolling_window",
+    "original_workload": "rolling_extreme_max",
+    "partition_history": "train",
+    "preserved_variants": {
+      "w16": "16-sample window with a scalar input stream",
+      "w32": "32-sample window with a scalar input stream"
+    },
+    "primary_variant": "w16",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "rolling_extrema",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_rolling_variance_moments",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "rolling_window",
+    "original_workload": "rolling_variance_moments",
+    "partition_history": "train",
+    "preserved_variants": {
+      "w12": "12-sample window with scalar sum and sum-of-squares state",
+      "w24": "24-sample window with scalar sum and sum-of-squares state"
+    },
+    "primary_variant": "w12",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "rolling_moments",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_rolling_dot_two_streams",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "rolling_window",
+    "original_workload": "rolling_dot_two_streams",
+    "partition_history": "train",
+    "preserved_variants": {
+      "w16": "two synchronized 16-sample windows",
+      "w8": "two synchronized 8-sample windows"
+    },
+    "primary_variant": "w16",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "rolling_weighted_windows",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_streaming_running_mean",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "streaming_reduction",
+    "original_workload": "streaming_running_mean",
+    "partition_history": "train",
+    "preserved_variants": {
+      "scalar": "scalar stream and scalar mean state",
+      "vec8": "8-channel stream with an 8-element mean vector"
+    },
+    "primary_variant": "scalar",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "streaming_moments",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_streaming_welford_var",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "streaming_reduction",
+    "original_workload": "streaming_welford_var",
+    "partition_history": "train",
+    "preserved_variants": {
+      "scalar": "scalar stream and scalar moment state",
+      "vec8": "8-channel stream with vector moment state"
+    },
+    "primary_variant": "scalar",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "streaming_moments",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_streaming_decayed_extrema",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "streaming_reduction",
+    "original_workload": "streaming_decayed_extrema",
+    "partition_history": "train",
+    "preserved_variants": {
+      "scalar": "scalar stream with scalar maximum and minimum",
+      "vec8": "8-channel stream with vector extrema"
+    },
+    "primary_variant": "scalar",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "streaming_extrema",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_streaming_logsumexp",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "streaming_reduction",
+    "original_workload": "streaming_logsumexp",
+    "partition_history": "train",
+    "preserved_variants": {
+      "scalar": "scalar stream with scalar normalizer state",
+      "vec8": "8-channel stream with vector normalizer state"
+    },
+    "primary_variant": "scalar",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "streaming_normalizers",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_segment_sum_reset",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "segmented_scan",
+    "original_workload": "segment_sum_reset",
+    "partition_history": "test",
+    "preserved_variants": {
+      "w4_short": "4-channel values with 2-5 step segments",
+      "w8_long": "8-channel values with 8-20 step segments"
+    },
+    "primary_variant": "w4_short",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "segmented_reset",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_segment_max_reset",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "segmented_scan",
+    "original_workload": "segment_max_reset",
+    "partition_history": "test",
+    "preserved_variants": {
+      "w4_short": "4-channel values with 2-5 step segments",
+      "w8_long": "8-channel values with 8-20 step segments"
+    },
+    "primary_variant": "w4_short",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "segmented_reset",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_segment_weighted_mean",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "segmented_scan",
+    "original_workload": "segment_weighted_mean",
+    "partition_history": "test",
+    "preserved_variants": {
+      "w4_short": "4-channel values and weights with 2-5 step segments",
+      "w8_long": "8-channel values and weights with 8-20 step segments"
+    },
+    "primary_variant": "w4_short",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "segmented_reset",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "historical_eval",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_segment_carry_ema",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "segmented_scan",
+    "original_workload": "segment_carry_ema",
+    "partition_history": "test",
+    "preserved_variants": {
+      "w4_short": "4-channel values with 2-5 step segments",
+      "w8_long": "8-channel values with 8-20 step segments"
+    },
+    "primary_variant": "w4_short",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "segmented_carry",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_stateful_scalar_iir",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "stateful_recurrence",
+    "original_workload": "stateful_scalar_iir",
+    "partition_history": "train",
+    "preserved_variants": {
+      "scalar": "scalar carry and scalar input stream",
+      "vec4": "four independent scalar channels"
+    },
+    "primary_variant": "scalar",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "iir_filters",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_stateful_vector_iir",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "stateful_recurrence",
+    "original_workload": "stateful_vector_iir",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n16": "16-element coupled vector carry",
+      "n8": "8-element coupled vector carry"
+    },
+    "primary_variant": "n8",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "iir_filters",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_stateful_gru_gate",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "stateful_recurrence",
+    "original_workload": "stateful_gru_gate",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n4": "4-element hidden state and input",
+      "n8": "8-element hidden state and input"
+    },
+    "primary_variant": "n4",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "gated_recurrences",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_stateful_lstm_cell",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "stateful_recurrence",
+    "original_workload": "stateful_lstm_cell",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n4": "4-element cell and hidden state",
+      "n8": "8-element cell and hidden state"
+    },
+    "primary_variant": "n4",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "gated_recurrences",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_control_polynomial_forcing",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "control_arithmetic",
+    "original_workload": "control_polynomial_forcing",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n2048": "2048-element vector carry and stream",
+      "n512": "512-element vector carry and stream"
+    },
+    "primary_variant": "n512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "elementwise_control",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_control_transcendental",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "control_arithmetic",
+    "original_workload": "control_transcendental",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n2048": "2048-element vector carry and stream",
+      "n512": "512-element vector carry and stream"
+    },
+    "primary_variant": "n512",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "elementwise_control",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_control_bisection_bracket",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "control_arithmetic",
+    "original_workload": "control_bisection_bracket",
+    "partition_history": "train",
+    "preserved_variants": {
+      "scalar": "scalar target and scalar bracket",
+      "vec4": "4-element target and bracket"
+    },
+    "primary_variant": "vec4",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "root_finding_control",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  },
+  {
+    "assigned_partition": "train",
+    "conversion_mechanism": "converted_scan_fori",
+    "converted_id": "conv_control_lowrank_update",
+    "disposition": "accepted",
+    "loop_kind": "fori_loop",
+    "measured_coverage": "4 factors x 2 default trips x 3 repeats = 24 raw rows planned",
+    "original_family": "control_arithmetic",
+    "original_workload": "control_lowrank_update",
+    "partition_history": "train",
+    "preserved_variants": {
+      "n16": "16x16 matrix carry with 16-element rank-one vectors",
+      "n8": "8x8 matrix carry with 8-element rank-one vectors"
+    },
+    "primary_variant": "n8",
+    "reference_checks": "Bit-for-bit numerical parity across factors {1, 2, 4, 8} against original scan baseline",
+    "related_group": "lowrank_control",
+    "source_path": "benchmarks/corpus/structured.py",
+    "trip_counts": [
+      64,
+      100,
+      256,
+      1023
+    ],
+    "unsuitable_reason": null
+  }
+]

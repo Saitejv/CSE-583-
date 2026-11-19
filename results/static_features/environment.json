@@ -1,0 +1,12 @@
+{
+  "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "Apple M2",
+  "source_commit": "a6efbbbab4dd0ad3418dce8111818f52957e286e",
+  "jax_platforms": "cpu",
+  "jax_enable_x64": "0",
+  "jax_enable_compilation_cache": "false",
+  "seed": 583,
+  "repeats": 3,
+  "worktree_uncommitted": true
+}

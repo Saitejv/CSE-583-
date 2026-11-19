@@ -1,0 +1,5929 @@
+{
+  "direct": {
+    "1": {
+      "all": {
+        "configurations": 33,
+        "arms": {
+          "native": {
+            "pooled_ms": 908.8092656666663,
+            "pooled_ms_excluding_load": 908.8092656666663,
+            "pooled_speedup": 1.0000000000000004,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 2629.4152070000005,
+            "pooled_ms_excluding_load": 1191.462596333333,
+            "pooled_speedup": 0.34563170671837773,
+            "geometric_speedup": 0.29808947932182617,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 33,
+            "worst_time_ratio": 6.5962648288329,
+            "median_decision_ms": 2.689417
+          },
+          "compact": {
+            "pooled_ms": 1205.1647503333336,
+            "pooled_ms_excluding_load": 1197.9601806666672,
+            "pooled_speedup": 0.7540954590775255,
+            "geometric_speedup": 0.7631931886917657,
+            "wins_over_5pct": 2,
+            "slowdowns_over_3pct": 31,
+            "worst_time_ratio": 3.422629939663269,
+            "median_decision_ms": 2.721208
+          },
+          "payoff": {
+            "pooled_ms": 914.4289046666667,
+            "pooled_ms_excluding_load": 907.0825156666666,
+            "pooled_speedup": 0.9938544823208005,
+            "geometric_speedup": 0.9955056900935643,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 1.0744726306691523,
+            "median_decision_ms": 0.005167
+          },
+          "size_heuristic": {
+            "pooled_ms": 2015.5576389999997,
+            "pooled_ms_excluding_load": 2015.5576389999997,
+            "pooled_speedup": 0.4508971850180201,
+            "geometric_speedup": 0.45153383601440267,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 32,
+            "worst_time_ratio": 8.66356564301208,
+            "median_decision_ms": 2.581417
+          },
+          "oracle": {
+            "pooled_ms": 1558.1245269999993,
+            "pooled_ms_excluding_load": 1558.1245269999993,
+            "pooled_speedup": 0.5832712661397358,
+            "geometric_speedup": 0.7520165802519043,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 14,
+            "worst_time_ratio": 4.240238999786731,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh": {
+        "configurations": 24,
+        "arms": {
+          "native": {
+            "pooled_ms": 540.2416823333333,
+            "pooled_ms_excluding_load": 540.2416823333333,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 1717.083091515152,
+            "pooled_ms_excluding_load": 671.2993746666667,
+            "pooled_speedup": 0.3146275710260618,
+            "geometric_speedup": 0.28852965185462515,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 24,
+            "worst_time_ratio": 6.5962648288329,
+            "median_decision_ms": 2.6769375
+          },
+          "compact": {
+            "pooled_ms": 683.0206583636365,
+            "pooled_ms_excluding_load": 677.7809713333332,
+            "pooled_speedup": 0.790959505716314,
+            "geometric_speedup": 0.7551787805316178,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 23,
+            "worst_time_ratio": 3.422629939663269,
+            "median_decision_ms": 2.720062
+          },
+          "payoff": {
+            "pooled_ms": 544.1925373636363,
+            "pooled_ms_excluding_load": 538.8497090000001,
+            "pooled_speedup": 0.992739968376922,
+            "geometric_speedup": 0.9955655284582392,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.0744726306691523,
+            "median_decision_ms": 0.005
+          },
+          "size_heuristic": {
+            "pooled_ms": 1243.0878610000002,
+            "pooled_ms_excluding_load": 1243.0878610000002,
+            "pooled_speedup": 0.4345965392170564,
+            "geometric_speedup": 0.44199487489775185,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 24,
+            "worst_time_ratio": 4.660235311773627,
+            "median_decision_ms": 2.5707295
+          },
+          "oracle": {
+            "pooled_ms": 733.3899850000001,
+            "pooled_ms_excluding_load": 733.3899850000001,
+            "pooled_speedup": 0.7366362963537513,
+            "geometric_speedup": 0.7228194630650329,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 3.329473235231393,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh_with_opportunity": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 217.75358399999996,
+            "pooled_ms_excluding_load": 217.75358399999996,
+            "pooled_speedup": 1.0000000000000002,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 828.2634550909092,
+            "pooled_ms_excluding_load": 305.3715966666666,
+            "pooled_speedup": 0.26290376891746314,
+            "geometric_speedup": 0.2456923340552591,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 6.5962648288329,
+            "median_decision_ms": 2.623854
+          },
+          "compact": {
+            "pooled_ms": 310.1874955151515,
+            "pooled_ms_excluding_load": 307.567652,
+            "pooled_speedup": 0.7020063256849229,
+            "geometric_speedup": 0.6848076067577119,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 3.422629939663269,
+            "median_decision_ms": 2.6807499999999997
+          },
+          "payoff": {
+            "pooled_ms": 219.33085918181823,
+            "pooled_ms_excluding_load": 216.659445,
+            "pooled_speedup": 0.9928086946465171,
+            "geometric_speedup": 0.9944824514521817,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.0744726306691523,
+            "median_decision_ms": 0.0052495
+          },
+          "size_heuristic": {
+            "pooled_ms": 445.24186100000003,
+            "pooled_ms_excluding_load": 445.24186100000003,
+            "pooled_speedup": 0.489068084278805,
+            "geometric_speedup": 0.47666866244301753,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 3.361123639513426,
+            "median_decision_ms": 2.4803335
+          },
+          "oracle": {
+            "pooled_ms": 409.2230143333333,
+            "pooled_ms_excluding_load": 409.2230143333333,
+            "pooled_speedup": 0.5321147060967311,
+            "geometric_speedup": 0.5249761864084335,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 3.329473235231393,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh_other": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 322.4880983333333,
+            "pooled_ms_excluding_load": 322.4880983333333,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 888.8196364242425,
+            "pooled_ms_excluding_load": 365.92777800000005,
+            "pooled_speedup": 0.36282737815145044,
+            "geometric_speedup": 0.3388358058441801,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 5.796569504841129,
+            "median_decision_ms": 3.1459995000000003
+          },
+          "compact": {
+            "pooled_ms": 372.83316284848485,
+            "pooled_ms_excluding_load": 370.21331933333335,
+            "pooled_speedup": 0.8649662381680054,
+            "geometric_speedup": 0.8327813314827771,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 1.9782926037332682,
+            "median_decision_ms": 3.1298125
+          },
+          "payoff": {
+            "pooled_ms": 324.86167818181815,
+            "pooled_ms_excluding_load": 322.190264,
+            "pooled_speedup": 0.9926935677308285,
+            "geometric_speedup": 0.9966497850284,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0215768344246068,
+            "median_decision_ms": 0.004708
+          },
+          "size_heuristic": {
+            "pooled_ms": 797.846,
+            "pooled_ms_excluding_load": 797.846,
+            "pooled_speedup": 0.4041984271818538,
+            "geometric_speedup": 0.40984332478377095,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 4.660235311773627,
+            "median_decision_ms": 3.0486665000000004
+          },
+          "oracle": {
+            "pooled_ms": 324.1669706666667,
+            "pooled_ms_excluding_load": 324.1669706666667,
+            "pooled_speedup": 0.994820964239877,
+            "geometric_speedup": 0.9952222400029789,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0143623594842488,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "proposal_control": {
+        "configurations": 4,
+        "arms": {
+          "native": {
+            "pooled_ms": 68.78111166666666,
+            "pooled_ms_excluding_load": 68.78111166666666,
+            "pooled_speedup": 1.0000000000000002,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 247.97188314141417,
+            "pooled_ms_excluding_load": 73.674597,
+            "pooled_speedup": 0.2773746393958785,
+            "geometric_speedup": 0.2664526050591353,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 4,
+            "worst_time_ratio": 4.646054083778748,
+            "median_decision_ms": 2.1741875
+          },
+          "compact": {
+            "pooled_ms": 76.71087917171717,
+            "pooled_ms_excluding_load": 75.837598,
+            "pooled_speedup": 0.8966278630792417,
+            "geometric_speedup": 0.893124566965241,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 4,
+            "worst_time_ratio": 1.1717308453531499,
+            "median_decision_ms": 2.239146
+          },
+          "payoff": {
+            "pooled_ms": 68.94920806060605,
+            "pooled_ms_excluding_load": 68.05873666666666,
+            "pooled_speedup": 0.9975620257481184,
+            "geometric_speedup": 0.9990865207322183,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0087529603449161,
+            "median_decision_ms": 0.0050415
+          },
+          "size_heuristic": {
+            "pooled_ms": 327.2972916666667,
+            "pooled_ms_excluding_load": 327.2972916666667,
+            "pooled_speedup": 0.2101487345538937,
+            "geometric_speedup": 0.3096310248909951,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 4,
+            "worst_time_ratio": 8.66356564301208,
+            "median_decision_ms": 2.1412294999999997
+          },
+          "oracle": {
+            "pooled_ms": 76.07434666666667,
+            "pooled_ms_excluding_load": 76.07434666666667,
+            "pooled_speedup": 0.9041301658237485,
+            "geometric_speedup": 0.8913296313932888,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.482802301325485,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "historical_control": {
+        "configurations": 2,
+        "arms": {
+          "native": {
+            "pooled_ms": 157.64255566666668,
+            "pooled_ms_excluding_load": 157.64255566666668,
+            "pooled_speedup": 0.9999999999999999,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 377.90840707070714,
+            "pooled_ms_excluding_load": 290.75976399999996,
+            "pooled_speedup": 0.4171448761582368,
+            "geometric_speedup": 0.3703177122107189,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 3.191109939006587,
+            "median_decision_ms": 3.974125
+          },
+          "compact": {
+            "pooled_ms": 292.43768225252524,
+            "pooled_ms_excluding_load": 292.00104166666665,
+            "pooled_speedup": 0.5390637569427166,
+            "geometric_speedup": 0.6915332167019986,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.9604411836183564,
+            "median_decision_ms": 3.9407705
+          },
+          "payoff": {
+            "pooled_ms": 159.17011069696972,
+            "pooled_ms_excluding_load": 158.724875,
+            "pooled_speedup": 0.9904030032798606,
+            "geometric_speedup": 0.9747918221977562,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.043986705776835,
+            "median_decision_ms": 0.005896
+          },
+          "size_heuristic": {
+            "pooled_ms": 295.00576433333333,
+            "pooled_ms_excluding_load": 295.00576433333333,
+            "pooled_speedup": 0.5343711029610356,
+            "geometric_speedup": 0.6048846058913734,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.934753670687182,
+            "median_decision_ms": 3.8564584999999996
+          },
+          "oracle": {
+            "pooled_ms": 606.1437363333333,
+            "pooled_ms_excluding_load": 606.1437363333333,
+            "pooled_speedup": 0.26007454373821187,
+            "geometric_speedup": 0.5533219842364451,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 4.240238999786731,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "regression_control": {
+        "configurations": 3,
+        "arms": {
+          "native": {
+            "pooled_ms": 142.143916,
+            "pooled_ms_excluding_load": 142.143916,
+            "pooled_speedup": 1.0000000000000002,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 286.45182527272726,
+            "pooled_ms_excluding_load": 155.72886066666663,
+            "pooled_speedup": 0.49622276229054063,
+            "geometric_speedup": 0.3888181848633345,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 4.78288929534926,
+            "median_decision_ms": 4.694792
+          },
+          "compact": {
+            "pooled_ms": 152.99553054545456,
+            "pooled_ms_excluding_load": 152.34056966666665,
+            "pooled_speedup": 0.9290723427882714,
+            "geometric_speedup": 0.7191558841603796,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 2.4309963964821204,
+            "median_decision_ms": 4.665375
+          },
+          "payoff": {
+            "pooled_ms": 142.11704854545454,
+            "pooled_ms_excluding_load": 141.449195,
+            "pooled_speedup": 1.000189051593883,
+            "geometric_speedup": 1.0042542778244832,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0023236064824264,
+            "median_decision_ms": 0.005542
+          },
+          "size_heuristic": {
+            "pooled_ms": 150.16672199999996,
+            "pooled_ms_excluding_load": 150.16672199999996,
+            "pooled_speedup": 0.946574008587602,
+            "geometric_speedup": 0.7289220985808745,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 2.4212507995580625,
+            "median_decision_ms": 4.513541
+          },
+          "oracle": {
+            "pooled_ms": 142.516459,
+            "pooled_ms_excluding_load": 142.516459,
+            "pooled_speedup": 0.9973859650835137,
+            "geometric_speedup": 1.0097792921533082,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.021721867776453,
+            "median_decision_ms": 0.0
+          }
+        }
+      }
+    },
+    "300": {
+      "all": {
+        "configurations": 33,
+        "arms": {
+          "native": {
+            "pooled_ms": 1649.9353173333332,
+            "pooled_ms_excluding_load": 1649.9353173333332,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 3273.6134589999997,
+            "pooled_ms_excluding_load": 1835.6608483333332,
+            "pooled_speedup": 0.504010427009102,
+            "geometric_speedup": 0.37308781115580747,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 33,
+            "worst_time_ratio": 5.726295856820532,
+            "median_decision_ms": 2.64675
+          },
+          "compact": {
+            "pooled_ms": 1865.128516,
+            "pooled_ms_excluding_load": 1857.9239463333333,
+            "pooled_speedup": 0.8846228574488929,
+            "geometric_speedup": 0.8126691979116948,
+            "wins_over_5pct": 2,
+            "slowdowns_over_3pct": 27,
+            "worst_time_ratio": 2.9484261142630452,
+            "median_decision_ms": 2.727708
+          },
+          "payoff": {
+            "pooled_ms": 1681.5407213333335,
+            "pooled_ms_excluding_load": 1674.1943323333335,
+            "pooled_speedup": 0.981204496805204,
+            "geometric_speedup": 0.9573488698722874,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 22,
+            "worst_time_ratio": 1.1195512478318006,
+            "median_decision_ms": 2.704708
+          },
+          "size_heuristic": {
+            "pooled_ms": 2703.368848,
+            "pooled_ms_excluding_load": 2703.368848,
+            "pooled_speedup": 0.610325638158472,
+            "geometric_speedup": 0.5250089744485311,
+            "wins_over_5pct": 2,
+            "slowdowns_over_3pct": 31,
+            "worst_time_ratio": 7.327893126721832,
+            "median_decision_ms": 2.631125
+          },
+          "oracle": {
+            "pooled_ms": 2126.6933606666666,
+            "pooled_ms_excluding_load": 2126.6933606666666,
+            "pooled_speedup": 0.7758219157726239,
+            "geometric_speedup": 0.8228276384514013,
+            "wins_over_5pct": 2,
+            "slowdowns_over_3pct": 13,
+            "worst_time_ratio": 3.1001694595828075,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh": {
+        "configurations": 24,
+        "arms": {
+          "native": {
+            "pooled_ms": 848.6346236666667,
+            "pooled_ms_excluding_load": 848.6346236666667,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 2016.955051181818,
+            "pooled_ms_excluding_load": 971.1713343333334,
+            "pooled_speedup": 0.42075038963779404,
+            "geometric_speedup": 0.3508847558300179,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 24,
+            "worst_time_ratio": 5.726295856820532,
+            "median_decision_ms": 2.6349584999999998
+          },
+          "compact": {
+            "pooled_ms": 987.2318413636366,
+            "pooled_ms_excluding_load": 981.9921543333331,
+            "pooled_speedup": 0.85961026388135,
+            "geometric_speedup": 0.8019340113037858,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 21,
+            "worst_time_ratio": 2.9484261142630452,
+            "median_decision_ms": 2.7128745
+          },
+          "payoff": {
+            "pooled_ms": 872.3378690303031,
+            "pooled_ms_excluding_load": 866.9950406666667,
+            "pooled_speedup": 0.9728279073909916,
+            "geometric_speedup": 0.9531239673316544,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 18,
+            "worst_time_ratio": 1.1195512478318006,
+            "median_decision_ms": 2.6938750000000002
+          },
+          "size_heuristic": {
+            "pooled_ms": 1571.3560143333334,
+            "pooled_ms_excluding_load": 1571.3560143333334,
+            "pooled_speedup": 0.5400651513251821,
+            "geometric_speedup": 0.5053190821289393,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 24,
+            "worst_time_ratio": 4.4494218134172465,
+            "median_decision_ms": 2.6312290000000003
+          },
+          "oracle": {
+            "pooled_ms": 1031.5950973333331,
+            "pooled_ms_excluding_load": 1031.5950973333331,
+            "pooled_speedup": 0.822643133784158,
+            "geometric_speedup": 0.7624062733343282,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 3.1001694595828075,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh_with_opportunity": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 274.83386,
+            "pooled_ms_excluding_load": 274.83386,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 879.9244960909092,
+            "pooled_ms_excluding_load": 357.0326376666667,
+            "pooled_speedup": 0.31233800311385534,
+            "geometric_speedup": 0.28224181341858035,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 5.726295856820532,
+            "median_decision_ms": 2.550834
+          },
+          "compact": {
+            "pooled_ms": 362.6399828484848,
+            "pooled_ms_excluding_load": 360.02013933333336,
+            "pooled_speedup": 0.7578697137618958,
+            "geometric_speedup": 0.7289264371990163,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 2.9484261142630452,
+            "median_decision_ms": 2.636833
+          },
+          "payoff": {
+            "pooled_ms": 287.90024684848487,
+            "pooled_ms_excluding_load": 285.2288326666667,
+            "pooled_speedup": 0.954614881398968,
+            "geometric_speedup": 0.9376537363125965,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 1.1195512478318006,
+            "median_decision_ms": 2.5794995
+          },
+          "size_heuristic": {
+            "pooled_ms": 495.56485999999995,
+            "pooled_ms_excluding_load": 495.56485999999995,
+            "pooled_speedup": 0.5545870625290099,
+            "geometric_speedup": 0.5290666644030955,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 3.1442758165350972,
+            "median_decision_ms": 2.5264375
+          },
+          "oracle": {
+            "pooled_ms": 454.7621259999999,
+            "pooled_ms_excluding_load": 454.7621259999999,
+            "pooled_speedup": 0.6043464138436191,
+            "geometric_speedup": 0.5776048321652529,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 3.1001694595828075,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh_other": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 573.8007636666667,
+            "pooled_ms_excluding_load": 573.8007636666667,
+            "pooled_speedup": 0.9999999999999999,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 1137.030555090909,
+            "pooled_ms_excluding_load": 614.1386966666666,
+            "pooled_speedup": 0.5046484996357811,
+            "geometric_speedup": 0.4362220834065337,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 5.007965649089679,
+            "median_decision_ms": 3.1012085000000003
+          },
+          "compact": {
+            "pooled_ms": 624.5918585151516,
+            "pooled_ms_excluding_load": 621.972015,
+            "pooled_speedup": 0.9186811448851878,
+            "geometric_speedup": 0.8822538539786801,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 10,
+            "worst_time_ratio": 1.7452048708126062,
+            "median_decision_ms": 3.0980415
+          },
+          "payoff": {
+            "pooled_ms": 584.4376221818183,
+            "pooled_ms_excluding_load": 581.766208,
+            "pooled_speedup": 0.9817998395184723,
+            "geometric_speedup": 0.9688494397458188,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 6,
+            "worst_time_ratio": 1.070524889243476,
+            "median_decision_ms": 3.0828545
+          },
+          "size_heuristic": {
+            "pooled_ms": 1075.7911543333332,
+            "pooled_ms_excluding_load": 1075.7911543333332,
+            "pooled_speedup": 0.5333756104568924,
+            "geometric_speedup": 0.4826374291635292,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 4.4494218134172465,
+            "median_decision_ms": 3.012896
+          },
+          "oracle": {
+            "pooled_ms": 576.8329713333334,
+            "pooled_ms_excluding_load": 576.8329713333334,
+            "pooled_speedup": 0.9947433523786654,
+            "geometric_speedup": 1.0063339038223948,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0148768142680311,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "proposal_control": {
+        "configurations": 4,
+        "arms": {
+          "native": {
+            "pooled_ms": 115.13425000000001,
+            "pooled_ms_excluding_load": 115.13425000000001,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 293.49271647474745,
+            "pooled_ms_excluding_load": 119.19543033333332,
+            "pooled_speedup": 0.3922899736079356,
+            "geometric_speedup": 0.3633404124383805,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 4,
+            "worst_time_ratio": 4.257601579918133,
+            "median_decision_ms": 2.237
+          },
+          "compact": {
+            "pooled_ms": 120.3559475050505,
+            "pooled_ms_excluding_load": 119.48266633333333,
+            "pooled_speedup": 0.956614545327464,
+            "geometric_speedup": 0.9420662803470315,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 1.1525787480173524,
+            "median_decision_ms": 2.1944165
+          },
+          "payoff": {
+            "pooled_ms": 119.16713806060606,
+            "pooled_ms_excluding_load": 118.27666666666669,
+            "pooled_speedup": 0.9661577165799266,
+            "geometric_speedup": 0.965185974494843,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.0817427677276545,
+            "median_decision_ms": 2.2133545
+          },
+          "size_heuristic": {
+            "pooled_ms": 417.3294313333333,
+            "pooled_ms_excluding_load": 417.3294313333333,
+            "pooled_speedup": 0.2758833702002649,
+            "geometric_speedup": 0.3495154918442789,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 4,
+            "worst_time_ratio": 7.327893126721832,
+            "median_decision_ms": 2.0851245
+          },
+          "oracle": {
+            "pooled_ms": 120.20704166666665,
+            "pooled_ms_excluding_load": 120.20704166666665,
+            "pooled_speedup": 0.9577995465462542,
+            "geometric_speedup": 0.9207985483504542,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.422381142148201,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "historical_control": {
+        "configurations": 2,
+        "arms": {
+          "native": {
+            "pooled_ms": 508.86990233333336,
+            "pooled_ms_excluding_load": 508.86990233333336,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 624.8966014040403,
+            "pooled_ms_excluding_load": 537.7479583333333,
+            "pooled_speedup": 0.8143265640907408,
+            "geometric_speedup": 0.7541603080830852,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.5025698042109688,
+            "median_decision_ms": 3.8009165000000005
+          },
+          "compact": {
+            "pooled_ms": 546.4182102525252,
+            "pooled_ms_excluding_load": 545.9815696666666,
+            "pooled_speedup": 0.9312828393807756,
+            "geometric_speedup": 0.951015764266314,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.0806261571033722,
+            "median_decision_ms": 3.7529165
+          },
+          "payoff": {
+            "pooled_ms": 507.691611030303,
+            "pooled_ms_excluding_load": 507.24637533333333,
+            "pooled_speedup": 1.0023208799937409,
+            "geometric_speedup": 0.9944824651107584,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0095173577236434,
+            "median_decision_ms": 3.6912915
+          },
+          "size_heuristic": {
+            "pooled_ms": 504.7314443333333,
+            "pooled_ms_excluding_load": 504.7314443333333,
+            "pooled_speedup": 1.0081993266844436,
+            "geometric_speedup": 1.3280663292878838,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.0759891826184793,
+            "median_decision_ms": 3.6598125
+          },
+          "oracle": {
+            "pooled_ms": 796.3792080000002,
+            "pooled_ms_excluding_load": 796.3792080000002,
+            "pooled_speedup": 0.6389793922562244,
+            "geometric_speedup": 1.2166890512465947,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.8291976110651496,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "regression_control": {
+        "configurations": 3,
+        "arms": {
+          "native": {
+            "pooled_ms": 177.2965413333333,
+            "pooled_ms_excluding_load": 177.2965413333333,
+            "pooled_speedup": 1.0000000000000002,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 338.26908993939395,
+            "pooled_ms_excluding_load": 207.54612533333332,
+            "pooled_speedup": 0.5241287087894987,
+            "geometric_speedup": 0.3949525681959705,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 4.428434692661901,
+            "median_decision_ms": 4.708959
+          },
+          "compact": {
+            "pooled_ms": 211.12251687878788,
+            "pooled_ms_excluding_load": 210.46755600000003,
+            "pooled_speedup": 0.8397803510230266,
+            "geometric_speedup": 0.6684090248996389,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 2.243168852956092,
+            "median_decision_ms": 4.705292
+          },
+          "payoff": {
+            "pooled_ms": 182.3441032121212,
+            "pooled_ms_excluding_load": 181.67624966666665,
+            "pooled_speedup": 0.9723184803354128,
+            "geometric_speedup": 0.956528625339866,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.0937653015705608,
+            "median_decision_ms": 4.723209
+          },
+          "size_heuristic": {
+            "pooled_ms": 209.951958,
+            "pooled_ms_excluding_load": 209.951958,
+            "pooled_speedup": 0.8444624333216905,
+            "geometric_speedup": 0.6605007677537812,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 2.2709151770501546,
+            "median_decision_ms": 4.475208
+          },
+          "oracle": {
+            "pooled_ms": 178.5120136666667,
+            "pooled_ms_excluding_load": 178.5120136666667,
+            "pooled_speedup": 0.9931910894490105,
+            "geometric_speedup": 1.0043844746471766,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.007330967735424,
+            "median_decision_ms": 0.0
+          }
+        }
+      }
+    },
+    "5000": {
+      "all": {
+        "configurations": 33,
+        "arms": {
+          "native": {
+            "pooled_ms": 13297.073999999999,
+            "pooled_ms_excluding_load": 13297.073999999999,
+            "pooled_speedup": 1.0000000000000002,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 14210.086000000003,
+            "pooled_ms_excluding_load": 12772.133389333334,
+            "pooled_speedup": 0.9357490165787876,
+            "geometric_speedup": 0.680050915687115,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 31,
+            "worst_time_ratio": 2.4115440559082235,
+            "median_decision_ms": 2.698666
+          },
+          "compact": {
+            "pooled_ms": 12573.417819666667,
+            "pooled_ms_excluding_load": 12566.21325,
+            "pooled_speedup": 1.0575544526327145,
+            "geometric_speedup": 0.9427135542240637,
+            "wins_over_5pct": 6,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 1.712692850169163,
+            "median_decision_ms": 2.690333
+          },
+          "payoff": {
+            "pooled_ms": 13262.227792333333,
+            "pooled_ms_excluding_load": 13254.881403333331,
+            "pooled_speedup": 1.002627477691705,
+            "geometric_speedup": 0.9922916320736345,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.0315112037323908,
+            "median_decision_ms": 2.678875
+          },
+          "size_heuristic": {
+            "pooled_ms": 13280.900207333334,
+            "pooled_ms_excluding_load": 13280.900207333334,
+            "pooled_speedup": 1.0012178235220632,
+            "geometric_speedup": 0.7950565786477942,
+            "wins_over_5pct": 7,
+            "slowdowns_over_3pct": 25,
+            "worst_time_ratio": 3.3046412063262958,
+            "median_decision_ms": 2.619167
+          },
+          "oracle": {
+            "pooled_ms": 11209.589556333334,
+            "pooled_ms_excluding_load": 11209.589556333334,
+            "pooled_speedup": 1.186223093466188,
+            "geometric_speedup": 1.0184507876362565,
+            "wins_over_5pct": 8,
+            "slowdowns_over_3pct": 7,
+            "worst_time_ratio": 1.562541626420038,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh": {
+        "configurations": 24,
+        "arms": {
+          "native": {
+            "pooled_ms": 5645.405696333332,
+            "pooled_ms_excluding_load": 5645.405696333332,
+            "pooled_speedup": 1.0000000000000002,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 6748.043161181818,
+            "pooled_ms_excluding_load": 5702.259444333333,
+            "pooled_speedup": 0.8365989311995785,
+            "geometric_speedup": 0.6637035715766073,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 23,
+            "worst_time_ratio": 2.4115440559082235,
+            "median_decision_ms": 2.7009995
+          },
+          "compact": {
+            "pooled_ms": 5795.435633030303,
+            "pooled_ms_excluding_load": 5790.195946,
+            "pooled_speedup": 0.9741123970315719,
+            "geometric_speedup": 0.9545418296097029,
+            "wins_over_5pct": 4,
+            "slowdowns_over_3pct": 9,
+            "worst_time_ratio": 1.4997379055653424,
+            "median_decision_ms": 2.676
+          },
+          "payoff": {
+            "pooled_ms": 5578.62353769697,
+            "pooled_ms_excluding_load": 5573.280709333333,
+            "pooled_speedup": 1.0119710817883822,
+            "geometric_speedup": 0.9915278341451024,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.0315112037323908,
+            "median_decision_ms": 2.6870415000000003
+          },
+          "size_heuristic": {
+            "pooled_ms": 6539.100485999999,
+            "pooled_ms_excluding_load": 6539.100485999999,
+            "pooled_speedup": 0.8633306229839965,
+            "geometric_speedup": 0.7836110040737834,
+            "wins_over_5pct": 4,
+            "slowdowns_over_3pct": 19,
+            "worst_time_ratio": 2.743653509197884,
+            "median_decision_ms": 2.605917
+          },
+          "oracle": {
+            "pooled_ms": 5607.892889,
+            "pooled_ms_excluding_load": 5607.892889,
+            "pooled_speedup": 1.0066892874161195,
+            "geometric_speedup": 0.9536419012875155,
+            "wins_over_5pct": 5,
+            "slowdowns_over_3pct": 7,
+            "worst_time_ratio": 1.562541626420038,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh_with_opportunity": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 1176.9138893333331,
+            "pooled_ms_excluding_load": 1176.9138893333331,
+            "pooled_speedup": 1.0000000000000002,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 1701.9772884242423,
+            "pooled_ms_excluding_load": 1179.08543,
+            "pooled_speedup": 0.6914979990261602,
+            "geometric_speedup": 0.6099712913144959,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 12,
+            "worst_time_ratio": 2.2615874123354547,
+            "median_decision_ms": 2.608854
+          },
+          "compact": {
+            "pooled_ms": 1175.020316848485,
+            "pooled_ms_excluding_load": 1172.4004733333334,
+            "pooled_speedup": 1.0016115231861924,
+            "geometric_speedup": 0.9634046819529442,
+            "wins_over_5pct": 4,
+            "slowdowns_over_3pct": 5,
+            "worst_time_ratio": 1.4997379055653424,
+            "median_decision_ms": 2.5734585
+          },
+          "payoff": {
+            "pooled_ms": 1181.327692181818,
+            "pooled_ms_excluding_load": 1178.6562780000002,
+            "pooled_speedup": 0.9962636930652723,
+            "geometric_speedup": 0.9909286221874204,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0271927346242304,
+            "median_decision_ms": 2.591146
+          },
+          "size_heuristic": {
+            "pooled_ms": 1273.4295276666664,
+            "pooled_ms_excluding_load": 1273.4295276666664,
+            "pooled_speedup": 0.9242081039928602,
+            "geometric_speedup": 0.8592576797079803,
+            "wins_over_5pct": 4,
+            "slowdowns_over_3pct": 8,
+            "worst_time_ratio": 1.5885179468713886,
+            "median_decision_ms": 2.5038335
+          },
+          "oracle": {
+            "pooled_ms": 1246.1721800000003,
+            "pooled_ms_excluding_load": 1246.1721800000003,
+            "pooled_speedup": 0.9444231770069953,
+            "geometric_speedup": 0.9025045870307953,
+            "wins_over_5pct": 5,
+            "slowdowns_over_3pct": 7,
+            "worst_time_ratio": 1.562541626420038,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh_other": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 4468.491806999999,
+            "pooled_ms_excluding_load": 4468.491806999999,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 5046.065872757576,
+            "pooled_ms_excluding_load": 4523.174014333334,
+            "pooled_speedup": 0.8855397293016425,
+            "geometric_speedup": 0.7221691204093496,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 2.4115440559082235,
+            "median_decision_ms": 3.1573335
+          },
+          "compact": {
+            "pooled_ms": 4620.415316181818,
+            "pooled_ms_excluding_load": 4617.795472666666,
+            "pooled_speedup": 0.9671190793931999,
+            "geometric_speedup": 0.9457605111775267,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 4,
+            "worst_time_ratio": 1.288277414942214,
+            "median_decision_ms": 3.1906875
+          },
+          "payoff": {
+            "pooled_ms": 4397.295845515152,
+            "pooled_ms_excluding_load": 4394.624431333333,
+            "pooled_speedup": 1.0161908509197672,
+            "geometric_speedup": 0.9921274084446946,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.0315112037323908,
+            "median_decision_ms": 3.026521
+          },
+          "size_heuristic": {
+            "pooled_ms": 5265.670958333333,
+            "pooled_ms_excluding_load": 5265.670958333333,
+            "pooled_speedup": 0.8486082480957653,
+            "geometric_speedup": 0.7146240530712593,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 11,
+            "worst_time_ratio": 2.743653509197884,
+            "median_decision_ms": 3.014042
+          },
+          "oracle": {
+            "pooled_ms": 4361.720709,
+            "pooled_ms_excluding_load": 4361.720709,
+            "pooled_speedup": 1.0244791230625307,
+            "geometric_speedup": 1.0076767353429925,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0107128459823236,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "proposal_control": {
+        "configurations": 4,
+        "arms": {
+          "native": {
+            "pooled_ms": 833.6603323333334,
+            "pooled_ms_excluding_load": 833.6603323333334,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 1006.1408558080808,
+            "pooled_ms_excluding_load": 831.8435696666667,
+            "pooled_speedup": 0.8285721899880311,
+            "geometric_speedup": 0.7403356796625197,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 4,
+            "worst_time_ratio": 1.7371954949981983,
+            "median_decision_ms": 2.2349375
+          },
+          "compact": {
+            "pooled_ms": 834.8624468383838,
+            "pooled_ms_excluding_load": 833.9891656666665,
+            "pooled_speedup": 0.9985601047099402,
+            "geometric_speedup": 1.0121394812450635,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.01371811877978,
+            "median_decision_ms": 2.1999370000000003
+          },
+          "payoff": {
+            "pooled_ms": 836.5770817272727,
+            "pooled_ms_excluding_load": 835.6866103333333,
+            "pooled_speedup": 0.996513472030674,
+            "geometric_speedup": 0.992962546459793,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0118657793873018,
+            "median_decision_ms": 2.243042
+          },
+          "size_heuristic": {
+            "pooled_ms": 1703.1817356666668,
+            "pooled_ms_excluding_load": 1703.1817356666668,
+            "pooled_speedup": 0.4894723298609226,
+            "geometric_speedup": 0.5868681333561572,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 3.3046412063262958,
+            "median_decision_ms": 2.0827915
+          },
+          "oracle": {
+            "pooled_ms": 827.0430413333333,
+            "pooled_ms_excluding_load": 827.0430413333333,
+            "pooled_speedup": 1.0080011446433692,
+            "geometric_speedup": 1.024969656380052,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0009209969636206,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "historical_control": {
+        "configurations": 2,
+        "arms": {
+          "native": {
+            "pooled_ms": 6079.388194333333,
+            "pooled_ms_excluding_load": 6079.388194333333,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 5230.532199070707,
+            "pooled_ms_excluding_load": 5143.383556,
+            "pooled_speedup": 1.162288647303125,
+            "geometric_speedup": 1.0587764007776097,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 1,
+            "worst_time_ratio": 1.039040339250997,
+            "median_decision_ms": 3.732042
+          },
+          "compact": {
+            "pooled_ms": 4816.558556585859,
+            "pooled_ms_excluding_load": 4816.121916,
+            "pooled_speedup": 1.2621850482894597,
+            "geometric_speedup": 1.201609151310476,
+            "wins_over_5pct": 1,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0077597703529606,
+            "median_decision_ms": 4.0502915
+          },
+          "payoff": {
+            "pooled_ms": 6111.78337469697,
+            "pooled_ms_excluding_load": 6111.3381389999995,
+            "pooled_speedup": 0.994699553570934,
+            "geometric_speedup": 0.9970941871961464,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0031978151570937,
+            "median_decision_ms": 3.6783124999999997
+          },
+          "size_heuristic": {
+            "pooled_ms": 3944.4180273333336,
+            "pooled_ms_excluding_load": 3944.4180273333336,
+            "pooled_speedup": 1.5412636673409001,
+            "geometric_speedup": 2.267667556432441,
+            "wins_over_5pct": 2,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 0.6827036378220049,
+            "median_decision_ms": 3.7334164999999997
+          },
+          "oracle": {
+            "pooled_ms": 4045.545417333333,
+            "pooled_ms_excluding_load": 4045.545417333333,
+            "pooled_speedup": 1.5027363599197041,
+            "geometric_speedup": 2.2507180599581456,
+            "wins_over_5pct": 2,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 0.7520195468654212,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "regression_control": {
+        "configurations": 3,
+        "arms": {
+          "native": {
+            "pooled_ms": 738.619777,
+            "pooled_ms_excluding_load": 738.619777,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "incumbent": {
+            "pooled_ms": 1225.369783939394,
+            "pooled_ms_excluding_load": 1094.6468193333333,
+            "pooled_speedup": 0.6027729642764977,
+            "geometric_speedup": 0.5491884738872405,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 2.0591996869059668,
+            "median_decision_ms": 4.594125
+          },
+          "compact": {
+            "pooled_ms": 1126.5611832121213,
+            "pooled_ms_excluding_load": 1125.9062223333333,
+            "pooled_speedup": 0.6556410677083702,
+            "geometric_speedup": 0.6601686674529701,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 1.712692850169163,
+            "median_decision_ms": 4.578958
+          },
+          "payoff": {
+            "pooled_ms": 735.2437982121213,
+            "pooled_ms_excluding_load": 734.5759446666666,
+            "pooled_speedup": 1.0045916453781563,
+            "geometric_speedup": 0.9943182043649513,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0199381795643585,
+            "median_decision_ms": 4.489959
+          },
+          "size_heuristic": {
+            "pooled_ms": 1094.1999583333334,
+            "pooled_ms_excluding_load": 1094.1999583333334,
+            "pooled_speedup": 0.6750318087427576,
+            "geometric_speedup": 0.6654782813672214,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 1.7163055624770578,
+            "median_decision_ms": 4.71925
+          },
+          "oracle": {
+            "pooled_ms": 729.1082086666667,
+            "pooled_ms_excluding_load": 729.1082086666667,
+            "pooled_speedup": 1.0130454824404287,
+            "geometric_speedup": 1.0071539435812622,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0074611202179684,
+            "median_decision_ms": 0.0
+          }
+        }
+      }
+    }
+  },
+  "estimated_break_even_from_long_horizon": {
+    "all": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "incumbent": {
+        "pooled_estimated_break_even": 11500,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2570861917839633,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.51754618860516,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.31457782986101,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.8231215132639977,
+            "factor": 2,
+            "estimated_break_even": 257348
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.2615874123354547,
+            "factor": 8,
+            "estimated_break_even": 164520
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.3758567474778864,
+            "factor": 4,
+            "estimated_break_even": 15247
+          },
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.9277110435832832,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.2846560859721858,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0835132241560859,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.3766244849553328,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 1.7371954949981983,
+            "factor": 2,
+            "estimated_break_even": 33387
+          },
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.039040339250997,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.126200073137081,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.6145711141873358,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.3000755282712775,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.8585371371633209,
+            "factor": 2,
+            "estimated_break_even": 974
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.172984076821606,
+            "factor": 2,
+            "estimated_break_even": 9190
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.9549573363919892,
+            "factor": 2,
+            "estimated_break_even": 141236
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.5519258354978056,
+            "factor": 2,
+            "estimated_break_even": 31183
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 2.0591996869059668,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 2.207742735690118,
+            "factor": 2,
+            "estimated_break_even": 1258864
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.4115440559082235,
+            "factor": 4,
+            "estimated_break_even": 671533
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.9118405690542493,
+            "factor": 2,
+            "estimated_break_even": 71536
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 2.0537469194400235,
+            "factor": 2,
+            "estimated_break_even": 103460
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.1350810110857905,
+            "factor": 4,
+            "estimated_break_even": 102518
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.5960798699242347,
+            "factor": 2,
+            "estimated_break_even": 30492
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.5208814378423285,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2449852047186618,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3174866611383174,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.059182700856837,
+            "factor": 2,
+            "estimated_break_even": 8854
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.121132757175614,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0985573521918155,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0268589803539725,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 1424,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0137239858021871,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0389170966139707,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0188567187678028,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1939777209063243,
+            "factor": 2,
+            "estimated_break_even": 1264836
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4997379055653424,
+            "factor": 8,
+            "estimated_break_even": 82224
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.900961833450181,
+            "factor": 4,
+            "estimated_break_even": 2068
+          },
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.383748401174511,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.0116256867854394,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0035902393723946,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.01371811877978,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 0.9258594205989521,
+            "factor": 2,
+            "estimated_break_even": 1900
+          },
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.0077597703529606,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9904524699885889,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.029217168935276,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0126092616792635,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.687252816274607,
+            "factor": 2,
+            "estimated_break_even": 403
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7197519719651118,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1534046171175447,
+            "factor": 2,
+            "estimated_break_even": 53345
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9756076209891853,
+            "factor": 2,
+            "estimated_break_even": 3194
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.712692850169163,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2228699349166132,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.288277414942214,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0065231437343323,
+            "factor": 2,
+            "estimated_break_even": 5308
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1402108887094533,
+            "factor": 2,
+            "estimated_break_even": 17876
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.183601927422285,
+            "factor": 4,
+            "estimated_break_even": 23477
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9310669252701721,
+            "factor": 2,
+            "estimated_break_even": 1871
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.4665560250277798,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.018459181460065,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0121953205223688,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9351416775835126,
+            "factor": 2,
+            "estimated_break_even": 1188
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.087731957877802,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9952197206031052,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0149752278564828,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "payoff": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0093537713483316,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0181509270160247,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0014243600147361,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0074879370321719,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0017852753328462,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.001045743480145,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0199381795643585,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.0056693247496424,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0038923049604156,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0118657793873018,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 1.0069393018359214,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.0031978151570937,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9971612051404478,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0221654510897882,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0047521067314062,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0026308272968976,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0095460616663607,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9973968069696909,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9930056400995466,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0055891851297951,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.999729255034375,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0315112037323908,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0196663847645746,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0199725996286673,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0197998163399578,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0271927346242304,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 0.9918120598288565,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0070280566637237,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0048300867588602,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0087212503873693,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0026944009807846,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0047607132510388,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9971081195667735,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "size_heuristic": {
+        "pooled_estimated_break_even": 4928,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.4438971308789281,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.6313261413881517,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.408108474718961,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.5885179468713886,
+            "factor": 8,
+            "estimated_break_even": 43868
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4955980808470744,
+            "factor": 8,
+            "estimated_break_even": 56819
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8918667679892502,
+            "factor": 8,
+            "estimated_break_even": 2731
+          },
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.3736606516479417,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.3102017466821472,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 2.0853907930766353,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 3.3046412063262958,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 0.933658268121975,
+            "factor": 8,
+            "estimated_break_even": 3558
+          },
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 0.2848452683721571,
+            "factor": 8,
+            "estimated_break_even": 53
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1938109762216107,
+            "factor": 8,
+            "estimated_break_even": 103422
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.743653509197884,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.7990978736892889,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6827036378220049,
+            "factor": 2,
+            "estimated_break_even": 383
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9408776882938122,
+            "factor": 8,
+            "estimated_break_even": 3827
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4735180395799852,
+            "factor": 8,
+            "estimated_break_even": 50291
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0982815512613227,
+            "factor": 8,
+            "estimated_break_even": 7927
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.7163055624770578,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.4453993526665958,
+            "factor": 8,
+            "estimated_break_even": 219853
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.462488993448956,
+            "factor": 8,
+            "estimated_break_even": 277532
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.175785718544502,
+            "factor": 8,
+            "estimated_break_even": 30994
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.3157649339779385,
+            "factor": 8,
+            "estimated_break_even": 20705
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3303892497070864,
+            "factor": 8,
+            "estimated_break_even": 29083
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9331078869772299,
+            "factor": 8,
+            "estimated_break_even": 3540
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.4392103475495173,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.066560473378466,
+            "factor": 2,
+            "estimated_break_even": 18517
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.06024496979017,
+            "factor": 2,
+            "estimated_break_even": 14147
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9396936940758698,
+            "factor": 2,
+            "estimated_break_even": 1513
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9962211614052919,
+            "factor": 4,
+            "estimated_break_even": 4066
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1241476555385013,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.1423273917821108,
+            "factor": 4,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 1240,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0107128459823236,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9940649805401481,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9936696210979189,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.562541626420038,
+            "factor": 8,
+            "estimated_break_even": 41104
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4653578249600177,
+            "factor": 8,
+            "estimated_break_even": 44146
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9034006005156484,
+            "factor": 8,
+            "estimated_break_even": 2914
+          },
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0074611202179684,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 0.9939142811881437,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 0.9999142023176831,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0009209969636206,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 0.9108450409394665,
+            "factor": 8,
+            "estimated_break_even": 2927
+          },
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 0.2624996201692601,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9870165190054323,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9859427289758681,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.998159060964342,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7520195468654212,
+            "factor": 4,
+            "estimated_break_even": 1338
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7357419610870454,
+            "factor": 4,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4460799847269155,
+            "factor": 8,
+            "estimated_break_even": 47684
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.084619028061547,
+            "factor": 8,
+            "estimated_break_even": 7620
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 0.9845091837332941,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9803039377834929,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0051740927258466,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9500536356725463,
+            "factor": 2,
+            "estimated_break_even": 1812
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2790547746131178,
+            "factor": 8,
+            "estimated_break_even": 19062
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3136867154757708,
+            "factor": 8,
+            "estimated_break_even": 36759
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9183163700145653,
+            "factor": 8,
+            "estimated_break_even": 2993
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 0.9868800294222239,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9930202513002296,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0559003593926488,
+            "factor": 2,
+            "estimated_break_even": 11948
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9268552774548495,
+            "factor": 2,
+            "estimated_break_even": 1059
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.992150974118241,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9849760790310638,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9838325682671274,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      }
+    },
+    "fresh": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "incumbent": {
+        "pooled_estimated_break_even": 351876,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2570861917839633,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.51754618860516,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.31457782986101,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.8231215132639977,
+            "factor": 2,
+            "estimated_break_even": 257348
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.2615874123354547,
+            "factor": 8,
+            "estimated_break_even": 164520
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.3758567474778864,
+            "factor": 4,
+            "estimated_break_even": 15247
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.126200073137081,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.6145711141873358,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.3000755282712775,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.172984076821606,
+            "factor": 2,
+            "estimated_break_even": 9190
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.9549573363919892,
+            "factor": 2,
+            "estimated_break_even": 141236
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.5519258354978056,
+            "factor": 2,
+            "estimated_break_even": 31183
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 2.207742735690118,
+            "factor": 2,
+            "estimated_break_even": 1258864
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.4115440559082235,
+            "factor": 4,
+            "estimated_break_even": 671533
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.9118405690542493,
+            "factor": 2,
+            "estimated_break_even": 71536
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 2.0537469194400235,
+            "factor": 2,
+            "estimated_break_even": 103460
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.1350810110857905,
+            "factor": 4,
+            "estimated_break_even": 102518
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.5960798699242347,
+            "factor": 2,
+            "estimated_break_even": 30492
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2449852047186618,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3174866611383174,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.059182700856837,
+            "factor": 2,
+            "estimated_break_even": 8854
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.121132757175614,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0985573521918155,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0268589803539725,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 158250,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0137239858021871,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0389170966139707,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0188567187678028,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1939777209063243,
+            "factor": 2,
+            "estimated_break_even": 1264836
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4997379055653424,
+            "factor": 8,
+            "estimated_break_even": 82224
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.900961833450181,
+            "factor": 4,
+            "estimated_break_even": 2068
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9904524699885889,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.029217168935276,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0126092616792635,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7197519719651118,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1534046171175447,
+            "factor": 2,
+            "estimated_break_even": 53345
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9756076209891853,
+            "factor": 2,
+            "estimated_break_even": 3194
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2228699349166132,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.288277414942214,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0065231437343323,
+            "factor": 2,
+            "estimated_break_even": 5308
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1402108887094533,
+            "factor": 2,
+            "estimated_break_even": 17876
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.183601927422285,
+            "factor": 4,
+            "estimated_break_even": 23477
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9310669252701721,
+            "factor": 2,
+            "estimated_break_even": 1871
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.018459181460065,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0121953205223688,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9351416775835126,
+            "factor": 2,
+            "estimated_break_even": 1188
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.087731957877802,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9952197206031052,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0149752278564828,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "payoff": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0093537713483316,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0181509270160247,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0014243600147361,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0074879370321719,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0017852753328462,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.001045743480145,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9971612051404478,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0221654510897882,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0047521067314062,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0095460616663607,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9973968069696909,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9930056400995466,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.999729255034375,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0315112037323908,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0196663847645746,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0199725996286673,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0197998163399578,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0271927346242304,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0070280566637237,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0048300867588602,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0087212503873693,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0026944009807846,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0047607132510388,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9971081195667735,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "size_heuristic": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.4438971308789281,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.6313261413881517,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.408108474718961,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.5885179468713886,
+            "factor": 8,
+            "estimated_break_even": 43868
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4955980808470744,
+            "factor": 8,
+            "estimated_break_even": 56819
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8918667679892502,
+            "factor": 8,
+            "estimated_break_even": 2731
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1938109762216107,
+            "factor": 8,
+            "estimated_break_even": 103422
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.743653509197884,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.7990978736892889,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9408776882938122,
+            "factor": 8,
+            "estimated_break_even": 3827
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4735180395799852,
+            "factor": 8,
+            "estimated_break_even": 50291
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0982815512613227,
+            "factor": 8,
+            "estimated_break_even": 7927
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.4453993526665958,
+            "factor": 8,
+            "estimated_break_even": 219853
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.462488993448956,
+            "factor": 8,
+            "estimated_break_even": 277532
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.175785718544502,
+            "factor": 8,
+            "estimated_break_even": 30994
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.3157649339779385,
+            "factor": 8,
+            "estimated_break_even": 20705
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3303892497070864,
+            "factor": 8,
+            "estimated_break_even": 29083
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9331078869772299,
+            "factor": 8,
+            "estimated_break_even": 3540
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.066560473378466,
+            "factor": 2,
+            "estimated_break_even": 18517
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.06024496979017,
+            "factor": 2,
+            "estimated_break_even": 14147
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9396936940758698,
+            "factor": 2,
+            "estimated_break_even": 1513
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9962211614052919,
+            "factor": 4,
+            "estimated_break_even": 4066
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1241476555385013,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.1423273917821108,
+            "factor": 4,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 7499,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0107128459823236,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9940649805401481,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9936696210979189,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.562541626420038,
+            "factor": 8,
+            "estimated_break_even": 41104
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4653578249600177,
+            "factor": 8,
+            "estimated_break_even": 44146
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9034006005156484,
+            "factor": 8,
+            "estimated_break_even": 2914
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9870165190054323,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9859427289758681,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.998159060964342,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7357419610870454,
+            "factor": 4,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4460799847269155,
+            "factor": 8,
+            "estimated_break_even": 47684
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.084619028061547,
+            "factor": 8,
+            "estimated_break_even": 7620
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9803039377834929,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0051740927258466,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9500536356725463,
+            "factor": 2,
+            "estimated_break_even": 1812
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2790547746131178,
+            "factor": 8,
+            "estimated_break_even": 19062
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3136867154757708,
+            "factor": 8,
+            "estimated_break_even": 36759
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9183163700145653,
+            "factor": 8,
+            "estimated_break_even": 2993
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9930202513002296,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0559003593926488,
+            "factor": 2,
+            "estimated_break_even": 11948
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9268552774548495,
+            "factor": 2,
+            "estimated_break_even": 1059
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.992150974118241,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9849760790310638,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9838325682671274,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      }
+    },
+    "fresh_with_opportunity": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "incumbent": {
+        "pooled_estimated_break_even": 35884,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.8231215132639977,
+            "factor": 2,
+            "estimated_break_even": 257348
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.2615874123354547,
+            "factor": 8,
+            "estimated_break_even": 164520
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.3758567474778864,
+            "factor": 4,
+            "estimated_break_even": 15247
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.172984076821606,
+            "factor": 2,
+            "estimated_break_even": 9190
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.9549573363919892,
+            "factor": 2,
+            "estimated_break_even": 141236
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.5519258354978056,
+            "factor": 2,
+            "estimated_break_even": 31183
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.9118405690542493,
+            "factor": 2,
+            "estimated_break_even": 71536
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 2.0537469194400235,
+            "factor": 2,
+            "estimated_break_even": 103460
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.1350810110857905,
+            "factor": 4,
+            "estimated_break_even": 102518
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.5960798699242347,
+            "factor": 2,
+            "estimated_break_even": 30492
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3174866611383174,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.059182700856837,
+            "factor": 2,
+            "estimated_break_even": 8854
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 4875,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1939777209063243,
+            "factor": 2,
+            "estimated_break_even": 1264836
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4997379055653424,
+            "factor": 8,
+            "estimated_break_even": 82224
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.900961833450181,
+            "factor": 4,
+            "estimated_break_even": 2068
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7197519719651118,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1534046171175447,
+            "factor": 2,
+            "estimated_break_even": 53345
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9756076209891853,
+            "factor": 2,
+            "estimated_break_even": 3194
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0065231437343323,
+            "factor": 2,
+            "estimated_break_even": 5308
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1402108887094533,
+            "factor": 2,
+            "estimated_break_even": 17876
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.183601927422285,
+            "factor": 4,
+            "estimated_break_even": 23477
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9310669252701721,
+            "factor": 2,
+            "estimated_break_even": 1871
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0121953205223688,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9351416775835126,
+            "factor": 2,
+            "estimated_break_even": 1188
+          }
+        ]
+      },
+      "payoff": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0074879370321719,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0017852753328462,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.001045743480145,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0095460616663607,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9973968069696909,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9930056400995466,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0196663847645746,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0199725996286673,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0197998163399578,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0271927346242304,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0048300867588602,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0087212503873693,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "size_heuristic": {
+        "pooled_estimated_break_even": 8618,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.5885179468713886,
+            "factor": 8,
+            "estimated_break_even": 43868
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4955980808470744,
+            "factor": 8,
+            "estimated_break_even": 56819
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8918667679892502,
+            "factor": 8,
+            "estimated_break_even": 2731
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9408776882938122,
+            "factor": 8,
+            "estimated_break_even": 3827
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4735180395799852,
+            "factor": 8,
+            "estimated_break_even": 50291
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0982815512613227,
+            "factor": 8,
+            "estimated_break_even": 7927
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.175785718544502,
+            "factor": 8,
+            "estimated_break_even": 30994
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.3157649339779385,
+            "factor": 8,
+            "estimated_break_even": 20705
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3303892497070864,
+            "factor": 8,
+            "estimated_break_even": 29083
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9331078869772299,
+            "factor": 8,
+            "estimated_break_even": 3540
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.06024496979017,
+            "factor": 2,
+            "estimated_break_even": 14147
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9396936940758698,
+            "factor": 2,
+            "estimated_break_even": 1513
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 7488,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.562541626420038,
+            "factor": 8,
+            "estimated_break_even": 41104
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4653578249600177,
+            "factor": 8,
+            "estimated_break_even": 44146
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9034006005156484,
+            "factor": 8,
+            "estimated_break_even": 2914
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7357419610870454,
+            "factor": 4,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.4460799847269155,
+            "factor": 8,
+            "estimated_break_even": 47684
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.084619028061547,
+            "factor": 8,
+            "estimated_break_even": 7620
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9500536356725463,
+            "factor": 2,
+            "estimated_break_even": 1812
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2790547746131178,
+            "factor": 8,
+            "estimated_break_even": 19062
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.3136867154757708,
+            "factor": 8,
+            "estimated_break_even": 36759
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9183163700145653,
+            "factor": 8,
+            "estimated_break_even": 2993
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0559003593926488,
+            "factor": 2,
+            "estimated_break_even": 11948
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9268552774548495,
+            "factor": 2,
+            "estimated_break_even": 1059
+          }
+        ]
+      }
+    },
+    "fresh_other": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "incumbent": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2570861917839633,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.51754618860516,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.31457782986101,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.126200073137081,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.6145711141873358,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.3000755282712775,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 2.207742735690118,
+            "factor": 2,
+            "estimated_break_even": 1258864
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.4115440559082235,
+            "factor": 4,
+            "estimated_break_even": 671533
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2449852047186618,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.121132757175614,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0985573521918155,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0268589803539725,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0137239858021871,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0389170966139707,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0188567187678028,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9904524699885889,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.029217168935276,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0126092616792635,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.2228699349166132,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.288277414942214,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.018459181460065,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.087731957877802,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9952197206031052,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0149752278564828,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "payoff": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0093537713483316,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0181509270160247,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0014243600147361,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9971612051404478,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0221654510897882,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0047521067314062,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.999729255034375,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0315112037323908,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0070280566637237,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0026944009807846,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0047607132510388,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9971081195667735,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "size_heuristic": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.4438971308789281,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.6313261413881517,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.408108474718961,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.1938109762216107,
+            "factor": 8,
+            "estimated_break_even": 103422
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 2.743653509197884,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.7990978736892889,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.4453993526665958,
+            "factor": 8,
+            "estimated_break_even": 219853
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.462488993448956,
+            "factor": 8,
+            "estimated_break_even": 277532
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.066560473378466,
+            "factor": 2,
+            "estimated_break_even": 18517
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9962211614052919,
+            "factor": 4,
+            "estimated_break_even": 4066
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1241476555385013,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.1423273917821108,
+            "factor": 4,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0107128459823236,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9940649805401481,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "acoustic_transmission_line",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9936696210979189,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9870165190054323,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9859427289758681,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "driven_state_space",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.998159060964342,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9803039377834929,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0051740927258466,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9930202513002296,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.992150974118241,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9849760790310638,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "streaming_cross_spectrum",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9838325682671274,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      }
+    },
+    "proposal_control": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "incumbent": {
+        "pooled_estimated_break_even": 129223,
+        "configurations": [
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.2846560859721858,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0835132241560859,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.3766244849553328,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 1.7371954949981983,
+            "factor": 2,
+            "estimated_break_even": 33387
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 5664,
+        "configurations": [
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.0116256867854394,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0035902393723946,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.01371811877978,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 0.9258594205989521,
+            "factor": 2,
+            "estimated_break_even": 1900
+          }
+        ]
+      },
+      "payoff": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.0056693247496424,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0038923049604156,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0118657793873018,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 1.0069393018359214,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "size_heuristic": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 1.3102017466821472,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 2.0853907930766353,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 3.3046412063262958,
+            "factor": 8,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 0.933658268121975,
+            "factor": 8,
+            "estimated_break_even": 3558
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 2974,
+        "configurations": [
+          {
+            "workload": "conv_dense_matvec",
+            "variant": "n32",
+            "trip_count": 255,
+            "time_ratio": 0.9939142811881437,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_elementwise_sine",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 0.9999142023176831,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_reduction_vector",
+            "variant": "n256",
+            "trip_count": 255,
+            "time_ratio": 1.0009209969636206,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "conv_scalar_recurrence",
+            "variant": "scalar",
+            "trip_count": 1024,
+            "time_ratio": 0.9108450409394665,
+            "factor": 8,
+            "estimated_break_even": 2927
+          }
+        ]
+      }
+    },
+    "historical_control": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "incumbent": {
+        "pooled_estimated_break_even": 1018,
+        "configurations": [
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.039040339250997,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.8585371371633209,
+            "factor": 2,
+            "estimated_break_even": 974
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 494,
+        "configurations": [
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.0077597703529606,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.687252816274607,
+            "factor": 2,
+            "estimated_break_even": 403
+          }
+        ]
+      },
+      "payoff": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 1.0031978151570937,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0026308272968976,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "size_heuristic": {
+        "pooled_estimated_break_even": 298,
+        "configurations": [
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 0.2848452683721571,
+            "factor": 8,
+            "estimated_break_even": 53
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6827036378220049,
+            "factor": 2,
+            "estimated_break_even": 383
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 883,
+        "configurations": [
+          {
+            "workload": "dense_gram_accum",
+            "variant": "large",
+            "trip_count": 1024,
+            "time_ratio": 0.2624996201692601,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "eval_write_waveguide_mesh",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.7520195468654212,
+            "factor": 4,
+            "estimated_break_even": 1338
+          }
+        ]
+      }
+    },
+    "regression_control": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "incumbent": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.9277110435832832,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 2.0591996869059668,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.5208814378423285,
+            "factor": 2,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.383748401174511,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.712692850169163,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.4665560250277798,
+            "factor": 2,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "payoff": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0199381795643585,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0055891851297951,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 0.9918120598288565,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "size_heuristic": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.3736606516479417,
+            "factor": 4,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.7163055624770578,
+            "factor": 2,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.4392103475495173,
+            "factor": 2,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compressed_trie_walk",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 1.0074611202179684,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_prefix_rank",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 0.9845091837332941,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "spectral_equalizer",
+            "variant": "small",
+            "trip_count": 1023,
+            "time_ratio": 0.9868800294222239,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      }
+    }
+  },
+  "median_load_ms": {
+    "native": 0.0,
+    "incumbent": 1465.868791,
+    "compact": 7.232875,
+    "payoff": 7.666334,
+    "size_heuristic": 0.0,
+    "oracle": 0.0
+  }
+}

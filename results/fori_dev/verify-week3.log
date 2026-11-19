@@ -1,0 +1,5 @@
+JAX_PLATFORMS=cpu .venv/bin/python -m benchmarks.verify_week3
+Verified 23 untouched commit-c3a4ce1 paths
+Rebuilt 220 original rows; only extraction timing and acquisition metadata are volatile
+Replayed Week 3 gate 1: archived CSV/Markdown byte-identical, zero wins
+Replayed Week 3 gate 2: archived CSV/Markdown byte-identical, zero wins

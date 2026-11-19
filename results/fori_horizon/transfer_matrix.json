@@ -1,0 +1,28 @@
+{
+  "source_sha256": "1f25cbd2d2880a34760e6c53331fa74398a048283209725ce4800687536e9914",
+  "cases": [
+    [
+      "synaptic_eligibility",
+      "synaptic_eligibility",
+      "large",
+      256
+    ],
+    [
+      "manhattan_voronoi",
+      "manhattan_voronoi",
+      "large",
+      256
+    ],
+    [
+      "dense_gram_accum",
+      "dense_reductions",
+      "large",
+      1024
+    ]
+  ],
+  "cohorts": [
+    "transfer",
+    "transfer",
+    "historical"
+  ]
+}

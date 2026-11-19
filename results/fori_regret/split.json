@@ -1,0 +1,83 @@
+{
+  "workloads": [
+    {
+      "workload": "negative_binomial_bank",
+      "family": "likelihood_feedback",
+      "partition": "train",
+      "factory": "make_nb_streaming_loglik",
+      "source": "agy_cases",
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    {
+      "workload": "packet_reorder_scoreboard",
+      "family": "associative_state_writes",
+      "partition": "train",
+      "factory": "packet_reorder_scoreboard_factory",
+      "source": "agy_cases",
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    {
+      "workload": "spectral_equalizer",
+      "family": "nonlinear_spectral_gain",
+      "partition": "holdout",
+      "factory": "piecewise_spectral_equalizer_factory",
+      "source": "agy_cases",
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    {
+      "workload": "packed_prefix_rank",
+      "family": "packed_word_rank",
+      "partition": "holdout",
+      "factory": "packed_prefix_rank_factory",
+      "source": "agy_cases",
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    {
+      "workload": "compressed_trie_walk",
+      "family": "failure_link_traversal",
+      "partition": "holdout",
+      "factory": "compressed_trie_walk_factory",
+      "source": "agy_cases",
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    {
+      "workload": "branch_tag_cache",
+      "family": "associative_state_writes",
+      "partition": "train",
+      "factory": "branch_tags",
+      "source": "opencode_cases",
+      "atol": 0.0001,
+      "rtol": 1e-05
+    },
+    {
+      "workload": "discounted_path_softmin",
+      "family": "discounted_cost_reduction",
+      "partition": "train",
+      "factory": "discounted_softmin",
+      "source": "opencode_cases",
+      "atol": 0.0001,
+      "rtol": 1e-05
+    }
+  ],
+  "sha256": {
+    "agy_cases.py": "ab33b80a8af14c98380db1d7290d719fb8590e9fb39450be32fce309c34e3030",
+    "opencode_cases.py": "41f412426aeb3c39bf88afa3ccbc5c8937f5b25f6aab7c4efb98f8732c79e8d6",
+    "workloads.py": "875ed988c43808fd0b10d7c8abefdcbfd74e30ce4c176003758f1df6fd77bc8b"
+  },
+  "sizes": [
+    "small",
+    "large"
+  ],
+  "trips": [
+    255,
+    256,
+    1023,
+    1024
+  ],
+  "process_repeats": 3
+}

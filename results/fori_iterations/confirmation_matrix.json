@@ -1,0 +1,84 @@
+{
+  "source_sha256": "9a8ad138a2a57342929b8d3e6aad97b264d0314c5ab45b1b504edcba6f64df42",
+  "cases": [
+    {
+      "workload": "phase_transport",
+      "family": "wrapped_phase_transport",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "phase_transport",
+      "family": "wrapped_phase_transport",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "predictive_sensor_tracker",
+      "family": "alpha_beta_tracking",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "predictive_sensor_tracker",
+      "family": "alpha_beta_tracking",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "dual_envelope_meter",
+      "family": "dual_envelope_detection",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "dual_envelope_meter",
+      "family": "dual_envelope_detection",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "coupled_chemical_surrogate",
+      "family": "dense_nonlinear_projection",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "coupled_chemical_surrogate",
+      "family": "dense_nonlinear_projection",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "index_expiry_counters",
+      "family": "indexed_expiry_cache",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "index_expiry_counters",
+      "family": "indexed_expiry_cache",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "adaptive_spike_recovery",
+      "family": "spiking_threshold_recovery",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "adaptive_spike_recovery",
+      "family": "spiking_threshold_recovery",
+      "variant": "large",
+      "trip_count": 255
+    }
+  ],
+  "horizons": [
+    1,
+    300,
+    5000,
+    20000
+  ],
+  "repeats": 3
+}

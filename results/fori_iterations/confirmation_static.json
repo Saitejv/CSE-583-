@@ -1,0 +1,254 @@
+[
+  {
+    "workload": "phase_transport",
+    "variant": "small",
+    "trip_count": 1024,
+    "family": "wrapped_phase_transport",
+    "oracle_factor": 8,
+    "warm_us": [
+      9.42739393939394,
+      8.317545454545455,
+      7.711484848484848,
+      7.3125
+    ],
+    "incumbent": {
+      "factor": 4,
+      "effect_mae": 0.07406986329215084
+    },
+    "refit": {
+      "factor": 4,
+      "effect_mae": 0.08107838797658064
+    }
+  },
+  {
+    "workload": "phase_transport",
+    "variant": "large",
+    "trip_count": 255,
+    "family": "wrapped_phase_transport",
+    "oracle_factor": 8,
+    "warm_us": [
+      8.775990099009901,
+      8.556514851485147,
+      6.857673267326732,
+      6.504534653465346
+    ],
+    "incumbent": {
+      "factor": 2,
+      "effect_mae": 0.4445111410139508
+    },
+    "refit": {
+      "factor": 2,
+      "effect_mae": 0.20633904121988822
+    }
+  },
+  {
+    "workload": "predictive_sensor_tracker",
+    "variant": "small",
+    "trip_count": 1024,
+    "family": "alpha_beta_tracking",
+    "oracle_factor": 8,
+    "warm_us": [
+      13.67622950819672,
+      11.782786885245901,
+      10.806,
+      10.403688524590162
+    ],
+    "incumbent": {
+      "factor": 4,
+      "effect_mae": 0.10938075440666022
+    },
+    "refit": {
+      "factor": 8,
+      "effect_mae": 0.07115125164727573
+    }
+  },
+  {
+    "workload": "predictive_sensor_tracker",
+    "variant": "large",
+    "trip_count": 255,
+    "family": "alpha_beta_tracking",
+    "oracle_factor": 8,
+    "warm_us": [
+      9.038567164179105,
+      8.446333333333333,
+      8.29789552238806,
+      6.485246153846154
+    ],
+    "incumbent": {
+      "factor": 2,
+      "effect_mae": 0.344883666284623
+    },
+    "refit": {
+      "factor": 4,
+      "effect_mae": 0.12083308894690666
+    }
+  },
+  {
+    "workload": "dual_envelope_meter",
+    "variant": "small",
+    "trip_count": 1024,
+    "family": "dual_envelope_detection",
+    "oracle_factor": 8,
+    "warm_us": [
+      11.6055,
+      10.001377049180327,
+      9.284147540983605,
+      9.205645161290322
+    ],
+    "incumbent": {
+      "factor": 2,
+      "effect_mae": 0.23160468318439476
+    },
+    "refit": {
+      "factor": 4,
+      "effect_mae": 0.125721740205211
+    }
+  },
+  {
+    "workload": "dual_envelope_meter",
+    "variant": "large",
+    "trip_count": 255,
+    "family": "dual_envelope_detection",
+    "oracle_factor": 8,
+    "warm_us": [
+      11.48348275862069,
+      7.83125,
+      7.005566666666667,
+      6.369258620689655
+    ],
+    "incumbent": {
+      "factor": 2,
+      "effect_mae": 0.561664307430506
+    },
+    "refit": {
+      "factor": 2,
+      "effect_mae": 0.55551154309195
+    }
+  },
+  {
+    "workload": "coupled_chemical_surrogate",
+    "variant": "small",
+    "trip_count": 1024,
+    "family": "dense_nonlinear_projection",
+    "oracle_factor": 1,
+    "warm_us": [
+      56.435449999999996,
+      57.814550000000004,
+      68.21664999999999,
+      71.04375
+    ],
+    "incumbent": {
+      "factor": 1,
+      "effect_mae": 0.04671547558491468
+    },
+    "refit": {
+      "factor": 1,
+      "effect_mae": 0.021902437308827623
+    }
+  },
+  {
+    "workload": "coupled_chemical_surrogate",
+    "variant": "large",
+    "trip_count": 255,
+    "family": "dense_nonlinear_projection",
+    "oracle_factor": 1,
+    "warm_us": [
+      46.840291666666666,
+      48.779,
+      48.125,
+      49.59204166666667
+    ],
+    "incumbent": {
+      "factor": 1,
+      "effect_mae": 0.04228448983688444
+    },
+    "refit": {
+      "factor": 4,
+      "effect_mae": 0.03855325138285934
+    }
+  },
+  {
+    "workload": "index_expiry_counters",
+    "variant": "small",
+    "trip_count": 1024,
+    "family": "indexed_expiry_cache",
+    "oracle_factor": 1,
+    "warm_us": [
+      21.330128205128208,
+      20.80448717948718,
+      20.66771794871795,
+      21.05769230769231
+    ],
+    "incumbent": {
+      "factor": 2,
+      "effect_mae": 0.03175875723323928
+    },
+    "refit": {
+      "factor": 2,
+      "effect_mae": 0.08179062995621848
+    }
+  },
+  {
+    "workload": "index_expiry_counters",
+    "variant": "large",
+    "trip_count": 255,
+    "family": "indexed_expiry_cache",
+    "oracle_factor": 4,
+    "warm_us": [
+      20.357758620689655,
+      17.51508620689655,
+      16.171689655172415,
+      16.701155172413795
+    ],
+    "incumbent": {
+      "factor": 2,
+      "effect_mae": 0.2864583500661029
+    },
+    "refit": {
+      "factor": 2,
+      "effect_mae": 0.26768485042804313
+    }
+  },
+  {
+    "workload": "adaptive_spike_recovery",
+    "variant": "small",
+    "trip_count": 1024,
+    "family": "spiking_threshold_recovery",
+    "oracle_factor": 2,
+    "warm_us": [
+      30.33331818181818,
+      14.335255813953488,
+      25.293545454545455,
+      27.683139534883722
+    ],
+    "incumbent": {
+      "factor": 2,
+      "effect_mae": 0.5132275090629513
+    },
+    "refit": {
+      "factor": 2,
+      "effect_mae": 0.21922687839740984
+    }
+  },
+  {
+    "workload": "adaptive_spike_recovery",
+    "variant": "large",
+    "trip_count": 255,
+    "family": "spiking_threshold_recovery",
+    "oracle_factor": 1,
+    "warm_us": [
+      35.02018181818182,
+      34.85678125,
+      36.55,
+      41.17446875
+    ],
+    "incumbent": {
+      "factor": 1,
+      "effect_mae": 0.10002096256429803
+    },
+    "refit": {
+      "factor": 4,
+      "effect_mae": 0.2159761271181825
+    }
+  }
+]

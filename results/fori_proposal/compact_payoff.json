@@ -1,0 +1,15 @@
+{
+  "version": "de057f1bfb882774ed1b5d79f7caba8f4565e2a9c992757acc3d5887e80aff8d",
+  "source_version": "d6237149afe8f6ee9f802c310c5f35a73910d0e8359d23aa9c3100dd50ff21d2",
+  "cost_error_calibration": "results/fori_regret/payoff.json",
+  "model_load_shared_across": 6,
+  "median_load_ms": 6.314416,
+  "policy": {
+    "warm_effect_margin": 0.09446430434653719,
+    "baseline_warm_margin": 1.5234068682537192,
+    "extra_cold_ms": 8.249812564782026,
+    "candidate_cold_ms": 13.532890958206451,
+    "decision_ms": 7.003,
+    "model_load_ms": 1.0524026666666666
+  }
+}

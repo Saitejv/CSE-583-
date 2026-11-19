@@ -1,0 +1,22 @@
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+/Users/saitejvelaga/Documents/umich/CSE583/project/benchmarks/corpus/static_experiment.py:148: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  elif (not g.correct.astype(str).str.lower().eq('true').all() or g.error.fillna('').ne('').any()
+pilot {'zero': 0.3587, 'factor_median': 0.3848, 'frozen': 0.3367, 'warm_refit': 0.4596, 'structure': 0.6625, 'indices': 0.5077, 'all_static': 0.6856} promising False
+augmented {'zero': 0.3461, 'factor_median': 0.3881, 'frozen': 0.3093, 'warm_refit': 0.4591, 'structure': 0.7394, 'indices': 0.5019, 'all_static': 0.8127} promising False

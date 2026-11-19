@@ -1,0 +1,495 @@
+{
+  "configurations": [
+    {
+      "workload": "order_book_depth",
+      "family": "indexed_order_depth",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "7cf335c066025e48",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "order_book_depth",
+      "family": "indexed_order_depth",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "9b2c0e9d38f02a33",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "order_book_depth",
+      "family": "indexed_order_depth",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "c2f387039f633eff",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "order_book_depth",
+      "family": "indexed_order_depth",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "351c4fa06f1b878b",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "halftone_modulator",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "7c507cb7ac8aa472",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "halftone_modulator",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "94a78f0182639b21",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "halftone_modulator",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "67e0e87c94caea87",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "halftone_modulator",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "1aa99742f51b8159",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "tile_stipple",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "45cbd8d473e1ba65",
+      "author": "agy_train"
+    },
+    {
+      "workload": "tile_stipple",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "830f526b7514fb12",
+      "author": "agy_train"
+    },
+    {
+      "workload": "tile_stipple",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "7d4850e9bf8abae4",
+      "author": "agy_train"
+    },
+    {
+      "workload": "tile_stipple",
+      "family": "quantization_error_feedback",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "1864671c30356ac2",
+      "author": "agy_train"
+    },
+    {
+      "workload": "fog_transmittance",
+      "family": "optical_compositing",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "3b24cbab09613894",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "fog_transmittance",
+      "family": "optical_compositing",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "d61fb4546094269f",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "fog_transmittance",
+      "family": "optical_compositing",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "280ef9aa014e6c17",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "fog_transmittance",
+      "family": "optical_compositing",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "00f77015ab564a67",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "tournament_rating",
+      "family": "paired_rating_updates",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "3bf8ce93d85b96bc",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "tournament_rating",
+      "family": "paired_rating_updates",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "b6f9d7e4cefbd528",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "tournament_rating",
+      "family": "paired_rating_updates",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "fffc1729126921cc",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "tournament_rating",
+      "family": "paired_rating_updates",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "c36e7e5b0fddefd9",
+      "author": "opencode_train"
+    },
+    {
+      "workload": "soft_kmeans",
+      "family": "online_centroid_assignment",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "c1fc261a88f13b2a",
+      "author": "agy_train"
+    },
+    {
+      "workload": "soft_kmeans",
+      "family": "online_centroid_assignment",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "a3b65ee422eb9460",
+      "author": "agy_train"
+    },
+    {
+      "workload": "soft_kmeans",
+      "family": "online_centroid_assignment",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "248c87c619d62e7e",
+      "author": "agy_train"
+    },
+    {
+      "workload": "soft_kmeans",
+      "family": "online_centroid_assignment",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "f3efb403d3d6c8c4",
+      "author": "agy_train"
+    },
+    {
+      "workload": "traffic_signal_debt",
+      "family": "cyclic_pressure_scheduler",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "c809410f366ff996",
+      "author": "agy_train"
+    },
+    {
+      "workload": "traffic_signal_debt",
+      "family": "cyclic_pressure_scheduler",
+      "partition": "train",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "bce469deb9ce155a",
+      "author": "agy_train"
+    },
+    {
+      "workload": "traffic_signal_debt",
+      "family": "cyclic_pressure_scheduler",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "797525b236213c25",
+      "author": "agy_train"
+    },
+    {
+      "workload": "traffic_signal_debt",
+      "family": "cyclic_pressure_scheduler",
+      "partition": "train",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "73064db161e2bfe7",
+      "author": "agy_train"
+    },
+    {
+      "workload": "queue_workload",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "2c3415154405ce81",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "queue_workload",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "c5e93b6aade8b9b3",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "queue_workload",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "3392841f2e2835dc",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "queue_workload",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "4cfeaa415a68e4a1",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "inventory_lost_sales",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "b6e5b8a61196958e",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "inventory_lost_sales",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "451ed583cbc7ba5a",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "inventory_lost_sales",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "326b776961c198a7",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "inventory_lost_sales",
+      "family": "reflected_resource_balance",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "7f87264e6e633b81",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "warranty_ladder",
+      "family": "age_cohort_survival",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "0c839e0f1a0c6e36",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "warranty_ladder",
+      "family": "age_cohort_survival",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "1f6cc43043b19394",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "warranty_ladder",
+      "family": "age_cohort_survival",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "105c2ca571730914",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "warranty_ladder",
+      "family": "age_cohort_survival",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "dbfa1559842f94df",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "bitplane_motion",
+      "family": "rolling_bit_motion",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "b6479de4d975b506",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "bitplane_motion",
+      "family": "rolling_bit_motion",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "eae75486b41852b0",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "bitplane_motion",
+      "family": "rolling_bit_motion",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "73645de1b2133343",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "bitplane_motion",
+      "family": "rolling_bit_motion",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "822d25174c8d10f1",
+      "author": "opencode_eval"
+    },
+    {
+      "workload": "flood_duration",
+      "family": "threshold_excursion_duration",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "e17b74483812e1a3",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "flood_duration",
+      "family": "threshold_excursion_duration",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "0e7028ff175f0a68",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "flood_duration",
+      "family": "threshold_excursion_duration",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "e3e27a26b0bb53bc",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "flood_duration",
+      "family": "threshold_excursion_duration",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "ef31572706387194",
+      "author": "agy_eval"
+    },
+    {
+      "workload": "adaptive_unmixing",
+      "family": "nonnegative_spectral_unmixing",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 255,
+      "body_hash": "890f946f1a8fa216",
+      "author": "opencode_unmixing"
+    },
+    {
+      "workload": "adaptive_unmixing",
+      "family": "nonnegative_spectral_unmixing",
+      "partition": "eval",
+      "variant": "small",
+      "trip_count": 1024,
+      "body_hash": "890f946f1a8fa216",
+      "author": "opencode_unmixing"
+    },
+    {
+      "workload": "adaptive_unmixing",
+      "family": "nonnegative_spectral_unmixing",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 255,
+      "body_hash": "17d9d96893a92345",
+      "author": "opencode_unmixing"
+    },
+    {
+      "workload": "adaptive_unmixing",
+      "family": "nonnegative_spectral_unmixing",
+      "partition": "eval",
+      "variant": "large",
+      "trip_count": 1024,
+      "body_hash": "17d9d96893a92345",
+      "author": "opencode_unmixing"
+    }
+  ],
+  "sha256": {
+    "agy_eval.py": "f5ad3b834ecfa4e1239554dea86e4ce0cefa3aab6280bdcdaf234173e48e60f8",
+    "agy_train.py": "de335ef48976376ef62eb1724c6df49c148c29f1440c3a115c0097fbd5f7db49",
+    "opencode_eval.py": "60b25bfa1a448df738a518269eea1c165f5e593c5cc7d3f46b27003f93f4ddf2",
+    "opencode_train.py": "d07bf153c45a5e2e3143ded7398c38344cbb9be640c9aeca8fc15fc5b56bd0c7",
+    "opencode_unmixing.py": "41dac7d771837b72715069f5b36b37456da347c27039604fb925ccedf816c9d0",
+    "workloads.py": "6daf63aed013e26e10e58f0c9f1e92a93b41669e08ee296883441fb32affcbdc"
+  },
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "sizes": [
+    "small",
+    "large"
+  ],
+  "trips": [
+    255,
+    1024
+  ],
+  "repeats": 3
+}

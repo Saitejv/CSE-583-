@@ -42,6 +42,10 @@ help:
 	@echo "make corpus-manifest  regenerate benchmarks/corpus/manifest.json"
 	@echo "make corpus-smoke     run the 96-row smoke tier through the CPU harness"
 	@echo "make corpus-full      run the full expanded corpus (not for a quick check)"
+	@echo "make phase4-demo      run the compile-once CPU reduction demo"
+	@echo "make phase4-evaluate  collect fresh isolated CPU deployment timings"
+	@echo "make phase5-demo      run the final reductions and learned wrapper demo"
+	@echo "make phase5-replay    reproduce the headline tables from recorded CPU runs"
 
 test:
 	$(PYTHON) -m pytest -q
@@ -112,6 +116,24 @@ corpus-smoke:
 corpus-full:
 	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.corpus.sweep --tier full \
 		--out results/raw/corpus_full_$(BACKEND)_$(DATE).csv
+
+.PHONY: corpus-pilot-report
+corpus-pilot-report:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.corpus.pilot
+
+.PHONY: phase4-demo phase4-evaluate
+phase4-demo:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.phase4 --demo
+
+phase4-evaluate:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.phase4
+
+.PHONY: phase5-demo phase5-replay
+phase5-demo:
+	JAX_PLATFORMS=cpu $(PYTHON) -m benchmarks.phase5 demo
+
+phase5-replay:
+	$(PYTHON) -m benchmarks.phase5 replay
 
 clean-results:
 	rm -f results/raw/sweep_$(BACKEND)_$(DATE)*.csv

@@ -1,0 +1,281 @@
+{
+  "excluded_bodies": {},
+  "fold_mae": {
+    "dependent_indexing": {
+      "factor_median": 1.4967549985644497,
+      "frozen": 0.23571195444053986,
+      "warm_refit": 0.4535233154507104,
+      "zero": 0.16607134877650587
+    },
+    "indirect_gather+indirect_scatter+locality_access": {
+      "factor_median": 0.4809488035005751,
+      "frozen": 0.1850172854651374,
+      "warm_refit": 0.8268088137872539,
+      "zero": 0.10490559190781677
+    },
+    "stateful_recurrence": {
+      "factor_median": 0.4194137644231352,
+      "frozen": 0.3364069276304405,
+      "warm_refit": 0.21198654582892418,
+      "zero": 0.4784441037282156
+    },
+    "stencil": {
+      "factor_median": 2.0477199642726887,
+      "frozen": 1.821496147025167,
+      "warm_refit": 1.8105782568506017,
+      "zero": 1.952132492129189
+    }
+  },
+  "folds": {
+    "dependent_indexing": {
+      "test": [
+        [
+          "dep_bucket_stateful",
+          "b64",
+          1023
+        ],
+        [
+          "dep_linked_list",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_pointer_chase",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_two_level_indirection",
+          "large",
+          1023
+        ]
+      ],
+      "train": [
+        [
+          "locality_block_reuse",
+          "hot8x32",
+          1023
+        ],
+        [
+          "scatter_min_update",
+          "s1024",
+          1023
+        ],
+        [
+          "stateful_coupled_oscillator",
+          "n8",
+          1023
+        ],
+        [
+          "stencil_anisotropic_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_diffusion_1d_fori",
+          "n128",
+          1023
+        ],
+        [
+          "stencil_five_point_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_nine_point_2d",
+          "n16",
+          1023
+        ]
+      ]
+    },
+    "indirect_gather+indirect_scatter+locality_access": {
+      "test": [
+        [
+          "locality_block_reuse",
+          "hot8x32",
+          1023
+        ],
+        [
+          "scatter_min_update",
+          "s1024",
+          1023
+        ]
+      ],
+      "train": [
+        [
+          "dep_bucket_stateful",
+          "b64",
+          1023
+        ],
+        [
+          "dep_linked_list",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_pointer_chase",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_two_level_indirection",
+          "large",
+          1023
+        ],
+        [
+          "stateful_coupled_oscillator",
+          "n8",
+          1023
+        ],
+        [
+          "stencil_anisotropic_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_diffusion_1d_fori",
+          "n128",
+          1023
+        ],
+        [
+          "stencil_five_point_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_nine_point_2d",
+          "n16",
+          1023
+        ]
+      ]
+    },
+    "stateful_recurrence": {
+      "test": [
+        [
+          "stateful_coupled_oscillator",
+          "n8",
+          1023
+        ]
+      ],
+      "train": [
+        [
+          "dep_bucket_stateful",
+          "b64",
+          1023
+        ],
+        [
+          "dep_linked_list",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_pointer_chase",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_two_level_indirection",
+          "large",
+          1023
+        ],
+        [
+          "locality_block_reuse",
+          "hot8x32",
+          1023
+        ],
+        [
+          "scatter_min_update",
+          "s1024",
+          1023
+        ],
+        [
+          "stencil_anisotropic_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_diffusion_1d_fori",
+          "n128",
+          1023
+        ],
+        [
+          "stencil_five_point_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_nine_point_2d",
+          "n16",
+          1023
+        ]
+      ]
+    },
+    "stencil": {
+      "test": [
+        [
+          "stencil_anisotropic_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_diffusion_1d_fori",
+          "n128",
+          1023
+        ],
+        [
+          "stencil_five_point_2d",
+          "n16",
+          1023
+        ],
+        [
+          "stencil_nine_point_2d",
+          "n16",
+          1023
+        ]
+      ],
+      "train": [
+        [
+          "dep_bucket_stateful",
+          "b64",
+          1023
+        ],
+        [
+          "dep_linked_list",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_pointer_chase",
+          "n1024",
+          1023
+        ],
+        [
+          "dep_two_level_indirection",
+          "large",
+          1023
+        ],
+        [
+          "locality_block_reuse",
+          "hot8x32",
+          1023
+        ],
+        [
+          "scatter_min_update",
+          "s1024",
+          1023
+        ],
+        [
+          "stateful_coupled_oscillator",
+          "n8",
+          1023
+        ]
+      ]
+    }
+  },
+  "mae": {
+    "factor_median": 1.414473747524804,
+    "frozen": 0.8122976276748676,
+    "warm_refit": 0.9929100420553345,
+    "zero": 0.8328246046515116
+  }
+}

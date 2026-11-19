@@ -1,0 +1,386 @@
+[
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 1024,
+    "repeat": 0,
+    "old_us": 181.64375,
+    "new_us": 181.32295000000002
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 255,
+    "repeat": 0,
+    "old_us": 217.11029411764704,
+    "new_us": 209.21811764705882
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 255,
+    "repeat": 0,
+    "old_us": 89.99435135135134,
+    "new_us": 87.72524324324324
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 1023,
+    "repeat": 0,
+    "old_us": 694.3611666666666,
+    "new_us": 657.7015
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 1024,
+    "repeat": 0,
+    "old_us": 607.75,
+    "new_us": 603.8611666666666
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 256,
+    "repeat": 0,
+    "old_us": 196.83768421052633,
+    "new_us": 196.92326315789475
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 1023,
+    "repeat": 0,
+    "old_us": 212.40273333333334,
+    "new_us": 183.61666666666665
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 256,
+    "repeat": 0,
+    "old_us": 76.98189130434783,
+    "new_us": 76.62680434782608
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 1023,
+    "repeat": 1,
+    "old_us": 696.0833333333334,
+    "new_us": 658.6736666666666
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 256,
+    "repeat": 1,
+    "old_us": 197.36842105263156,
+    "new_us": 199.36842105263156
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 1024,
+    "repeat": 1,
+    "old_us": 611.993,
+    "new_us": 597.7708333333334
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 1023,
+    "repeat": 1,
+    "old_us": 212.35535294117648,
+    "new_us": 186.6470588235294
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 1024,
+    "repeat": 1,
+    "old_us": 176.7817619047619,
+    "new_us": 177.4007619047619
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 255,
+    "repeat": 1,
+    "old_us": 90.26644736842105,
+    "new_us": 83.09868421052632
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 256,
+    "repeat": 1,
+    "old_us": 80.17463829787233,
+    "new_us": 77.17287234042553
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 255,
+    "repeat": 1,
+    "old_us": 217.8995294117647,
+    "new_us": 208.951
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 1023,
+    "repeat": 2,
+    "old_us": 700.132,
+    "new_us": 645.8471666666667
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 255,
+    "repeat": 2,
+    "old_us": 211.5808823529412,
+    "new_us": 207.21570588235295
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 1023,
+    "repeat": 2,
+    "old_us": 206.17984210526313,
+    "new_us": 184.10305263157895
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 1024,
+    "repeat": 2,
+    "old_us": 182.7840909090909,
+    "new_us": 180.51704545454544
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 256,
+    "repeat": 2,
+    "old_us": 77.02336585365855,
+    "new_us": 77.21241463414634
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 256,
+    "repeat": 2,
+    "old_us": 190.0771,
+    "new_us": 191.54375
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "large",
+    "trip": 1024,
+    "repeat": 2,
+    "old_us": 576.6666666666666,
+    "new_us": 579.0833333333334
+  },
+  {
+    "workload": "eval_app_ct_backprojection_step",
+    "variant": "small",
+    "trip": 255,
+    "repeat": 2,
+    "old_us": 90.88414634146342,
+    "new_us": 85.4451219512195
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 1024,
+    "repeat": 0,
+    "old_us": 429.90625,
+    "new_us": 189.25
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 255,
+    "repeat": 0,
+    "old_us": 571.8333333333334,
+    "new_us": 326.875
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 255,
+    "repeat": 0,
+    "old_us": 119.59945161290322,
+    "new_us": 60.818548387096776
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 1023,
+    "repeat": 0,
+    "old_us": 2242.7083333333335,
+    "new_us": 1243.4166666666667
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 1024,
+    "repeat": 0,
+    "old_us": 2242.5763333333334,
+    "new_us": 1242.0971666666667
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 256,
+    "repeat": 0,
+    "old_us": 578.3958333333334,
+    "new_us": 329.7638333333333
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 1023,
+    "repeat": 0,
+    "old_us": 425.75922222222226,
+    "new_us": 187.31488888888887
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 256,
+    "repeat": 0,
+    "old_us": 120.17338709677419,
+    "new_us": 60.974483870967745
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 1023,
+    "repeat": 1,
+    "old_us": 2246.9375,
+    "new_us": 1247.3401666666668
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 256,
+    "repeat": 1,
+    "old_us": 576.5903333333333,
+    "new_us": 329.4306666666667
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 1024,
+    "repeat": 1,
+    "old_us": 2246.2638333333334,
+    "new_us": 1246.6943333333334
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 1023,
+    "repeat": 1,
+    "old_us": 428.47222222222223,
+    "new_us": 188.7592222222222
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 1024,
+    "repeat": 1,
+    "old_us": 429.176,
+    "new_us": 189.56944444444443
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 255,
+    "repeat": 1,
+    "old_us": 118.83467741935483,
+    "new_us": 60.307806451612905
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 256,
+    "repeat": 1,
+    "old_us": 119.91935483870968,
+    "new_us": 60.16264516129033
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 255,
+    "repeat": 1,
+    "old_us": 574.5416666666666,
+    "new_us": 327.993
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 1023,
+    "repeat": 2,
+    "old_us": 2235.361,
+    "new_us": 1239.9791666666667
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 255,
+    "repeat": 2,
+    "old_us": 574.007,
+    "new_us": 327.1181666666667
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 1023,
+    "repeat": 2,
+    "old_us": 428.54633333333334,
+    "new_us": 188.5
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 1024,
+    "repeat": 2,
+    "old_us": 428.72222222222223,
+    "new_us": 189.18977777777778
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 256,
+    "repeat": 2,
+    "old_us": 119.48387096774194,
+    "new_us": 60.194903225806456
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 256,
+    "repeat": 2,
+    "old_us": 580.3958333333334,
+    "new_us": 330.7015
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "large",
+    "trip": 1024,
+    "repeat": 2,
+    "old_us": 2244.9098333333336,
+    "new_us": 1244.9653333333333
+  },
+  {
+    "workload": "eval_write_waveguide_mesh",
+    "variant": "small",
+    "trip": 255,
+    "repeat": 2,
+    "old_us": 119.07929032258065,
+    "new_us": 60.38574193548387
+  }
+]

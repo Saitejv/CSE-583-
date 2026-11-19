@@ -1,0 +1,21 @@
+{
+  "hardware": "Apple M2",
+  "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+  "backend": "cpu",
+  "python": "3.13.2",
+  "jax": "0.12.0.1",
+  "jaxlib": "0.12.0.1",
+  "reduction_repeats": 7,
+  "learned_repeats": 3,
+  "sha256_before_measurement": {
+    "benchmarks/phase4.py": "e7030e69e9e99ba94cf8856317eeb3b7bd76c41fd941162ae5880d5c834fb191",
+    "models/cost_cpu_recovery_v1.json": "e1f88ef91875f4712ea848f31394000a78cbe079a0c4a0ed32cd3982615b98eb",
+    "src/jax_unroll/library_kernels.py": "ffb47922482a4cd1a8759eec30aac0117a0a44ae154dbbd5c003a9a55123dd05",
+    "src/jax_unroll/auto_loop.py": "42be9297f86608041fa39da2c837f3f1cf5a50d6bc12c3d928c5a1e1c4e6605c",
+    "src/jax_unroll/selector.py": "348e02068b3e9505055a4bf6c517820927f15a729012b8d4d148430b837b2025",
+    "src/jax_unroll/features.py": "8ca6b40cb66ad86db5e8b9429c09d20a90cb99c64a00231e105164bf4baac5fc",
+    "src/jax_unroll/model.py": "93c47ec4094fe5a9edecc0902544544f13e5edfe54f1ea794545bc5e1c68e855",
+    "src/jax_unroll/baselines.py": "ee9d8854624a30d83cd421dd68e0959105c03dc19a3f8af5fbb0b31f208d6944",
+    "src/jax_unroll/schema.py": "9f988ea69f7c0cf54328efcabda4cc11aa29b86470b38b2eef71852c5f53f37c"
+  }
+}

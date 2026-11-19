@@ -1,0 +1,142 @@
+[
+  {
+    "body": "matched_gather",
+    "factor": 1,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_gather",
+    "factor": 2,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_gather",
+    "factor": 4,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_gather",
+    "factor": 8,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_gather",
+    "factor": 1,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_gather",
+    "factor": 2,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_gather",
+    "factor": 4,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_gather",
+    "factor": 8,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 1,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 2,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 4,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 8,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 1,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 2,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 4,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_scatter_add",
+    "factor": 8,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1024
+  },
+  {
+    "body": "matched_scatter_min",
+    "factor": 1,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_scatter_min",
+    "factor": 2,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_scatter_min",
+    "factor": 4,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  },
+  {
+    "body": "matched_scatter_min",
+    "factor": 8,
+    "identical_features": true,
+    "identical_jaxpr": true,
+    "trip_count": 1023
+  }
+]

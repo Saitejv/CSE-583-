@@ -1,0 +1,14 @@
+.venv/bin/python -m benchmarks.sweep --backend cpu \
+		--out results/raw/sweep_cpu_2026-11-17_fori_dev_quick.csv \
+		--families recurrence,elementwise --trip-counts 16,100 --factors 1,8 \
+		--repeats 1 --limit 12 --sample-budget-ms 50 --r-calls 5
+sweep: 8 measurements, backend=cpu, repeats=1, out=results/raw/sweep_cpu_2026-11-17_fori_dev_quick.csv
+[1/8] r0 scalar_recurrence/scalar T=100 u=8 warm=14.084 us child=2.1s
+[2/8] r0 elementwise_sine/n1024 T=16 u=1 warm=72.104 us child=1.0s
+[3/8] r0 scalar_recurrence/scalar T=16 u=1 warm=9.625 us child=0.8s
+[4/8] r0 elementwise_sine/n1024 T=100 u=1 warm=313.5 us child=1.0s
+[5/8] r0 elementwise_sine/n1024 T=100 u=8 warm=767.187 us child=0.9s
+[6/8] r0 elementwise_sine/n1024 T=16 u=8 warm=143.917 us child=0.8s
+[7/8] r0 scalar_recurrence/scalar T=100 u=1 warm=11.916 us child=0.9s
+[8/8] r0 scalar_recurrence/scalar T=16 u=8 warm=11.209 us child=0.9s
+sweep: wrote 8 rows to results/raw/sweep_cpu_2026-11-17_fori_dev_quick.csv in 0.1 min (0 errors, 8 correctness passes)

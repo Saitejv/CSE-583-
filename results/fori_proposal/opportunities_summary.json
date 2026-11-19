@@ -1,0 +1,1033 @@
+{
+  "direct": {
+    "20000": {
+      "all": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 4143.51582,
+            "pooled_ms_excluding_load": 4143.51582,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "compact": {
+            "pooled_ms": 3822.915653666667,
+            "pooled_ms_excluding_load": 3815.379403333334,
+            "pooled_speedup": 1.0838627360312898,
+            "geometric_speedup": 1.0732175762650542,
+            "wins_over_5pct": 6,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.120696056101772,
+            "median_decision_ms": 2.7144375
+          },
+          "oracle": {
+            "pooled_ms": 3713.999276666666,
+            "pooled_ms_excluding_load": 3713.999276666666,
+            "pooled_speedup": 1.1156479878797465,
+            "geometric_speedup": 1.0869978193019476,
+            "wins_over_5pct": 6,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 1.117081908112875,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 4143.51582,
+            "pooled_ms_excluding_load": 4143.51582,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "compact": {
+            "pooled_ms": 3822.915653666667,
+            "pooled_ms_excluding_load": 3815.379403333334,
+            "pooled_speedup": 1.0838627360312898,
+            "geometric_speedup": 1.0732175762650542,
+            "wins_over_5pct": 6,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.120696056101772,
+            "median_decision_ms": 2.7144375
+          },
+          "oracle": {
+            "pooled_ms": 3713.999276666666,
+            "pooled_ms_excluding_load": 3713.999276666666,
+            "pooled_speedup": 1.1156479878797465,
+            "geometric_speedup": 1.0869978193019476,
+            "wins_over_5pct": 6,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 1.117081908112875,
+            "median_decision_ms": 0.0
+          }
+        }
+      },
+      "fresh_with_opportunity": {
+        "configurations": 12,
+        "arms": {
+          "native": {
+            "pooled_ms": 4143.51582,
+            "pooled_ms_excluding_load": 4143.51582,
+            "pooled_speedup": 1.0,
+            "geometric_speedup": 1.0,
+            "wins_over_5pct": 0,
+            "slowdowns_over_3pct": 0,
+            "worst_time_ratio": 1.0,
+            "median_decision_ms": 0.0
+          },
+          "compact": {
+            "pooled_ms": 3822.915653666667,
+            "pooled_ms_excluding_load": 3815.379403333334,
+            "pooled_speedup": 1.0838627360312898,
+            "geometric_speedup": 1.0732175762650542,
+            "wins_over_5pct": 6,
+            "slowdowns_over_3pct": 2,
+            "worst_time_ratio": 1.120696056101772,
+            "median_decision_ms": 2.7144375
+          },
+          "oracle": {
+            "pooled_ms": 3713.999276666666,
+            "pooled_ms_excluding_load": 3713.999276666666,
+            "pooled_speedup": 1.1156479878797465,
+            "geometric_speedup": 1.0869978193019476,
+            "wins_over_5pct": 6,
+            "slowdowns_over_3pct": 3,
+            "worst_time_ratio": 1.117081908112875,
+            "median_decision_ms": 0.0
+          }
+        }
+      }
+    }
+  },
+  "estimated_break_even_from_long_horizon": {
+    "all": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 4681,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0076207645241373,
+            "factor": 2,
+            "estimated_break_even": 22821
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.120696056101772,
+            "factor": 8,
+            "estimated_break_even": 66161
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8227610551197033,
+            "factor": 4,
+            "estimated_break_even": 2375
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6847521601965602,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0668546876491527,
+            "factor": 2,
+            "estimated_break_even": 834547
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9137993090911469,
+            "factor": 2,
+            "estimated_break_even": 2986
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9079692490702923,
+            "factor": 2,
+            "estimated_break_even": 2610
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9911981706095216,
+            "factor": 2,
+            "estimated_break_even": 17358
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.970607106441902,
+            "factor": 4,
+            "estimated_break_even": 15322
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.858217203120215,
+            "factor": 2,
+            "estimated_break_even": 1590
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0029686603663295,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9184146842099998,
+            "factor": 2,
+            "estimated_break_even": 1396
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 5968,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0791908707905309,
+            "factor": 8,
+            "estimated_break_even": 33151
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1032386462357933,
+            "factor": 8,
+            "estimated_break_even": 60155
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.7670501024137478,
+            "factor": 8,
+            "estimated_break_even": 2501
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6243558696119483,
+            "factor": 4,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.117081908112875,
+            "factor": 8,
+            "estimated_break_even": 60995
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8813725642984676,
+            "factor": 8,
+            "estimated_break_even": 7282
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9262864266750649,
+            "factor": 2,
+            "estimated_break_even": 902
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9914424148981984,
+            "factor": 8,
+            "estimated_break_even": 18627
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0127001673982625,
+            "factor": 8,
+            "estimated_break_even": 21524
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8061146631919859,
+            "factor": 8,
+            "estimated_break_even": 2761
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9649511543367264,
+            "factor": 2,
+            "estimated_break_even": 7982
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9048818813261987,
+            "factor": 2,
+            "estimated_break_even": 781
+          }
+        ]
+      }
+    },
+    "fresh": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 4681,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0076207645241373,
+            "factor": 2,
+            "estimated_break_even": 22821
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.120696056101772,
+            "factor": 8,
+            "estimated_break_even": 66161
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8227610551197033,
+            "factor": 4,
+            "estimated_break_even": 2375
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6847521601965602,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0668546876491527,
+            "factor": 2,
+            "estimated_break_even": 834547
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9137993090911469,
+            "factor": 2,
+            "estimated_break_even": 2986
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9079692490702923,
+            "factor": 2,
+            "estimated_break_even": 2610
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9911981706095216,
+            "factor": 2,
+            "estimated_break_even": 17358
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.970607106441902,
+            "factor": 4,
+            "estimated_break_even": 15322
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.858217203120215,
+            "factor": 2,
+            "estimated_break_even": 1590
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0029686603663295,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9184146842099998,
+            "factor": 2,
+            "estimated_break_even": 1396
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 5968,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0791908707905309,
+            "factor": 8,
+            "estimated_break_even": 33151
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1032386462357933,
+            "factor": 8,
+            "estimated_break_even": 60155
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.7670501024137478,
+            "factor": 8,
+            "estimated_break_even": 2501
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6243558696119483,
+            "factor": 4,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.117081908112875,
+            "factor": 8,
+            "estimated_break_even": 60995
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8813725642984676,
+            "factor": 8,
+            "estimated_break_even": 7282
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9262864266750649,
+            "factor": 2,
+            "estimated_break_even": 902
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9914424148981984,
+            "factor": 8,
+            "estimated_break_even": 18627
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0127001673982625,
+            "factor": 8,
+            "estimated_break_even": 21524
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8061146631919859,
+            "factor": 8,
+            "estimated_break_even": 2761
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9649511543367264,
+            "factor": 2,
+            "estimated_break_even": 7982
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9048818813261987,
+            "factor": 2,
+            "estimated_break_even": 781
+          }
+        ]
+      }
+    },
+    "fresh_with_opportunity": {
+      "native": {
+        "pooled_estimated_break_even": null,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 1.0,
+            "factor": 1,
+            "estimated_break_even": null
+          }
+        ]
+      },
+      "compact": {
+        "pooled_estimated_break_even": 4681,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0076207645241373,
+            "factor": 2,
+            "estimated_break_even": 22821
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.120696056101772,
+            "factor": 8,
+            "estimated_break_even": 66161
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8227610551197033,
+            "factor": 4,
+            "estimated_break_even": 2375
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6847521601965602,
+            "factor": 2,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0668546876491527,
+            "factor": 2,
+            "estimated_break_even": 834547
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9137993090911469,
+            "factor": 2,
+            "estimated_break_even": 2986
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9079692490702923,
+            "factor": 2,
+            "estimated_break_even": 2610
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9911981706095216,
+            "factor": 2,
+            "estimated_break_even": 17358
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.970607106441902,
+            "factor": 4,
+            "estimated_break_even": 15322
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.858217203120215,
+            "factor": 2,
+            "estimated_break_even": 1590
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0029686603663295,
+            "factor": 1,
+            "estimated_break_even": null
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9184146842099998,
+            "factor": 2,
+            "estimated_break_even": 1396
+          }
+        ]
+      },
+      "oracle": {
+        "pooled_estimated_break_even": 5968,
+        "configurations": [
+          {
+            "workload": "compensated_charge",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 1.0791908707905309,
+            "factor": 8,
+            "estimated_break_even": 33151
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.1032386462357933,
+            "factor": 8,
+            "estimated_break_even": 60155
+          },
+          {
+            "workload": "compensated_charge",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.7670501024137478,
+            "factor": 8,
+            "estimated_break_even": 2501
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.6243558696119483,
+            "factor": 4,
+            "estimated_break_even": 1
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.117081908112875,
+            "factor": 8,
+            "estimated_break_even": 60995
+          },
+          {
+            "workload": "lane_error_moments",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8813725642984676,
+            "factor": 8,
+            "estimated_break_even": 7282
+          },
+          {
+            "workload": "packed_word_digest",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9262864266750649,
+            "factor": 2,
+            "estimated_break_even": 902
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "large",
+            "trip_count": 255,
+            "time_ratio": 0.9914424148981984,
+            "factor": 8,
+            "estimated_break_even": 18627
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 1.0127001673982625,
+            "factor": 8,
+            "estimated_break_even": 21524
+          },
+          {
+            "workload": "slew_limited_actuator",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.8061146631919859,
+            "factor": 8,
+            "estimated_break_even": 2761
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 255,
+            "time_ratio": 0.9649511543367264,
+            "factor": 2,
+            "estimated_break_even": 7982
+          },
+          {
+            "workload": "staggered_charge_deposit",
+            "variant": "small",
+            "trip_count": 1024,
+            "time_ratio": 0.9048818813261987,
+            "factor": 2,
+            "estimated_break_even": 781
+          }
+        ]
+      }
+    }
+  },
+  "median_load_ms": {
+    "native": 0.0,
+    "compact": 7.817709,
+    "oracle": 0.0
+  }
+}

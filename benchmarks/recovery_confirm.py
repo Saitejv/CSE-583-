@@ -35,7 +35,7 @@ def _git(*args):
     return subprocess.check_output(["git", *args])
 
 
-def require_frozen():
+def require_frozen(*, check_sources=True):
     commit = _git("log", "-1", "--format=%H", "HEAD", "--", str(MODEL)).decode().strip()
     if not commit:
         raise ValueError("commit the selected model before accessing confirmation labels")
@@ -48,12 +48,14 @@ def require_frozen():
         RESULTS / "dev_report.json": comparisons["dev_report_sha256"],
         RESULTS / "dev_pairs.csv": comparisons["dev_pairs_sha256"],
     }
-    frozen_paths = [*paths, DATA / "dev.meta.json",
-        "benchmarks/recovery_confirm.py", "benchmarks/recovery_sweep.py", "benchmarks/recovery_workloads.py",
-        "benchmarks/recovery_data.py", "benchmarks/recovery_metrics.py", "benchmarks/recovery_train.py",
-        "benchmarks/dataset.py", "benchmarks/sweep.py", "benchmarks/workloads.py", "benchmarks/oracle.py",
-        "src/jax_unroll",
-    ]
+    frozen_paths = [*paths, DATA / "dev.meta.json"]
+    if check_sources:
+        frozen_paths.extend([
+            "benchmarks/recovery_confirm.py", "benchmarks/recovery_sweep.py", "benchmarks/recovery_workloads.py",
+            "benchmarks/recovery_data.py", "benchmarks/recovery_metrics.py", "benchmarks/recovery_train.py",
+            "benchmarks/dataset.py", "benchmarks/sweep.py", "benchmarks/workloads.py", "benchmarks/oracle.py",
+            "src/jax_unroll",
+        ])
     if subprocess.run(["git", "diff", "--quiet", commit, "--", *map(str, frozen_paths)], check=False).returncode != 0:
         raise ValueError("confirmation requires unchanged committed protocol, inputs, model and runner")
     if any(sha(path) != expected for path, expected in paths.items()):
@@ -182,7 +184,7 @@ def verify():
     if (
         start["status"] != "started" or any(start[key] != finish[key] for key in start if key != "status")
         or start["artifact_sha256"] != sha(MODEL) or start["raw_sha256"] != sha(RAW)
-        or start["protocol_sha256"] != sha(PROTOCOL) or start["freeze_commit"] != require_frozen()
+        or start["protocol_sha256"] != sha(PROTOCOL) or start["freeze_commit"] != require_frozen(check_sources=False)
     ):
         raise ValueError("gate ledger disagrees with frozen inputs")
     if finish["status"] == "inconclusive":

@@ -1,0 +1,92 @@
+{
+  "source_sha256": "215bd89515d6a549c7bbf485d45d4dc37851229989484aeebc7434564f9f1644",
+  "cases": [
+    {
+      "workload": "schmitt_edges",
+      "family": "schmitt_edges",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "schmitt_edges",
+      "family": "schmitt_edges",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "polynomial_value_derivative",
+      "family": "polynomial_value_derivative",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "polynomial_value_derivative",
+      "family": "polynomial_value_derivative",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "reservoir_balance",
+      "family": "reservoir_balance",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "reservoir_balance",
+      "family": "reservoir_balance",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "triangle_area",
+      "family": "triangle_area",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "triangle_area",
+      "family": "triangle_area",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "emission_forward",
+      "family": "emission_forward",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "emission_forward",
+      "family": "emission_forward",
+      "variant": "large",
+      "trip_count": 255
+    },
+    {
+      "workload": "union_labels",
+      "family": "union_labels",
+      "variant": "small",
+      "trip_count": 1024
+    },
+    {
+      "workload": "union_labels",
+      "family": "union_labels",
+      "variant": "large",
+      "trip_count": 255
+    }
+  ],
+  "horizons": [
+    1,
+    300,
+    5000,
+    20000
+  ],
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "repeats": 3,
+  "opportunity": "warm median paired gain >=1.05 and win in every repeat",
+  "budget_ms": 125
+}

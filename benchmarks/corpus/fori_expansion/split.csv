@@ -1,0 +1,137 @@
+workload,family,related_group,partition,mechanism,tier,origin,reason
+conv_dense_matvec,dense_linear_algebra,dense_matvec,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_elementwise_sine,elementwise,elementwise_sine,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_indexed_update,indexed_memory,indexed_update,historical_eval,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_reduction_vector,reduction,reduction_vector,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_scalar_recurrence,recurrence,scalar_recurrence,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_bucket_max,histogram,bucket_max,historical_eval,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_lookup,gather,gather_lookup,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_rows,gather,gather_rows,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_masked_rows,masked_read,masked_rows,historical_eval,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_scatter_accumulate,scatter,scatter_accumulate,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_scatter_blend,scatter,scatter_blend,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_strided_mix,strided_read,strided_mix,historical_eval,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_window_read,window,window_read,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_window_replace,window,window_replace,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_scalar_table,indirect_gather,random_scalar_gather,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_row_pool,indirect_gather,random_row_gather,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_multi_table,indirect_gather,select_gather,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_duplicate_index,indirect_gather,collision_memory,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_sorted_blocks,indirect_gather,ordered_gather,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_gather_masked_window,indirect_gather,masked_memory,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_matched_gather,indirect_gather,random_scalar_gather,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_scatter_unique_rows,indirect_scatter,unique_update,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_scatter_collision_add,indirect_scatter,collision_memory,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_scatter_two_tables,indirect_scatter,split_table_memory,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_scatter_permutation,indirect_scatter,permutation_memory,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_matched_scatter_add,indirect_scatter,collision_memory,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_matched_scatter_min,indirect_scatter,collision_memory,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_locality_stream_contiguous,locality_access,sequential_locality,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_locality_stride_sample,locality_access,strided_locality,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_locality_random_window,locality_access,random_window_locality,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_locality_permutation_read,locality_access,permutation_memory,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_dep_parallel_chains,dependent_indexing,dependent_chain,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_rolling_mean_shift,rolling_window,rolling_moments,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_rolling_conv1d_fir,rolling_window,rolling_weighted_windows,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_rolling_extreme_max,rolling_window,rolling_extrema,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_rolling_variance_moments,rolling_window,rolling_moments,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_rolling_dot_two_streams,rolling_window,rolling_weighted_windows,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_streaming_running_mean,streaming_reduction,streaming_moments,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_streaming_welford_var,streaming_reduction,streaming_moments,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_streaming_decayed_extrema,streaming_reduction,streaming_extrema,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_streaming_logsumexp,streaming_reduction,streaming_normalizers,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_segment_sum_reset,segmented_scan,segmented_reset,historical_eval,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_segment_max_reset,segmented_scan,segmented_reset,historical_eval,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_segment_weighted_mean,segmented_scan,segmented_reset,historical_eval,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_segment_carry_ema,segmented_scan,segmented_carry,historical_eval,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_stateful_scalar_iir,stateful_recurrence,iir_filters,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_stateful_vector_iir,stateful_recurrence,iir_filters,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_stateful_gru_gate,stateful_recurrence,gated_recurrences,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_stateful_lstm_cell,stateful_recurrence,gated_recurrences,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_control_polynomial_forcing,control_arithmetic,elementwise_control,train,converted_scan_fori,smoke,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_control_transcendental,control_arithmetic,elementwise_control,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_control_bisection_bracket,control_arithmetic,root_finding_control,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+conv_control_lowrank_update,control_arithmetic,lowrank_control,train,converted_scan_fori,full,converted_scan,Converted historical scan inheriting historical partition lineage
+jacobi_solver,iterative_solver,jacobi_solver,historical_eval,iterative_solver,full,historical_fori,Historical fori_loop preserving original split lineage
+ring_feedback,ring_buffer,ring_feedback,historical_eval,ring_feedback,full,historical_fori,Historical fori_loop preserving original split lineage
+dep_bucket_stateful,dependent_indexing,stateful_dependent,train,"Rows are read from a bucket table; the next bucket depends on the previous row statistic and the loop counter, while a vector accumulator integrates tanh(row).",full,historical_fori,Historical fori_loop preserving original split lineage
+dep_linked_list,dependent_indexing,dependent_chain,train,An integer next-pointer table walks a fixed cycle while payload loads feed a decaying scalar accumulator.,full,historical_fori,Historical fori_loop preserving original split lineage
+dep_pointer_chase,dependent_indexing,dependent_chain,train,The next index is the previous index advanced by one plus a bucket of the previous loaded value; a scalar accumulator decays and adds the payload.,smoke,historical_fori,Historical fori_loop preserving original split lineage
+dep_two_level_indirection,dependent_indexing,dependent_chain,train,A first load yields the address for a second load; the chain index combines both levels and a scalar accumulator integrates the payload.,full,historical_fori,Historical fori_loop preserving original split lineage
+locality_block_reuse,locality_access,reuse_locality,train,A tiny working set of rows is revisited by counter-indexed reads and in-place tanh updates.,full,historical_fori,Historical fori_loop preserving original split lineage
+scatter_min_update,indirect_scatter,collision_memory,train,Twelve random indices per trip apply elementwise minimum updates to the addressed slots.,full,historical_fori,Historical fori_loop preserving original split lineage
+stateful_coupled_oscillator,stateful_recurrence,coupled_dynamics,train,position-velocity state with neighbor coupling and weak damping,full,historical_fori,Historical fori_loop preserving original split lineage
+stencil_anisotropic_2d,stencil,stencil_wide_support,historical_eval,unequal axis weights plus a radius-two x-direction Laplacian,full,historical_fori,Historical fori_loop preserving original split lineage
+stencil_diffusion_1d_fori,stencil,stencil_axis_aligned,historical_eval,nearest-neighbor 1D Laplacian update,full,historical_fori,Historical fori_loop preserving original split lineage
+stencil_five_point_2d,stencil,stencil_axis_aligned,historical_eval,axis-neighbor 2D Laplacian with radius-one support,smoke,historical_fori,Historical fori_loop preserving original split lineage
+stencil_nine_point_2d,stencil,stencil_wide_support,historical_eval,axis plus diagonal neighbor average with a center weight,full,historical_fori,Historical fori_loop preserving original split lineage
+sig_cascaded_biquad,signal_processing,sig_biquad,train,signal_biquad_cascade,full,new_independent,New independent body allocated to development / training
+sig_goertzel,signal_processing,sig_spectral,train,signal_spectral_detection,smoke,new_independent,New independent body allocated to development / training
+sig_lms_adaptive,signal_processing,sig_adaptive,train,signal_adaptive_filter,full,new_independent,New independent body allocated to development / training
+sig_polyphase_resample,signal_processing,sig_polyphase,train,signal_polyphase_commutation,full,new_independent,New independent body allocated to development / training
+sig_hilbert_analytic,signal_processing,sig_analytic_eval,fresh_eval,signal_analytic_phase,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+sig_pll_carrier,signal_processing,sig_carrier_eval,fresh_eval,signal_carrier_tracking,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+sig_overlap_add_step,signal_processing,sig_overlap,train,signal_overlap_synthesis,full,new_independent,New independent body allocated to development / training
+opt_coordinate_descent,optimization_estimation,opt_sparse_reg,train,opt_coordinate_descent,full,new_independent,New independent body allocated to development / training
+opt_primal_dual_chambolle,optimization_estimation,opt_primal_dual,train,opt_primal_dual,full,new_independent,New independent body allocated to development / training
+opt_recursive_least_squares,optimization_estimation,opt_recursive,train,opt_rls_covariance,full,new_independent,New independent body allocated to development / training
+opt_kalman_diagonal,optimization_estimation,opt_kalman,train,opt_kalman_filtering,smoke,new_independent,New independent body allocated to development / training
+opt_mirror_descent,optimization_estimation,opt_mirror_eval,fresh_eval,opt_mirror_descent,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+opt_anderson_acceleration,optimization_estimation,opt_anderson_eval,fresh_eval,opt_anderson_accel,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+opt_projected_subgradient_box,optimization_estimation,opt_subgrad,train,opt_subgradient_projection,full,new_independent,New independent body allocated to development / training
+sp_csr_matvec_row,sparse_linear_algebra,sp_csr,train,sparse_csr_gemv,full,new_independent,New independent body allocated to development / training
+sp_triangular_solve,sparse_linear_algebra,sp_triangular,train,sparse_triangular_solve,full,new_independent,New independent body allocated to development / training
+sp_bcr_relaxation,sparse_linear_algebra,sp_block_rel,train,sparse_block_relaxation,full,new_independent,New independent body allocated to development / training
+sp_residual_propagation,sparse_linear_algebra,sp_diffusion,train,sparse_residual_diffusion,smoke,new_independent,New independent body allocated to development / training
+sp_ellpack_gemv,sparse_linear_algebra,sp_ellpack_eval,fresh_eval,sparse_ellpack_gemv,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+sp_ilu0_precond_apply,sparse_linear_algebra,sp_ilu0_eval,fresh_eval,sparse_ilu_preconditioner,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+sp_jacobi_sparse_row,sparse_linear_algebra,sp_jacobi,train,sparse_jacobi_relaxation,full,new_independent,New independent body allocated to development / training
+graph_edge_message_passing,graph_mesh,graph_mp,train,graph_message_passing,full,new_independent,New independent body allocated to development / training
+graph_frontier_relaxation,graph_mesh,graph_bellman,train,graph_shortest_path,full,new_independent,New independent body allocated to development / training
+graph_greedy_coloring,graph_mesh,graph_color_eval,fresh_eval,graph_coloring,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+graph_mesh_flux_assembly,graph_mesh,graph_mesh_eval,fresh_eval,mesh_flux_assembly,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+graph_pagerank_iter,graph_mesh,graph_pagerank,train,graph_pagerank,smoke,new_independent,New independent body allocated to development / training
+graph_label_propagation,graph_mesh,graph_label_prop,train,graph_label_prop,full,new_independent,New independent body allocated to development / training
+graph_degree_normalized_conv,graph_mesh,graph_gcn,train,graph_gcn_conv,full,new_independent,New independent body allocated to development / training
+dp_banded_smith_waterman,dynamic_programming,dp_align_eval,fresh_eval,dp_banded_alignment,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+dp_viterbi_max_plus,dynamic_programming,dp_viterbi,train,dp_viterbi_trellis,smoke,new_independent,New independent body allocated to development / training
+dp_edit_distance_row,dynamic_programming,dp_edit_dist,train,dp_edit_distance,full,new_independent,New independent body allocated to development / training
+dp_knapsack_bounded,dynamic_programming,dp_knapsack_eval,fresh_eval,dp_knapsack,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+dp_longest_common_subsequence,dynamic_programming,dp_lcs,train,dp_lcs,full,new_independent,New independent body allocated to development / training
+dp_matrix_chain_tile,dynamic_programming,dp_matrix_chain,train,dp_matrix_chain,full,new_independent,New independent body allocated to development / training
+dp_dtw_banded_step,dynamic_programming,dp_dtw,train,dp_dtw_banded,full,new_independent,New independent body allocated to development / training
+sim_verlet_symplectic,numerical_simulation,sim_verlet_eval,fresh_eval,sim_symplectic_verlet,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+sim_reaction_diffusion_1d,numerical_simulation,sim_gray_scott,train,sim_reaction_diffusion,full,new_independent,New independent body allocated to development / training
+sim_finite_volume_burgers,numerical_simulation,sim_burgers,train,sim_burgers_godunov,smoke,new_independent,New independent body allocated to development / training
+sim_pbd_cloth_spring,numerical_simulation,sim_pbd,train,sim_pbd_constraints,full,new_independent,New independent body allocated to development / training
+sim_shallow_water_1d,numerical_simulation,sim_shallow_eval,fresh_eval,sim_shallow_water,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+sim_heat_crank_nicolson_step,numerical_simulation,sim_thermal,train,sim_crank_nicolson,full,new_independent,New independent body allocated to development / training
+sim_rigid_body_quaternion,numerical_simulation,sim_rigid_body,train,sim_rigid_quaternion,full,new_independent,New independent body allocated to development / training
+tiled_online_softmax,tiled_tensor,tiled_softmax_eval,fresh_eval,tiled_online_softmax,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+tiled_gram_accumulate,tiled_tensor,tiled_gram,train,tiled_gram_product,smoke,new_independent,New independent body allocated to development / training
+tiled_cholesky_update,tiled_tensor,tiled_cholesky_eval,fresh_eval,tiled_cholesky_rankk,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+tiled_blocked_pairwise_dist,tiled_tensor,tiled_topk,train,tiled_pairwise_topk,full,new_independent,New independent body allocated to development / training
+tiled_conv2d_im2col_tile,tiled_tensor,tiled_conv,train,tiled_conv2d_gemm,full,new_independent,New independent body allocated to development / training
+tiled_tensor_contract_chain,tiled_tensor,tiled_tt,train,tiled_tensor_contraction,full,new_independent,New independent body allocated to development / training
+tiled_matrix_power_trace,tiled_tensor,tiled_power,train,tiled_krylov_power,full,new_independent,New independent body allocated to development / training
+idx_permutation_cycle_walk,index_memory,idx_orbit_eval,fresh_eval,index_permutation_orbit,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+idx_double_indirect_gather,index_memory,idx_nested_ptr,train,index_nested_pointer,full,new_independent,New independent body allocated to development / training
+idx_gather_transform_scatter,index_memory,idx_pic,train,index_pic_pipeline,full,new_independent,New independent body allocated to development / training
+idx_overlapping_block_update,index_memory,idx_patch_blend,train,index_patch_blend,smoke,new_independent,New independent body allocated to development / training
+idx_compressed_sparse_lookup,index_memory,idx_bsearch,train,index_binary_search,full,new_independent,New independent body allocated to development / training
+idx_strided_transpose_copy,index_memory,idx_transpose,train,index_strided_transpose,full,new_independent,New independent body allocated to development / training
+idx_circular_fifo_buffer,index_memory,idx_fifo_eval,fresh_eval,index_circular_fifo,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+stream_count_min_sketch,streaming_compression,stream_cms,train,stream_count_min,full,new_independent,New independent body allocated to development / training
+stream_run_length_encode,streaming_compression,stream_rle,train,stream_rle,full,new_independent,New independent body allocated to development / training
+stream_bit_pack_u8_to_u32,streaming_compression,stream_bit_pack,train,stream_bit_packing,smoke,new_independent,New independent body allocated to development / training
+stream_hyperloglog_step,streaming_compression,stream_hll_eval,fresh_eval,stream_hll_cardinality,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+stream_lzw_bounded_dict,streaming_compression,stream_lzw,train,stream_lzw_dictionary,full,new_independent,New independent body allocated to development / training
+stream_exponential_decay_histogram,streaming_compression,stream_decay_hist,train,stream_decay_hist,full,new_independent,New independent body allocated to development / training
+stream_reservoir_sampling,streaming_compression,stream_reservoir,train,stream_reservoir,full,new_independent,New independent body allocated to development / training
+sched_priority_queue_step,scheduling_control,sched_heap,train,sched_priority_queue,full,new_independent,New independent body allocated to development / training
+sched_fsm_traffic_controller,scheduling_control,sched_fsm_eval,fresh_eval,sched_traffic_fsm,full,new_independent,Reserved fresh evaluation body from unfamiliar family / unobserved mechanism
+sched_masked_active_set,scheduling_control,sched_active_set,train,sched_active_set,smoke,new_independent,New independent body allocated to development / training
+sched_leaky_bucket_policer,scheduling_control,sched_policer,train,sched_token_bucket,full,new_independent,New independent body allocated to development / training
+sched_round_robin_arbiter,scheduling_control,sched_drr,train,sched_deficit_rr,full,new_independent,New independent body allocated to development / training
+sched_pid_anti_windup,scheduling_control,sched_pid,train,sched_pid_control,full,new_independent,New independent body allocated to development / training
+sched_branching_tree_walker,scheduling_control,sched_tree,train,sched_tree_traversal,full,new_independent,New independent body allocated to development / training

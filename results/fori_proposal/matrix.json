@@ -1,0 +1,340 @@
+{
+  "source_sha256": "9cec3545868be41a967b7e8987975097d299bd55c84b247ab501ed1b8cbec242",
+  "configurations": [
+    {
+      "workload": "slew_limited_actuator",
+      "family": "scalar_control",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "slew_limited_actuator",
+      "family": "scalar_control",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "slew_limited_actuator",
+      "family": "scalar_control",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "slew_limited_actuator",
+      "family": "scalar_control",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "compensated_charge",
+      "family": "compensated_integration",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "compensated_charge",
+      "family": "compensated_integration",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "compensated_charge",
+      "family": "compensated_integration",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "compensated_charge",
+      "family": "compensated_integration",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "lane_error_moments",
+      "family": "lane_wise_arithmetic",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "lane_error_moments",
+      "family": "lane_wise_arithmetic",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "lane_error_moments",
+      "family": "lane_wise_arithmetic",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "lane_error_moments",
+      "family": "lane_wise_arithmetic",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "packed_word_digest",
+      "family": "integer_word_mixing",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "packed_word_digest",
+      "family": "integer_word_mixing",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "packed_word_digest",
+      "family": "integer_word_mixing",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "packed_word_digest",
+      "family": "integer_word_mixing",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "driven_state_space",
+      "family": "state_space_matrix_vector",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "driven_state_space",
+      "family": "state_space_matrix_vector",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "driven_state_space",
+      "family": "state_space_matrix_vector",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "driven_state_space",
+      "family": "state_space_matrix_vector",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "staggered_charge_deposit",
+      "family": "one_dimensional_indexed_deposit",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "staggered_charge_deposit",
+      "family": "one_dimensional_indexed_deposit",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "staggered_charge_deposit",
+      "family": "one_dimensional_indexed_deposit",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "staggered_charge_deposit",
+      "family": "one_dimensional_indexed_deposit",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "streaming_cross_spectrum",
+      "family": "streamed_cross_products",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "streaming_cross_spectrum",
+      "family": "streamed_cross_products",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "streaming_cross_spectrum",
+      "family": "streamed_cross_products",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "streaming_cross_spectrum",
+      "family": "streamed_cross_products",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "acoustic_transmission_line",
+      "family": "one_dimensional_acoustic_scattering",
+      "variant": "small",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "acoustic_transmission_line",
+      "family": "one_dimensional_acoustic_scattering",
+      "variant": "small",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "acoustic_transmission_line",
+      "family": "one_dimensional_acoustic_scattering",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "fresh",
+      "live": true
+    },
+    {
+      "workload": "acoustic_transmission_line",
+      "family": "one_dimensional_acoustic_scattering",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "fresh",
+      "live": false
+    },
+    {
+      "workload": "conv_scalar_recurrence",
+      "family": "recurrence",
+      "variant": "scalar",
+      "trip_count": 1024,
+      "cohort": "proposal_control",
+      "live": true
+    },
+    {
+      "workload": "conv_elementwise_sine",
+      "family": "elementwise",
+      "variant": "n256",
+      "trip_count": 255,
+      "cohort": "proposal_control",
+      "live": true
+    },
+    {
+      "workload": "conv_reduction_vector",
+      "family": "reduction",
+      "variant": "n256",
+      "trip_count": 255,
+      "cohort": "proposal_control",
+      "live": true
+    },
+    {
+      "workload": "conv_dense_matvec",
+      "family": "dense_linear_algebra",
+      "variant": "n32",
+      "trip_count": 255,
+      "cohort": "proposal_control",
+      "live": true
+    },
+    {
+      "workload": "eval_write_waveguide_mesh",
+      "family": "eval_writes_state",
+      "variant": "large",
+      "trip_count": 255,
+      "cohort": "historical_control",
+      "live": true
+    },
+    {
+      "workload": "dense_gram_accum",
+      "family": "dense_reductions",
+      "variant": "large",
+      "trip_count": 1024,
+      "cohort": "historical_control",
+      "live": true
+    },
+    {
+      "workload": "spectral_equalizer",
+      "family": "nonlinear_spectral_gain",
+      "variant": "small",
+      "trip_count": 1023,
+      "cohort": "regression_control",
+      "live": true
+    },
+    {
+      "workload": "packed_prefix_rank",
+      "family": "packed_word_rank",
+      "variant": "small",
+      "trip_count": 1023,
+      "cohort": "regression_control",
+      "live": true
+    },
+    {
+      "workload": "compressed_trie_walk",
+      "family": "failure_link_traversal",
+      "variant": "small",
+      "trip_count": 1023,
+      "cohort": "regression_control",
+      "live": true
+    }
+  ],
+  "direct_horizons": [
+    1,
+    300,
+    5000
+  ],
+  "process_repeats": 3,
+  "cold_budget_ms": 125
+}

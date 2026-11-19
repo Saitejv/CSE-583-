@@ -1,10 +1,24 @@
 # Phase 4 handoff: CPU unroll selection
 
+## Current entry decision (2026-11-18)
+
+The Phase 4 entry decision selected the opt-in static `fori_loop`
+specializations for measured reduction shapes on Apple M2. Phase 4 added
+the compile-once demo, full-caller first-call and break-even measurements,
+and an experimental engine path for project-owned loops. Native JAX is the
+general default. [Phase 4 deployment report](phase4_report.md)
+
+[Current plan](../TASKS.md#phase-4---jax-integration-and-held-out-evaluation-week-4) ·
+[Compile-once results](compile_once_reductions.md) ·
+[Library evaluation](library_deployment.md)
+
+## Historical Phase 3 recovery handoff
+
 **Use factor 1 by default.** The learned policy is ready for opt-in CPU
 integration and a scoped demo, not for general automatic selection. The
 fresh confirmation gate passed on six configurations, but the typical
 feasible long-horizon decision was still slower than factor 1.
-`auto_scan` and `auto_fori_loop` remain stubs.
+At the time of the recovery handoff, both wrappers were still stubs.
 
 ## What changed and why
 
@@ -132,6 +146,6 @@ make quick
 The archived Week 3 raw sweeps are retained byte for byte. Rebuilding the
 220 historical dataset rows reproduces all fields except fresh extraction
 timing; both historical gate CSV/Markdown pairs replay byte for byte. The
-fresh gate CLI refuses a second score. Check this handoff revision for
-verification if Phase 4 has changed the frozen source files. The recorded
-measurements, not newly timed sweeps, are the inputs for reproducible reports.
+fresh gate CLI refuses a second score. Verification checks the frozen
+inputs and evidence without requiring later code to match the freeze.
+Use recorded measurements, not newly timed sweeps, to reproduce reports.

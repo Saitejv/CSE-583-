@@ -5,7 +5,7 @@ Phase status (see TASKS.md):
     Phase 1: workload registry and measurement sweep.
     Phase 2: Jaxpr features, baselines, dataset, and frozen splits.
     Phase 3: cost model and selector.
-    Phase 4: opt-in auto_scan / auto_fori_loop integration.
+    Phase 4: opt-in fori_loop and compile-once CPU reductions.
 """
 
 from __future__ import annotations

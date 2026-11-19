@@ -1,0 +1,1379 @@
+{
+  "records": [
+    {
+      "family": "dense_linear_algebra",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "dense_matvec",
+      "tier": "full",
+      "workload": "conv_dense_matvec"
+    },
+    {
+      "family": "elementwise",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "elementwise_sine",
+      "tier": "full",
+      "workload": "conv_elementwise_sine"
+    },
+    {
+      "family": "indexed_memory",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "indexed_update",
+      "tier": "full",
+      "workload": "conv_indexed_update"
+    },
+    {
+      "family": "reduction",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "reduction_vector",
+      "tier": "full",
+      "workload": "conv_reduction_vector"
+    },
+    {
+      "family": "recurrence",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "scalar_recurrence",
+      "tier": "full",
+      "workload": "conv_scalar_recurrence"
+    },
+    {
+      "family": "histogram",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "bucket_max",
+      "tier": "full",
+      "workload": "conv_bucket_max"
+    },
+    {
+      "family": "gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "gather_lookup",
+      "tier": "full",
+      "workload": "conv_gather_lookup"
+    },
+    {
+      "family": "gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "gather_rows",
+      "tier": "full",
+      "workload": "conv_gather_rows"
+    },
+    {
+      "family": "masked_read",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "masked_rows",
+      "tier": "full",
+      "workload": "conv_masked_rows"
+    },
+    {
+      "family": "scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "scatter_accumulate",
+      "tier": "full",
+      "workload": "conv_scatter_accumulate"
+    },
+    {
+      "family": "scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "scatter_blend",
+      "tier": "full",
+      "workload": "conv_scatter_blend"
+    },
+    {
+      "family": "strided_read",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "strided_mix",
+      "tier": "full",
+      "workload": "conv_strided_mix"
+    },
+    {
+      "family": "window",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "window_read",
+      "tier": "full",
+      "workload": "conv_window_read"
+    },
+    {
+      "family": "window",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "window_replace",
+      "tier": "full",
+      "workload": "conv_window_replace"
+    },
+    {
+      "family": "indirect_gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "random_scalar_gather",
+      "tier": "smoke",
+      "workload": "conv_gather_scalar_table"
+    },
+    {
+      "family": "indirect_gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "random_row_gather",
+      "tier": "full",
+      "workload": "conv_gather_row_pool"
+    },
+    {
+      "family": "indirect_gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "select_gather",
+      "tier": "full",
+      "workload": "conv_gather_multi_table"
+    },
+    {
+      "family": "indirect_gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "collision_memory",
+      "tier": "full",
+      "workload": "conv_gather_duplicate_index"
+    },
+    {
+      "family": "indirect_gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "ordered_gather",
+      "tier": "full",
+      "workload": "conv_gather_sorted_blocks"
+    },
+    {
+      "family": "indirect_gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "masked_memory",
+      "tier": "full",
+      "workload": "conv_gather_masked_window"
+    },
+    {
+      "family": "indirect_gather",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "random_scalar_gather",
+      "tier": "full",
+      "workload": "conv_matched_gather"
+    },
+    {
+      "family": "indirect_scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "unique_update",
+      "tier": "smoke",
+      "workload": "conv_scatter_unique_rows"
+    },
+    {
+      "family": "indirect_scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "collision_memory",
+      "tier": "smoke",
+      "workload": "conv_scatter_collision_add"
+    },
+    {
+      "family": "indirect_scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "split_table_memory",
+      "tier": "full",
+      "workload": "conv_scatter_two_tables"
+    },
+    {
+      "family": "indirect_scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "permutation_memory",
+      "tier": "full",
+      "workload": "conv_scatter_permutation"
+    },
+    {
+      "family": "indirect_scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "collision_memory",
+      "tier": "full",
+      "workload": "conv_matched_scatter_add"
+    },
+    {
+      "family": "indirect_scatter",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "collision_memory",
+      "tier": "full",
+      "workload": "conv_matched_scatter_min"
+    },
+    {
+      "family": "locality_access",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "sequential_locality",
+      "tier": "smoke",
+      "workload": "conv_locality_stream_contiguous"
+    },
+    {
+      "family": "locality_access",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "strided_locality",
+      "tier": "full",
+      "workload": "conv_locality_stride_sample"
+    },
+    {
+      "family": "locality_access",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "random_window_locality",
+      "tier": "full",
+      "workload": "conv_locality_random_window"
+    },
+    {
+      "family": "locality_access",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "permutation_memory",
+      "tier": "full",
+      "workload": "conv_locality_permutation_read"
+    },
+    {
+      "family": "dependent_indexing",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "dependent_chain",
+      "tier": "full",
+      "workload": "conv_dep_parallel_chains"
+    },
+    {
+      "family": "rolling_window",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "rolling_moments",
+      "tier": "smoke",
+      "workload": "conv_rolling_mean_shift"
+    },
+    {
+      "family": "rolling_window",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "rolling_weighted_windows",
+      "tier": "smoke",
+      "workload": "conv_rolling_conv1d_fir"
+    },
+    {
+      "family": "rolling_window",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "rolling_extrema",
+      "tier": "full",
+      "workload": "conv_rolling_extreme_max"
+    },
+    {
+      "family": "rolling_window",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "rolling_moments",
+      "tier": "full",
+      "workload": "conv_rolling_variance_moments"
+    },
+    {
+      "family": "rolling_window",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "rolling_weighted_windows",
+      "tier": "full",
+      "workload": "conv_rolling_dot_two_streams"
+    },
+    {
+      "family": "streaming_reduction",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "streaming_moments",
+      "tier": "smoke",
+      "workload": "conv_streaming_running_mean"
+    },
+    {
+      "family": "streaming_reduction",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "streaming_moments",
+      "tier": "full",
+      "workload": "conv_streaming_welford_var"
+    },
+    {
+      "family": "streaming_reduction",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "streaming_extrema",
+      "tier": "full",
+      "workload": "conv_streaming_decayed_extrema"
+    },
+    {
+      "family": "streaming_reduction",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "streaming_normalizers",
+      "tier": "full",
+      "workload": "conv_streaming_logsumexp"
+    },
+    {
+      "family": "segmented_scan",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "segmented_reset",
+      "tier": "smoke",
+      "workload": "conv_segment_sum_reset"
+    },
+    {
+      "family": "segmented_scan",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "segmented_reset",
+      "tier": "full",
+      "workload": "conv_segment_max_reset"
+    },
+    {
+      "family": "segmented_scan",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "segmented_reset",
+      "tier": "full",
+      "workload": "conv_segment_weighted_mean"
+    },
+    {
+      "family": "segmented_scan",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "historical_eval",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "segmented_carry",
+      "tier": "full",
+      "workload": "conv_segment_carry_ema"
+    },
+    {
+      "family": "stateful_recurrence",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "iir_filters",
+      "tier": "smoke",
+      "workload": "conv_stateful_scalar_iir"
+    },
+    {
+      "family": "stateful_recurrence",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "iir_filters",
+      "tier": "full",
+      "workload": "conv_stateful_vector_iir"
+    },
+    {
+      "family": "stateful_recurrence",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "gated_recurrences",
+      "tier": "full",
+      "workload": "conv_stateful_gru_gate"
+    },
+    {
+      "family": "stateful_recurrence",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "gated_recurrences",
+      "tier": "full",
+      "workload": "conv_stateful_lstm_cell"
+    },
+    {
+      "family": "control_arithmetic",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "elementwise_control",
+      "tier": "smoke",
+      "workload": "conv_control_polynomial_forcing"
+    },
+    {
+      "family": "control_arithmetic",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "elementwise_control",
+      "tier": "full",
+      "workload": "conv_control_transcendental"
+    },
+    {
+      "family": "control_arithmetic",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "root_finding_control",
+      "tier": "full",
+      "workload": "conv_control_bisection_bracket"
+    },
+    {
+      "family": "control_arithmetic",
+      "mechanism": "converted_scan_fori",
+      "origin": "converted_scan",
+      "partition": "train",
+      "reason": "Converted historical scan inheriting historical partition lineage",
+      "related_group": "lowrank_control",
+      "tier": "full",
+      "workload": "conv_control_lowrank_update"
+    },
+    {
+      "family": "iterative_solver",
+      "mechanism": "iterative_solver",
+      "origin": "historical_fori",
+      "partition": "historical_eval",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "jacobi_solver",
+      "tier": "full",
+      "workload": "jacobi_solver"
+    },
+    {
+      "family": "ring_buffer",
+      "mechanism": "ring_feedback",
+      "origin": "historical_fori",
+      "partition": "historical_eval",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "ring_feedback",
+      "tier": "full",
+      "workload": "ring_feedback"
+    },
+    {
+      "family": "dependent_indexing",
+      "mechanism": "Rows are read from a bucket table; the next bucket depends on the previous row statistic and the loop counter, while a vector accumulator integrates tanh(row).",
+      "origin": "historical_fori",
+      "partition": "train",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "stateful_dependent",
+      "tier": "full",
+      "workload": "dep_bucket_stateful"
+    },
+    {
+      "family": "dependent_indexing",
+      "mechanism": "An integer next-pointer table walks a fixed cycle while payload loads feed a decaying scalar accumulator.",
+      "origin": "historical_fori",
+      "partition": "train",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "dependent_chain",
+      "tier": "full",
+      "workload": "dep_linked_list"
+    },
+    {
+      "family": "dependent_indexing",
+      "mechanism": "The next index is the previous index advanced by one plus a bucket of the previous loaded value; a scalar accumulator decays and adds the payload.",
+      "origin": "historical_fori",
+      "partition": "train",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "dependent_chain",
+      "tier": "smoke",
+      "workload": "dep_pointer_chase"
+    },
+    {
+      "family": "dependent_indexing",
+      "mechanism": "A first load yields the address for a second load; the chain index combines both levels and a scalar accumulator integrates the payload.",
+      "origin": "historical_fori",
+      "partition": "train",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "dependent_chain",
+      "tier": "full",
+      "workload": "dep_two_level_indirection"
+    },
+    {
+      "family": "locality_access",
+      "mechanism": "A tiny working set of rows is revisited by counter-indexed reads and in-place tanh updates.",
+      "origin": "historical_fori",
+      "partition": "train",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "reuse_locality",
+      "tier": "full",
+      "workload": "locality_block_reuse"
+    },
+    {
+      "family": "indirect_scatter",
+      "mechanism": "Twelve random indices per trip apply elementwise minimum updates to the addressed slots.",
+      "origin": "historical_fori",
+      "partition": "train",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "collision_memory",
+      "tier": "full",
+      "workload": "scatter_min_update"
+    },
+    {
+      "family": "stateful_recurrence",
+      "mechanism": "position-velocity state with neighbor coupling and weak damping",
+      "origin": "historical_fori",
+      "partition": "train",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "coupled_dynamics",
+      "tier": "full",
+      "workload": "stateful_coupled_oscillator"
+    },
+    {
+      "family": "stencil",
+      "mechanism": "unequal axis weights plus a radius-two x-direction Laplacian",
+      "origin": "historical_fori",
+      "partition": "historical_eval",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "stencil_wide_support",
+      "tier": "full",
+      "workload": "stencil_anisotropic_2d"
+    },
+    {
+      "family": "stencil",
+      "mechanism": "nearest-neighbor 1D Laplacian update",
+      "origin": "historical_fori",
+      "partition": "historical_eval",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "stencil_axis_aligned",
+      "tier": "full",
+      "workload": "stencil_diffusion_1d_fori"
+    },
+    {
+      "family": "stencil",
+      "mechanism": "axis-neighbor 2D Laplacian with radius-one support",
+      "origin": "historical_fori",
+      "partition": "historical_eval",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "stencil_axis_aligned",
+      "tier": "smoke",
+      "workload": "stencil_five_point_2d"
+    },
+    {
+      "family": "stencil",
+      "mechanism": "axis plus diagonal neighbor average with a center weight",
+      "origin": "historical_fori",
+      "partition": "historical_eval",
+      "reason": "Historical fori_loop preserving original split lineage",
+      "related_group": "stencil_wide_support",
+      "tier": "full",
+      "workload": "stencil_nine_point_2d"
+    },
+    {
+      "family": "signal_processing",
+      "mechanism": "signal_biquad_cascade",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sig_biquad",
+      "tier": "full",
+      "workload": "sig_cascaded_biquad"
+    },
+    {
+      "family": "signal_processing",
+      "mechanism": "signal_spectral_detection",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sig_spectral",
+      "tier": "smoke",
+      "workload": "sig_goertzel"
+    },
+    {
+      "family": "signal_processing",
+      "mechanism": "signal_adaptive_filter",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sig_adaptive",
+      "tier": "full",
+      "workload": "sig_lms_adaptive"
+    },
+    {
+      "family": "signal_processing",
+      "mechanism": "signal_polyphase_commutation",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sig_polyphase",
+      "tier": "full",
+      "workload": "sig_polyphase_resample"
+    },
+    {
+      "family": "signal_processing",
+      "mechanism": "signal_analytic_phase",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "sig_analytic_eval",
+      "tier": "full",
+      "workload": "sig_hilbert_analytic"
+    },
+    {
+      "family": "signal_processing",
+      "mechanism": "signal_carrier_tracking",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "sig_carrier_eval",
+      "tier": "full",
+      "workload": "sig_pll_carrier"
+    },
+    {
+      "family": "signal_processing",
+      "mechanism": "signal_overlap_synthesis",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sig_overlap",
+      "tier": "full",
+      "workload": "sig_overlap_add_step"
+    },
+    {
+      "family": "optimization_estimation",
+      "mechanism": "opt_coordinate_descent",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "opt_sparse_reg",
+      "tier": "full",
+      "workload": "opt_coordinate_descent"
+    },
+    {
+      "family": "optimization_estimation",
+      "mechanism": "opt_primal_dual",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "opt_primal_dual",
+      "tier": "full",
+      "workload": "opt_primal_dual_chambolle"
+    },
+    {
+      "family": "optimization_estimation",
+      "mechanism": "opt_rls_covariance",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "opt_recursive",
+      "tier": "full",
+      "workload": "opt_recursive_least_squares"
+    },
+    {
+      "family": "optimization_estimation",
+      "mechanism": "opt_kalman_filtering",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "opt_kalman",
+      "tier": "smoke",
+      "workload": "opt_kalman_diagonal"
+    },
+    {
+      "family": "optimization_estimation",
+      "mechanism": "opt_mirror_descent",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "opt_mirror_eval",
+      "tier": "full",
+      "workload": "opt_mirror_descent"
+    },
+    {
+      "family": "optimization_estimation",
+      "mechanism": "opt_anderson_accel",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "opt_anderson_eval",
+      "tier": "full",
+      "workload": "opt_anderson_acceleration"
+    },
+    {
+      "family": "optimization_estimation",
+      "mechanism": "opt_subgradient_projection",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "opt_subgrad",
+      "tier": "full",
+      "workload": "opt_projected_subgradient_box"
+    },
+    {
+      "family": "sparse_linear_algebra",
+      "mechanism": "sparse_csr_gemv",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sp_csr",
+      "tier": "full",
+      "workload": "sp_csr_matvec_row"
+    },
+    {
+      "family": "sparse_linear_algebra",
+      "mechanism": "sparse_triangular_solve",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sp_triangular",
+      "tier": "full",
+      "workload": "sp_triangular_solve"
+    },
+    {
+      "family": "sparse_linear_algebra",
+      "mechanism": "sparse_block_relaxation",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sp_block_rel",
+      "tier": "full",
+      "workload": "sp_bcr_relaxation"
+    },
+    {
+      "family": "sparse_linear_algebra",
+      "mechanism": "sparse_residual_diffusion",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sp_diffusion",
+      "tier": "smoke",
+      "workload": "sp_residual_propagation"
+    },
+    {
+      "family": "sparse_linear_algebra",
+      "mechanism": "sparse_ellpack_gemv",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "sp_ellpack_eval",
+      "tier": "full",
+      "workload": "sp_ellpack_gemv"
+    },
+    {
+      "family": "sparse_linear_algebra",
+      "mechanism": "sparse_ilu_preconditioner",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "sp_ilu0_eval",
+      "tier": "full",
+      "workload": "sp_ilu0_precond_apply"
+    },
+    {
+      "family": "sparse_linear_algebra",
+      "mechanism": "sparse_jacobi_relaxation",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sp_jacobi",
+      "tier": "full",
+      "workload": "sp_jacobi_sparse_row"
+    },
+    {
+      "family": "graph_mesh",
+      "mechanism": "graph_message_passing",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "graph_mp",
+      "tier": "full",
+      "workload": "graph_edge_message_passing"
+    },
+    {
+      "family": "graph_mesh",
+      "mechanism": "graph_shortest_path",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "graph_bellman",
+      "tier": "full",
+      "workload": "graph_frontier_relaxation"
+    },
+    {
+      "family": "graph_mesh",
+      "mechanism": "graph_coloring",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "graph_color_eval",
+      "tier": "full",
+      "workload": "graph_greedy_coloring"
+    },
+    {
+      "family": "graph_mesh",
+      "mechanism": "mesh_flux_assembly",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "graph_mesh_eval",
+      "tier": "full",
+      "workload": "graph_mesh_flux_assembly"
+    },
+    {
+      "family": "graph_mesh",
+      "mechanism": "graph_pagerank",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "graph_pagerank",
+      "tier": "smoke",
+      "workload": "graph_pagerank_iter"
+    },
+    {
+      "family": "graph_mesh",
+      "mechanism": "graph_label_prop",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "graph_label_prop",
+      "tier": "full",
+      "workload": "graph_label_propagation"
+    },
+    {
+      "family": "graph_mesh",
+      "mechanism": "graph_gcn_conv",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "graph_gcn",
+      "tier": "full",
+      "workload": "graph_degree_normalized_conv"
+    },
+    {
+      "family": "dynamic_programming",
+      "mechanism": "dp_banded_alignment",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "dp_align_eval",
+      "tier": "full",
+      "workload": "dp_banded_smith_waterman"
+    },
+    {
+      "family": "dynamic_programming",
+      "mechanism": "dp_viterbi_trellis",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "dp_viterbi",
+      "tier": "smoke",
+      "workload": "dp_viterbi_max_plus"
+    },
+    {
+      "family": "dynamic_programming",
+      "mechanism": "dp_edit_distance",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "dp_edit_dist",
+      "tier": "full",
+      "workload": "dp_edit_distance_row"
+    },
+    {
+      "family": "dynamic_programming",
+      "mechanism": "dp_knapsack",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "dp_knapsack_eval",
+      "tier": "full",
+      "workload": "dp_knapsack_bounded"
+    },
+    {
+      "family": "dynamic_programming",
+      "mechanism": "dp_lcs",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "dp_lcs",
+      "tier": "full",
+      "workload": "dp_longest_common_subsequence"
+    },
+    {
+      "family": "dynamic_programming",
+      "mechanism": "dp_matrix_chain",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "dp_matrix_chain",
+      "tier": "full",
+      "workload": "dp_matrix_chain_tile"
+    },
+    {
+      "family": "dynamic_programming",
+      "mechanism": "dp_dtw_banded",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "dp_dtw",
+      "tier": "full",
+      "workload": "dp_dtw_banded_step"
+    },
+    {
+      "family": "numerical_simulation",
+      "mechanism": "sim_symplectic_verlet",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "sim_verlet_eval",
+      "tier": "full",
+      "workload": "sim_verlet_symplectic"
+    },
+    {
+      "family": "numerical_simulation",
+      "mechanism": "sim_reaction_diffusion",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sim_gray_scott",
+      "tier": "full",
+      "workload": "sim_reaction_diffusion_1d"
+    },
+    {
+      "family": "numerical_simulation",
+      "mechanism": "sim_burgers_godunov",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sim_burgers",
+      "tier": "smoke",
+      "workload": "sim_finite_volume_burgers"
+    },
+    {
+      "family": "numerical_simulation",
+      "mechanism": "sim_pbd_constraints",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sim_pbd",
+      "tier": "full",
+      "workload": "sim_pbd_cloth_spring"
+    },
+    {
+      "family": "numerical_simulation",
+      "mechanism": "sim_shallow_water",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "sim_shallow_eval",
+      "tier": "full",
+      "workload": "sim_shallow_water_1d"
+    },
+    {
+      "family": "numerical_simulation",
+      "mechanism": "sim_crank_nicolson",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sim_thermal",
+      "tier": "full",
+      "workload": "sim_heat_crank_nicolson_step"
+    },
+    {
+      "family": "numerical_simulation",
+      "mechanism": "sim_rigid_quaternion",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sim_rigid_body",
+      "tier": "full",
+      "workload": "sim_rigid_body_quaternion"
+    },
+    {
+      "family": "tiled_tensor",
+      "mechanism": "tiled_online_softmax",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "tiled_softmax_eval",
+      "tier": "full",
+      "workload": "tiled_online_softmax"
+    },
+    {
+      "family": "tiled_tensor",
+      "mechanism": "tiled_gram_product",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "tiled_gram",
+      "tier": "smoke",
+      "workload": "tiled_gram_accumulate"
+    },
+    {
+      "family": "tiled_tensor",
+      "mechanism": "tiled_cholesky_rankk",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "tiled_cholesky_eval",
+      "tier": "full",
+      "workload": "tiled_cholesky_update"
+    },
+    {
+      "family": "tiled_tensor",
+      "mechanism": "tiled_pairwise_topk",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "tiled_topk",
+      "tier": "full",
+      "workload": "tiled_blocked_pairwise_dist"
+    },
+    {
+      "family": "tiled_tensor",
+      "mechanism": "tiled_conv2d_gemm",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "tiled_conv",
+      "tier": "full",
+      "workload": "tiled_conv2d_im2col_tile"
+    },
+    {
+      "family": "tiled_tensor",
+      "mechanism": "tiled_tensor_contraction",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "tiled_tt",
+      "tier": "full",
+      "workload": "tiled_tensor_contract_chain"
+    },
+    {
+      "family": "tiled_tensor",
+      "mechanism": "tiled_krylov_power",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "tiled_power",
+      "tier": "full",
+      "workload": "tiled_matrix_power_trace"
+    },
+    {
+      "family": "index_memory",
+      "mechanism": "index_permutation_orbit",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "idx_orbit_eval",
+      "tier": "full",
+      "workload": "idx_permutation_cycle_walk"
+    },
+    {
+      "family": "index_memory",
+      "mechanism": "index_nested_pointer",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "idx_nested_ptr",
+      "tier": "full",
+      "workload": "idx_double_indirect_gather"
+    },
+    {
+      "family": "index_memory",
+      "mechanism": "index_pic_pipeline",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "idx_pic",
+      "tier": "full",
+      "workload": "idx_gather_transform_scatter"
+    },
+    {
+      "family": "index_memory",
+      "mechanism": "index_patch_blend",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "idx_patch_blend",
+      "tier": "smoke",
+      "workload": "idx_overlapping_block_update"
+    },
+    {
+      "family": "index_memory",
+      "mechanism": "index_binary_search",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "idx_bsearch",
+      "tier": "full",
+      "workload": "idx_compressed_sparse_lookup"
+    },
+    {
+      "family": "index_memory",
+      "mechanism": "index_strided_transpose",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "idx_transpose",
+      "tier": "full",
+      "workload": "idx_strided_transpose_copy"
+    },
+    {
+      "family": "index_memory",
+      "mechanism": "index_circular_fifo",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "idx_fifo_eval",
+      "tier": "full",
+      "workload": "idx_circular_fifo_buffer"
+    },
+    {
+      "family": "streaming_compression",
+      "mechanism": "stream_count_min",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "stream_cms",
+      "tier": "full",
+      "workload": "stream_count_min_sketch"
+    },
+    {
+      "family": "streaming_compression",
+      "mechanism": "stream_rle",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "stream_rle",
+      "tier": "full",
+      "workload": "stream_run_length_encode"
+    },
+    {
+      "family": "streaming_compression",
+      "mechanism": "stream_bit_packing",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "stream_bit_pack",
+      "tier": "smoke",
+      "workload": "stream_bit_pack_u8_to_u32"
+    },
+    {
+      "family": "streaming_compression",
+      "mechanism": "stream_hll_cardinality",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "stream_hll_eval",
+      "tier": "full",
+      "workload": "stream_hyperloglog_step"
+    },
+    {
+      "family": "streaming_compression",
+      "mechanism": "stream_lzw_dictionary",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "stream_lzw",
+      "tier": "full",
+      "workload": "stream_lzw_bounded_dict"
+    },
+    {
+      "family": "streaming_compression",
+      "mechanism": "stream_decay_hist",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "stream_decay_hist",
+      "tier": "full",
+      "workload": "stream_exponential_decay_histogram"
+    },
+    {
+      "family": "streaming_compression",
+      "mechanism": "stream_reservoir",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "stream_reservoir",
+      "tier": "full",
+      "workload": "stream_reservoir_sampling"
+    },
+    {
+      "family": "scheduling_control",
+      "mechanism": "sched_priority_queue",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sched_heap",
+      "tier": "full",
+      "workload": "sched_priority_queue_step"
+    },
+    {
+      "family": "scheduling_control",
+      "mechanism": "sched_traffic_fsm",
+      "origin": "new_independent",
+      "partition": "fresh_eval",
+      "reason": "Reserved fresh evaluation body from unfamiliar family / unobserved mechanism",
+      "related_group": "sched_fsm_eval",
+      "tier": "full",
+      "workload": "sched_fsm_traffic_controller"
+    },
+    {
+      "family": "scheduling_control",
+      "mechanism": "sched_active_set",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sched_active_set",
+      "tier": "smoke",
+      "workload": "sched_masked_active_set"
+    },
+    {
+      "family": "scheduling_control",
+      "mechanism": "sched_token_bucket",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sched_policer",
+      "tier": "full",
+      "workload": "sched_leaky_bucket_policer"
+    },
+    {
+      "family": "scheduling_control",
+      "mechanism": "sched_deficit_rr",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sched_drr",
+      "tier": "full",
+      "workload": "sched_round_robin_arbiter"
+    },
+    {
+      "family": "scheduling_control",
+      "mechanism": "sched_pid_control",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sched_pid",
+      "tier": "full",
+      "workload": "sched_pid_anti_windup"
+    },
+    {
+      "family": "scheduling_control",
+      "mechanism": "sched_tree_traversal",
+      "origin": "new_independent",
+      "partition": "train",
+      "reason": "New independent body allocated to development / training",
+      "related_group": "sched_tree",
+      "tier": "full",
+      "workload": "sched_branching_tree_walker"
+    }
+  ],
+  "split_hash": "8c1a47d11b34e2ac718cd3d444526bb795a25fa325eaa23442cf57d42763ac59",
+  "summary": {
+    "counts": {
+      "converted_scan": 53,
+      "fresh_eval": 18,
+      "historical_eval": 14,
+      "historical_fori": 13,
+      "new_independent": 70,
+      "total": 136,
+      "train": 104
+    },
+    "split_hash": "8c1a47d11b34e2ac718cd3d444526bb795a25fa325eaa23442cf57d42763ac59",
+    "status": "passed"
+  },
+  "version": 1
+}

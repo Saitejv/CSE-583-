@@ -1,0 +1,5364 @@
+{
+  "direct": {
+    "1": {
+      "all": {
+        "native": {
+          "ms_per_process": 303.65358433333336,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 355.5829443333333,
+          "pooled_speedup": 0.8539599246039205,
+          "geometric_speedup": 0.798727472492311,
+          "factors": {
+            "1": 3,
+            "2": 7,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 10,
+          "worst_time_ratio": 1.9256236748053328,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.03117433538566
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.777526209767888
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0480928242621173
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0474116001384484
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7984952558696643
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.2911282558152475
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.9256236748053328
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.6117734931706211
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5252736813297612
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.4192581028146831
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.7814364021386226
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.365701033279279
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 435.5016123333333,
+          "pooled_speedup": 0.6972501954847337,
+          "geometric_speedup": 0.6805236566123813,
+          "factors": {
+            "1": 1,
+            "2": 5,
+            "4": 5,
+            "8": 1
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 10,
+          "worst_time_ratio": 2.5528395337565772,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.4382497930077074
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.7619645279945428
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.5528395337565772
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0506474280245572
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7347018284219454
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.7845834603214998
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.9612126255399585
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.5998251518434372
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5215887659106762
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.2639107808693077
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.4354183580584055
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.7897781947092763
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 299.43015266666674,
+          "pooled_speedup": 1.014104897683328,
+          "geometric_speedup": 0.9731420215307146,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 6,
+          "worst_time_ratio": 1.121083702122297,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0363688298378888
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.017737550046019
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.947417008996477
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0152534336795838
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0156655907501355
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0452898023174484
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0327851843830045
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0724951334343744
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.121083702122297
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.979853866717872
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9542558242292444
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.1085685332315627
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 290.1308890000001,
+          "pooled_speedup": 1.0466089473614553,
+          "geometric_speedup": 0.9926612398689059,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 1.075990194621031,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9878908756976884
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0258332126627687
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9756428552182244
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.060364646157104
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9864121069883336
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.075990194621031
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.000035794786065
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9819841528228459
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.07325340680882
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0383879174574973
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9482766255812236
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9459576834693993
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 428.42080700000014,
+          "pooled_speedup": 0.7087741290150114,
+          "geometric_speedup": 0.6645863736567915,
+          "factors": {
+            "1": 4,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 7,
+          "worst_time_ratio": 3.031080238613707,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9755414744091727
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.7210351424215854
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9702391834650232
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0120698510529018
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.1893584289669792
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 3.01219235489671
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 3.031080238613707
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9999268152314305
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.269274719930666
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.7073537132011467
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.6302039707727505
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.7625044827468803
+            }
+          ]
+        }
+      },
+      "opportunity": {
+        "native": {
+          "ms_per_process": 191.4570706666667,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 224.82924500000004,
+          "pooled_speedup": 0.8515665774115225,
+          "geometric_speedup": 0.7695592940079055,
+          "factors": {
+            "1": 0,
+            "2": 6,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 6,
+          "worst_time_ratio": 1.9256236748053328,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.777526209767888
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7984952558696643
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.2911282558152475
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.9256236748053328
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5252736813297612
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.4192581028146831
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.7814364021386226
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.365701033279279
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 241.55465833333335,
+          "pooled_speedup": 0.7926035125452456,
+          "geometric_speedup": 0.7047957234993155,
+          "factors": {
+            "1": 0,
+            "2": 4,
+            "4": 3,
+            "8": 1
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 6,
+          "worst_time_ratio": 2.4354183580584055,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.7619645279945428
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7347018284219454
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.7845834603214998
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.9612126255399585
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5215887659106762
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.2639107808693077
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.4354183580584055
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.7897781947092763
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 187.29950977777776,
+          "pooled_speedup": 1.0221973933291213,
+          "geometric_speedup": 0.968038219442214,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 1.121083702122297,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.017737550046019
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0156655907501355
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0452898023174484
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0327851843830045
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.121083702122297
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.979853866717872
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9542558242292444
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.1085685332315627
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 183.92852800000003,
+          "pooled_speedup": 1.0409318921242423,
+          "geometric_speedup": 0.9894561263652155,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 1.075990194621031,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0258332126627687
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9864121069883336
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.075990194621031
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.000035794786065
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.07325340680882
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0383879174574973
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9482766255812236
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9459576834693993
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 321.92926499999993,
+          "pooled_speedup": 0.5947178199741074,
+          "geometric_speedup": 0.5388775053853335,
+          "factors": {
+            "1": 0,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 7,
+          "worst_time_ratio": 3.031080238613707,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.7210351424215854
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.1893584289669792
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 3.01219235489671
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 3.031080238613707
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.269274719930666
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.7073537132011467
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.6302039707727505
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.7625044827468803
+            }
+          ]
+        }
+      },
+      "other": {
+        "native": {
+          "ms_per_process": 112.19651366666666,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 130.75369933333332,
+          "pooled_speedup": 0.8580752532334982,
+          "geometric_speedup": 0.8604223681340025,
+          "factors": {
+            "1": 3,
+            "2": 1,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 1.6117734931706211,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.03117433538566
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0480928242621173
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0474116001384484
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.6117734931706211
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 193.946954,
+          "pooled_speedup": 0.578490723121471,
+          "geometric_speedup": 0.6344584125420579,
+          "factors": {
+            "1": 1,
+            "2": 1,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 2.5528395337565772,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.4382497930077074
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.5528395337565772
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0506474280245572
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.5998251518434372
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 112.13064288888889,
+          "pooled_speedup": 1.0005874467146598,
+          "geometric_speedup": 0.983430494131246,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.0724951334343744,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0363688298378888
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.947417008996477
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0152534336795838
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0724951334343744
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 106.202361,
+          "pooled_speedup": 1.056440860732528,
+          "geometric_speedup": 0.9991026471712896,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.060364646157104,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9878908756976884
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9756428552182244
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.060364646157104
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9819841528228459
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 106.491542,
+          "pooled_speedup": 1.0535720636542822,
+          "geometric_speedup": 1.010820840589928,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0120698510529018,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9755414744091727
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9702391834650232
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0120698510529018
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9999268152314305
+            }
+          ]
+        }
+      }
+    },
+    "300": {
+      "all": {
+        "native": {
+          "ms_per_process": 425.6480269999998,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 425.02801333333326,
+          "pooled_speedup": 1.0014587595339988,
+          "geometric_speedup": 0.8490725571612368,
+          "factors": {
+            "1": 3,
+            "2": 7,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 9,
+          "worst_time_ratio": 1.6820705917395942,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0320668718059558
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6663836466032508
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0249987791258464
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0457027208125234
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.8189858481926799
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.201429373470765
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5674471938601469
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.5422581789188168
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.3322899880931842
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.3283741104118183
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.6820705917395942
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.364616332742985
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 512.6104446666667,
+          "pooled_speedup": 0.830353792882204,
+          "geometric_speedup": 0.7174703292388338,
+          "factors": {
+            "1": 1,
+            "2": 5,
+            "4": 5,
+            "8": 1
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 9,
+          "worst_time_ratio": 2.4016917654064396,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.3031722049812937
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6929343522406567
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.1666589579111584
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9854300449996228
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7654195449883848
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.594389477822731
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5170201147628364
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 2.2022980089073143
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.3878583075691056
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.2844657119728975
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.4016917654064396
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.596967539619969
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 407.12193066666663,
+          "pooled_speedup": 1.0455050316326524,
+          "geometric_speedup": 0.9398184637991969,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 8,
+          "worst_time_ratio": 1.1534715303526877,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0176722494766435
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9587804877314865
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0513997103960848
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0441741000279274
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0258082286647743
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0886007776111413
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0200183459739207
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.1534715303526877
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.1027959389916406
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.122772123962696
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.1087262579792518
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0900430271264119
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 399.6468893333333,
+          "pooled_speedup": 1.0650602778618896,
+          "geometric_speedup": 0.948578211701882,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 9,
+          "worst_time_ratio": 1.1394221712668318,
+          "median_load_ms": 2.769708,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0700724200596634
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9669065841245651
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0184416712196502
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9800407251279594
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0492351205661625
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.081206030678861
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0359423603931028
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0614578951749423
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0921637755790083
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0952676378740265
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0730796450415399
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.1394221712668318
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 510.5077773333333,
+          "pooled_speedup": 0.8337738344034574,
+          "geometric_speedup": 0.7215997544833359,
+          "factors": {
+            "1": 4,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 8,
+          "worst_time_ratio": 2.464458242264627,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0439288169772643
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6363767033545906
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0985111656505564
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9625549980549879
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.0250191511371276
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 2.4377916695377504
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.225727552907335
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0032984387969968
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.130982258276467
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.5736568859784192
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.464458242264627
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.5487675473024667
+            }
+          ]
+        }
+      },
+      "opportunity": {
+        "native": {
+          "ms_per_process": 219.00980466666667,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 248.13268933333333,
+          "pooled_speedup": 0.8826318098396784,
+          "geometric_speedup": 0.8364052876368798,
+          "factors": {
+            "1": 0,
+            "2": 6,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 6,
+          "worst_time_ratio": 1.6820705917395942,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6663836466032508
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.8189858481926799
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.201429373470765
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5674471938601469
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.3322899880931842
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.3283741104118183
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.6820705917395942
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.364616332742985
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 264.39906033333335,
+          "pooled_speedup": 0.828330495541688,
+          "geometric_speedup": 0.7622855720267537,
+          "factors": {
+            "1": 0,
+            "2": 4,
+            "4": 3,
+            "8": 1
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 6,
+          "worst_time_ratio": 2.4016917654064396,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6929343522406567
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7654195449883848
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.594389477822731
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.5170201147628364
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.3878583075691056
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.2844657119728975
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.4016917654064396
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.596967539619969
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 230.40362044444439,
+          "pooled_speedup": 0.9505484516441224,
+          "geometric_speedup": 0.9404493425393394,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 5,
+          "worst_time_ratio": 1.122772123962696,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9587804877314865
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0258082286647743
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0886007776111413
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0200183459739207
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.1027959389916406
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.122772123962696
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.1087262579792518
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0900430271264119
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 233.50558322222227,
+          "pooled_speedup": 0.9379210622910019,
+          "geometric_speedup": 0.938472920617579,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 7,
+          "worst_time_ratio": 1.1394221712668318,
+          "median_load_ms": 2.769708,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9669065841245651
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0492351205661625
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.081206030678861
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0359423603931028
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0921637755790083
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0952676378740265
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0730796450415399
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.1394221712668318
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 344.90384666666665,
+          "pooled_speedup": 0.6349880025499667,
+          "geometric_speedup": 0.6208489437758231,
+          "factors": {
+            "1": 0,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 6,
+          "worst_time_ratio": 2.464458242264627,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6363767033545906
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.0250191511371276
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 2.4377916695377504
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.225727552907335
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.130982258276467
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.5736568859784192
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 2.464458242264627
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.5487675473024667
+            }
+          ]
+        }
+      },
+      "other": {
+        "native": {
+          "ms_per_process": 206.63822233333335,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 176.895324,
+          "pooled_speedup": 1.1681384089798401,
+          "geometric_speedup": 0.8749855350412054,
+          "factors": {
+            "1": 3,
+            "2": 1,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 1.5422581789188168,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0320668718059558
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0249987791258464
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0457027208125234
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.5422581789188168
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 248.2113843333333,
+          "pooled_speedup": 0.8325090442097947,
+          "geometric_speedup": 0.6355890950438274,
+          "factors": {
+            "1": 1,
+            "2": 1,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 2.2022980089073143,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.3031722049812937
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 2.1666589579111584
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9854300449996228
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 2.2022980089073143
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 176.7183102222222,
+          "pooled_speedup": 1.1693085004801542,
+          "geometric_speedup": 0.9385579756663457,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 1.1534715303526877,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0176722494766435
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0513997103960848
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0441741000279274
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.1534715303526877
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 166.14130611111113,
+          "pooled_speedup": 1.243749836630867,
+          "geometric_speedup": 0.9691164008707959,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.0700724200596634,
+          "median_load_ms": 2.769708,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0700724200596634
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0184416712196502
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9800407251279594
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0614578951749423
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 165.60393066666668,
+          "pooled_speedup": 1.2477857349247456,
+          "geometric_speedup": 0.9748038529664195,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.0985111656505564,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0439288169772643
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0985111656505564
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9625549980549879
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0032984387969968
+            }
+          ]
+        }
+      }
+    },
+    "5000": {
+      "all": {
+        "native": {
+          "ms_per_process": 1737.9428616666664,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 1603.806388,
+          "pooled_speedup": 1.0836363258497423,
+          "geometric_speedup": 1.0559455140513927,
+          "factors": {
+            "1": 3,
+            "2": 7,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 4,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 1.1803938024944003,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0177220206332316
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.5238859054278892
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9940646043576885
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9915480950961931
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7098389770179
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.9428158713284579
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0814665989485657
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.069343953927674
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.1803938024944003
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.012835703346494
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.1768429539191148
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.9092973266951054
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 1687.9838336666664,
+          "pooled_speedup": 1.0295968640241524,
+          "geometric_speedup": 1.018382694420805,
+          "factors": {
+            "1": 1,
+            "2": 5,
+            "4": 5,
+            "8": 1
+          },
+          "wins_over_5pct": 3,
+          "losses_over_3pct": 5,
+          "worst_time_ratio": 1.4005653016127468,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.0855128193796868
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6653860650068878
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.0561925429832644
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9854436716025468
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7000171052580769
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.0007505398387972
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0260359378414519
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.0366391397605261
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.1485698811705956
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.9575863112819141
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.4005653016127468
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.9313671943798343
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 1684.4616793333337,
+          "pooled_speedup": 1.031749717425747,
+          "geometric_speedup": 0.995007961424153,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.0478369143990873,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0127552250497551
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0105663461663248
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.8747003450532402
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9934865747840158
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.011645859594129
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0227168403180549
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.011066253243932
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0220832924347472
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0443639571860441
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0254539619908762
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0478369143990873
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9951284683852387
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 1781.5969723333335,
+          "pooled_speedup": 0.9754972020358265,
+          "geometric_speedup": 0.9859963005299187,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 1.067069028936934,
+          "median_load_ms": 2.547583,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.995379767554274
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0235919063702832
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.877175755470933
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0107515668182863
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0359282307771325
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.067069028936934
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0226229416324666
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0301085597927033
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0111120977949546
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0298027294363594
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.018331030373207
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0619078850910186
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 1633.0160283333332,
+          "pooled_speedup": 1.064253400770611,
+          "geometric_speedup": 1.0353583810424776,
+          "factors": {
+            "1": 4,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 4,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 1.2465634361519908,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9955962345849384
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.5285010638568239
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.8670657898931237
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9999221694028478
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.7628682107621062
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.2292445955551812
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.1256569062171853
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9665108444679965
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.2442949832917962
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.013471631751101
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.2465634361519908
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.9007707418003996
+            }
+          ]
+        }
+      },
+      "opportunity": {
+        "native": {
+          "ms_per_process": 767.0501119999999,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 657.9364400000002,
+          "pooled_speedup": 1.165842268897585,
+          "geometric_speedup": 1.0946408151242424,
+          "factors": {
+            "1": 0,
+            "2": 6,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 4,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 1.1803938024944003,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.5238859054278892
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7098389770179
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.9428158713284579
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0814665989485657
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.1803938024944003
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.012835703346494
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.1768429539191148
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.9092973266951054
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 698.2905883333334,
+          "pooled_speedup": 1.0984683523098606,
+          "geometric_speedup": 1.0482049314043762,
+          "factors": {
+            "1": 0,
+            "2": 4,
+            "4": 3,
+            "8": 1
+          },
+          "wins_over_5pct": 3,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.4005653016127468,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.6653860650068878
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.7000171052580769
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 1.0007505398387972
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0260359378414519
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.1485698811705956
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.9575863112819141
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.4005653016127468
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.9313671943798343
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 771.4779257777777,
+          "pooled_speedup": 0.9942606085931572,
+          "geometric_speedup": 0.97947046285718,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.0478369143990873,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0105663461663248
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.011645859594129
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0227168403180549
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.011066253243932
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0443639571860441
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0254539619908762
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0478369143990873
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9951284683852387
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 825.7931575555554,
+          "pooled_speedup": 0.9288646981170905,
+          "geometric_speedup": 0.9674717312935287,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 1.067069028936934,
+          "median_load_ms": 2.547583,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0235919063702832
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0359282307771325
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.067069028936934
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0226229416324666
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0111120977949546
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0298027294363594
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.018331030373207
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0619078850910186
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 707.0636256666668,
+          "pooled_speedup": 1.0848388803437228,
+          "geometric_speedup": 1.029910731052471,
+          "factors": {
+            "1": 0,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 3,
+          "losses_over_3pct": 4,
+          "worst_time_ratio": 1.2465634361519908,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.5285010638568239
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.7628682107621062
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.2292445955551812
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.1256569062171853
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.2442949832917962
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 1.013471631751101
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 1.2465634361519908
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.9007707418003996
+            }
+          ]
+        }
+      },
+      "other": {
+        "native": {
+          "ms_per_process": 970.8927496666665,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 945.869948,
+          "pooled_speedup": 1.0264548014445074,
+          "geometric_speedup": 0.9826101679977194,
+          "factors": {
+            "1": 3,
+            "2": 1,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.069343953927674,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0177220206332316
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9940646043576885
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9915480950961931
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.069343953927674
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 989.6932453333335,
+          "pooled_speedup": 0.9810037142768061,
+          "geometric_speedup": 0.9612594777335589,
+          "factors": {
+            "1": 1,
+            "2": 1,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 1.0855128193796868,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.0855128193796868
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.0561925429832644
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9854436716025468
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.0366391397605261
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 912.9837535555556,
+          "pooled_speedup": 1.0634282876180305,
+          "geometric_speedup": 1.026826289980483,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0220832924347472,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0127552250497551
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.8747003450532402
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9934865747840158
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0220832924347472
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 955.8038147777778,
+          "pooled_speedup": 1.0157866443464623,
+          "geometric_speedup": 1.0241163226041567,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.0301085597927033,
+          "median_load_ms": 2.547583,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.995379767554274
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.877175755470933
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0107515668182863
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0301085597927033
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 925.9524026666664,
+          "pooled_speedup": 1.048534186930749,
+          "geometric_speedup": 1.0463402784747295,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 1,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 0.9999221694028478,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9955962345849384
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.8670657898931237
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9999221694028478
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9665108444679965
+            }
+          ]
+        }
+      }
+    },
+    "20000": {
+      "all": {
+        "native": {
+          "ms_per_process": 5820.957958666666,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 5311.3148059999985,
+          "pooled_speedup": 1.0959542356802014,
+          "geometric_speedup": 1.151258360339068,
+          "factors": {
+            "1": 3,
+            "2": 7,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 6,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0243654555916113,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": 1823,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0158011627492987
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.4789899028314881
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.999570151374226
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.005084762166711
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.6746433449746986
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.8558471262960503
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.9107845436730394
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.0150902981996959
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0243654555916113
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.8461609879229595
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.9954789175402521
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.8193031937261139
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 5486.1715976666665,
+          "pooled_speedup": 1.0610236765365466,
+          "geometric_speedup": 1.1371430909061406,
+          "factors": {
+            "1": 1,
+            "2": 5,
+            "4": 5,
+            "8": 1
+          },
+          "wins_over_5pct": 6,
+          "losses_over_3pct": 3,
+          "worst_time_ratio": 1.1068217128511586,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": 7093,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.048815831847274
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.4792917800029047
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.1068217128511586
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.005396351899026
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.6849815369613481
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.828375633190933
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.8999871584425178
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.9882673247971394
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0246955039806505
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.8764398618988305
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.0427572716320432
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.8090722311529633
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 6010.540624333335,
+          "pooled_speedup": 0.9684583005896086,
+          "geometric_speedup": 0.9856682472659185,
+          "factors": {
+            "1": 12,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.057468003316592,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9998402793278688
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0159500927672023
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0095932192880135
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.057468003316592
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0277355567912025
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0117859614817584
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0209080430107007
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.009903620436463
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0085542677804133
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9998356285524834
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.011825243261977
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0024071730547075
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 5829.227834333335,
+          "pooled_speedup": 0.9985813085537745,
+          "geometric_speedup": 1.008624349921242,
+          "factors": {
+            "1": 10,
+            "2": 2,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.0992139151435796,
+          "median_load_ms": 5.094708,
+          "estimated_crossover_calls": 6106,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.980172789184589
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0261031000384209
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9988561100415189
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0232127660397747
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0093115222605773
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9658502765976976
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0180160952575565
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0992139151435796
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0410140012113165
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.8961004592485802
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9890001156379595
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.8719720827162094
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 5196.0622496666665,
+          "pooled_speedup": 1.1202633222956648,
+          "geometric_speedup": 1.1807861338988854,
+          "factors": {
+            "1": 4,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 8,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0062260177054179,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": 3709,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0062260177054179
+            },
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.4947625584934891
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9994835652346352
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9918556503833116
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.6036968313033599
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.9478830777173747
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 0.9298430978428067
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0005158193686015
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.881366896579863
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.8349398080710491
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.8557884787050194
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.8227027170895927
+            }
+          ]
+        }
+      },
+      "opportunity": {
+        "native": {
+          "ms_per_process": 2500.8725556666664,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 1902.7718706666674,
+          "pooled_speedup": 1.3143312628383794,
+          "geometric_speedup": 1.2407245177627217,
+          "factors": {
+            "1": 0,
+            "2": 6,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 6,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0243654555916113,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": 1275,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.4789899028314881
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.6746433449746986
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.8558471262960503
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.9107845436730394
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0243654555916113
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.8461609879229595
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.9954789175402521
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.8193031937261139
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 2012.063102666667,
+          "pooled_speedup": 1.242939424887898,
+          "geometric_speedup": 1.2344436109634132,
+          "factors": {
+            "1": 0,
+            "2": 4,
+            "4": 3,
+            "8": 1
+          },
+          "wins_over_5pct": 6,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.0427572716320432,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": 3224,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.4792917800029047
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.6849815369613481
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.828375633190933
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 0.8999871584425178
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 2,
+              "time_ratio": 1.0246955039806505
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 4,
+              "time_ratio": 0.8764398618988305
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.0427572716320432
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.8090722311529633
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 2562.5400091111114,
+          "pooled_speedup": 0.9759350280482699,
+          "geometric_speedup": 0.9878117246505514,
+          "factors": {
+            "1": 8,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0277355567912025,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0159500927672023
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0277355567912025
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0117859614817584
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0209080430107007
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0085542677804133
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9998356285524834
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.011825243261977
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0024071730547075
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 2470.4077177777776,
+          "pooled_speedup": 1.012331906862845,
+          "geometric_speedup": 1.0252408224060603,
+          "factors": {
+            "1": 6,
+            "2": 2,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 2,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.0410140012113165,
+          "median_load_ms": 5.094708,
+          "estimated_crossover_calls": 3778,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0261031000384209
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0093115222605773
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9658502765976976
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0180160952575565
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0410140012113165
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.8961004592485802
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9890001156379595
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.8719720827162094
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 1890.3175973333334,
+          "pooled_speedup": 1.3229906758497312,
+          "geometric_speedup": 1.2827730309398835,
+          "factors": {
+            "1": 0,
+            "2": 1,
+            "4": 1,
+            "8": 6
+          },
+          "wins_over_5pct": 8,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 0.9478830777173747,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": 3787,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.4947625584934891
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.6036968313033599
+            },
+            {
+              "workload": "dual_envelope_meter",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.9478830777173747
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 0.9298430978428067
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.881366896579863
+            },
+            {
+              "workload": "phase_transport",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.8349398080710491
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 8,
+              "time_ratio": 0.8557884787050194
+            },
+            {
+              "workload": "predictive_sensor_tracker",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 8,
+              "time_ratio": 0.8227027170895927
+            }
+          ]
+        }
+      },
+      "other": {
+        "native": {
+          "ms_per_process": 3320.0854030000005,
+          "pooled_speedup": 1.0,
+          "geometric_speedup": 1.0,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0
+            }
+          ]
+        },
+        "incumbent": {
+          "ms_per_process": 3408.5429353333325,
+          "pooled_speedup": 0.97404828573043,
+          "geometric_speedup": 0.9912145362921803,
+          "factors": {
+            "1": 3,
+            "2": 1,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0158011627492987,
+          "median_load_ms": 7.579167,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0158011627492987
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.999570151374226
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.005084762166711
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 1.0150902981996959
+            }
+          ]
+        },
+        "refit": {
+          "ms_per_process": 3474.108495,
+          "pooled_speedup": 0.9556654341044121,
+          "geometric_speedup": 0.9649456184771105,
+          "factors": {
+            "1": 1,
+            "2": 1,
+            "4": 2,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 2,
+          "worst_time_ratio": 1.1068217128511586,
+          "median_load_ms": 4.60775,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.048815831847274
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 4,
+              "time_ratio": 1.1068217128511586
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.005396351899026
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 2,
+              "time_ratio": 0.9882673247971394
+            }
+          ]
+        },
+        "old_payoff": {
+          "ms_per_process": 3448.0006152222227,
+          "pooled_speedup": 0.9629016272046175,
+          "geometric_speedup": 0.9813952359596033,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.057468003316592,
+          "median_load_ms": 7.405625,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9998402793278688
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0095932192880135
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.057468003316592
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.009903620436463
+            }
+          ]
+        },
+        "savings": {
+          "ms_per_process": 3358.820116555555,
+          "pooled_speedup": 0.9884677618296281,
+          "geometric_speedup": 0.9761949688368585,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 1,
+          "worst_time_ratio": 1.0992139151435796,
+          "median_load_ms": 5.094708,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.980172789184589
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9988561100415189
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0232127660397747
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0992139151435796
+            }
+          ]
+        },
+        "oracle": {
+          "ms_per_process": 3305.744652333333,
+          "pooled_speedup": 1.0043381301869596,
+          "geometric_speedup": 1.000493086943853,
+          "factors": {
+            "1": 4,
+            "2": 0,
+            "4": 0,
+            "8": 0
+          },
+          "wins_over_5pct": 0,
+          "losses_over_3pct": 0,
+          "worst_time_ratio": 1.0062260177054179,
+          "median_load_ms": 0.0,
+          "estimated_crossover_calls": null,
+          "cases": [
+            {
+              "workload": "adaptive_spike_recovery",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 1.0062260177054179
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "large",
+              "trip_count": 255,
+              "factor": 1,
+              "time_ratio": 0.9994835652346352
+            },
+            {
+              "workload": "coupled_chemical_surrogate",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 0.9918556503833116
+            },
+            {
+              "workload": "index_expiry_counters",
+              "variant": "small",
+              "trip_count": 1024,
+              "factor": 1,
+              "time_ratio": 1.0005158193686015
+            }
+          ]
+        }
+      }
+    }
+  }
+}

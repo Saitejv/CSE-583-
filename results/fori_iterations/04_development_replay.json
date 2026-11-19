@@ -1,0 +1,473 @@
+{
+  "baseline": {
+    "incumbent_warm": {
+      "300": {
+        "pooled_speedup": 0.7764519356292148,
+        "body_speedup": 0.6967139028420393,
+        "utility": -0.7231697565505663,
+        "unrolled": 285,
+        "regressions_over_3pct": 564
+      },
+      "5000": {
+        "pooled_speedup": 0.9762285056989985,
+        "body_speedup": 0.8929496100814749,
+        "utility": -0.23569644160052844,
+        "unrolled": 285,
+        "regressions_over_3pct": 421
+      },
+      "20000": {
+        "pooled_speedup": 1.0066658879268984,
+        "body_speedup": 0.9792028131154877,
+        "utility": -0.0619761382776851,
+        "unrolled": 285,
+        "regressions_over_3pct": 238
+      }
+    },
+    "original_payoff": {
+      "300": {
+        "pooled_speedup": 0.8673617195995498,
+        "body_speedup": 0.7986846148680357,
+        "utility": -0.44957827192238525,
+        "unrolled": 0,
+        "regressions_over_3pct": 567
+      },
+      "5000": {
+        "pooled_speedup": 0.9793173679854086,
+        "body_speedup": 0.9265277012042032,
+        "utility": -0.15262266988075082,
+        "unrolled": 0,
+        "regressions_over_3pct": 435
+      },
+      "20000": {
+        "pooled_speedup": 0.994400765570221,
+        "body_speedup": 0.9747009322410372,
+        "utility": -0.05124918240097556,
+        "unrolled": 0,
+        "regressions_over_3pct": 232
+      }
+    },
+    "refit_warm": {
+      "300": {
+        "pooled_speedup": 0.7421498115916463,
+        "body_speedup": 0.6707053005575259,
+        "utility": -0.8021985394699587,
+        "unrolled": 361,
+        "regressions_over_3pct": 558
+      },
+      "5000": {
+        "pooled_speedup": 0.9847299948224923,
+        "body_speedup": 0.8823198497559439,
+        "utility": -0.26658897715547186,
+        "unrolled": 361,
+        "regressions_over_3pct": 418
+      },
+      "20000": {
+        "pooled_speedup": 1.0240653786579592,
+        "body_speedup": 0.9795462870585283,
+        "utility": -0.0698897548712834,
+        "unrolled": 361,
+        "regressions_over_3pct": 249
+      }
+    }
+  },
+  "selected": {
+    "model": "incumbent",
+    "boundaries": [
+      15.0,
+      60.0
+    ],
+    "quantile": 0.55,
+    "score": -0.2358185423393511,
+    "replay": {
+      "300": {
+        "pooled_speedup": 0.8673617195995498,
+        "body_speedup": 0.7986846148680357,
+        "utility": -0.44957827192238525,
+        "unrolled": 0,
+        "regressions_over_3pct": 567
+      },
+      "5000": {
+        "pooled_speedup": 0.9788146836120818,
+        "body_speedup": 0.9263996232011492,
+        "utility": -0.15289915779599947,
+        "unrolled": 1,
+        "regressions_over_3pct": 436
+      },
+      "20000": {
+        "pooled_speedup": 1.0026350769505865,
+        "body_speedup": 0.9789580985269654,
+        "utility": -0.04860001685308879,
+        "unrolled": 55,
+        "regressions_over_3pct": 227
+      }
+    }
+  },
+  "trials": [
+    {
+      "model": "incumbent",
+      "boundaries": [
+        15.0,
+        60.0
+      ],
+      "quantile": 0.55,
+      "score": -0.2358185423393511,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9788146836120818,
+          "body_speedup": 0.9263996232011492,
+          "utility": -0.15289915779599947,
+          "unrolled": 1,
+          "regressions_over_3pct": 436
+        },
+        "20000": {
+          "pooled_speedup": 1.0026350769505865,
+          "body_speedup": 0.9789580985269654,
+          "utility": -0.04860001685308879,
+          "unrolled": 55,
+          "regressions_over_3pct": 227
+        }
+      }
+    },
+    {
+      "model": "incumbent",
+      "boundaries": [],
+      "quantile": 0.55,
+      "score": -0.23588231660878864,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9788146836120818,
+          "body_speedup": 0.9263996232011492,
+          "utility": -0.15289915779599947,
+          "unrolled": 1,
+          "regressions_over_3pct": 436
+        },
+        "20000": {
+          "pooled_speedup": 1.0030602088868594,
+          "body_speedup": 0.9789483133080644,
+          "utility": -0.048939713326109704,
+          "unrolled": 63,
+          "regressions_over_3pct": 225
+        }
+      }
+    },
+    {
+      "model": "incumbent",
+      "boundaries": [],
+      "quantile": 0.7,
+      "score": -0.2361081928588602,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9793173679854086,
+          "body_speedup": 0.9265277012042032,
+          "utility": -0.15262266988075082,
+          "unrolled": 0,
+          "regressions_over_3pct": 435
+        },
+        "20000": {
+          "pooled_speedup": 1.0007147922280872,
+          "body_speedup": 0.9776407485622739,
+          "utility": -0.049254181708070055,
+          "unrolled": 25,
+          "regressions_over_3pct": 230
+        }
+      }
+    },
+    {
+      "model": "refit",
+      "boundaries": [],
+      "quantile": 0.55,
+      "score": -0.23632253058047006,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8663301030940466,
+          "body_speedup": 0.7974877811080341,
+          "utility": -0.45257753187028155,
+          "unrolled": 4,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9877273160018205,
+          "body_speedup": 0.929239928072502,
+          "utility": -0.15096663499119928,
+          "unrolled": 22,
+          "regressions_over_3pct": 434
+        },
+        "20000": {
+          "pooled_speedup": 1.0045110263023094,
+          "body_speedup": 0.9782513160940097,
+          "utility": -0.05245547669717422,
+          "unrolled": 89,
+          "regressions_over_3pct": 247
+        }
+      }
+    },
+    {
+      "model": "incumbent",
+      "boundaries": [
+        15.0,
+        60.0
+      ],
+      "quantile": 0.7,
+      "score": -0.23733138639222598,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9793173679854086,
+          "body_speedup": 0.9265277012042032,
+          "utility": -0.15262266988075082,
+          "unrolled": 0,
+          "regressions_over_3pct": 435
+        },
+        "20000": {
+          "pooled_speedup": 0.9947985780374071,
+          "body_speedup": 0.9753436085173361,
+          "utility": -0.05084842564086449,
+          "unrolled": 18,
+          "regressions_over_3pct": 228
+        }
+      }
+    },
+    {
+      "model": "incumbent",
+      "boundaries": [],
+      "quantile": 0.85,
+      "score": -0.2375173501475786,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9793173679854086,
+          "body_speedup": 0.9265277012042032,
+          "utility": -0.15262266988075082,
+          "unrolled": 0,
+          "regressions_over_3pct": 435
+        },
+        "20000": {
+          "pooled_speedup": 0.9943960750065602,
+          "body_speedup": 0.9746933816513058,
+          "utility": -0.05126467560248445,
+          "unrolled": 1,
+          "regressions_over_3pct": 232
+        }
+      }
+    },
+    {
+      "model": "incumbent",
+      "boundaries": [
+        15.0,
+        60.0
+      ],
+      "quantile": 0.85,
+      "score": -0.2375173501475786,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9793173679854086,
+          "body_speedup": 0.9265277012042032,
+          "utility": -0.15262266988075082,
+          "unrolled": 0,
+          "regressions_over_3pct": 435
+        },
+        "20000": {
+          "pooled_speedup": 0.9943960750065602,
+          "body_speedup": 0.9746933816513058,
+          "utility": -0.05126467560248445,
+          "unrolled": 1,
+          "regressions_over_3pct": 232
+        }
+      }
+    },
+    {
+      "model": "refit",
+      "boundaries": [],
+      "quantile": 0.7,
+      "score": -0.23785877688296456,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.866949547048997,
+          "body_speedup": 0.7977524934321545,
+          "utility": -0.4519137764955589,
+          "unrolled": 3,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9794228572754469,
+          "body_speedup": 0.9263175692220524,
+          "utility": -0.15404477177045917,
+          "unrolled": 15,
+          "regressions_over_3pct": 435
+        },
+        "20000": {
+          "pooled_speedup": 0.9999949725972422,
+          "body_speedup": 0.9780630943463552,
+          "utility": -0.050367818346172974,
+          "unrolled": 43,
+          "regressions_over_3pct": 244
+        }
+      }
+    },
+    {
+      "model": "refit",
+      "boundaries": [
+        15.0,
+        60.0
+      ],
+      "quantile": 0.85,
+      "score": -0.2387045906006867,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9786093731842052,
+          "body_speedup": 0.9258819972260941,
+          "utility": -0.15437999920863532,
+          "unrolled": 6,
+          "regressions_over_3pct": 437
+        },
+        "20000": {
+          "pooled_speedup": 0.9945168426433962,
+          "body_speedup": 0.974236977042792,
+          "utility": -0.052858448884233696,
+          "unrolled": 12,
+          "regressions_over_3pct": 237
+        }
+      }
+    },
+    {
+      "model": "refit",
+      "boundaries": [],
+      "quantile": 0.85,
+      "score": -0.23882775590567717,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8673617195995498,
+          "body_speedup": 0.7986846148680357,
+          "utility": -0.44957827192238525,
+          "unrolled": 0,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9786093731842052,
+          "body_speedup": 0.9258819972260941,
+          "utility": -0.15437999920863532,
+          "unrolled": 6,
+          "regressions_over_3pct": 437
+        },
+        "20000": {
+          "pooled_speedup": 0.9951596906526746,
+          "body_speedup": 0.9745435341273999,
+          "utility": -0.053454109009629644,
+          "unrolled": 21,
+          "regressions_over_3pct": 239
+        }
+      }
+    },
+    {
+      "model": "refit",
+      "boundaries": [
+        15.0,
+        60.0
+      ],
+      "quantile": 0.55,
+      "score": -0.23901238592021776,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.8663301030940466,
+          "body_speedup": 0.7974877811080341,
+          "utility": -0.45257753187028155,
+          "unrolled": 4,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9778648481571468,
+          "body_speedup": 0.9263665447354192,
+          "utility": -0.1540909631823413,
+          "unrolled": 18,
+          "regressions_over_3pct": 435
+        },
+        "20000": {
+          "pooled_speedup": 0.9989093216136521,
+          "body_speedup": 0.9779918141230997,
+          "utility": -0.051931141670011505,
+          "unrolled": 78,
+          "regressions_over_3pct": 243
+        }
+      }
+    },
+    {
+      "model": "refit",
+      "boundaries": [
+        15.0,
+        60.0
+      ],
+      "quantile": 0.7,
+      "score": -0.23956160430483675,
+      "replay": {
+        "300": {
+          "pooled_speedup": 0.866949547048997,
+          "body_speedup": 0.7977524934321545,
+          "utility": -0.4519137764955589,
+          "unrolled": 3,
+          "regressions_over_3pct": 567
+        },
+        "5000": {
+          "pooled_speedup": 0.9792536658652509,
+          "body_speedup": 0.9261061634993439,
+          "utility": -0.15414120620439878,
+          "unrolled": 11,
+          "regressions_over_3pct": 438
+        },
+        "20000": {
+          "pooled_speedup": 0.993716528914966,
+          "body_speedup": 0.9751338038482494,
+          "utility": -0.053115006128417776,
+          "unrolled": 40,
+          "regressions_over_3pct": 243
+        }
+      }
+    }
+  ]
+}

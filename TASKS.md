@@ -1,218 +1,46 @@
-# Project Tasks: Compilation-Budget-Aware Loop Unroll Selection for JAX
+# Next tasks for `auto_fori_loop`
 
-Phases 0–3 are implemented as of 2026-11-17. The Week 3 acceptance gate failed in both recorded runs. The four-week target is Nov 17–Dec 15, 2026.
+Improve end-to-end runtime on unchanged `jax.lax.fori_loop` bodies. Prioritize training on costly prediction mistakes, then use the improved forecasts to decide when unrolling pays off.
 
-Sources of truth: `CSE583_Cost_Aware_JAX_Loop_Unrolling_Proposal.docx` and `group10_slides.pdf`. If this file conflicts with them, they win.
+## 1. Train on costly prediction mistakes
 
-## Goal and success criteria
+- [x] Rank 517 historical development configurations by warm regret, including harmful unrolling and missed speedups at factor 1. [Ranked cases](results/fori_regret/development_regret.csv)
+- [x] Review new drafts from OpenCode and Anti-Gravity, freeze the family split, and sweep factors 1, 2, 4, and 8 on 56 configurations in three CPU processes. Verified identical inputs, equivalent outputs, and Jaxprs differing only in unroll. Retained all cold and warm samples. [Frozen split](results/fori_regret/split.json)
+- [x] Train on 549 development configurations and score against the incumbent on 24 configurations from three fresh families. Effect log MAE fell from 0.414 to 0.409. Pooled warm speedup versus factor 1 improved from 0.869× to 0.981×, and slowdowns above 3% fell from six to four. Native factor 1 was fastest on every held-out configuration. [Holdout metrics](results/fori_regret/holdout.json)
 
-Automatically choose a partial unroll factor `u` for fixed-trip-count `lax.scan` / `lax.fori_loop` loops from static Jaxpr features, without compiling/benchmarking all candidates at decision time. For each candidate, predict `C(u)` (compile cost) and `T(u)` (warm latency), then pick the feasible factor minimizing `C(u) + R * T(u)` under budget `B`.
+## 2. Unroll only when the expected savings justify setup
 
-Project is done when:
+- [x] Add an opt-in payoff rule using the expected call count, incremental first-call cost, trace-time decision cost, and development residual margins. Use factor 1 when the conservative payoff is nonpositive or the candidate exceeds the cold budget. [Calibration](results/fori_regret/payoff.json)
+- [x] Measure the actual wrapper at 1, 300, and 5,000 synchronized calls on all 24 held-out configurations, including model load, tracing, decision, compilation, and execution. At 5,000 calls the refit saved 6.7% versus the incumbent, and the payoff rule saved about 9%. Native factor 1 had the lowest total runtime at every horizon and the payoff rule had no pooled break-even. Keep the incumbent as the general static choice. [Results and commands](docs/fori_regret.md)
 
-- An opt-in `auto_scan` / `auto_fori_loop` wrapper selects `u` from features and passes it to JAX's `unroll`.
-- On held-out loop families, the selector beats factor 1 and the LLVM-style size heuristic on total cost (or warm latency when `R` is large) for a useful subset of loops.
-- We report median latency, end-to-end time over `R` calls, budget-violation rate, factor agreement, and regret vs the measured oracle, with CPU/GPU results separated.
-- Deliverables exist: sweep suite, feature extractor, learned selector, opt-in interface, correctness tests, evaluation report, demo.
+Verified the full test suite with `PYTHONPATH=src:. JAX_PLATFORMS=cpu .venv/bin/python -m pytest -q` (**1,200 passed**).
 
-Non-goals: new XLA/LLVM pass, dynamic trip counts, arbitrary nested control flow, upstream JAX integration (optional stretch only).
+## 3. Broaden evaluation around the proposal
 
-## Ground rules
+- [x] Freeze eight fresh bodies covering loop-control-heavy recurrences and lane-wise arithmetic, dense updates, indexing, and simulation. Preserve the proposal-style, historical, and prior regression workloads as separate controls. [Frozen matrix](results/fori_proposal/matrix.json)
+- [x] Sweep native factors 1, 2, 4, and 8. Verified repeatable warm wins on 16 of 32 fresh configurations, reaching 2.44× on lane-wise moments. Verified equivalent outputs and Jaxprs differing only by unroll. [Warm results](results/fori_proposal/native_summary.json)
+- [x] Export the incumbent's numerical forecast data for low-overhead inference. Verified exact forecast parity across all 41 swept configurations. [Compact model calibration](results/fori_proposal/compact_payoff.json)
+- [x] Directly time the wrapper at 1, 300, and 5,000 calls on 24 fresh and nine control configurations. Confirm 20,000 calls separately on all 12 live fresh cases with a measured warm opportunity. The compact model was 2.7% slower pooled on all fresh cases at 5,000 calls and 7.7% faster pooled on the opportunity cohort at 20,000 calls. [Evaluation and commands](docs/fori_proposal_evaluation.md)
 
-- Never benchmark candidate factors during a decision. Offline sweeps only.
-- Hold out entire loop families from training and model selection.
-- Pin JAX/jaxlib and record device/backend with every row.
-- Correctness vs `u=1` is mandatory before reporting speedups.
-- Inspect HLO before claiming a win: XLA may unroll or fuse independently.
-- Time with warmup + `block_until_ready()`; medians and spread, not single runs.
-- Do not merge CPU and GPU results.
+Replayed both runtime summaries from 1,890 raw live rows and verified the full CPU suite (**1,204 passed**).
 
-## Done
+## 4. Run five measured optimization cycles
 
-- [x] Read proposal and slides; extracted scope, baselines, metrics, 4-week plan.
-- [x] Create Python 3.13 `.venv` with pinned `requirements.txt` (JAX/jaxlib 0.12.0.1, NumPy, pandas, scikit-learn, matplotlib, pytest).
-- [x] Verify CPU backend and `lax.scan(unroll=1/2/4/8)` execution on Apple M2.
-- [x] Create project directories (`src/jax_unroll`, `benchmarks`, `tests`, `data`, `results`) and `.gitignore`.
-- [x] Phase 2 complete (2026-11-17): static Jaxpr features, baselines, feature/label dataset, and frozen splits. See `docs/week2_results.md`.
-- [x] Phase 3 implementation complete (2026-11-17). The CPU selector, dev LOFO, timing, and both frozen gate results are recorded in `docs/week3_results.md`.
+- [x] Compare model storage, trace reuse, proposal-augmented refitting, per-call savings calibration, and deferred loading. Keep the uncompressed export and deferred loading. Keep trace reuse in the benchmark and retain the warm incumbent after the accuracy/runtime comparison. [Five-cycle report](docs/fori_iterations.md)
+- [x] Validate on six frozen families with native factors 1, 2, 4, and 8 and direct totals through 20,000 calls. The incumbent saved 8.8% pooled at 20,000 calls versus native factor 1. The savings rule chose two larger factors at that horizon and was effectively tied with native. [Confirmation results](results/fori_iterations/confirmation_summary.json)
 
-## Phase 0 - Scaffolding and target hardware
+Replayed all 864 live measurements and verified the full CPU suite (**1,209 passed**).
 
-- [x] Owner: TBD. Confirm primary target device. Ideal: one documented GPU. If none by end of week 1, commit to CPU-only results and say so in the report. Decision: CPU-only Apple M2 for now; GPU checkpoint 2026-11-23 (`docs/hardware.md`).
-- [x] `pip install -r requirements.txt` reproduces the environment on the target machine; pin CUDA/jaxlib variant there if GPU. `uv pip install -r requirements.txt` installs the editable package and `python -m jax_unroll` works.
-- [x] Add package skeleton:
-  - `src/jax_unroll/features.py` - Jaxpr feature extraction
-  - `src/jax_unroll/model.py` - cost-model training/prediction
-  - `src/jax_unroll/selector.py` - budget-aware decision policy
-  - `src/jax_unroll/auto_loop.py` - `auto_scan`, `auto_fori_loop`
-  - `benchmarks/workloads.py` - loop-family registry
-  - `benchmarks/sweep.py` - measurement harness
-  - `tests/` - pytest suite
-- [x] Agree on data schema (below) and file layout before collecting data. See `docs/data_schema.md`.
-- [x] Add a `Makefile` or scripts for: `sweep`, `train`, `evaluate`, `test`.
+[Current predictor results](docs/fori_prediction_update.md) · [Live wrapper benchmark](docs/fori_predictor.md)
 
-Acceptance: fresh checkout + `uv pip install -r requirements.txt` runs the smoke test; schema documented. **Met 2026-11-17.**
+## 5. Optimize the horizon-specific decision
 
-## Phase 1 - Workloads and factor sweeps (Week 1)
+- [x] Ranked the compact incumbent's factor-choice regret on 626 historical configurations at 300, 5,000, and 20,000 calls. The prior mixed confirmation left only 87 ms at the long horizon. Two older dense-update bodies accounted for 15.685 s of the targeted suite's 24.349 s gap. [Replay rankings](results/fori_horizon/development_regret.csv)
+- [x] Calibrated an opt-in matrix rule using family-grouped development forecasts and compared it to a simple crossover. The warm incumbent remains the general long-horizon selector. The short bypass saved 0.101 s at one call and 0.092 s at 300 on the 14 originally frozen fresh configurations.
+- [x] Verified native factors and measured 1,035 end-to-end wrapper/native/oracle totals in 105 fresh CPU processes, with every frozen case retained. On three separately frozen matrix-update families, the targeted decision took 2.949 s versus 5.713 s for the incumbent and 5.700 s for native at 20,000 calls. It recovered 80.7% of direct oracle headroom. [Report, limitations, and reproduction](docs/fori_horizon.md)
 
-- [x] T1.1 Implement the workload registry with static shapes and fixed trip counts:
-  - scalar recurrence (confirmed 2.05x signal at `u=8`)
-  - elementwise sine (confirmed regression at `u=8`)
-  - reduction + vector
-  - dense matrix-vector update
-  - indexed tensor update (gather/scatter-style)
-  - one application-style iterative workload (e.g. GRU-like scan or iterative solver)
-- [x] T1.2 Vary trip count (`16, 64, 256, 1024`; add `100, 1000` for remainder behavior), array shape/size, and factor `{1, 2, 4, 8}`. Record whether `u` divides trip count.
-- [x] T1.3 Measurement protocol:
-  - one fresh process per configuration (or `jax.clear_caches()` plus separate timing where valid)
-  - randomized configuration order, >=3 process repeats, warmups
-  - separate tracing + lowering time (`.lower()`), backend compile time (`.compile()`), and warm execution time (`block_until_ready()`)
-  - cold compile = trace + lower + compile; also record end-to-end time for `R` calls
-  - IR size from StableHLO text (`.lower().as_text()`); optimized HLO via `compiled.as_text()` if supported, else XLA dump flags
-- [x] T1.4 Correctness: compare every factor against `u=1`; assert within tolerance and record pass/fail in the dataset.
-- [x] T1.5 Emit `results/raw/sweep_<backend>_<date>.csv` and a human-readable oracle table (best measured factor per configuration). Produced `results/raw/sweep_cpu_2026-11-17.csv` (432 rows) and `..._shapes.csv` (240 rows); oracle in `results/oracle_cpu_2026-11-17.csv/.md`.
-- [x] T1.6 Risk gate: verify at least two workloads show distinct useful choices with non-trivial gains. If not, broaden workloads or narrow the research question before building the model. **PASS**: useful dominant warm factors 1, 2, and 8; evidence in `results/risk_gate_cpu_2026-11-17.md` and `docs/week1_results.md`.
+Verified the full CPU test suite (**1,225 passed**) and reproduced the summaries from the saved direct measurements.
 
-Suggested columns:
-```
-workload, family, backend, device, trip_count, shape, dtype, factor, divides_trip,
-process_repeat, trace_ms, lower_ms, compile_ms, cold_total_ms, warm_median_us,
-warm_p95_us, end_to_end_ms_R, stablehlo_bytes, hlo_bytes, correct, notes
-```
+## 6. Expand the family-grouped training and evaluation corpus
 
-Acceptance: reproducible sweep command; >=6 families; all factors valid/correct; oracle table reproduced from raw data in one script; gate decision documented. **Met 2026-11-17**: 660/672 rows correct (12 excluded for a divergent `NaN` configuration), 0 errors, 55 valid configurations, 3 process repeats; see `docs/week1_results.md`.
-
-### Week 1 outcome (2026-11-17)
-
-- Data: 672 measurements over 56 configurations (six families, primary and
-  secondary shapes, trip counts 16/64/100/256/1000/1024, factors 1/2/4/8),
-  three fresh-process repeats. 660 rows are correct; the 12 rows for
-  `dense_matvec`/`n32`/`T=1000` are excluded because the `float32` state
-  overflows to `NaN`, leaving 55 valid configurations.
-- Gate: PASS. Scalar recurrence favors `u=8` (1.32-1.35x warm at large trip
-  counts), indexed update favors `u=2` (1.07x median), sine/Jacobi/reduction
-  favor `u=1`; dense matvec has no useful signal.
-- Total-cost caveat: at `R=100` and `R=1000` compilation dominates and the
-  total-cost oracle chooses `u=1` everywhere; at `R=10000` scalar and indexed
-  update show 1.05x/1.04x median total gains. Phase 3/4 must sweep `R` and `B`.
-- Full report: `docs/week1_results.md`.
-
-## Phase 2 - Jaxpr features and heuristics (Week 2)
-
-- [x] T2.1 Feature extractor from the loop body via `jax.make_jaxpr`:
-  - trip structure: trip count, candidate factor, remainder, remainder ratio, divide-evenly flag
-  - operation mix: total equations; counts of elementwise, dot/matmul, reduce, gather/scatter/index, convert, other
-  - tensor footprint: input/output/carry shapes and dtypes; estimated carry bytes, intermediate bytes, max tensor bytes
-  - dependences: loop-carried state count; approximate longest def-use path; count of body outputs that feed later equations
-  - arithmetic intensity proxy and per-iteration equation count
-  - context: backend/device, dtype bits, `B`, `R`
-- [x] T2.2 Handle both `scan` and `fori_loop` bodies; document what is and is not captured. Keep extraction cheap (microseconds/milliseconds) and measured.
-- [x] T2.3 Tests: known-loop feature values; `scan` vs equivalent `fori_loop` parity where possible; assert feature extraction does not compile candidates.
-- [x] T2.4 Implement baselines:
-  - factor 1 (JAX default)
-  - fixed factors 2/4/8
-  - LLVM-style size heuristic (rolled vs unrolled size estimate, threshold and max factor)
-- [x] T2.5 Dataset builder: join features and sweep labels by configuration key; stable schema; deduplicate; version data and config.
-- [x] T2.6 Define leave-one-family-out splits now; freeze the held-out families before model work.
-
-Acceptance: feature table for all swept configs; tests pass; baseline heuristic implemented and documented; held-out families frozen and recorded. **Met 2026-11-17**: 220-row dataset over 55 configurations (`data/features_cpu_2026-11-17.csv`), 197 tests pass, `llvm_size` baseline documented, split version 1 frozen. See `docs/week2_results.md`.
-
-### Week 2 outcome (2026-11-17)
-
-- Features: `src/jax_unroll/features.py` extracts trip/remainder structure, operation mix, tensor footprint, dependence proxies, and work proxies from `jax.make_jaxpr` for `scan` and static-bound `fori_loop` (which traces to `scan` in JAX 0.12; the counter is excluded from state features). It also locates loops through `jit`/`pjit` wrappers and supports bare bodies with an explicit `body_num_xs`. No candidate is lowered or compiled. Median extraction cost 0.56 ms (p95 1.13 ms) over 220 configurations.
-- Dataset: `benchmarks/dataset.py` joins features with the Week 1 sweep medians into `data/features_cpu_2026-11-17.csv` (220 rows x 78 columns, 55 configurations, 672 raw rows, 12 dropped as non-finite) plus a versioned metadata sidecar (dataset version 2) with raw-file hashes and the split manifest. `B`/`R` context columns are empty until the Phase 3 R/B grid.
-- Baselines: `src/jax_unroll/baselines.py` implements factor 1, fixed 2/4/8, and an LLVM `UnrollThreshold`-style size heuristic. Warm-only sanity check over 55 configurations: factor 1 is the best median warm baseline (1.000x), while `llvm_size` over-unrolls small scan bodies (0.842x median, 45/55 choices u=8). The measured warm oracle uses u=1 31/55, u=2 9/55, u=4 7/55, u=8 8/55; this gap is Phase 3 work.
-- Splits: split version 1 frozen before model work. Dev = recurrence, elementwise, reduction, dense_linear_algebra; held out = indexed_memory, iterative_solver. LOFO folds over dev families only; see `docs/splits.md`.
-- Full report: `docs/week2_results.md`; feature definitions: `docs/features.md`.
-
-## Phase 3 - Cost model, selector, and overhead (Week 3)
-
-- [x] T3.1 Train small models on dev families only:
-  - ridge regressions for `log C(u)` and `log T(u)` with factor-relative terms
-  - no deep learning; prioritize interpretability and tiny inference cost
-- [x] T3.2 Validate with leave-one-family-out CV. Report MAE of `C`/`T`, factor agreement, and regret.
-- [x] T3.3 Implement the selector:
-  - candidate `u in {1,2,4,8}`
-  - `score(u) = C_hat(u) + R * T_hat(u) / 1000` for cold ms and warm µs
-  - feasibility: `C_hat(u) <= B`
-  - throughput-only mode: minimize `T_hat(u)`
-  - fallback to `u=1` when predictions are uncertain, infeasible, or feature extraction fails
-  - deterministic tie-breaking (prefer smaller `u`)
-- [x] T3.4 Measure analysis + inference overhead and include it in end-to-end cost.
-- [x] T3.5 Cache decisions by loop signature (shapes, dtypes, body hash, backend, `B`, `R`); invalidate on version/backend change.
-- [x] T3.6 Report prediction calibration and failure cases; avoid overfitting to one shape.
-
-Acceptance gate **failed** on 2026-11-17. Both frozen versions selected factor 1 on all 20 held-out configurations across the R/B grid. Neither beat both baselines on a matched setting. The regret, confidence intervals, decision overhead, and dev-only retry are documented in [Week 3 results](docs/week3_results.md).
-
-### Phase 3 recovery handoff (2026-11-17)
-
-- [x] Freeze a [separate recovery protocol](docs/recovery_protocol.md), expand dev with six additional memory-access bodies, and reserve four distinct confirmation bodies. Keep the original holdout and frozen records unchanged.
-- [x] Compare factor-relative warm calibration in seven grouped dev LOFO folds and freeze the selected expanded-dev model before confirmation collection.
-- [x] Score the fresh confirmation once with decision overhead. **Pass:** 12 paired wins over both baselines, six distinct configurations; 0.990× median feasible long-horizon speedup against factor 1.
-- [x] Deliver the [Phase 4 handoff](docs/phase4_handoff.md), reproducible evidence, and tests. **Factor 1 is the default; learned policy is opt-in only.**
-
-## Phase 4 - JAX integration and held-out evaluation (Week 4)
-
-- [ ] T4.1 Implement opt-in `auto_scan(f, init, xs, *, B, R, ...)` and `auto_fori_loop(lower, upper, body_fun, init_val, ...)`:
-  - keep the factor-1 default and make the recovered CPU policy explicitly opt-in
-  - inspect body/features at trace time
-  - select `u` and call existing `lax.scan` / `lax.fori_loop` with `unroll=u`
-  - preserve JAX semantics and pytree handling; static trip count only
-  - expose `force_factor` / `disable` escape hatches; clear errors for unsupported cases
-- [ ] T4.2 End-to-end benchmark: cold compile + `R` invocations for `R in {1, 10, 100, 1000}`; include decision overhead; measure budget-violation rate.
-- [ ] T4.3 Held-out evaluation only: no tuning on these families. Primary table on the documented target device; CPU table separate.
-- [ ] T4.4 HLO audit: confirm whether XLA unrolls/fuses beyond our setting; report gains over the actual baseline, not an assumed one.
-- [ ] T4.5 Failure analysis: no-gain cases explained by backend optimization, memory behavior, dependence chains, or prediction error.
-- [ ] T4.6 Full pytest suite: correctness across factors, fallback paths, budget edge cases, cache behavior, unsupported-loop errors.
-
-Acceptance: demo script shows a selected factor and measured end-to-end improvement; held-out results table with baselines, oracle regret, CIs, and budget violations; HLO evidence attached.
-
-## Phase 5 - Deliverables and demo
-
-- [ ] D1 Reproducible factor-sweep suite (`benchmarks/sweep.py` + documented commands).
-- [ ] D2 Jaxpr feature extractor with documented feature definitions.
-- [x] D3 Learned selector + versioned model artifacts + training script.
-- [ ] D4 Opt-in automatic JAX loop interface.
-- [ ] D5 Correctness/test suite and CI-style `pytest -q` instructions.
-- [ ] D6 Evaluation report with tradeoffs, failure cases, CPU/GPU separation, and threats to validity.
-- [ ] D7 Final demo (notebook or script) and updated slides.
-- [ ] D8 Stretch, only if time: Jaxpr scan-parameter rewrite demonstration; upstream JAX issue/discussion.
-
-Acceptance: another student can clone, install, run the sweep and demo, and reproduce headline numbers.
-
-## Milestones and gates
-
-| End of | Must have | Gate |
-|---|---|---|
-| Week 1 (Nov 23) | Sweep harness + oracle over 6 families + target hardware decision | At least 2 families with distinct useful factors, else adjust scope |
-| Week 2 (Nov 30) | Features + baselines + frozen splits | Held-out families frozen; feature extraction cheap and tested |
-| Week 3 (Dec 7) | Trained selector, policy, and overhead complete | **Failed** in both frozen evaluations on Nov 17. Zero paired wins over both baselines. |
-| Week 4 (Dec 14) | Wrapper + held-out evaluation + report/demo | Reproducible headline result; limitations stated |
-
-## Risks and contingencies
-
-- Weak optimization signal: broaden workload set or narrow the claim; report negative results honestly.
-- XLA already unrolls: audit optimized HLO; compare against actual JAX/XLA baseline.
-- Overfitting / small dataset: leave-one-family-out, simple models, CIs, fixed baselines.
-- No GPU: finish CPU results, state the limitation, avoid GPU speedup claims.
-- Feature extraction too slow: cache per loop signature; simplify longest-path proxy.
-- Schedule slip: drop the stretch Jaxpr rewrite and the application workload before dropping evaluation or correctness.
-
-## Open questions
-
-- Which GPU will be available, and by when? (Owner: TBD)
-- Which application-style iterative workload best fits the 4-week budget?
-- Preferred `R` default and budget `B` values for the demo?
-- Predict `C(u)`/`T(u)` vs directly classify the best factor? (Start with regression; compare.)
-- Committed model JSON and gate evidence are immutable. The two archived Week 3 sweep inputs and the recovery measurements are tracked; other raw sweep outputs under `results/raw/` remain gitignored.
-
-## Commands
-
-```bash
-source .venv/bin/activate
-make test
-make quick
-make recovery-train
-make recovery-verify
-make verify-week3
-```
+- [x] Used three OpenCode free-model sessions and two agy CLI sessions to draft native loop bodies. Retained 13 bodies, froze 28 training and 24 held-out configurations, and collected 624 per-factor process measurements on CPU. On training data, 20 of 28 configurations had a repeat-supported warm gain of at least 1.05×. Verified outputs, graph equivalence, label units and split isolation. All four focused tests passed. [Corpus, data loader and commands](docs/fori_agent_cases.md)
