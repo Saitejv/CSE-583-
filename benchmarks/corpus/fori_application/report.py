@@ -8,20 +8,21 @@ from itertools import product
 import numpy as np
 import pandas as pd
 
-from benchmarks.corpus.fori_application.live import key, specs
+from benchmarks.corpus.fori_application.live import LONG_CALLS, key, oracle_name, specs
 from benchmarks.corpus.fori_application.protocol import ARMS, HORIZONS, OUT, REPEATS
 from jax_unroll.schema import FACTORS
 
 
-def detail(cohort):
-    raw = json.loads((OUT / f"{cohort}_live.json").read_text())
+def detail(cohort, long_run=False):
+    suffix = "_long" if long_run else ""
+    raw = json.loads((OUT / f"{cohort}{suffix}_live.json").read_text())
     for filename, expected_hash in raw["freeze"].items():
         if sha256((OUT / filename).read_bytes()).hexdigest() != expected_hash:
             raise ValueError(f"{filename} changed")
-    oracle_file = "transfer_oracle.json" if cohort == "transfer" else "oracle.json"
+    oracle_file = oracle_name(cohort == "transfer", long_run)
     sweep = {key(r): r for r in json.loads((OUT / oracle_file).read_text()) if r["cohort"] == cohort}
     expected = {(s.name, v, t) for s, v, t in specs(cohort)}
-    remaining = set(product(ARMS, HORIZONS, range(REPEATS)))
+    remaining = set(product(ARMS, (LONG_CALLS,) if long_run else HORIZONS, range(REPEATS)))
     rows = []
     for block in raw["blocks"]:
         arm, h, repeat = block["arm"], block["calls"], block["repeat"]
@@ -115,10 +116,12 @@ def summarize(frame):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("cohort", choices=("applications", "transfer", "holdout"))
+    parser.add_argument("--long", action="store_true", help="Report the 20,000-call extension")
     opts = parser.parse_args()
-    cases, totals = summarize(detail(opts.cohort))
-    cases.to_csv(OUT / f"{opts.cohort}_cases.csv", index=False)
-    totals.to_csv(OUT / f"{opts.cohort}_totals.csv", index=False)
+    suffix = "_long" if opts.long else ""
+    cases, totals = summarize(detail(opts.cohort, opts.long))
+    cases.to_csv(OUT / f"{opts.cohort}{suffix}_cases.csv", index=False)
+    totals.to_csv(OUT / f"{opts.cohort}{suffix}_totals.csv", index=False)
     print(totals[totals.subset == "all"].pivot(index="calls", columns="arm", values="seconds").round(3))
 
 

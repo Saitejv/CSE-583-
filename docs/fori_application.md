@@ -32,6 +32,10 @@ Seconds sum all configurations in a cohort and average three independent process
 
 Daily returns and elevation data come from Matplotlib's bundled samples. The covariance and grid interpolation have development analogues in the earlier synthetic covariance and Voronoi benchmarks. The signal grid accounts for most of the gain. The terrain candidate took .858, .852, and 1.502 s versus native's 1.023, 1.021, and 1.040 s. Keep the existing choice there pending stronger evidence. [Every configuration](../results/fori_application/transfer_cases.csv) · [Full and opportunity totals](../results/fori_application/transfer_totals.csv)
 
+## Long-horizon extension
+
+After seeing the 5,000-call application results, we specified a 20,000-call extension on every configuration in both four-application cohorts. It uses the same inputs, calibrated policy, five arms, three repeats, and cold budget. The oracle selects the minimum of the four existing native timing curves at 20,000 calls. The extension has separate direct result files.
+
 ## Reproduction
 
 From the CSE583 repository root with the pinned dependencies:
@@ -48,6 +52,10 @@ $py -m benchmarks.corpus.fori_application.transfer sweep
 $py -m benchmarks.corpus.fori_application.live --cohort transfer
 for cohort in applications holdout transfer; do
   $py -m benchmarks.corpus.fori_application.report "$cohort"
+done
+for cohort in applications transfer; do
+  $py -m benchmarks.corpus.fori_application.live --cohort "$cohort" --long
+  $py -m benchmarks.corpus.fori_application.report "$cohort" --long
 done
 $py -m pytest -q
 ```

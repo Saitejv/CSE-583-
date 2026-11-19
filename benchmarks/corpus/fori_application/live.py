@@ -46,7 +46,17 @@ def key(row):
     return row["workload"], row["variant"], row["trip_count"]
 
 
-def prepare(transfer=False):
+LONG_CALLS = 20_000
+
+
+def oracle_name(transfer, long_run):
+    prefix = "transfer_" if transfer else ""
+    suffix = "_long" if long_run else ""
+    return f"{prefix}oracle{suffix}.json"
+
+
+def prepare(transfer=False, long_run=False):
+    horizons = (LONG_CALLS,) if long_run else HORIZONS
     result = []
     sources = (
         (("transfer", OUT / "transfer_runs.json"),)
@@ -54,6 +64,8 @@ def prepare(transfer=False):
         else (("applications", OUT / "application_runs.json"), ("holdout", AGENT_OUT / "eval_runs.json"))
     )
     for cohort, path in sources:
+        if long_run and cohort == "holdout":
+            continue
         expected = {(s.name, v, t) for s, v, t in specs(cohort)}
         for r, c, w in curves(path):
             expected.remove(key(r))
@@ -66,12 +78,12 @@ def prepare(transfer=False):
                     variant=r["variant"],
                     trip_count=r["trip_count"],
                     opportunity=bool(np.any((np.median(ratios, axis=0) >= 1.05) & (ratios > 1).all(axis=0))),
-                    oracle={h: FACTORS[total(cold, warm, h).argmin()] for h in HORIZONS},
+                    oracle={h: FACTORS[total(cold, warm, h).argmin()] for h in horizons},
                 )
             )
         if expected:
             raise ValueError("native sweep missing cases")
-    (OUT / ("transfer_oracle.json" if transfer else "oracle.json")).write_text(
+    (OUT / oracle_name(transfer, long_run)).write_text(
         json.dumps(result, indent=2) + "\n"
     )
 
@@ -89,7 +101,7 @@ class Recorder:
 def worker(cohort, arm, h, repeat):
     jax.config.update("jax_enable_compilation_cache", False)
     _warm_backend()
-    oracle = OUT / ("transfer_oracle.json" if cohort == "transfer" else "oracle.json")
+    oracle = OUT / oracle_name(cohort == "transfer", h == LONG_CALLS)
     choices = {key(r): r["oracle"][str(h)] for r in json.loads(oracle.read_text())}
     engine = None
     start = perf_counter_ns()
@@ -139,7 +151,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--worker", type=int)
     parser.add_argument("--arm", choices=ARMS)
-    parser.add_argument("--calls", type=int, choices=HORIZONS)
+    parser.add_argument("--calls", type=int, choices=(*HORIZONS, LONG_CALLS))
+    parser.add_argument("--long", action="store_true", help="Measure the real-data 20,000-call extension")
     parser.add_argument("--cohort", choices=("applications", "holdout", "transfer"))
     opts = parser.parse_args()
     if opts.worker is not None:
@@ -154,13 +167,16 @@ def main():
         from benchmarks.corpus.fori_application.transfer import check as check_transfer
 
         check_transfer()
-    prepare(transfer)
+    if opts.long and opts.cohort not in ("applications", "transfer"):
+        parser.error("--long requires an explicit real-data cohort")
+    prepare(transfer, opts.long)
+    horizons = (LONG_CALLS,) if opts.long else HORIZONS
     for cohort in [opts.cohort] if opts.cohort else ("applications", "holdout"):
-        path = OUT / (cohort + "_live.json")
+        path = OUT / (cohort + ("_long" if opts.long else "") + "_live.json")
         inputs = (
-            ("transfer_manifest.json", "fit.json", "transfer_oracle.json")
+            ("transfer_manifest.json", "fit.json", oracle_name(True, opts.long))
             if transfer
-            else ("manifest.json", "fit.json", "oracle.json")
+            else ("manifest.json", "fit.json", oracle_name(False, opts.long))
         )
         stamp = {p: sha256((OUT / p).read_bytes()).hexdigest() for p in inputs}
         old = json.loads(path.read_text()) if path.exists() else dict(host=host(), freeze=stamp, blocks=[])
@@ -168,7 +184,7 @@ def main():
             raise ValueError("incompatible saved run")
         done = {(b["arm"], b["calls"], b["repeat"]) for b in old["blocks"]}
         for repeat in range(REPEATS):
-            order = list(product(ARMS, HORIZONS))
+            order = list(product(ARMS, horizons))
             random.Random(5831902 + repeat).shuffle(order)
             for arm, h in order:
                 if (arm, h, repeat) in done:
