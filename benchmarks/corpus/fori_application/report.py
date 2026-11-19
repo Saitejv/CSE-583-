@@ -19,7 +19,7 @@ def detail(cohort, long_run=False):
     for filename, expected_hash in raw["freeze"].items():
         if sha256((OUT / filename).read_bytes()).hexdigest() != expected_hash:
             raise ValueError(f"{filename} changed")
-    oracle_file = oracle_name(cohort == "transfer", long_run)
+    oracle_file = oracle_name(cohort, long_run)
     sweep = {key(r): r for r in json.loads((OUT / oracle_file).read_text()) if r["cohort"] == cohort}
     expected = {(s.name, v, t) for s, v, t in specs(cohort)}
     remaining = set(product(ARMS, (LONG_CALLS,) if long_run else HORIZONS, range(REPEATS)))
@@ -115,7 +115,7 @@ def summarize(frame):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("cohort", choices=("applications", "transfer", "holdout"))
+    parser.add_argument("cohort", choices=("applications", "transfer", "holdout", "scan_ports"))
     parser.add_argument("--long", action="store_true", help="Report the 20,000-call extension")
     opts = parser.parse_args()
     suffix = "_long" if opts.long else ""

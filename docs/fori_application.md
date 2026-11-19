@@ -60,6 +60,8 @@ After seeing the 5,000-call application results, we specified a 20,000-call exte
 
 The engine beat native and the previous policy in all three repeats on each cohort. Each application has one configuration, so pooled and workload-weighted seconds coincide. On the original four, morphology supplied 0.542 s of savings and the engine recovered 73.1% of oracle headroom. Segmented maximum was 0.010 s slower than native. On the targeted four, the signal grid saved 6.668 s, covariance 1.149 s, and terrain interpolation 0.705 s. All three beat native in all three repeats. Recursive least squares lost 0.003 s with the same factor as native. The engine recovered 99.7% of the measured savings available to the four-factor oracle on this targeted cohort. The 0.026 s difference between the two pooled means is too small to justify further selection complexity on these applications. [Original configurations](../results/fori_application/applications_long_cases.csv) · [Original totals and opportunities](../results/fori_application/applications_long_totals.csv) · [Targeted configurations](../results/fori_application/transfer_long_cases.csv) · [Targeted totals and opportunities](../results/fori_application/transfer_long_totals.csv)
 
+The four external scan-derived controls are reported separately. [Source-size scenarios and timings](fori_scan_ports.md)
+
 ## Reproduction
 
 From the CSE583 repository root with the pinned dependencies:

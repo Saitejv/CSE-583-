@@ -1,0 +1,118 @@
+{
+  "source": "583/benchmark_unroll.py",
+  "source_sha256": "1ef9606b92cd1baaf294dbcd66fdb12ada2472570c23dceec4ce5f0ce063edb3",
+  "port_sha256": "3b819a9c23d038d9fd3a872b5b58b90b495316d589cd72758643a7ed4f09710c",
+  "fit_sha256": "37628c6c2134f06bcc118dda16aa2cc7714651b43adbf2d3a8a8d4b00a493ffe",
+  "cases": [
+    {
+      "name": "scalar",
+      "description": "8192 steps; scalar carry",
+      "trip_count": 8192,
+      "inputs": [
+        {
+          "shape": [],
+          "dtype": "float32",
+          "sha256": "9dff0964ecc970d2839ddbc7da950099414cf28f2bdca0083bfb82c172a8c081"
+        },
+        {
+          "shape": [
+            8192
+          ],
+          "dtype": "float32",
+          "sha256": "213f30abf702afa51b9340925140e018599f98fa9730631f949fddd0215ea54f"
+        }
+      ]
+    },
+    {
+      "name": "elementwise",
+      "description": "128 steps; 4096-element vector",
+      "trip_count": 128,
+      "inputs": [
+        {
+          "shape": [
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "fe0f7a35c8e39c5699e4e8471fa5ef830f9bbb73522fb0d9636855a257f111ba"
+        },
+        {
+          "shape": [
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "a5f8b5b264aefdefa81ec12694f5828365018865b75dfdcd4d6baeef8b167cd1"
+        }
+      ]
+    },
+    {
+      "name": "reduction",
+      "description": "128 steps; 8192-element mean and update",
+      "trip_count": 128,
+      "inputs": [
+        {
+          "shape": [
+            8192
+          ],
+          "dtype": "float32",
+          "sha256": "3d460a86630d9a4f01781044ac49e33f7e80c9559e7ed176d8fed9c3a16f6ad1"
+        },
+        {
+          "shape": [
+            8192
+          ],
+          "dtype": "float32",
+          "sha256": "3c957c080b1fdac3ab3a2e707b80831bbb119e10028f7566a956e40d4ceefc90"
+        }
+      ]
+    },
+    {
+      "name": "matrix",
+      "description": "64 steps; 128x128 matmul + tanh",
+      "trip_count": 64,
+      "inputs": [
+        {
+          "shape": [
+            128,
+            128
+          ],
+          "dtype": "float32",
+          "sha256": "99b66008fc6ba51c044864e3ac0f0ee49dc406ec8c22880786b9edeb7af6eb8f"
+        },
+        {
+          "shape": [
+            128,
+            128
+          ],
+          "dtype": "float32",
+          "sha256": "ece734b9b11a6660edfa08d13a0a7044b4ee9aa70b9454c1f2f6a5bb5bc2c18b"
+        },
+        {
+          "shape": [
+            128
+          ],
+          "dtype": "float32",
+          "sha256": "a47c1ed02ed7d9600ab09cd1979024a1b4d0227742e1710f6a662ba449aec66c"
+        }
+      ]
+    }
+  ],
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "calls": [
+    300,
+    5000,
+    20000
+  ],
+  "arms": [
+    "native",
+    "warm",
+    "previous",
+    "candidate",
+    "oracle"
+  ],
+  "repeats": 3
+}

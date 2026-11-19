@@ -33,6 +33,10 @@ from jax_unroll.selector import HorizonPolicy
 
 
 def specs(cohort):
+    if cohort == "scan_ports":
+        from benchmarks.corpus.fori_application.scan_ports import settings as port_settings
+
+        return port_settings()
     if cohort == "transfer":
         from benchmarks.corpus.fori_application.transfer import (
             settings as transfer_settings,
@@ -49,20 +53,21 @@ def key(row):
 LONG_CALLS = 20_000
 
 
-def oracle_name(transfer, long_run):
-    prefix = "transfer_" if transfer else ""
+def oracle_name(cohort, long_run):
+    prefix = f"{cohort}_" if cohort in ("transfer", "scan_ports") else ""
     suffix = "_long" if long_run else ""
     return f"{prefix}oracle{suffix}.json"
 
 
-def prepare(transfer=False, long_run=False):
+def prepare(cohort, long_run=False):
     horizons = (LONG_CALLS,) if long_run else HORIZONS
     result = []
     sources = (
-        (("transfer", OUT / "transfer_runs.json"),)
-        if transfer
+        ((cohort, OUT / f"{cohort}_runs.json"),)
+        if cohort in ("transfer", "scan_ports")
         else (("applications", OUT / "application_runs.json"), ("holdout", AGENT_OUT / "eval_runs.json"))
     )
+    destination = OUT / oracle_name(cohort, long_run)
     for cohort, path in sources:
         if long_run and cohort == "holdout":
             continue
@@ -83,9 +88,7 @@ def prepare(transfer=False, long_run=False):
             )
         if expected:
             raise ValueError("native sweep missing cases")
-    (OUT / oracle_name(transfer, long_run)).write_text(
-        json.dumps(result, indent=2) + "\n"
-    )
+    destination.write_text(json.dumps(result, indent=2) + "\n")
 
 
 class Recorder:
@@ -101,7 +104,7 @@ class Recorder:
 def worker(cohort, arm, h, repeat):
     jax.config.update("jax_enable_compilation_cache", False)
     _warm_backend()
-    oracle = OUT / oracle_name(cohort == "transfer", h == LONG_CALLS)
+    oracle = OUT / oracle_name(cohort, h == LONG_CALLS)
     choices = {key(r): r["oracle"][str(h)] for r in json.loads(oracle.read_text())}
     engine = None
     start = perf_counter_ns()
@@ -131,13 +134,22 @@ def worker(cohort, arm, h, repeat):
             fn = spec.build(trip, factor, size).fn
         out, timing = measure_calls(fn, args, h)
         if engine:
-            if engine.decision.cache_hit or engine.decision.fallback_reason not in (
-                None,
-                "insufficient_calls",
-            ):
+            allowed = {None, "insufficient_calls"}
+            if cohort == "scan_ports" and spec.name == "scalar" and trip == 8192:
+                allowed.add("unsupported_features")
+            if engine.decision.cache_hit or engine.decision.fallback_reason not in allowed:
                 raise ValueError(engine.decision)
             factor = engine.decision.factor
-        records.append(dict(workload=spec.name, variant=size, trip_count=trip, factor=factor, **timing))
+        records.append(
+            dict(
+                workload=spec.name,
+                variant=size,
+                trip_count=trip,
+                factor=factor,
+                fallback_reason=engine.decision.fallback_reason if engine else None,
+                **timing,
+            )
+        )
         checks.append((spec, native.fn, fn, args, out, factor))
     for spec, native, fn, args, out, factor in checks:
         assert_same_graph(fn, args, str(jax.make_jaxpr(native)(*args)), factor)
@@ -152,32 +164,33 @@ def main():
     parser.add_argument("--worker", type=int)
     parser.add_argument("--arm", choices=ARMS)
     parser.add_argument("--calls", type=int, choices=(*HORIZONS, LONG_CALLS))
-    parser.add_argument("--long", action="store_true", help="Measure the real-data 20,000-call extension")
-    parser.add_argument("--cohort", choices=("applications", "holdout", "transfer"))
+    parser.add_argument("--long", action="store_true", help="Measure the 20,000-call extension")
+    parser.add_argument("--cohort", choices=("applications", "holdout", "transfer", "scan_ports"))
     opts = parser.parse_args()
     if opts.worker is not None:
         print(json.dumps(worker(opts.cohort, opts.arm, opts.calls, opts.worker)))
         return
-    check()
+    if opts.cohort == "scan_ports":
+        from benchmarks.corpus.fori_application.scan_ports import check as check_ports
+
+        check_ports()
+    else:
+        check()
     fit = json.loads((OUT / "fit.json").read_text())
     if asdict(application_engine().payoff) != fit["policy"]:
         raise ValueError("deployment policy differs from development choice")
-    transfer = opts.cohort == "transfer"
-    if transfer:
+    if opts.cohort == "transfer":
         from benchmarks.corpus.fori_application.transfer import check as check_transfer
 
         check_transfer()
-    if opts.long and opts.cohort not in ("applications", "transfer"):
-        parser.error("--long requires an explicit real-data cohort")
-    prepare(transfer, opts.long)
+    if opts.long and opts.cohort not in ("applications", "transfer", "scan_ports"):
+        parser.error("--long requires an application, transfer or scan_ports cohort")
+    prepare(opts.cohort, opts.long)
     horizons = (LONG_CALLS,) if opts.long else HORIZONS
     for cohort in [opts.cohort] if opts.cohort else ("applications", "holdout"):
         path = OUT / (cohort + ("_long" if opts.long else "") + "_live.json")
-        inputs = (
-            ("transfer_manifest.json", "fit.json", oracle_name(True, opts.long))
-            if transfer
-            else ("manifest.json", "fit.json", oracle_name(False, opts.long))
-        )
+        manifest = f"{cohort}_manifest.json" if cohort in ("transfer", "scan_ports") else "manifest.json"
+        inputs = (manifest, "fit.json", oracle_name(cohort, opts.long))
         stamp = {p: sha256((OUT / p).read_bytes()).hexdigest() for p in inputs}
         old = json.loads(path.read_text()) if path.exists() else dict(host=host(), freeze=stamp, blocks=[])
         if old["freeze"] != stamp or old["host"] != host():

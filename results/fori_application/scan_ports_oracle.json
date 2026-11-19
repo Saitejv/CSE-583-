@@ -1,0 +1,46 @@
+[
+  {
+    "cohort": "scan_ports",
+    "workload": "elementwise",
+    "variant": "source",
+    "trip_count": 128,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "scan_ports",
+    "workload": "matrix",
+    "variant": "source",
+    "trip_count": 64,
+    "opportunity": false,
+    "oracle": {
+      "300": 1,
+      "5000": 4
+    }
+  },
+  {
+    "cohort": "scan_ports",
+    "workload": "reduction",
+    "variant": "source",
+    "trip_count": 128,
+    "opportunity": false,
+    "oracle": {
+      "300": 2,
+      "5000": 1
+    }
+  },
+  {
+    "cohort": "scan_ports",
+    "workload": "scalar",
+    "variant": "source",
+    "trip_count": 8192,
+    "opportunity": true,
+    "oracle": {
+      "300": 4,
+      "5000": 8
+    }
+  }
+]
