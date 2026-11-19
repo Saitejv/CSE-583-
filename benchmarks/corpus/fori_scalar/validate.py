@@ -48,16 +48,19 @@ def oracle():
     return result
 
 
-def worker(arm, calls, repeat):
+def worker(arm, calls, repeat, *, batch=None, out_dir=OUT, candidate_factory=None, incumbent_path=UNCOMPRESSED):
     jax.config.update("jax_enable_compilation_cache", False)
     _warm_backend()
-    batch = configs()
+    batch = configs() if batch is None else list(batch)
     random.Random(583209 + repeat + calls).shuffle(batch)
-    choices = json.loads((OUT / "oracle.json").read_text())
+    choices = json.loads((out_dir / "oracle.json").read_text())
     start = perf_counter_ns()
     engine = None
     if arm in ("candidate", "incumbent"):
-        engine = Recorder(application_engine(model_path=BUNDLED if arm == "candidate" else UNCOMPRESSED))
+        if arm == "candidate" and candidate_factory is not None:
+            engine = Recorder(candidate_factory())
+        else:
+            engine = Recorder(application_engine(model_path=BUNDLED if arm == "candidate" else incumbent_path))
     setup = (perf_counter_ns() - start) / 1e6 if engine else 0.
     checks, rows = [], []
     for spec, variant, trip in batch:

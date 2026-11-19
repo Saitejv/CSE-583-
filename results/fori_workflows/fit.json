@@ -1,0 +1,84 @@
+{
+  "scores": {
+    "0": 0.0,
+    "1": 0.1794521608770731,
+    "4": 0.2729431098436179
+  },
+  "folds": [
+    {
+      "max_streams": 0,
+      "family": "modal_synthesis",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 0,
+      "family": "level_trend",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 0,
+      "family": "battery_rc",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 0,
+      "family": "dc_rejection",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 0,
+      "family": "ohlc_smoothing",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 1,
+      "family": "modal_synthesis",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 1,
+      "family": "level_trend",
+      "replay_saved_ms": 265.2492838187145
+    },
+    {
+      "max_streams": 1,
+      "family": "battery_rc",
+      "replay_saved_ms": 302.9938837844029
+    },
+    {
+      "max_streams": 1,
+      "family": "dc_rejection",
+      "replay_saved_ms": 718.7137254307214
+    },
+    {
+      "max_streams": 1,
+      "family": "ohlc_smoothing",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 4,
+      "family": "modal_synthesis",
+      "replay_saved_ms": 0.0
+    },
+    {
+      "max_streams": 4,
+      "family": "level_trend",
+      "replay_saved_ms": 265.2492838187145
+    },
+    {
+      "max_streams": 4,
+      "family": "battery_rc",
+      "replay_saved_ms": 302.9938837844029
+    },
+    {
+      "max_streams": 4,
+      "family": "dc_rejection",
+      "replay_saved_ms": 686.5589193456151
+    },
+    {
+      "max_streams": 4,
+      "family": "ohlc_smoothing",
+      "replay_saved_ms": 679.3905125606173
+    }
+  ]
+}

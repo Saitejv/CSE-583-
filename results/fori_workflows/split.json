@@ -1,0 +1,768 @@
+{
+  "rows": [
+    {
+      "workload": "dc_blocker",
+      "family": "dc_rejection",
+      "split": "train",
+      "trip_count": 2048,
+      "variant": "default",
+      "body_hash": "56f1cfc6ceb2cb70",
+      "inputs": [
+        [
+          [
+            2048
+          ],
+          "float32",
+          "9e55b84227a3c55d34f8861144ae3f5d7ef0e2737b2a996304f672a65135d6a4"
+        ],
+        [
+          [],
+          "float32",
+          "87e2f7bf058af2e1864bb8d20622940396484f1d8fab1da5e3c63ae693a4914a"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    },
+    {
+      "workload": "dc_blocker",
+      "family": "dc_rejection",
+      "split": "train",
+      "trip_count": 4096,
+      "variant": "default",
+      "body_hash": "702f37c3137fdbf3",
+      "inputs": [
+        [
+          [
+            4096
+          ],
+          "float32",
+          "5be58ec65f9a81a0a5cd7b2554b2d752df89bd30272f04d737b1ff67a6014d72"
+        ],
+        [
+          [],
+          "float32",
+          "87e2f7bf058af2e1864bb8d20622940396484f1d8fab1da5e3c63ae693a4914a"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    },
+    {
+      "workload": "heikin_ashi",
+      "family": "ohlc_smoothing",
+      "split": "train",
+      "trip_count": 2048,
+      "variant": "default",
+      "body_hash": "a1b729c473208ba8",
+      "inputs": [
+        [
+          [
+            2048
+          ],
+          "float32",
+          "d393acacd823131f2e97376ff2ec320fe15cce33574c5fba996abc41a24e2f3d"
+        ],
+        [
+          [
+            2048
+          ],
+          "float32",
+          "7207accdd6517a69917b103c4f538dc25f9e3073a8d1564b7a9c730333fb3689"
+        ],
+        [
+          [
+            2048
+          ],
+          "float32",
+          "0d6f96294f99e5f8979d5c22cdc122c1c1d18f079e8fcfcbaa9e6c9bc77b6a4a"
+        ],
+        [
+          [
+            2048
+          ],
+          "float32",
+          "f71bc87b4a1773eb8ce8d708d0b75466d908703a209b1dc731a8aa578a2c2d51"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "e7c2e94863070920a4469e7392869627a9beb2bf400593b3070bfdd3441a38f1"
+        ]
+      ]
+    },
+    {
+      "workload": "heikin_ashi",
+      "family": "ohlc_smoothing",
+      "split": "train",
+      "trip_count": 4096,
+      "variant": "default",
+      "body_hash": "05c62350c65b93da",
+      "inputs": [
+        [
+          [
+            4096
+          ],
+          "float32",
+          "b368f7e3ab851e06fc387fe7bb55dcfa0715db58251232f68ab919dc21a0ca69"
+        ],
+        [
+          [
+            4096
+          ],
+          "float32",
+          "8cf1dbfd380da361d000c93433103c23fd22fd5fa217b1c026b585ddf325664c"
+        ],
+        [
+          [
+            4096
+          ],
+          "float32",
+          "3c3296114eb359ce8be7a7e6d2f4a9a1734aa61be9f1d8851cdca1d7fdbf9f6d"
+        ],
+        [
+          [
+            4096
+          ],
+          "float32",
+          "f1573ae246912f96b20b303607970a5ab7e360dc2b0a562204ed4e399f23c200"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "e7c2e94863070920a4469e7392869627a9beb2bf400593b3070bfdd3441a38f1"
+        ]
+      ]
+    },
+    {
+      "workload": "battery_ecm",
+      "family": "battery_rc",
+      "split": "train",
+      "trip_count": 2048,
+      "variant": "default",
+      "body_hash": "c2ec49f02dfa0704",
+      "inputs": [
+        [
+          [
+            2048
+          ],
+          "float32",
+          "92c2113b50cd398e6cc11557f47ad7fd5cd2211bdb9b3d4982fb7f7eae502e6d"
+        ],
+        [
+          [],
+          "float32",
+          "030a1a64b337c633d995221728d15e8b0d086cc0dcf4557205111b089b04464d"
+        ],
+        [
+          [],
+          "float32",
+          "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        ]
+      ]
+    },
+    {
+      "workload": "battery_ecm",
+      "family": "battery_rc",
+      "split": "train",
+      "trip_count": 4096,
+      "variant": "default",
+      "body_hash": "9057cf1c4d1b1699",
+      "inputs": [
+        [
+          [
+            4096
+          ],
+          "float32",
+          "5f2c1e7b742df4bcd39d91217827a7186fa221c83c170764bdcfbb039f659942"
+        ],
+        [
+          [],
+          "float32",
+          "030a1a64b337c633d995221728d15e8b0d086cc0dcf4557205111b089b04464d"
+        ],
+        [
+          [],
+          "float32",
+          "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        ]
+      ]
+    },
+    {
+      "workload": "holt_trend",
+      "family": "level_trend",
+      "split": "train",
+      "trip_count": 2048,
+      "variant": "default",
+      "body_hash": "ff4fed764399f7a1",
+      "inputs": [
+        [
+          [
+            2048
+          ],
+          "float32",
+          "d05a110b1ac7e59e8eb183850a2ec0bfd098f7a4eb178b7eab1cdec77989bfe0"
+        ],
+        [
+          [],
+          "float32",
+          "80c8a717ccd70c8809eb78e6a9591c003e11c721fe0ccaf62fd592abda1a5593"
+        ],
+        [
+          [],
+          "float32",
+          "fb360f7241a770dc32cade9a1d1273c92b13bd4959b1c130931312b7fe95e63f"
+        ]
+      ]
+    },
+    {
+      "workload": "holt_trend",
+      "family": "level_trend",
+      "split": "train",
+      "trip_count": 4096,
+      "variant": "default",
+      "body_hash": "aa0a29b65dc8ebf8",
+      "inputs": [
+        [
+          [
+            4096
+          ],
+          "float32",
+          "489080a4b97497b92dc0afcbb66d6660d4893258baab1f1beccc148ef9687408"
+        ],
+        [
+          [],
+          "float32",
+          "80c8a717ccd70c8809eb78e6a9591c003e11c721fe0ccaf62fd592abda1a5593"
+        ],
+        [
+          [],
+          "float32",
+          "fb360f7241a770dc32cade9a1d1273c92b13bd4959b1c130931312b7fe95e63f"
+        ]
+      ]
+    },
+    {
+      "workload": "alpha_beta_tracker",
+      "family": "level_trend",
+      "split": "train",
+      "trip_count": 2048,
+      "variant": "default",
+      "body_hash": "eb775a7594205524",
+      "inputs": [
+        [
+          [
+            2048
+          ],
+          "float32",
+          "0254cdda13025aa00686b1da222494f5d1cdff7ecad10f45057414701620f717"
+        ],
+        [
+          [],
+          "float32",
+          "0b9d79ff0fc4d0a77ef398763bbe45c445501e826219f2b6a1aa709411ab631d"
+        ],
+        [
+          [],
+          "float32",
+          "e0fb2d87992a9fc79e7729163ad2aea5efbf14806711292c8c46e873bac1a253"
+        ],
+        [
+          [],
+          "float32",
+          "fb360f7241a770dc32cade9a1d1273c92b13bd4959b1c130931312b7fe95e63f"
+        ],
+        [
+          [
+            2048,
+            2
+          ],
+          "float32",
+          "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    },
+    {
+      "workload": "alpha_beta_tracker",
+      "family": "level_trend",
+      "split": "train",
+      "trip_count": 4096,
+      "variant": "default",
+      "body_hash": "869399ef8c19fd68",
+      "inputs": [
+        [
+          [
+            4096
+          ],
+          "float32",
+          "8464fed852b130a63c62ab63d64f62e875f2dd1a460355dd77965c446fefb962"
+        ],
+        [
+          [],
+          "float32",
+          "0b9d79ff0fc4d0a77ef398763bbe45c445501e826219f2b6a1aa709411ab631d"
+        ],
+        [
+          [],
+          "float32",
+          "e0fb2d87992a9fc79e7729163ad2aea5efbf14806711292c8c46e873bac1a253"
+        ],
+        [
+          [],
+          "float32",
+          "fb360f7241a770dc32cade9a1d1273c92b13bd4959b1c130931312b7fe95e63f"
+        ],
+        [
+          [
+            4096,
+            2
+          ],
+          "float32",
+          "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    },
+    {
+      "workload": "acoustic_resonator_bank",
+      "family": "modal_synthesis",
+      "split": "train",
+      "trip_count": 2048,
+      "variant": "default",
+      "body_hash": "7f2546f339dd9bc9",
+      "inputs": [
+        [
+          [
+            2048
+          ],
+          "float32",
+          "916c50d163bdb9eeefd7bac97538863b7752d1bed989c688db3a2d7bb1083b07"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "5228b9ca1ae847063a70011fe14b9464bfb0dbf517fed929a2d8f7e327e46523"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "55cb8f8fdf1d22c3cb309c3b6756113c7a22f0ab644da9e553107c2b90d32c2a"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "56352717ab3c4a9abc086f577fac37f2931bb4b12eb663aafcef4e8c97b94305"
+        ],
+        [
+          [
+            2048,
+            8
+          ],
+          "float32",
+          "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+        ]
+      ]
+    },
+    {
+      "workload": "acoustic_resonator_bank",
+      "family": "modal_synthesis",
+      "split": "train",
+      "trip_count": 4096,
+      "variant": "default",
+      "body_hash": "dc9f6eeb4c1b6008",
+      "inputs": [
+        [
+          [
+            4096
+          ],
+          "float32",
+          "c56b5fb507c817f66f9a0db6491fd2f0fb0286e8ed8b3837c7e57fcca7016b5c"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "5228b9ca1ae847063a70011fe14b9464bfb0dbf517fed929a2d8f7e327e46523"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "55cb8f8fdf1d22c3cb309c3b6756113c7a22f0ab644da9e553107c2b90d32c2a"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "56352717ab3c4a9abc086f577fac37f2931bb4b12eb663aafcef4e8c97b94305"
+        ],
+        [
+          [
+            4096,
+            8
+          ],
+          "float32",
+          "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+        ],
+        [
+          [
+            8
+          ],
+          "float32",
+          "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+        ]
+      ]
+    },
+    {
+      "workload": "muskingum",
+      "family": "river_routing",
+      "split": "test",
+      "trip_count": 2304,
+      "variant": "default",
+      "body_hash": "441f67dac31408c5",
+      "inputs": [
+        [
+          [
+            2304
+          ],
+          "float32",
+          "9da08ccc052726628820cc887a08a88f7db47d5892758075fe643522eafab2aa"
+        ],
+        [
+          [],
+          "float32",
+          "52d4c13e514ab1501c5b91cf37d48852061ebfa25b6ce28bb51149a067406b0b"
+        ]
+      ]
+    },
+    {
+      "workload": "muskingum",
+      "family": "river_routing",
+      "split": "test",
+      "trip_count": 3840,
+      "variant": "default",
+      "body_hash": "cccde4db9ba23f10",
+      "inputs": [
+        [
+          [
+            3840
+          ],
+          "float32",
+          "1c351a3776fa62b98dfc7c3f18e2a4bebe49f96fc73f4816bea348704c237fb7"
+        ],
+        [
+          [],
+          "float32",
+          "a67587557ba04bbf79be87034ae8df33bf769551f9f5a92483db210183ea7c28"
+        ]
+      ]
+    },
+    {
+      "workload": "cumulative_trapezoid_integrator",
+      "family": "quadrature",
+      "split": "test",
+      "trip_count": 2304,
+      "variant": "default",
+      "body_hash": "dd3bd5c0fda3475c",
+      "inputs": [
+        [
+          [
+            2304
+          ],
+          "float32",
+          "62639d8c7f8ebe097d3adf2195b7bce4cbf8987d24a9ce0bec400410ef7dfd9f"
+        ],
+        [
+          [],
+          "float32",
+          "ffe61de41490ddcd878c30c0498e6a99beb8d54e96c1cfa1d44ff9895b307e27"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    },
+    {
+      "workload": "cumulative_trapezoid_integrator",
+      "family": "quadrature",
+      "split": "test",
+      "trip_count": 3840,
+      "variant": "default",
+      "body_hash": "2c69360343ebe859",
+      "inputs": [
+        [
+          [
+            3840
+          ],
+          "float32",
+          "4ad59dd6ca22c57e47d4444382dbcae4cc1aef95801f20c714fba79c4b13055b"
+        ],
+        [
+          [],
+          "float32",
+          "c09d84bfdba3201df74a4805eac73d8f85588975035516d13b280034c6ef6257"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    },
+    {
+      "workload": "hysteretic_event_detector",
+      "family": "alarm_persistence",
+      "split": "test",
+      "trip_count": 2304,
+      "variant": "default",
+      "body_hash": "aecd2ebd98c37314",
+      "inputs": [
+        [
+          [
+            2304
+          ],
+          "float32",
+          "11566d8cec09549b9f5d94b1144c971f149e179b7b2020355af0a3fc437c0c1f"
+        ],
+        [
+          [],
+          "float32",
+          "35c2b904d71646198c08e2d1ccff53400e0fa8a1e82612147078feef74491159"
+        ],
+        [
+          [],
+          "float32",
+          "5059b35a51a066cc88e72daa9017c4e126068c6368cd3b9f45b4d8d5cc94b3e5"
+        ],
+        [
+          [],
+          "float32",
+          "d9fc8a51763953481a1808af3156bcb8144c2f925e96dec623c886f6d9d975b2"
+        ],
+        [
+          [
+            3
+          ],
+          "float32",
+          "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+        ]
+      ]
+    },
+    {
+      "workload": "hysteretic_event_detector",
+      "family": "alarm_persistence",
+      "split": "test",
+      "trip_count": 3840,
+      "variant": "default",
+      "body_hash": "9ef927339860c7aa",
+      "inputs": [
+        [
+          [
+            3840
+          ],
+          "float32",
+          "5acee48f380b3aa0cb8ba07cc8b6a6ba8fc74cbe862e907313d81ced9ae3fa55"
+        ],
+        [
+          [],
+          "float32",
+          "35c2b904d71646198c08e2d1ccff53400e0fa8a1e82612147078feef74491159"
+        ],
+        [
+          [],
+          "float32",
+          "5059b35a51a066cc88e72daa9017c4e126068c6368cd3b9f45b4d8d5cc94b3e5"
+        ],
+        [
+          [],
+          "float32",
+          "d9fc8a51763953481a1808af3156bcb8144c2f925e96dec623c886f6d9d975b2"
+        ],
+        [
+          [
+            3
+          ],
+          "float32",
+          "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+        ]
+      ]
+    },
+    {
+      "workload": "rainflow_turning_points",
+      "family": "fatigue_preprocessing",
+      "split": "test",
+      "trip_count": 2304,
+      "variant": "turns_range",
+      "body_hash": "c98cdbd2a77d77ba",
+      "inputs": [
+        [
+          [
+            2304
+          ],
+          "float32",
+          "82efa60d17378e8939028c905be57d7f2a096fd70debd384a2e4fe9a7a8eeae2"
+        ],
+        [
+          [
+            5
+          ],
+          "float32",
+          "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90"
+        ]
+      ]
+    },
+    {
+      "workload": "rainflow_turning_points",
+      "family": "fatigue_preprocessing",
+      "split": "test",
+      "trip_count": 3840,
+      "variant": "turns_range",
+      "body_hash": "edf9353bba93d66d",
+      "inputs": [
+        [
+          [
+            3840
+          ],
+          "float32",
+          "1a88f99f353dd20ecde79416ce22e8ff2908d31e1ad4071ab047c29ad0ad1009"
+        ],
+        [
+          [
+            5
+          ],
+          "float32",
+          "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90"
+        ]
+      ]
+    },
+    {
+      "workload": "welford_online_moments",
+      "family": "online_moments",
+      "split": "test",
+      "trip_count": 2304,
+      "variant": "default",
+      "body_hash": "36ea3440db6f15fa",
+      "inputs": [
+        [
+          [
+            2304
+          ],
+          "float32",
+          "3240bf81fb642e3beb5465c8556f83f1f704c13d28acb1187e03a75f7a3e71d7"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    },
+    {
+      "workload": "welford_online_moments",
+      "family": "online_moments",
+      "split": "test",
+      "trip_count": 3840,
+      "variant": "default",
+      "body_hash": "5d6872f8c144cc53",
+      "inputs": [
+        [
+          [
+            3840
+          ],
+          "float32",
+          "961e24dd673953f9dc60ba02640ce5bef9842fefbc3d0f55de54f4c8c5fb0a60"
+        ],
+        [
+          [
+            2
+          ],
+          "float32",
+          "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        ]
+      ]
+    }
+  ],
+  "source": {
+    "cases.py": "74b17a4667de50825c4b7e860a9d8c361d73d161d31fb08dc500ac0812d060d7",
+    "deepseek_cases.py": "a0750b8c1d0800c17ea513d83d036e13b0375a5d411905d60d63dd211f7fcd9a",
+    "gemini_cases.py": "8da198b0722a5d5a5925aef7abe72a947f4078344c18f0dee839e36cc84257a1"
+  },
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "calls": [
+    300,
+    5000,
+    20000
+  ],
+  "repeats": 3,
+  "promotion": "Faster pooled totals against incumbent and native in all three 20k repeats; report every case."
+}

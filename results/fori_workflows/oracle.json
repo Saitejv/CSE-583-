@@ -1,0 +1,52 @@
+{
+  "cumulative_trapezoid_integrator/2304": {
+    "300": 2,
+    "5000": 8,
+    "20000": 8
+  },
+  "cumulative_trapezoid_integrator/3840": {
+    "300": 2,
+    "5000": 8,
+    "20000": 8
+  },
+  "hysteretic_event_detector/2304": {
+    "300": 1,
+    "5000": 4,
+    "20000": 4
+  },
+  "hysteretic_event_detector/3840": {
+    "300": 1,
+    "5000": 4,
+    "20000": 4
+  },
+  "muskingum/2304": {
+    "300": 2,
+    "5000": 4,
+    "20000": 8
+  },
+  "muskingum/3840": {
+    "300": 1,
+    "5000": 8,
+    "20000": 8
+  },
+  "rainflow_turning_points/2304": {
+    "300": 1,
+    "5000": 2,
+    "20000": 2
+  },
+  "rainflow_turning_points/3840": {
+    "300": 2,
+    "5000": 2,
+    "20000": 2
+  },
+  "welford_online_moments/2304": {
+    "300": 2,
+    "5000": 8,
+    "20000": 8
+  },
+  "welford_online_moments/3840": {
+    "300": 2,
+    "5000": 8,
+    "20000": 8
+  }
+}

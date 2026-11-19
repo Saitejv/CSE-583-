@@ -236,8 +236,8 @@ class HorizonPolicy:
         budget = math.inf if B is None else B - self.decision_ms
         if budget <= 0:
             return 1
-        if (features.get("scalar_stream_length", 0) > 1024
-                and features["scalar_stream_length"] == features["trip_count"] and R >= self.min_calls):
+        stream_length = features.get("scalar_stream_length", 0) or features.get("workflow_stream_length", 0)
+        if stream_length > 1024 and stream_length == features["trip_count"] and R >= self.min_calls:
             return select_factor(predictions, B=budget, R=R - 1)  # profile cold cost includes the first call
         log_budget = math.log(budget)
         feasible = [f for f in FACTORS if predictions[f].log_cold_ms <= log_budget]
