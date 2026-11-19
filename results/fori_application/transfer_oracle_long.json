@@ -1,0 +1,42 @@
+[
+  {
+    "cohort": "transfer",
+    "workload": "recursive_least_squares",
+    "variant": "real",
+    "trip_count": 442,
+    "opportunity": false,
+    "oracle": {
+      "20000": 1
+    }
+  },
+  {
+    "cohort": "transfer",
+    "workload": "signal_grid",
+    "variant": "real",
+    "trip_count": 1024,
+    "opportunity": true,
+    "oracle": {
+      "20000": 2
+    }
+  },
+  {
+    "cohort": "transfer",
+    "workload": "terrain_interpolation",
+    "variant": "real",
+    "trip_count": 512,
+    "opportunity": true,
+    "oracle": {
+      "20000": 2
+    }
+  },
+  {
+    "cohort": "transfer",
+    "workload": "weighted_covariance",
+    "variant": "real",
+    "trip_count": 569,
+    "opportunity": true,
+    "oracle": {
+      "20000": 4
+    }
+  }
+]

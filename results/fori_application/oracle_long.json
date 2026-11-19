@@ -1,0 +1,42 @@
+[
+  {
+    "cohort": "applications",
+    "workload": "class_pixel_peaks",
+    "variant": "real",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "20000": 1
+    }
+  },
+  {
+    "cohort": "applications",
+    "workload": "neighborhood_contrast",
+    "variant": "real",
+    "trip_count": 81,
+    "opportunity": true,
+    "oracle": {
+      "20000": 4
+    }
+  },
+  {
+    "cohort": "applications",
+    "workload": "online_regression",
+    "variant": "real",
+    "trip_count": 442,
+    "opportunity": false,
+    "oracle": {
+      "20000": 2
+    }
+  },
+  {
+    "cohort": "applications",
+    "workload": "threshold_curves",
+    "variant": "real",
+    "trip_count": 1024,
+    "opportunity": false,
+    "oracle": {
+      "20000": 2
+    }
+  }
+]

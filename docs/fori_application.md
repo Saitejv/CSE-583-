@@ -1,5 +1,7 @@
 # End-to-end application measurements on Apple M2
 
+At 20,000 calls per configuration the engine saved **8.519 s (42.8%)** across four targeted real-data applications and **0.573 s (10.2%)** across four broader applications.
+
 The packaged application engine reduced combined runtime from **5.287 s to 3.184 s** at 5,000 calls on a prospective test of three streamed matrix updates and a recursive regression control. The two repeatable gains came from historical daily signal replay (**1.861 s saved**) and class-balanced feature covariance (**0.288 s saved**). A separately frozen, broader four-application benchmark saved **0.119 s** and missed its predeclared 10% target.
 
 ## What shipped
@@ -30,7 +32,7 @@ Seconds sum all configurations in a cohort and average three independent process
 | Nearest-sample interpolation on the Jacksboro elevation grid | 2 | 1.071 | −.043 | 2/3 |
 | Recursive least squares on diabetes regression data | 1 | .183 | −.002 | 1/3 |
 
-Daily returns and elevation data come from Matplotlib's bundled samples. The covariance and grid interpolation have development analogues in the earlier synthetic covariance and Voronoi benchmarks. The signal grid accounts for most of the gain. The terrain candidate took .858, .852, and 1.502 s versus native's 1.023, 1.021, and 1.040 s. Keep the existing choice there pending stronger evidence. [Every configuration](../results/fori_application/transfer_cases.csv) · [Full and opportunity totals](../results/fori_application/transfer_totals.csv)
+Daily returns and elevation data come from Matplotlib's bundled samples. The covariance and grid interpolation have development analogues in the earlier synthetic covariance and Voronoi benchmarks. The signal grid accounts for most of the gain. The terrain candidate took .858, .852, and 1.502 s versus native's 1.023, 1.021, and 1.040 s. The 5,000-call terrain result is inconclusive. [Every configuration](../results/fori_application/transfer_cases.csv) · [Full and opportunity totals](../results/fori_application/transfer_totals.csv)
 
 ## Held-out families
 
@@ -43,13 +45,20 @@ At 5,000 calls the engine saved **2.155 s (2.0%)** across all 24 held-out config
 | 16 warm opportunities, pooled | 5,000 | 9.660 | 9.123 | 8.191 | 6.983 | 4.057 |
 | 16 warm opportunities, equal-workload | 5,000 | 7.991 | 7.546 | 6.801 | 5.835 | 3.440 |
 
-Inventory lost-sales simulation saved 1.453 s and flood duration saved 1.185 s relative to native. The revised rule changed two decisions relative to the previous policy, both on large inventories. Eight configurations achieved at least 1.05× speedup, and four slowed by over 3%. The worst median slowdown was 35.2% on the large 255-step warranty ladder, which lost 0.108 s. Keep native for this configuration.
+Inventory lost-sales simulation saved 1.453 s and flood duration saved 1.185 s relative to native. The revised rule changed two decisions relative to the previous policy. It selected factor 2 for the large 1,024-step inventory simulation and the large 255-step warranty ladder. The flood simulation already used factor 2 under the previous policy. Eight configurations achieved at least 1.05× speedup, and four slowed by over 3%. The worst median slowdown was 35.2% on the large 255-step warranty ladder, which lost 0.108 s. Keep native for this configuration.
 
 The engine recovered 39.3% of native-to-oracle headroom on all 24 and 47.8% on the opportunity subset. Two cases explain 1.948 s of the remaining 3.322 s. The large 1,024-step flood simulation took 1.093 s longer with factor 2 than the directly timed oracle at factor 8. The small 1,024-step inventory simulation took 0.855 s longer with factor 1 than the oracle at factor 4. [All configurations](../results/fori_application/holdout_cases.csv) · [Both subsets and weighting schemes](../results/fori_application/holdout_totals.csv) · [Raw process measurements](../results/fori_application/holdout_live.json)
 
 ## Long-horizon extension
 
 After seeing the 5,000-call application results, we specified a 20,000-call extension on every configuration in both four-application cohorts. It uses the same inputs, calibrated policy, five arms, three repeats, and cold budget. The oracle selects the minimum of the four existing native timing curves at 20,000 calls. The extension has separate direct result files.
+
+| Direct at 20,000 calls | Native 1 | Compact warm | Previous | Application engine | Oracle | Seconds saved vs native |
+|---|---:|---:|---:|---:|---:|---:|
+| Original four | 5.639 | 5.640 | 5.112 | 5.066 | 4.855 | 0.573 |
+| Targeted four | 19.884 | 19.886 | 19.904 | 11.366 | 11.340 | 8.519 |
+
+The engine beat native and the previous policy in all three repeats on each cohort. Each application has one configuration, so pooled and workload-weighted seconds coincide. On the original four, morphology supplied 0.542 s of savings and the engine recovered 73.1% of oracle headroom. Segmented maximum was 0.010 s slower than native. On the targeted four, the signal grid saved 6.668 s, covariance 1.149 s, and terrain interpolation 0.705 s. All three beat native in all three repeats. Recursive least squares lost 0.003 s with the same factor as native. The engine recovered 99.7% of the measured savings available to the four-factor oracle on this targeted cohort. The 0.026 s difference between the two pooled means is too small to justify further selection complexity on these applications. [Original configurations](../results/fori_application/applications_long_cases.csv) · [Original totals and opportunities](../results/fori_application/applications_long_totals.csv) · [Targeted configurations](../results/fori_application/transfer_long_cases.csv) · [Targeted totals and opportunities](../results/fori_application/transfer_long_totals.csv)
 
 ## Reproduction
 
