@@ -6,7 +6,7 @@ The experimental selector chooses a partial unroll factor for fixed-trip-count l
 
 Two opt-in compile-once reductions improved warm full-caller latency on Apple M2. Native JAX is the general default, and learned selection remains experimental. [Final evaluation and reproduction guide](docs/final_report.md) · [Final slides](docs/phase5_slides.pptx)
 
-For repeated CPU applications, the installed package includes the compact model and its calibrated matrix-update policy. Create one shared engine outside the jitted caller, then pass the expected number of invocations and optional cold budget to the wrapper. [Application measurements and supported use cases](docs/fori_application.md)
+For repeated CPU applications, the installed package includes the compact model and its calibrated matrix-update policy and a measured cost table for simple 2,048–8,192-step scalar streams. Create one shared engine outside the jitted caller, then pass the expected number of invocations and optional cold budget to the wrapper. [Application measurements](docs/fori_application.md) · [Long scalar training and transfer results](docs/fori_scalar.md)
 
 ```python
 import jax

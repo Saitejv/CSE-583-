@@ -1,5 +1,7 @@
 # Four native fori_loop scenarios from the 583 scan benchmark
 
+This report describes the original frozen engine. A later incremental fit uses all four scenarios for training and validates on separate families. [Updated scalar model and directly measured gains](fori_scalar.md)
+
 These external controls use the four step functions from `583/benchmark_unroll.py` at their original dimensions. The historical scan timings were available before this evaluation. The shipped application policy and compact warm selector were frozen throughout. These are synthetic kernels in families related to earlier project benchmarks. [Input fingerprints, source digest and protocol](../results/fori_application/scan_ports_manifest.json)
 
 The native port carries the original state through an indexed loop. For the scalar scan it reads the original input at index `i`. The other three steps ignore the index. The float32 inputs use the source's seed (20261103) and draw order. We checked the inputs directly against the supplied script and compared all 16 native configurations against its factor-1 scan. All inputs were identical, the maximum absolute output difference was zero, and each native factor changed only the unroll parameter in the port's Jaxpr.

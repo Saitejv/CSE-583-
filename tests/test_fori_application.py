@@ -34,7 +34,9 @@ def test_bundled_policy_and_model_match_frozen_fit(monkeypatch, tmp_path):
     assert "unroll=1\n" in short and engine.model is None
     assert graph(5000, 0) == short and engine.model is None
     assert graph(5000, 125) == short.replace("unroll=1\n", "unroll=2\n")
-    assert engine.model.version == fit["model_version"]
+    scalar_fit = json.loads((Path(__file__).resolve().parents[1] / "results/fori_scalar/fit.json").read_text())
+    assert scalar_fit["base"] == fit["model_version"]
+    assert engine.model.version == scalar_fit["model"]
 
 
 def test_real_data_kernel_references():

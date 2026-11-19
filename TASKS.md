@@ -57,3 +57,9 @@ Verified the full CPU test suite (**1,225 passed**) and reproduced the summaries
 - [x] Ported the scalar, sine, reduction and matrix recurrences to native fori_loop at the original dimensions and on byte-identical source inputs. All four factors matched the supplied script's scan outputs exactly.
 - [x] Compared the frozen application engine, compact warm baseline, previous rule, native factor 1, and horizon oracle at 300, 5,000, and 20,000 calls in 45 fresh CPU processes. The only repeatable warm opportunity was the 8,192-step scalar recurrence, outside the model's support. At 20,000 calls native took 0.672 s there, factor 8 took 0.350 s, and the shipped wrapper took 0.694 s. The engine chose factor 1 on all four scenarios. [Timings, source comparison and commands](docs/fori_scan_ports.md)
 - [x] Verified the five new regression tests in the full CPU suite (1,237 passed) and reproduced both the existing and new reports from saved direct measurements.
+
+## 9. Train on the 583 scenarios and validate scalar transfer
+
+- [x] Added all four supplied scenarios with native first-call and warm labels for factors 1, 2, 4, and 8. Fitted the long-scalar support region using the original scalar recurrence and six additional training configurations. Kept the original compact forest for existing workloads.
+- [x] Measured the original scalar and six family-held-out configurations in 36 fresh CPU processes. At 20,000 calls the original scalar saved 0.328 s (48.7%); the held-out families saved 0.733 s (12.2%) versus native. The nonlinear filter retains an additional 0.431 s of measured headroom. [Training data, per-case results and commands](docs/fori_scalar.md)
+- [x] Verified all 1,247 tests, reproduced the bundled model byte-for-byte from the training rows, and confirmed that a clean wheel install selects factor 8 on the supplied scalar recurrence.

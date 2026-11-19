@@ -1,0 +1,146 @@
+{
+  "rows": [
+    {
+      "split": "train",
+      "workload": "scalar",
+      "family": "scalar",
+      "variant": "source",
+      "trip_count": 8192,
+      "body_hash": "60a6969942818bde"
+    },
+    {
+      "split": "train",
+      "workload": "elementwise",
+      "family": "elementwise",
+      "variant": "source",
+      "trip_count": 128,
+      "body_hash": "97f78990e1287bf6"
+    },
+    {
+      "split": "train",
+      "workload": "reduction",
+      "family": "reduction",
+      "variant": "source",
+      "trip_count": 128,
+      "body_hash": "e80993fb29dcc05e"
+    },
+    {
+      "split": "train",
+      "workload": "matrix",
+      "family": "matrix",
+      "variant": "source",
+      "trip_count": 64,
+      "body_hash": "87f309ce183275ba"
+    },
+    {
+      "split": "train",
+      "workload": "cusum",
+      "family": "cusum",
+      "variant": "scalar",
+      "trip_count": 2048,
+      "body_hash": "49846f760639daef"
+    },
+    {
+      "split": "train",
+      "workload": "cusum",
+      "family": "cusum",
+      "variant": "scalar",
+      "trip_count": 4095,
+      "body_hash": "f4c5d1094021628d"
+    },
+    {
+      "split": "train",
+      "workload": "cusum",
+      "family": "cusum",
+      "variant": "scalar",
+      "trip_count": 8192,
+      "body_hash": "4a12cb00d7af63bb"
+    },
+    {
+      "split": "train",
+      "workload": "leaky_minimum",
+      "family": "leaky_minimum",
+      "variant": "scalar",
+      "trip_count": 2048,
+      "body_hash": "54d4348bb8a0d466"
+    },
+    {
+      "split": "train",
+      "workload": "leaky_minimum",
+      "family": "leaky_minimum",
+      "variant": "scalar",
+      "trip_count": 4095,
+      "body_hash": "aeda7df7ca5960bc"
+    },
+    {
+      "split": "train",
+      "workload": "leaky_minimum",
+      "family": "leaky_minimum",
+      "variant": "scalar",
+      "trip_count": 8192,
+      "body_hash": "2569da714beaed76"
+    },
+    {
+      "split": "test",
+      "workload": "tracking_error",
+      "family": "tracking_error",
+      "variant": "scalar",
+      "trip_count": 3073,
+      "body_hash": "ceea3870f0d0e8aa"
+    },
+    {
+      "split": "test",
+      "workload": "tracking_error",
+      "family": "tracking_error",
+      "variant": "scalar",
+      "trip_count": 6144,
+      "body_hash": "939fefbcd5270f28"
+    },
+    {
+      "split": "test",
+      "workload": "inventory",
+      "family": "inventory",
+      "variant": "scalar",
+      "trip_count": 3073,
+      "body_hash": "ccd112ed1e38dc5d"
+    },
+    {
+      "split": "test",
+      "workload": "inventory",
+      "family": "inventory",
+      "variant": "scalar",
+      "trip_count": 6144,
+      "body_hash": "e88b2d56c32c9d4f"
+    },
+    {
+      "split": "test",
+      "workload": "nonlinear_filter",
+      "family": "nonlinear_filter",
+      "variant": "scalar",
+      "trip_count": 3073,
+      "body_hash": "a4c3c55f6b2911da"
+    },
+    {
+      "split": "test",
+      "workload": "nonlinear_filter",
+      "family": "nonlinear_filter",
+      "variant": "scalar",
+      "trip_count": 6144,
+      "body_hash": "08f87b2c188216f1"
+    }
+  ],
+  "factors": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "repeats": 3,
+  "calls": [
+    300,
+    5000,
+    20000
+  ],
+  "source_sha256": "82d1374eefc26dd4c51e19ef6d97916f78456885a13530ffde3fa4e1b5b50c40",
+  "cases_sha256": "3e6023d96a7600b7e71d1b228f8108c5fe3057eb22385c2b99331f09eecb01b1"
+}

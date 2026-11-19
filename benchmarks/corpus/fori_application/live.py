@@ -109,7 +109,8 @@ def worker(cohort, arm, h, repeat):
     engine = None
     start = perf_counter_ns()
     if arm == "candidate":
-        engine = Recorder(application_engine())
+        # Reproduce the original candidate, even after a newer fit is packaged.
+        engine = Recorder(application_engine(model_path=UNCOMPRESSED))
     elif arm == "warm":
         engine = TimedEngine(CompactForiPredictor.load(UNCOMPRESSED))
     elif arm == "previous":
